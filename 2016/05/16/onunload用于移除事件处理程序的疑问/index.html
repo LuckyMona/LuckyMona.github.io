@@ -1,0 +1,601 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="onunload,红皮书,高程,读书笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x770B;&amp;#x7EA2;&amp;#x76AE;&amp;#x4E66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x770B;&amp;#x5230;13.4.1 &amp;#x201C;UI&amp;#x4E8B;&amp;#x4EF6;&amp;#x201D;&amp;#xFF0C;&amp;#x5BF9;onunload&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x4EA7;&amp;#x751F;&amp;#x4E86">
+<meta property="og:type" content="article">
+<meta property="og:title" content="onunload用于移除事件处理程序的疑问">
+<meta property="og:url" content="http://yoursite.com/2016/05/16/onunload用于移除事件处理程序的疑问/index.html">
+<meta property="og:site_name" content="Mary's blog">
+<meta property="og:description" content="&amp;#x770B;&amp;#x7EA2;&amp;#x76AE;&amp;#x4E66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x770B;&amp;#x5230;13.4.1 &amp;#x201C;UI&amp;#x4E8B;&amp;#x4EF6;&amp;#x201D;&amp;#xFF0C;&amp;#x5BF9;onunload&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x4EA7;&amp;#x751F;&amp;#x4E86">
+<meta property="og:updated_time" content="2016-07-02T09:33:49.885Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="onunload用于移除事件处理程序的疑问">
+<meta name="twitter:description" content="&amp;#x770B;&amp;#x7EA2;&amp;#x76AE;&amp;#x4E66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x770B;&amp;#x5230;13.4.1 &amp;#x201C;UI&amp;#x4E8B;&amp;#x4EF6;&amp;#x201D;&amp;#xFF0C;&amp;#x5BF9;onunload&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x4EA7;&amp;#x751F;&amp;#x4E86">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/05/16/onunload用于移除事件处理程序的疑问/"/>
+
+  <title> onunload用于移除事件处理程序的疑问 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                onunload用于移除事件处理程序的疑问
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-16T13:30:00+08:00" content="2016-05-16">
+              2016-05-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/存疑/" itemprop="url" rel="index">
+                    <span itemprop="name">存疑</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x770B;&#x7EA2;&#x76AE;&#x4E66;&#x7684;&#x65F6;&#x5019;&#x770B;&#x5230;13.4.1 &#x201C;UI&#x4E8B;&#x4EF6;&#x201D;&#xFF0C;&#x5BF9;onunload&#x4E8B;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x4EA7;&#x751F;&#x4E86;&#x7591;&#x95EE;&#xFF0C;&#x6309;&#x7167;&#x4E66;&#x4E0A;&#x8BF4;&#x6CD5;&#xFF1A;<br><a id="more"></a></p>
+<blockquote>
+<p>&#x4E0E; load &#x4E8B;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;&#x662F; unload &#x4E8B;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x5728;&#x6587;&#x6863;&#x88AB;&#x5B8C;&#x5168;&#x5378;&#x8F7D;&#x540E;&#x89E6;&#x53D1;&#x3002;&#x53EA;&#x8981;&#x7528;&#x6237;&#x4ECE;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x751F; unload &#x4E8B;&#x4EF6;&#x3002;&#x800C;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x6700;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x6E05;&#x9664;&#x5F15;&#x7528;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;</p>
+<p>&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x90FD;&#x8981;&#x5C0F;&#x5FC3;&#x7F16;&#x5199; onunload &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x65E2;&#x7136; unload &#x4E8B;&#x4EF6;&#x662F;&#x5728;&#x4E00;&#x5207;&#x90FD;&#x88AB;&#x5378;&#x8F7D;&#x4E4B;&#x540E;&#x624D;&#x89E6;&#x53D1;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x540E;&#x5B58;&#x5728;&#x7684;&#x90A3;&#x4E9B;&#x5BF9;&#x8C61;&#xFF0C;&#x6B64;&#x65F6;&#x5C31;&#x4E0D;&#x4E00;&#x5B9A;&#x5B58;&#x5728;&#x4E86;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x64CD;&#x4F5C; DOM &#x8282;<br>&#x70B9;&#x6216;&#x8005;&#x5143;&#x7D20;&#x7684;&#x6837;&#x5F0F;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x3002;</p>
+</blockquote>
+<p>&#x4EE5;&#x53CA;13.5.2 &#x201C;&#x79FB;&#x9664;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x201D;&#xFF1A;</p>
+<blockquote>
+<p>&#x5BFC;&#x81F4;&#x201C;&#x7A7A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x201D;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5C31;&#x662F;&#x5378;&#x8F7D;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x2026;&#x2026;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5728;&#x9875;&#x9762;&#x5378;&#x8F7D;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x901A;&#x8FC7; onunload &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x79FB;&#x9664;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;</p>
+</blockquote>
+<p>&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7591;&#x95EE;&#xFF1A;<strong>&#x56E0;&#x4E3A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x662F;&#x52A0;&#x5728;DOM&#x8282;&#x70B9;&#x4E0A;&#x7684;&#xFF0C;&#x65E2;&#x7136;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;DOM&#x4E86;&#xFF0C;&#x90A3;&#x600E;&#x4E48;&#x505A;&#x5230;&#x6E05;&#x9664;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x5462;&#xFF1F;</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/onunload/" rel="tag">#onunload</a>
+          
+            <a href="/tags/红皮书/" rel="tag">#红皮书</a>
+          
+            <a href="/tags/高程/" rel="tag">#高程</a>
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/02/npm ERR! shasum check failed for/" rel="prev" title="npm ERR! shasum check failed for报错，解决办法">
+                npm ERR! shasum check failed for报错，解决办法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

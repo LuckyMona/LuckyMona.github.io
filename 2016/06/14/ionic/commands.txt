@@ -1,0 +1,14 @@
+ionic build --no-telemetry
+
+ionic run android
+
+Error: No platforms added to this project. Please use `cordova platform add <platform>`.
+
+
+cordova platform add android
+
+Adding android project...
+
+
+ionic run android
+

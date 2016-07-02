@@ -1,0 +1,612 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="npm,nodeJS,踩坑," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x4F7F;&amp;#x7528;npm install&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#xFF0C;&amp;#x6B7B;&amp;#x6D3B;&amp;#x62A5;&amp;#x9519;&amp;#xFF1A;12npm ERR! shasum check failed for C:\Users\MARY~1.TIE\AppData\Local\Temp\npm-1212-7fb4bd00\registry.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm ERR! shasum check failed for报错，解决办法">
+<meta property="og:url" content="http://yoursite.com/2016/06/02/npm ERR! shasum check failed for/index.html">
+<meta property="og:site_name" content="Mary's blog">
+<meta property="og:description" content="&amp;#x4F7F;&amp;#x7528;npm install&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#xFF0C;&amp;#x6B7B;&amp;#x6D3B;&amp;#x62A5;&amp;#x9519;&amp;#xFF1A;12npm ERR! shasum check failed for C:\Users\MARY~1.TIE\AppData\Local\Temp\npm-1212-7fb4bd00\registry.">
+<meta property="og:updated_time" content="2016-07-02T09:35:13.954Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm ERR! shasum check failed for报错，解决办法">
+<meta name="twitter:description" content="&amp;#x4F7F;&amp;#x7528;npm install&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#xFF0C;&amp;#x6B7B;&amp;#x6D3B;&amp;#x62A5;&amp;#x9519;&amp;#xFF1A;12npm ERR! shasum check failed for C:\Users\MARY~1.TIE\AppData\Local\Temp\npm-1212-7fb4bd00\registry.">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/02/npm ERR! shasum check failed for/"/>
+
+  <title> npm ERR! shasum check failed for报错，解决办法 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                npm ERR! shasum check failed for报错，解决办法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-02T13:30:00+08:00" content="2016-06-02">
+              2016-06-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/踩坑/" itemprop="url" rel="index">
+                    <span itemprop="name">踩坑</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x4F7F;&#x7528;npm install&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6B7B;&#x6D3B;&#x62A5;&#x9519;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm ERR! shasum check failed for C:\Users\MARY~1.TIE\AppData\Local\Temp\npm-1212</div><div class="line">-7fb4bd00\registry.cnpmjs.org\iconv-lite\download\iconv-lite-0.4.11.tgz</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>&#x7F51;&#x4E0A;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x641C;&#x5230;&#x633A;&#x591A;&#x7B54;&#x6848;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8BD5;&#x4E86;&#x597D;&#x591A;&#x90FD;&#x4E0D;&#x884C;&#xFF0C;</p>
+<h3 id="&#x73B0;&#x5728;&#x5217;&#x51FA;&#x6211;&#x8BD5;&#x8FC7;&#x7684;-&#x8FD9;&#x4E9B;&#x8BD5;&#x8FC7;&#x6765;&#x90FD;&#x4E0D;&#x884C;&#xFF1A;"><a href="#&#x73B0;&#x5728;&#x5217;&#x51FA;&#x6211;&#x8BD5;&#x8FC7;&#x7684;-&#x8FD9;&#x4E9B;&#x8BD5;&#x8FC7;&#x6765;&#x90FD;&#x4E0D;&#x884C;&#xFF1A;" class="headerlink" title="&#x73B0;&#x5728;&#x5217;&#x51FA;&#x6211;&#x8BD5;&#x8FC7;&#x7684;,&#x8FD9;&#x4E9B;&#x8BD5;&#x8FC7;&#x6765;&#x90FD;&#x4E0D;&#x884C;&#xFF1A;"></a>&#x73B0;&#x5728;&#x5217;&#x51FA;&#x6211;&#x8BD5;&#x8FC7;&#x7684;,&#x8FD9;&#x4E9B;&#x8BD5;&#x8FC7;&#x6765;&#x90FD;&#x4E0D;&#x884C;&#xFF1A;</h3><p>&#x6765;&#x81EA;<a href="http://www.ithao123.cn/content-41081.html" target="_blank" rel="external">&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#x7684;&#x65B9;&#x6848;</a></p>
+<ol>
+<li><p>&#x901A;&#x8FC7;config&#x547D;&#x4EE4;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config set registry http://registry.cnpmjs.org </div><div class="line">npm info underscore &#xFF08;&#x5982;&#x679C;&#x4E0A;&#x9762;&#x914D;&#x7F6E;&#x6B63;&#x786E;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x4F1A;&#x6709;&#x5B57;&#x7B26;&#x4E32;response&#xFF09;</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x547D;&#x4EE4;&#x884C;&#x6307;&#x5B9A;<br><code>npm --registry http://registry.cnpmjs.org</code> info underscore</p>
+</li>
+<li>&#x7F16;&#x8F91; ~/.npmrc &#x52A0;&#x5165;&#x4E0B;&#x9762;&#x5185;&#x5BB9;<br><code>registry = http://registry.cnpmjs.org</code><br>&#x641C;&#x7D22;&#x955C;&#x50CF;: <a href="http://cnpmjs.org" target="_blank" rel="external">http://cnpmjs.org</a></li>
+</ol>
+<p>&#x6700;&#x540E;&#x5728;starkoverflow&#x7684;&#x8FD9;&#x4E2A;<a href="http://stackoverflow.com/questions/20633898/shasum-check-failed-error-while-installing-phonegap" target="_blank" rel="external">&#x94FE;&#x63A5;</a>&#xFF0C;&#x8BD5;&#x5230;&#x4E86;&#x6B63;&#x89E3;&#xFF1A;</p>
+<h3 id="&#x53EF;&#x884C;&#x7684;&#x65B9;&#x6848;"><a href="#&#x53EF;&#x884C;&#x7684;&#x65B9;&#x6848;" class="headerlink" title="&#x53EF;&#x884C;&#x7684;&#x65B9;&#x6848;"></a>&#x53EF;&#x884C;&#x7684;&#x65B9;&#x6848;</h3><ol>
+<li>Try this first<br><code>npm set registry https://registry.npmjs.org/</code></li>
+<li>if failed then try to use the npm mirror:<br><code>npm set registry http://ec2-46-137-149-160.eu-west-1.compute.amazonaws.com</code></li>
+<li>then use it normally:<br><code>npm install express</code></li>
+</ol>
+<p>&#x6211;&#x53EA;&#x7528;&#x4E86;&#x7B2C;&#x4E00;&#x53E5;&#x5C31;&#x4E0D;&#x518D;&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x7684;cnpm.js&#xFF0C;&#x8FD9;&#x4E2A;&#x5C0F;&#x53DB;&#x5F92;&#xFF0C;&#x7ED9;&#x6211;&#x9020;&#x6210;&#x8FD9;&#x4E48;&#x591A;err&#xFF0C;&#x8FD8;&#x662F;&#x539F;&#x7248;&#x3001;&#x5B98;&#x65B9;&#x9760;&#x8C31;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/npm/" rel="tag">#npm</a>
+          
+            <a href="/tags/nodeJS/" rel="tag">#nodeJS</a>
+          
+            <a href="/tags/踩坑/" rel="tag">#踩坑</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/16/onunload用于移除事件处理程序的疑问/" rel="next" title="onunload用于移除事件处理程序的疑问">
+                <i class="fa fa-chevron-left"></i> onunload用于移除事件处理程序的疑问
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/02/mongoDB使用过程踩坑记录/" rel="prev" title="mongoDB使用过程踩坑小记">
+                mongoDB使用过程踩坑小记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#现在列出我试过的-这些试过来都不行："><span class="nav-number">1.</span> <span class="nav-text">现在列出我试过的,这些试过来都不行：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可行的方案"><span class="nav-number">2.</span> <span class="nav-text">可行的方案</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
