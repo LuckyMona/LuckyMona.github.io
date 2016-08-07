@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="onunload,红皮书,高程,读书笔记," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="有志者自有千计万计，无志者只感千难万难">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mary's blog">
-<meta property="og:url" content="http://yoursite.com/tags/angularJS/index.html">
+<meta name="description" content="&amp;#x770B;&amp;#x7EA2;&amp;#x76AE;&amp;#x4E66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x770B;&amp;#x5230;13.4.1 &amp;#x201C;UI&amp;#x4E8B;&amp;#x4EF6;&amp;#x201D;&amp;#xFF0C;&amp;#x5BF9;onunload&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x4EA7;&amp;#x751F;&amp;#x4E86">
+<meta property="og:type" content="article">
+<meta property="og:title" content="onunload用于移除事件处理程序的疑问">
+<meta property="og:url" content="http://yoursite.com/2016/05/16/Question_About_Onunload/index.html">
 <meta property="og:site_name" content="Mary's blog">
-<meta property="og:description" content="有志者自有千计万计，无志者只感千难万难">
+<meta property="og:description" content="&amp;#x770B;&amp;#x7EA2;&amp;#x76AE;&amp;#x4E66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x770B;&amp;#x5230;13.4.1 &amp;#x201C;UI&amp;#x4E8B;&amp;#x4EF6;&amp;#x201D;&amp;#xFF0C;&amp;#x5BF9;onunload&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x4EA7;&amp;#x751F;&amp;#x4E86">
+<meta property="og:updated_time" content="2016-08-07T08:34:35.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mary's blog">
-<meta name="twitter:description" content="有志者自有千计万计，无志者只感千难万难">
+<meta name="twitter:title" content="onunload用于移除事件处理程序的疑问">
+<meta name="twitter:description" content="&amp;#x770B;&amp;#x7EA2;&amp;#x76AE;&amp;#x4E66;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x770B;&amp;#x5230;13.4.1 &amp;#x201C;UI&amp;#x4E8B;&amp;#x4EF6;&amp;#x201D;&amp;#xFF0C;&amp;#x5BF9;onunload&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x4EA7;&amp;#x751F;&amp;#x4E86">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/angularJS/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/05/16/Question_About_Onunload/"/>
 
-  <title> 标签: angularJS | Mary's blog </title>
+  <title> onunload用于移除事件处理程序的疑问 | Mary's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -155,7 +156,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -233,46 +234,171 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        angularJS
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                onunload用于移除事件处理程序的疑问
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-16T13:30:00+08:00" content="2016-05-16">
+              2016-05-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/存疑/" itemprop="url" rel="index">
+                    <span itemprop="name">存疑</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/16/Question_About_Onunload/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/16/Question_About_Onunload/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/16/Question_About_Onunload/" class="leancloud_visitors" data-flag-title="onunload用于移除事件处理程序的疑问">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>&#x770B;&#x7EA2;&#x76AE;&#x4E66;&#x7684;&#x65F6;&#x5019;&#x770B;&#x5230;13.4.1 &#x201C;UI&#x4E8B;&#x4EF6;&#x201D;&#xFF0C;&#x5BF9;onunload&#x4E8B;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x4EA7;&#x751F;&#x4E86;&#x7591;&#x95EE;&#xFF0C;&#x6587;&#x4E2D;&#x8BF4;&#x6CD5;&#x7591;&#x4F3C;&#x6709;&#x524D;&#x540E;&#x77DB;&#x76FE;&#x7684;&#x5730;&#x65B9;&#x3002;&#x95EE;&#x51E0;&#x4E2A;&#x4EBA;&#x4EE5;&#x53CA;&#x67E5;&#x8D44;&#x6599;&#x6682;&#x65F6;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5B58;&#x7591;&#xFF0C;&#x5F85;&#x6211;&#x89E3;&#x51B3;&#x540E;&#x518D;&#x66F4;&#x65B0;&#x7ED3;&#x679C;&#x3002;<br><a id="more"></a><br>&#x6309;&#x7167;&#x4E66;&#x4E0A;&#x8BF4;&#x6CD5;&#xFF1A;</p>
+<blockquote>
+<p>&#x4E0E; load &#x4E8B;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;&#x662F; unload &#x4E8B;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x5728;&#x6587;&#x6863;&#x88AB;&#x5B8C;&#x5168;&#x5378;&#x8F7D;&#x540E;&#x89E6;&#x53D1;&#x3002;&#x53EA;&#x8981;&#x7528;&#x6237;&#x4ECE;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x751F; unload &#x4E8B;&#x4EF6;&#x3002;&#x800C;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x6700;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x6E05;&#x9664;&#x5F15;&#x7528;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;</p>
+<p>&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x90FD;&#x8981;&#x5C0F;&#x5FC3;&#x7F16;&#x5199; onunload &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x65E2;&#x7136; unload &#x4E8B;&#x4EF6;&#x662F;&#x5728;&#x4E00;&#x5207;&#x90FD;&#x88AB;&#x5378;&#x8F7D;&#x4E4B;&#x540E;&#x624D;&#x89E6;&#x53D1;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x540E;&#x5B58;&#x5728;&#x7684;&#x90A3;&#x4E9B;&#x5BF9;&#x8C61;&#xFF0C;&#x6B64;&#x65F6;&#x5C31;&#x4E0D;&#x4E00;&#x5B9A;&#x5B58;&#x5728;&#x4E86;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x64CD;&#x4F5C; DOM &#x8282;<br>&#x70B9;&#x6216;&#x8005;&#x5143;&#x7D20;&#x7684;&#x6837;&#x5F0F;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x3002;</p>
+</blockquote>
+<p>&#x4EE5;&#x53CA;13.5.2 &#x201C;&#x79FB;&#x9664;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x201D;&#xFF1A;</p>
+<blockquote>
+<p>&#x5BFC;&#x81F4;&#x201C;&#x7A7A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x201D;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5C31;&#x662F;&#x5378;&#x8F7D;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x2026;&#x2026;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5728;&#x9875;&#x9762;&#x5378;&#x8F7D;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x901A;&#x8FC7; onunload &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x79FB;&#x9664;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x3002;</p>
+</blockquote>
+<p>&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7591;&#x95EE;&#xFF1A;<strong>&#x56E0;&#x4E3A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x662F;&#x52A0;&#x5728;DOM&#x8282;&#x70B9;&#x4E0A;&#x7684;&#xFF0C;&#x65E2;&#x7136;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;DOM&#x4E86;&#xFF0C;&#x90A3;&#x600E;&#x4E48;&#x505A;&#x5230;&#x6E05;&#x9664;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x5462;&#xFF1F;</strong></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/" itemprop="url">
-              
-                <span itemprop="name">ion-view、ng-repeat遇到$watch时产生的一个小坑</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-11T21:31:00+08:00"
-              content="2016-07-11" >
-          07-11
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/onunload/" rel="tag">#onunload</a>
+          
+            <a href="/tags/红皮书/" rel="tag">#红皮书</a>
+          
+            <a href="/tags/高程/" rel="tag">#高程</a>
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/" rel="prev" title="MongoDB使用过程踩坑小记">
+                MongoDB使用过程踩坑小记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -280,6 +406,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -299,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/1.jpg"
@@ -350,6 +496,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -453,6 +610,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -469,9 +630,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'supermaryyy';
-      var disqus_identifier = 'tags/angularJS/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = '2016/05/16/Question_About_Onunload/';
+      var disqus_title = "onunload用于移除事件处理程序的疑问";
+      var disqus_url = 'http://yoursite.com/2016/05/16/Question_About_Onunload/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -482,6 +643,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
