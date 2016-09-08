@@ -1,0 +1,900 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS,垂直居中,水平居中,方案总结,总结," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="by MaryTien from http://luckymona.github.io&amp;#x672C;&amp;#x6587;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css
+
+&amp;#x4E4B;&amp;#x524D;&amp;#x5DEE;&amp;#x4E0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结向↗CSS居中常用套路">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/index.html">
+<meta property="og:site_name" content="Mary's blog">
+<meta property="og:description" content="by MaryTien from http://luckymona.github.io&amp;#x672C;&amp;#x6587;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css
+
+&amp;#x4E4B;&amp;#x524D;&amp;#x5DEE;&amp;#x4E0">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/6.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/7.jpg">
+<meta property="og:updated_time" content="2016-09-08T14:10:33.867Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总结向↗CSS居中常用套路">
+<meta name="twitter:description" content="by MaryTien from http://luckymona.github.io&amp;#x672C;&amp;#x6587;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css
+
+&amp;#x4E4B;&amp;#x524D;&amp;#x5DEE;&amp;#x4E0">
+<meta name="twitter:image" content="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/"/>
+
+  <title> 总结向↗CSS居中常用套路 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-MaryIsTheBest', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e5105bc5db77c7c5a84291b9d0e212c8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                总结向↗CSS居中常用套路
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-08T21:00:00+08:00" content="2016-09-08">
+              2016-09-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/08/summary-of-aligning-to-center-solutions-in-css/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/" class="leancloud_visitors" data-flag-title="总结向↗CSS居中常用套路">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>by MaryTien from <a href="http://luckymona.github.io" target="_blank" rel="external">http://luckymona.github.io</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css" target="_blank" rel="external">http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css</a></p>
+</blockquote>
+<p>&#x4E4B;&#x524D;&#x5DEE;&#x4E0D;&#x591A;&#x6709;&#x5C0F;&#x534A;&#x5E74;&#x65F6;&#x95F4;&#x505A;&#x5207;&#x56FE;&#x4ED4;&#xFF0C;&#x867D;&#x7136;&#x5C45;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x6765;&#x53BB;&#x53BB;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x90A3;&#x4E48;&#x51E0;&#x4E2A;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x8BA4;&#x771F;&#x603B;&#x7ED3;&#x8FC7;&#x6BCF;&#x79CD;&#x65B9;&#x6848;&#x9002;&#x7528;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x6709;&#x65F6;&#x9047;&#x5230;&#x5C45;&#x4E2D;&#x9700;&#x6C42;&#x8FD8;&#x662F;&#x4E0D;&#x80FD;&#x4E00;&#x4E0B;&#x5C31;&#x7528;&#x5BF9;&#x65B9;&#x6CD5;&#xFF0C;&#x8BD5;&#x6765;&#x8BD5;&#x53BB;&#x6D6A;&#x8D39;&#x65F6;&#x95F4;&#x3002;&#x672C;&#x6587;&#x5C31;&#x5BF9;CSS&#x4E2D;&#x7684;&#x5E38;&#x7528;&#x7684;&#x5C45;&#x4E2D;&#x65B9;&#x6848;&#x6765;&#x4E2A;&#x603B;&#x7ED3;&#xFF0C;&#x672C;&#x60F3;&#x6765;&#x4E2A;&#x6700;&#x5F3A;&#x603B;&#x7ED3;&#xFF0C;&#x4F46;&#x662F;CSS&#x5957;&#x8DEF;&#x592A;&#x591A;&#xFF0C;&#x5199;&#x7740;&#x5199;&#x7740;&#x5C31;&#x4E0D;&#x60F3;&#x5199;&#x4E86;==!&#xFF0C;&#x4E8E;&#x662F;&#x53D8;&#x6210;&#x4E86;&#x5E38;&#x7528;&#x65B9;&#x6848;&#x7684;&#x603B;&#x7ED3;&#x3002;&#xFF08;&#x6587;&#x4E2D;&#x4F8B;&#x5B50;&#x5747;&#x4E3A;&#x4EE5;chrome&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#xFF09;<br><a id="more"></a></p>
+<h1 id="&#x5E38;&#x7528;&#x5143;&#x7D20;&#x5206;&#x7C7B;&#x2013;&#x6309;&#x7167;&#x5757;&#x5143;&#x7D20;&#x3001;&#x884C;&#x5185;&#x5143;&#x7D20;"><a href="#&#x5E38;&#x7528;&#x5143;&#x7D20;&#x5206;&#x7C7B;&#x2013;&#x6309;&#x7167;&#x5757;&#x5143;&#x7D20;&#x3001;&#x884C;&#x5185;&#x5143;&#x7D20;" class="headerlink" title="&#x5E38;&#x7528;&#x5143;&#x7D20;&#x5206;&#x7C7B;&#x2013;&#x6309;&#x7167;&#x5757;&#x5143;&#x7D20;&#x3001;&#x884C;&#x5185;&#x5143;&#x7D20;"></a>&#x5E38;&#x7528;&#x5143;&#x7D20;&#x5206;&#x7C7B;&#x2013;&#x6309;&#x7167;&#x5757;&#x5143;&#x7D20;&#x3001;&#x884C;&#x5185;&#x5143;&#x7D20;</h1><p>&#x5C45;&#x4E2D;&#x7684;&#x9700;&#x6C42;&#x5E38;&#x5E38;&#x6D89;&#x53CA;&#x8FD9;&#x4E9B;&#x56E0;&#x7D20;&#xFF1A;&#x5185;&#x8054;&#x5143;&#x7D20;&#x5C45;&#x4E2D;&#x3001;&#x5757;&#x5143;&#x7D20;&#x5C45;&#x4E2D;&#xFF0C;&#x5757;&#x5143;&#x7D20;&#x5C45;&#x4E2D;&#x53C8;&#x5206;&#x4E3A;&#x5B9A;&#x5BBD;&#x5EA6;&#x3001;&#x4E0D;&#x5B9A;&#x5BBD;&#x5EA6;&#xFF0C;&#x8FD8;&#x6709;&#x5404;&#x79CD;&#x5B9A;&#x4F4D;&#x3001;&#x6D6E;&#x52A8;&#x3001;&#x7236;&#x5143;&#x7D20;&#x5BBD;&#x9AD8;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x4E8E;&#x662F;&#x6211;&#x5148;&#x628A;&#x5E38;&#x7528;&#x5143;&#x7D20;&#x6309;&#x7167;display&#x503C;&#x5206;&#x4E00;&#x4E0B;&#x7C7B;&#x3002;&#x6839;&#x636E;&#x4E8C;&#x516B;&#x539F;&#x5219;&#xFF0C;&#x4EC5;&#x4E3E;&#x5E38;&#x7528;&#x7684;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x5C0F;&#x670B;&#x53CB;&#xFF0C;&#x4E14;&#x4E0D;&#x5305;&#x62EC;HTML5&#x90A3;&#x4E9B;&#x65B0;&#x6807;&#x7B7E;&#xFF08;&#x591A;&#x4E86;&#x4EBA;&#x5BB6;&#x8BB0;&#x4E0D;&#x4F4F;&#x561B;&#xFF0C;&#x8111;&#x7EC6;&#x80DE;&#x8981;&#x60F3;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x4E8B; <del>&#x55EF;&#xFF0C;&#x4E00;&#x4E2A;&#x501F;&#x53E3;</del>&#xFF09;</p>
+<h2 id="&#x5E38;&#x7528;block&#x5143;&#x7D20;&#xFF1A;"><a href="#&#x5E38;&#x7528;block&#x5143;&#x7D20;&#xFF1A;" class="headerlink" title="&#x5E38;&#x7528;block&#x5143;&#x7D20;&#xFF1A;"></a>&#x5E38;&#x7528;block&#x5143;&#x7D20;&#xFF1A;</h2><p>&#x6587;&#x6863;&#x7C7B;&#xFF1A;head \ html \ body<br>&#x6587;&#x7AE0;&#x7C7B;&#xFF1A;h \ h1~h6 \ p<br>&#x5E03;&#x5C40;&#x7C7B;&#xFF1A;div \ br \ hr<br>&#x5217;&#x8868;&#x7C7B;&#xFF1A;ol \ ul \ li \ dl \ dt \ dd<br>&#x8868;&#x5355;&#x7C7B;&#xFF1A;form<br>&#x9700;&#x6CE8;&#x610F;&#x7684;&#xFF1A;<strong>hr&#x662F;&#x5757;&#x5143;&#x7D20;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x5BBD;&#x9AD8;</strong></p>
+<h2 id="&#x5E38;&#x7528;inline&#x5143;&#x7D20;&#xFF1A;"><a href="#&#x5E38;&#x7528;inline&#x5143;&#x7D20;&#xFF1A;" class="headerlink" title="&#x5E38;&#x7528;inline&#x5143;&#x7D20;&#xFF1A;"></a>&#x5E38;&#x7528;inline&#x5143;&#x7D20;&#xFF1A;</h2><p>a \ span \ strong \ i \ em \ del \ q </p>
+<h2 id="&#x5E38;&#x7528;&#x7684;inline-block&#x5143;&#x7D20;&#xFF1A;"><a href="#&#x5E38;&#x7528;&#x7684;inline-block&#x5143;&#x7D20;&#xFF1A;" class="headerlink" title="&#x5E38;&#x7528;&#x7684;inline-block&#x5143;&#x7D20;&#xFF1A;"></a>&#x5E38;&#x7528;&#x7684;inline-block&#x5143;&#x7D20;&#xFF1A;</h2><p>img \ input \ button \ select \ textarea</p>
+<h2 id="&#x5176;&#x4ED6;&#x5143;&#x7D20;&#xFF1A;"><a href="#&#x5176;&#x4ED6;&#x5143;&#x7D20;&#xFF1A;" class="headerlink" title="&#x5176;&#x4ED6;&#x5143;&#x7D20;&#xFF1A;"></a>&#x5176;&#x4ED6;&#x5143;&#x7D20;&#xFF1A;</h2><ol>
+<li>&#x4E0E;select&#x642D;&#x914D;&#x4F7F;&#x7528;&#x7684;option&#x3001;optgroup&#xFF0C;&#x867D;&#x7136;&#x662F;display:block&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x4E0D;&#x80FD;&#x8BBE;&#x5B9A;&#x5BBD;&#x9AD8;</li>
+<li>&#x8D77;&#x914D;&#x7F6E;&#x4F5C;&#x7528;&#x7684;&#x5143;&#x7D20;&#xFF1A;meta&#x3001;script&#x3001;style</li>
+<li>table&#x5143;&#x7D20;&#xFF1A;&#xFF08;markdown&#x4E2D;&#x5199;&#x8868;&#x683C;&#x5F88;&#x8D39;&#x52B2;&#xFF0C;&#x63A8;&#x8350;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;TableEditor&#xFF09;</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">table&#x5143;&#x7D20;&#x540D;</th>
+<th style="text-align:center">display&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">table</td>
+<td style="text-align:center">table</td>
+</tr>
+<tr>
+<td style="text-align:center">thead</td>
+<td style="text-align:center">table-header-group</td>
+</tr>
+<tr>
+<td style="text-align:center">tbody</td>
+<td style="text-align:center">table-row-group</td>
+</tr>
+<tr>
+<td style="text-align:center">tfoot</td>
+<td style="text-align:center">table-footer-group</td>
+</tr>
+<tr>
+<td style="text-align:center">tr</td>
+<td style="text-align:center">table-row</td>
+</tr>
+<tr>
+<td style="text-align:center">th / td</td>
+<td style="text-align:center">table-cell</td>
+</tr>
+</tbody>
+</table>
+<p>inline&#x5143;&#x7D20;&#x4E0D;&#x5B58;&#x5728;&#x5BBD;&#x9AD8;&#xFF0C;&#x4E5F;&#x5C31;&#x4E0D;&#x5B58;&#x5728;&#x5C45;&#x4E0D;&#x5C45;&#x4E2D;&#x7684;&#x95EE;&#x9898;&#x3002;&#x6240;&#x4EE5;&#x8BA8;&#x8BBA;&#x5C45;&#x4E2D;&#x4E3B;&#x8981;&#x662F;&#x8BA8;&#x8BBA;block / inline-block&#x5143;&#x7D20;&#x7684;&#x5C45;&#x4E2D;&#x3002;</p>
+<h1 id="&#x5C45;&#x4E2D;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x6280;&#x672F;"><a href="#&#x5C45;&#x4E2D;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x6280;&#x672F;" class="headerlink" title="&#x5C45;&#x4E2D;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x6280;&#x672F;"></a>&#x5C45;&#x4E2D;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x6280;&#x672F;</h1><h2 id="line-height&#x2013;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"><a href="#line-height&#x2013;&#x5782;&#x76F4;&#x5C45;&#x4E2D;" class="headerlink" title="line-height&#x2013;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"></a>line-height&#x2013;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</h2><p>block / inline-block&#x5143;&#x7D20;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;height&#x503C;&#x7B49;&#x4E8E;line-height&#x503C;&#xFF0C;&#x4F7F; <strong>&#x5355;&#x884C;&#x6587;&#x672C;&#x5185;&#x5BB9;</strong> &#x6216;&#x8005; <strong>&#x5355;&#x884C;display:inline&#x7684;&#x5143;&#x7D20;</strong>&#x5782;&#x76F4;&#x5C45;&#x4E2D;:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.block_center { height:200px; line-height:200px; border:1px solid red; }</div><div class="line">.inlineB_center { display:inline-block; height:200px; line-height:200px; border:1px solid red; }</div><div class="line"></div><div class="line">&lt;p class=&quot;block_Center&quot;&gt;dfasdfadfa&lt;/p&gt;</div><div class="line">&lt;p class=&quot;inlineB_center&quot;&gt;dfasdfadfa&lt;/p&gt;</div><div class="line"></div><div class="line">.origin_inlineB_center { height:200px; line-height:200px; border:1px solid red; }</div><div class="line">&lt;input class=&quot;origin_inlineB_center&quot; type=&quot;text&quot; value=&quot;aaaaa&quot;&gt;</div><div class="line">&lt;button class=&quot;origin_inlineB_center&quot; &gt;aaaaa&lt;/button&gt;</div><div class="line">&lt;textarea sclass=&quot;origin_inlineB_center&quot; &gt;aaaaa&lt;/textarea&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>&#x9700;&#x6CE8;&#x610F;:</strong></p>
+<ol>
+<li>&#x5B50;&#x5143;&#x7D20;&#x4E3A;inline-block&#x5143;&#x7D20;&#xFF0C;&#x7236;&#x7EA7;&#x52A0;line-height&#x7B49;&#x4E8E;height&#xFF0C;&#x5E76;&#x4E0D;&#x80FD;&#x4F7F;&#x5B50;&#x5143;&#x7D20;&#x5C45;&#x4E2D;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.father { height: 200px; width:100px; line-height: 200px; border:1px solid red; }</div><div class="line">.child { height: 100px; width:100px; background: red; display: inline-block; }</div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;!-- &#x6216;&#x8005;&#x539F;&#x751F;inline-block&#x5143;&#x7D20;&#x4E5F;&#x4E0D;&#x884C;,class&#x5185;&#x5BB9;&#x540C;&#x4E0A;&#xFF0C;.child &#x53BB;&#x6389;display:inline-block --&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">    &lt;input class=&quot;child&quot; type=&quot;button&quot; name=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;!-- or --&gt;</div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">    &lt;img src=&quot;1.jpg&quot; class=&quot;child&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&#x90FD;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x679C;&#xFF1A;<br><img src="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/1.jpg" alt="align/1"><br><img src="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/2.jpg" alt="align/2"></p>
+<h2 id="text-align-center&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;"><a href="#text-align-center&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;" class="headerlink" title="text-align:center&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;"></a>text-align:center&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;</h2><p>text-align&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x5176;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x5BF9;&#x9F50;text&#x7684;&#xFF0C;&#x5177;&#x4F53;&#x8BF4;&#x6765;&#xFF1A;</p>
+<ol>
+<li><p>&#x662F;&#x4F7F;block / inline-block&#x5143;&#x7D20;&#x7684;&#x5185;&#x5BB9;&#x6587;&#x672C;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF0C;&#x4F46;&#x5BF9;inline-block&#x5143;&#x7D20;select&#x65E0;&#x6548;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!-- div&#x5143;&#x7D20; --&gt;</div><div class="line">.center { text-align:center }</div><div class="line">&lt;div class=&quot;center&quot;&gt;This text will be in the center&lt;/div&gt;</div><div class="line">&lt;p class=&quot;center&quot;&gt;dsfadfadfafgdfs&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;!-- inline-block&#x5143;&#x7D20; --&gt;</div><div class="line">.inlineB_center { text-align:center; width:100px; }</div><div class="line">&lt;input class=&quot;inlineB_center&quot; value=&quot;aaaaa&quot; type=&quot;text&quot;&gt;</div><div class="line">&lt;button class=&quot;inlineB_center&quot;&gt;aaaaa&lt;/button&gt;</div><div class="line">&lt;textarea class=&quot;inlineB_center&quot;&gt;aaaaa&lt;/textarea&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x4F5C;&#x4E3A;&#x5B50;&#x5143;&#x7D20;&#x7684;inline / inline-block&#x5143;&#x7D20;&#x5728;&#x7236;&#x5143;&#x7D20;&#x5185;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.center { text-align:center; width: 200px; height:100px; border:1px solid red; }</div><div class="line">.centerChild { width:100px; height:100px; }</div><div class="line"></div><div class="line">&lt;div class=&quot;center&quot;&gt;</div><div class="line">    &lt;div style=&quot;display:inline&quot;&gt;aaa&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;center&quot;&gt;</div><div class="line">    &lt;div style=&quot;display:inline-block&quot;&gt;aaa&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;!-- or &#x539F;&#x751F;inline-block&#x5143;&#x7D20; --&gt;</div><div class="line">&lt;div class=&quot;center&quot;&gt;</div><div class="line">    &lt;img src=&quot;1.jpg&quot; class=&quot;centerChild&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="padding&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"><a href="#padding&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;" class="headerlink" title="padding&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"></a>padding&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</h2><p>&#x901A;&#x8FC7;&#x5728;&#x5185;&#x5BB9;&#x7684;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x6DFB;&#x52A0;&#x540C;&#x6837;&#x7684;&#x8DDD;&#x79BB;&#xFF0C;&#x6765;&#x53CD;&#x5411;&#x8FBE;&#x5230;&#x5185;&#x5BB9;&#x5C45;&#x4E2D;&#x7684;&#x6548;&#x679C;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x5C45;&#x4E2D;&#xFF0C;&#x9650;&#x5236;&#x6761;&#x4EF6;&#x6BD4;&#x8F83;&#x591A;&#x3002;&#x8FD9;&#x79CD;&#x5C45;&#x4E2D;&#x76F8;&#x5F53;&#x4E8E;&#x5728;&#x6A21;&#x62DF;&#x6807;&#x51C6;&#x76D2;&#x6A21;&#x578B;&#xFF0C;&#x7236;&#x7EA7;&#x76F8;&#x5F53;&#x4E8E;border&#xFF0C;&#x5B50;&#x7EA7;&#x76F8;&#x5F53;&#x4E8E;content&#xFF0C;&#x4E8C;&#x8005;&#x7684;&#x5BBD;&#x9AD8;&#x901A;&#x8FC7;padding&#x76F8;&#x4E92;&#x5236;&#x7EA6;&#x3002;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x4E0D;&#x4F7F;&#x7528;padding&#x6765;&#x505A;&#x5C45;&#x4E2D;&#xFF0C;&#x5B83;&#x7ECF;&#x5E38;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x662F;&#xFF0C;&#x5728;&#x4E00;&#x5757;&#x5185;&#x5BB9;&#x5206;&#x533A;&#x7684;&#x8FB9;&#x7EBF;&#x5185;&#x7684;&#x56DB;&#x9762;&#x7559;&#x767D;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x7EA2;&#x7EBF;&#x6846;&#x8D77;&#x6765;&#x7684;&#x5185;&#x5BB9;&#x533A;&#x548C;&#x5916;&#x8FB9;&#x6846;&#x4E4B;&#x95F4;&#x7684;&#x7559;&#x767D;<br><img src="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/3.jpg" alt="align/3"></p>
+<h2 id="margin-0-auto&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;"><a href="#margin-0-auto&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;" class="headerlink" title="margin 0 auto&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;"></a>margin 0 auto&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;</h2><p>&#x6700;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x662F;margin:xx auto&#xFF0C;&#x53EF;&#x4EE5;&#x4EE4;&#x5B50;&#x7EA7;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x4E0A;&#x4E0B;margin&#x4E0A;&#x8BBE;&#x5B9A;auto&#x5374;&#x4E0D;&#x80FD;&#x4EE4;&#x5176;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF0C;&#x8FD9;&#x662F;&#x7531;CSS2&#x89C4;&#x8303;&#x7684;&#x89C4;&#x5B9A;&#x51B3;&#x5B9A;&#x7684;<a href="[&#x4E3A;&#x4EC0;&#x4E48;&#x300C;margin:auto&#x300D;&#x53EF;&#x4EE5;&#x8BA9;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#xFF1F;](https://www.zhihu.com/question/21644198)">^1</a>&#x3002;</p>
+<p>&#x539F;&#x7406;&#x662F;&#xFF0C;CSS2&#x89C4;&#x8303;&#x89C4;&#x5B9A;&#xFF1A;</p>
+<blockquote>
+<p>&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x5728;&#x666E;&#x901A;&#x6D41;&#x5185;&#x5E03;&#x5C40;&#x6309;&#x4EE5;&#x4E0B;&#x516C;&#x5F0F;&#xFF1A;&#x5DE6;m+&#x5DE6;b+&#x5DE6;p+w+&#x53F3;p+&#x53F3;b+&#x53F3;m = &#x5305;&#x542B;&#x5757;&#x5BBD;&#x5EA6;<br>&#x5982;&#x679C;&#x5BBD;&#x5EA6;w&#x4E0D;&#x662F;auto&#xFF0C;&#x5E76;&#x4E14;&#x5DE6;margin&#x548C;&#x53F3;margin&#x90FD;&#x662F;auto&#x7684;&#x8BDD;&#xFF0C;&#x4E24;&#x8005;&#x76F8;&#x7B49;&#x3002;</p>
+</blockquote>
+<p>&#x7136;&#x800C;&#x7EB5;&#x5411;margin&#x6CA1;&#x6709;&#x89C4;&#x5B9A;&#xFF0C;&#x4E8E;&#x662F;&#x5C31;&#x4E0D;&#x80FD;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x3002;</p>
+<p><strong>&#x9650;&#x5236;&#x6761;&#x4EF6;&#x662F;&#xFF1A;</strong></p>
+<ol>
+<li>&#x7236;&#x7EA7;&#x5B50;&#x7EA7;&#x5747;&#x4E3A;block&#x5143;&#x7D20;</li>
+<li>&#x7236;&#x7EA7;&#x5B50;&#x7EA7;&#x5BBD;&#x5EA6;&#x56FA;&#x5B9A;</li>
+<li>&#x5E76;&#x4E14;&#x5904;&#x4E8E;&#x6B63;&#x5E38;&#x6587;&#x6863;&#x6D41;&#x4E2D;</li>
+</ol>
+<p><strong>&#x5931;&#x6548;&#x60C5;&#x51B5;&#xFF1A;</strong></p>
+<ol>
+<li>&#x5982;&#x679C;&#x5B50;&#x7EA7;&#x662F;inline&#x5143;&#x7D20;&#x6216;&#x8005;inline-block&#x5143;&#x7D20;&#xFF0C;&#x5C45;&#x4E2D;&#x4F1A;&#x5931;&#x6548;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x5B9A;&#x7236;&#x7EA7;&#x5BBD;&#x5EA6;&#xFF0C;&#x5C45;&#x4E2D;&#x4F1A;&#x5931;&#x6548;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x5B50;&#x7EA7;&#x5BBD;&#x5EA6;&#x4E3A;auto&#x90A3;&#x5C31;&#x6574;&#x884C;&#x6491;&#x6EE1;&#x7236;&#x7EA7;&#xFF0C;&#x5BBD;&#x5EA6;&#x7B49;&#x4E8E;&#x7236;&#x7EA7;&#x4E86;&#xFF0C;&#x4E5F;&#x5C31;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x5C45;&#x4E2D;&#x4E0D;&#x5C45;&#x4E2D;&#x4E86;&#xFF1B;</li>
+<li>&#x5B50;&#x7EA7;&#x8BBE;&#x5B9A;&#x4E86;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x6216;&#x8005;&#x56FA;&#x5B9A;&#x5B9A;&#x4F4D;&#xFF0C;&#x8131;&#x79BB;&#x4E86;&#x6B63;&#x5E38;&#x6587;&#x6863;&#x6D41;&#xFF0C;&#x5C45;&#x4E2D;&#x4F1A;&#x5931;&#x6548;&#xFF1B;</li>
+<li>&#x53E6;&#x5916;&#x5982;&#x679C;&#x4E0D;&#x5199;DOCTYPE&#x6216;&#x8005;&#x5199;&#x7684;&#x4E0D;&#x6B63;&#x786E;&#x4E5F;&#x4F1A;&#x5BFC;&#x81F4;&#x5931;&#x6548;&#x3002;</li>
+</ol>
+<h2 id="absolute-left-top-50-margin&#x4E3A;&#x5BBD;-&#x9AD8;&#x4E00;&#x534A;&#x7684;&#x8D1F;&#x503C;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"><a href="#absolute-left-top-50-margin&#x4E3A;&#x5BBD;-&#x9AD8;&#x4E00;&#x534A;&#x7684;&#x8D1F;&#x503C;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;" class="headerlink" title="absolute + left/top 50% + margin&#x4E3A;&#x5BBD;/&#x9AD8;&#x4E00;&#x534A;&#x7684;&#x8D1F;&#x503C;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"></a>absolute + left/top 50% + margin&#x4E3A;&#x5BBD;/&#x9AD8;&#x4E00;&#x534A;&#x7684;&#x8D1F;&#x503C;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</h2><p><strong>&#x9650;&#x5236;&#x6761;&#x4EF6;&#xFF1A;</strong></p>
+<ol>
+<li>&#x7236;&#x7EA7;&#x5B9A;&#x4F4D;relative&#xFF0C;&#x5B50;&#x7EA7;&#x5B9A;&#x4F4D;absolute,</li>
+<li>&#x5B50;&#x7EA7;&#x5BBD;&#x5EA6;&#x786E;&#x5B9A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.father { border:2px solid #f77; height:100px; width:300px; position:relative; }</div><div class="line">.child { width:100px; height:100px; background:#7c7; position:absolute; left:50%;  margin-left:-50px;}</div><div class="line"></div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/4.jpg" alt="align/4"></p>
+<p>margin&#x8D1F;&#x503C;&#x7684;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#x6709;<a href="[CSS&#x5E03;&#x5C40;&#x5947;&#x6DEB;&#x5DE7;&#x8BA1;&#x4E4B;-&#x5F3A;&#x5927;&#x7684;&#x8D1F;&#x8FB9;&#x8DDD;](http://www.cnblogs.com/2050/archive/2012/08/13/2636467.html)">^2</a>&#xFF1A;</p>
+<ol>
+<li><p>&#x76F8;&#x5BF9;&#x81EA;&#x8EAB;&#x504F;&#x79FB;&#xFF0C;&#x8FBE;&#x5230;&#x7684;&#x89C6;&#x89C9;&#x6548;&#x679C;&#x76F8;&#x5F53;&#x4E8E;<code>position&#xFF1A;relative; top&#xFF1A;-xx; left:-xx; right:-xx; bottom:-xx</code>&#xFF0C;&#x4F46;&#x4E0E;&#x4E4B;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;relative&#x504F;&#x79FB;&#x540E;&#x4ECD;&#x5360;&#x636E;&#x539F;&#x6765;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;margin&#x8D1F;&#x503C;&#x7684;&#x504F;&#x79FB;&#x8FDE;&#x539F;&#x6765;&#x5360;&#x636E;&#x7684;&#x4F4D;&#x7F6E;&#x4E5F;&#x4F1A;&#x504F;&#x79FB;&#xFF0C;&#x5E38;&#x5229;&#x7528;&#x8FD9;&#x70B9;&#xFF0C;&#x8BBE;&#x7F6E;&#x5DE6;&#x4E0A;&#x7684;margin&#x8D1F;&#x503C;&#xFF0C;&#x906E;&#x76D6;&#x5DE6;&#x8FB9;&#x6216;&#x8005;&#x4E0A;&#x8FB9;&#x7684;border&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x53F3;&#x4E0B;&#x7684;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x540E;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x906E;&#x4F4F;&#x3002;</p>
+</li>
+<li><p>&#x6269;&#x5C55;&#x5BBD;&#x5EA6;&#x4F8B;&#x5982;</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">div { width:432px; background:#999; }</div><div class="line">ul { margin-right: -10px; height:200px; border:1px solid #f77; padding:0;}</div><div class="line">li { width:100px; margin-right:10px; float:left; height:100px; background:#7c7; list-style: none;}</div><div class="line"></div><div class="line">&lt;div&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><img src="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/5.jpg" alt="align/5"></p>
+<h2 id="absolute-left-top-50-transform-translate&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"><a href="#absolute-left-top-50-transform-translate&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;" class="headerlink" title="absolute + left/top 50% + transform translate&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"></a>absolute + left/top 50% + transform translate&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</h2><p>&#x4E0A;&#x9762;&#x7684;&#x5C45;&#x4E2D;&#x65B9;&#x6CD5;&#x6709;&#x4E00;&#x4E2A;&#x9650;&#x5236;&#x662F;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x5B50;&#x7EA7;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;CSS3&#x4E2D;&#x7684;transform&#x7684;translate&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x81EA;&#x8EAB;&#x5C3A;&#x5BF8;&#x8BBE;&#x5B9A;&#x767E;&#x5206;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x7528;&#x77E5;&#x9053;&#x5B50;&#x7EA7;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x4E5F;&#x80FD;&#x505A;&#x5230;&#x5C45;&#x4E2D;&#x4E86;&#x3002;&#x6B64;&#x65B9;&#x6CD5;&#x4ECE;&#x5F20;&#x946B;&#x65ED;&#x5927;&#x795E;&#x535A;&#x5BA2;&#x5B66;&#x6765; [^3]&#xFF0C;&#x611F;&#x8C22;&#x5927;&#x795E;&#x3002;<br>&#x7F3A;&#x70B9;&#xFF1A; IE9(-ms-), IE10+&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x624D;&#x652F;&#x6301;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.father { position:relative; </div><div class="line">          width:300px; height: 300px; border:1px solid red;</div><div class="line">        }</div><div class="line">.child { position:absolute; </div><div class="line">         left:50%; </div><div class="line">         top:50%;</div><div class="line">         transform: translate(-50%, -50%);</div><div class="line"></div><div class="line">         width:100px; height: 100px; background: #7c7;</div><div class="line">        }</div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/6.jpg" alt="align/6"></p>
+<h2 id="margin&#xFF1A;auto-absolute-0-0-0-0&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"><a href="#margin&#xFF1A;auto-absolute-0-0-0-0&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;" class="headerlink" title="margin&#xFF1A;auto + absolute 0 0 0 0&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"></a>margin&#xFF1A;auto + absolute 0 0 0 0&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</h2><p>&#x6BD4;&#x8D77;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x517C;&#x5BB9;IE8+&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x540C;&#x6837;&#x6765;&#x81EA;&#x5F20;&#x946B;&#x65ED;&#x5927;&#x795E;[^3]&#xFF0C;&#x51FA;&#x6765;&#x6548;&#x679C;&#x540C;&#x4E0A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.father { position:relative; </div><div class="line">          width:300px; height: 300px; border:1px solid red;</div><div class="line">        }</div><div class="line">.child { position:absolute; </div><div class="line">         left:0;</div><div class="line">         top:0; </div><div class="line">         right: 0; </div><div class="line">         bottom: 0;</div><div class="line"></div><div class="line">         margin:auto;</div><div class="line"></div><div class="line">         width:100px; height: 100px; background: #7c7; </div><div class="line">        }</div><div class="line"></div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>&#x7B80;&#x5355;&#x7FFB;&#x8BD1;&#x4E0B;&#x539F;&#x7406; [^4]&#xFF1A;</p>
+<ol>
+<li>&#x6B63;&#x5E38;&#x6587;&#x6863;&#x6D41;&#x5185;&#xFF0C;&#x5BF9;&#x4E8E;top&#x548C;bottom&#xFF0C;margin&#x4E3A;auto&#xFF0C;&#x7B49;&#x540C;&#x4E8E;margin&#x7B49;&#x4E8E;&#x96F6;&#xFF1B;</li>
+<li>absolute&#x4F7F;&#x4E4B;&#x8131;&#x79BB;&#x6B63;&#x5E38;&#x6587;&#x6863;&#x6D41;&#xFF0C;&#x6B64;&#x65F6;&#x7684;margin auto&#x76F8;&#x5F53;&#x4E8E;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x4E86;&#xFF1B;</li>
+<li>&#x8BBE;&#x5B9A;&#x56DB;&#x9762;&#x90FD;&#x4E3A;0&#x540E;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5728;&#x8BBE;&#x5B9A;&#x4E86;relative&#x7684;&#x7236;&#x5143;&#x7D20;&#x5185;&#xFF0C;&#x8D34;&#x8FD1;&#x7236;&#x5143;&#x7D20;&#x7684;border&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x8FB9;&#x754C;&#x76D2;&#x5B50;&#xFF08;bound box&#xFF09;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;&#x8FB9;&#x754C;&#x76D2;&#x5B50;&#x5360;&#x6EE1;&#x7236;&#x5143;&#x7D20;&#x6240;&#x6709;&#x7A7A;&#x95F4;&#xFF1B;</li>
+<li>&#x7ED9;&#x5B50;&#x5143;&#x7D20;&#x8BBE;&#x5B9A;&#x4E86;&#x5BBD;&#x6216;&#x8005;&#x9AD8;&#xFF0C;&#x5C31;&#x963B;&#x6B62;&#x5176;&#x5360;&#x6EE1;&#x7236;&#x5143;&#x7D20;&#x6240;&#x6709;&#x7A7A;&#x95F4;&#xFF0C;&#x8FEB;&#x4F7F;&#x6D4F;&#x89C8;&#x5668;&#x57FA;&#x4E8E;&#x8FB9;&#x754C;&#x76D2;&#x5B50;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;margin&#xFF1A;auto&#xFF1B;</li>
+<li>&#x73B0;&#x5728;&#x5143;&#x7D20;&#x662F;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#xFF0C;&#x975E;&#x6B63;&#x5E38;&#x6587;&#x6863;&#x6D41;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x8BA1;&#x7B97;margin&#xFF1A;auto&#x65F6;&#xFF0C;&#x5C31;&#x8BA9;&#x4E0A;&#x4E0B;margin&#x76F8;&#x7B49;&#xFF08;&#x57FA;&#x4E8E;&#x89C4;&#x8303;&#x89C4;&#x5B9A;&#xFF09;&#xFF0C;&#x8FD9;&#x6837;&#x5143;&#x7D20;&#x5C31;&#x5C45;&#x4E2D;&#x4E8E;&#x8FB9;&#x754C;&#x76D2;&#x5B50;&#xFF08;bound box&#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x5C45;&#x4E2D;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#x4E86;&#x3002;</li>
+</ol>
+<h2 id="table-cell-vertical-align-&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;"><a href="#table-cell-vertical-align-&#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;" class="headerlink" title="table-cell + vertical-align &#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;"></a>table-cell + vertical-align &#x2013;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;</h2><p>&#x5982;&#x679C;&#x662F;&#x5728;td&#x5143;&#x7D20;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5C5E;&#x6027;valign=&#x201D;middle&#x201D;&#x505A;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF0C;align=&#x201D;center&#x201D;&#x505A;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">td { width:300px; height: 300px; border:1px solid red; }</div><div class="line">.tdChild { width:100px; height: 100px; background: #7c7; }</div><div class="line"></div><div class="line">&lt;td valign=&quot;middle&quot; align=&quot;center&quot;&gt;</div><div class="line">    &lt;div class=&quot;tdChild&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/td&gt;</div></pre></td></tr></table></figure></p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;table&#xFF0C;&#x6CA1;&#x6709;td&#x5143;&#x7D20;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;css&#x8FD9;&#x6837;&#x5199;&#xFF1A;<br>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5B50;&#x7EA7;&#x4E0D;&#x9700;&#x8981;&#x5927;&#x5C0F;&#x56FA;&#x5B9A;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#xFF1A;&#x591A;&#x884C;&#x6587;&#x5B57;&#x5C45;&#x4E2D;&#x3001;&#x5927;&#x5C0F;&#x4E0D;&#x56FA;&#x5B9A;&#x56FE;&#x7247;&#x7684;&#x5C45;&#x4E2D;<br>&#x6709;&#x4E00;&#x4E2A;&#x7591;&#x95EE;&#xFF0C;&#x8BB8;&#x591A;&#x535A;&#x5BA2;&#x5199;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x8981;&#x7ED9;.father&#x518D;&#x52A0;&#x4E00;&#x4E2A;&#x7236;&#x7EA7;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x7236;&#x7EA7;display:table,&#x6211;&#x4E0D;&#x77E5;&#x9053;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FD9;&#x4E48;&#x52A0;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x52A0;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x5C45;&#x4E2D;&#x3002;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.father {</div><div class="line">    display: table-cell;</div><div class="line">    vertical-align: middle;</div><div class="line">     </div><div class="line">    width:300px; </div><div class="line">    height: 300px; </div><div class="line">    border:1px solid red;</div><div class="line">}</div><div class="line">.child { display: inline-block; background: #7c7; }</div><div class="line"></div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">    &lt;div class=&quot;child&quot;&gt;dafsdf sda sdf sdfas sdf&lt;br&gt;dsfasd sdf dd &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="css3-flex&#x5C45;&#x4E2D;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"><a href="#css3-flex&#x5C45;&#x4E2D;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;" class="headerlink" title="css3 flex&#x5C45;&#x4E2D;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;"></a>css3 flex&#x5C45;&#x4E2D;&#x2013;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</h2><p>&#x517C;&#x5BB9;&#x6027;&#x4E0D;&#x592A;&#x597D;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x624B;&#x673A;&#x7AEF;&#x5F00;&#x53D1;&#xFF0C;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.father { display:-webkit-box;</div><div class="line">    -webkit-box-align:center;</div><div class="line">    -webkit-box-pack:center;</div><div class="line">    </div><div class="line">    width:300px; </div><div class="line">    height: 300px; </div><div class="line">    border:1px solid red; </div><div class="line">} </div><div class="line">.child { display:-webkit-flex; </div><div class="line"></div><div class="line">    width: 100px; </div><div class="line">    height:100px; </div><div class="line">    background: #7c7; </div><div class="line">    margin-bottom:10px;</div><div class="line">}</div><div class="line">&lt;div class=&quot;father&quot;&gt;</div><div class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/align/7.jpg" alt="align/7"></p>
+<p>&#x672C;&#x4EBA;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E9B;&#x5C45;&#x4E2D;&#x65B9;&#x6CD5;&#x4E86;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5C45;&#x4E2D;&#x65B9;&#x5F0F;&#xFF0C;&#x672C;&#x4EBA;&#x6BD4;&#x8F83;&#x4E0D;&#x5E38;&#x7528;&#xFF0C;&#x7531;&#x4E8E;&#x7CBE;&#x529B;&#x6709;&#x9650;&#x5C31;&#x4E0D;&#x52A0;&#x4E86;&#x3002;&#x53E6;&#x5916;&#x5C0F;&#x53EF;&#x624D;&#x758F;&#x5B66;&#x6D45;&#xFF0C;&#x65F6;&#x95F4;&#x4ED3;&#x4FC3;&#xFF0C;&#x5982;&#x6709;&#x9519;&#x6F0F;&#x5904;&#xFF0C;&#x8BF7;&#x5927;&#x529B;&#x6279;&#x8BC4;&#xFF01;&#x53E6;&#x5916;&#x7684;&#x53E6;&#x5916;&#xFF0C;&#x5199;&#x535A;&#x5BA2;&#x771F;&#x7D2F;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x771F;&#x7684;&#x5F88;&#x6709;&#x6210;&#x5C31;&#x611F;&#x5440;&#xFF0C;&#x8D6B;&#x8D6B;~~</p>
+<blockquote>
+<p>&#x672C;&#x6587;&#x4E3A;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x5C0A;&#x91CD;&#x8F9B;&#x52E4;&#x52B3;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x6458;&#x8981;&#x3001;&#x63A8;&#x8350;&#x6216;&#x805A;&#x5408;&#xFF0C;&#x4F46;&#x5B8C;&#x6574;&#x8F6C;&#x8F7D;&#x9700;&#x7ECF;&#x8FC7;&#x672C;&#x4EBA;&#x540C;&#x610F;&#xFF0C;&#x672C;&#x4EBA;&#x90AE;&#x7BB1; miao.hnlk@gmail.com<br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css" target="_blank" rel="external">http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css</a></p>
+</blockquote>
+<p>&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;</p>
+<p>[^3]:<a href="http://www.zhangxinxu.com/wordpress/2013/11/margin-auto-absolute-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" target="_blank" rel="external">&#x5C0F;tip: margin:auto&#x5B9E;&#x73B0;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;&#x7684;&#x6C34;&#x5E73;&#x5782;&#x76F4;&#x5C45;&#x4E2D;</a><br>[^4]:<a href="https://www.smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css" target="_blank" rel="external">Absolute Horizontal And Vertical Centering In CSS</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+            <a href="/tags/垂直居中/" rel="tag">#垂直居中</a>
+          
+            <a href="/tags/水平居中/" rel="tag">#水平居中</a>
+          
+            <a href="/tags/方案总结/" rel="tag">#方案总结</a>
+          
+            <a href="/tags/总结/" rel="tag">#总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/" rel="next" title="支持离线和拍照上传的Hybrid APP开发小记">
+                <i class="fa fa-chevron-left"></i> 支持离线和拍照上传的Hybrid APP开发小记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description">有志者自有千计万计，无志者只感千难万难</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用元素分类–按照块元素、行内元素"><span class="nav-number">1.</span> <span class="nav-text">常用元素分类–按照块元素、行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用block元素："><span class="nav-number">1.1.</span> <span class="nav-text">常用block元素：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用inline元素："><span class="nav-number">1.2.</span> <span class="nav-text">常用inline元素：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的inline-block元素："><span class="nav-number">1.3.</span> <span class="nav-text">常用的inline-block元素：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他元素："><span class="nav-number">1.4.</span> <span class="nav-text">其他元素：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#居中主要用到的技术"><span class="nav-number">2.</span> <span class="nav-text">居中主要用到的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#line-height–垂直居中"><span class="nav-number">2.1.</span> <span class="nav-text">line-height–垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#text-align-center–水平居中"><span class="nav-number">2.2.</span> <span class="nav-text">text-align:center–水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#padding–水平垂直居中"><span class="nav-number">2.3.</span> <span class="nav-text">padding–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin-0-auto–水平居中"><span class="nav-number">2.4.</span> <span class="nav-text">margin 0 auto–水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#absolute-left-top-50-margin为宽-高一半的负值–水平垂直居中"><span class="nav-number">2.5.</span> <span class="nav-text">absolute + left/top 50% + margin为宽/高一半的负值–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#absolute-left-top-50-transform-translate–水平垂直居中"><span class="nav-number">2.6.</span> <span class="nav-text">absolute + left/top 50% + transform translate–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin：auto-absolute-0-0-0-0–水平垂直居中"><span class="nav-number">2.7.</span> <span class="nav-text">margin：auto + absolute 0 0 0 0–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#table-cell-vertical-align-–水平居中"><span class="nav-number">2.8.</span> <span class="nav-text">table-cell + vertical-align –水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css3-flex居中–水平垂直居中"><span class="nav-number">2.9.</span> <span class="nav-text">css3 flex居中–水平垂直居中</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'supermaryyy';
+      var disqus_identifier = '2016/09/08/summary-of-aligning-to-center-solutions-in-css/';
+      var disqus_title = "总结向↗CSS居中常用套路";
+      var disqus_url = 'http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("viqvtCrDXybVezVWV8Rjug5j-gzGzoHsz", "26hWjxk9tYLU0r9HPP8dKz2l");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
