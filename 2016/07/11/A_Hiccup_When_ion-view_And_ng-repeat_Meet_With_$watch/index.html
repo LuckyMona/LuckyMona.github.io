@@ -101,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -194,6 +194,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -472,10 +482,10 @@
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -511,7 +521,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、通过-state配置视图的controller-时的写法："><span class="nav-number">1.</span> <span class="nav-text">1、通过$state配置视图的controller 时的写法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#app-js配置："><span class="nav-number">1.1.</span> <span class="nav-text">app.js配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板部分写法："><span class="nav-number">1.2.</span> <span class="nav-text">模板部分写法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#controller部分："><span class="nav-number">1.3.</span> <span class="nav-text">controller部分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、controller写在ion-content上可以减少一层scope"><span class="nav-number">2.</span> <span class="nav-text">2、controller写在ion-content上可以减少一层scope</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板部分写法：-1"><span class="nav-number">2.1.</span> <span class="nav-text">模板部分写法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#controller部分：-1"><span class="nav-number">2.2.</span> <span class="nav-text">controller部分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大坑"><span class="nav-number">3.</span> <span class="nav-text">大坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小知识点"><span class="nav-number">4.</span> <span class="nav-text">小知识点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、通过-state配置视图的controller-时的写法："><span class="nav-text">1、通过$state配置视图的controller 时的写法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#app-js配置："><span class="nav-text">app.js配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板部分写法："><span class="nav-text">模板部分写法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#controller部分："><span class="nav-text">controller部分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、controller写在ion-content上可以减少一层scope"><span class="nav-text">2、controller写在ion-content上可以减少一层scope</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板部分写法：-1"><span class="nav-text">模板部分写法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#controller部分：-1"><span class="nav-text">controller部分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大坑"><span class="nav-text">大坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小知识点"><span class="nav-text">小知识点</span></a></li></ol></div>
             
           </div>
         </section>
@@ -774,6 +784,9 @@
 
 
   
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
 
 </body>
 </html>

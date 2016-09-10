@@ -103,7 +103,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -196,6 +196,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -598,10 +608,10 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -637,7 +647,7 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#APP需求背景简介"><span class="nav-number">1.</span> <span class="nav-text">APP需求背景简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方案篇"><span class="nav-number">2.</span> <span class="nav-text">方案篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#照片离线存储、上传："><span class="nav-number">2.1.</span> <span class="nav-text">照片离线存储、上传：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线存储技术简介"><span class="nav-number">2.2.</span> <span class="nav-text">离线存储技术简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用缓存（Appcache）"><span class="nav-number">2.2.1.</span> <span class="nav-text">应用缓存（Appcache）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端数据存储"><span class="nav-number">2.2.2.</span> <span class="nav-text">客户端数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sessionStorage"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-SQL-和-IndexedDB"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">Web SQL 和 IndexedDB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用SQLite的经验"><span class="nav-number">2.3.</span> <span class="nav-text">使用SQLite的经验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ionic-点击小图显示大图"><span class="nav-number">2.4.</span> <span class="nav-text">ionic 点击小图显示大图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断手机网络状况"><span class="nav-number">2.5.</span> <span class="nav-text">判断手机网络状况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-state-go切换状态之前，检查token"><span class="nav-number">2.6.</span> <span class="nav-text">使用$state.go切换状态之前，检查token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64解码"><span class="nav-number">2.7.</span> <span class="nav-text">Base64解码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#angularJS-Watch元素高度变化"><span class="nav-number">2.8.</span> <span class="nav-text">angularJS $Watch元素高度变化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error篇"><span class="nav-number">3.</span> <span class="nav-text">Error篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cordova-already-defined"><span class="nav-number">3.1.</span> <span class="nav-text">cordova already defined</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ionic页面滚动时，因为父级使用了transform，导致内容中Position-fixed失效"><span class="nav-number">3.2.</span> <span class="nav-text">ionic页面滚动时，因为父级使用了transform，导致内容中Position:fixed失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ionic滚动时，ion-content-高度计算错误-，不能显示全部内容"><span class="nav-number">3.3.</span> <span class="nav-text">ionic滚动时，ion-content 高度计算错误 ，不能显示全部内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传图片："><span class="nav-number">3.4.</span> <span class="nav-text">上传图片：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题1：不能发出请求"><span class="nav-number">3.4.1.</span> <span class="nav-text">问题1：不能发出请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传数据的格式"><span class="nav-number">3.4.2.</span> <span class="nav-text">上传数据的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#on-‘-stateChangeStart’-中使用-state-go会导致无限循环的问题"><span class="nav-number">3.4.3.</span> <span class="nav-text">$on(‘$stateChangeStart’)中使用$state.go会导致无限循环的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install-时的问题"><span class="nav-number">3.4.4.</span> <span class="nav-text">npm install 时的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install的时候，不能自动安装插件，build出来的APK包plugin丢失，"><span class="nav-number">3.4.5.</span> <span class="nav-text">npm install的时候，不能自动安装插件，build出来的APK包plugin丢失，</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#angular-如何刷新页面"><span class="nav-number">4.1.</span> <span class="nav-text">angular 如何刷新页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AngularJS定时器"><span class="nav-number">4.2.</span> <span class="nav-text">AngularJS定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array的删除splice和for循环合用时的一个小坑"><span class="nav-number">4.3.</span> <span class="nav-text">Array的删除splice和for循环合用时的一个小坑</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#APP需求背景简介"><span class="nav-text">APP需求背景简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方案篇"><span class="nav-text">方案篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#照片离线存储、上传："><span class="nav-text">照片离线存储、上传：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线存储技术简介"><span class="nav-text">离线存储技术简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用缓存（Appcache）"><span class="nav-text">应用缓存（Appcache）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端数据存储"><span class="nav-text">客户端数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie"><span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage"><span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sessionStorage"><span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-SQL-和-IndexedDB"><span class="nav-text">Web SQL 和 IndexedDB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用SQLite的经验"><span class="nav-text">使用SQLite的经验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ionic-点击小图显示大图"><span class="nav-text">ionic 点击小图显示大图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断手机网络状况"><span class="nav-text">判断手机网络状况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-state-go切换状态之前，检查token"><span class="nav-text">使用$state.go切换状态之前，检查token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64解码"><span class="nav-text">Base64解码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#angularJS-Watch元素高度变化"><span class="nav-text">angularJS $Watch元素高度变化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error篇"><span class="nav-text">Error篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cordova-already-defined"><span class="nav-text">cordova already defined</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ionic页面滚动时，因为父级使用了transform，导致内容中Position-fixed失效"><span class="nav-text">ionic页面滚动时，因为父级使用了transform，导致内容中Position:fixed失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ionic滚动时，ion-content-高度计算错误-，不能显示全部内容"><span class="nav-text">ionic滚动时，ion-content 高度计算错误 ，不能显示全部内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传图片："><span class="nav-text">上传图片：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题1：不能发出请求"><span class="nav-text">问题1：不能发出请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传数据的格式"><span class="nav-text">上传数据的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#on-‘-stateChangeStart’-中使用-state-go会导致无限循环的问题"><span class="nav-text">$on(‘$stateChangeStart’)中使用$state.go会导致无限循环的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install-时的问题"><span class="nav-text">npm install 时的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install的时候，不能自动安装插件，build出来的APK包plugin丢失，"><span class="nav-text">npm install的时候，不能自动安装插件，build出来的APK包plugin丢失，</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#angular-如何刷新页面"><span class="nav-text">angular 如何刷新页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AngularJS定时器"><span class="nav-text">AngularJS定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array的删除splice和for循环合用时的一个小坑"><span class="nav-text">Array的删除splice和for循环合用时的一个小坑</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -900,6 +910,9 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
 
 
   
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
 
 </body>
 </html>
