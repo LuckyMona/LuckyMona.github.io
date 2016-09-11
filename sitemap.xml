@@ -2,16 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/09/11/read-book-professional-javascript1/</loc>
+    
+    <lastmod>2016-09-11T12:18:48.335Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/05/16/Question_About_Onunload/</loc>
+    
+    <lastmod>2016-09-11T11:31:00.382Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</loc>
+    
+    <lastmod>2016-09-11T11:30:21.958Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/02/npm%20ERR!%20shasum%20check%20failed%20for/</loc>
+    
+    <lastmod>2016-09-11T11:30:18.745Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/</loc>
     
-    <lastmod>2016-09-10T13:22:13.337Z</lastmod>
+    <lastmod>2016-09-11T11:29:37.362Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/</loc>
     
-    <lastmod>2016-09-10T11:56:06.613Z</lastmod>
+    <lastmod>2016-09-11T11:29:18.226Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/</loc>
+    
+    <lastmod>2016-09-11T11:28:25.099Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/</loc>
+    
+    <lastmod>2016-09-11T11:27:21.553Z</lastmod>
     
   </url>
   
@@ -40,41 +82,6 @@
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2016-09-10T03:12:02.829Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/02/npm%20ERR!%20shasum%20check%20failed%20for/</loc>
-    
-    <lastmod>2016-09-08T14:19:54.740Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/05/16/Question_About_Onunload/</loc>
-    
-    <lastmod>2016-09-08T14:19:35.247Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</loc>
-    
-    <lastmod>2016-09-08T14:19:30.010Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/</loc>
-    
-    <lastmod>2016-08-07T07:41:54.945Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/</loc>
-    
-    <lastmod>2016-08-07T07:38:13.576Z</lastmod>
     
   </url>
   
