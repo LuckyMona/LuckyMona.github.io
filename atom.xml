@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-17T07:56:33.616Z</updated>
+  <updated>2016-09-17T08:23:32.851Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/09/17/read-book-professional-javascript3/"/>
     <id>http://yoursite.com/2016/09/17/read-book-professional-javascript3/</id>
     <published>2016-09-17T08:00:00.000Z</published>
-    <updated>2016-09-17T07:56:33.616Z</updated>
+    <updated>2016-09-17T08:23:32.851Z</updated>
     
     <content type="html"><![CDATA[<p>&#x6458;&#x8981;&#xFF1A;</p>
 <ol>
@@ -159,14 +159,6 @@
 <td><code>var res = 3 &amp; 7</code></td>
 </tr>
 <tr>
-<td>`</td>
-<td>`</td>
-<td>OR</td>
-<td>&#x6309;&#x4F4D;&#x6216;</td>
-<td>`var res = 3</td>
-<td>7`</td>
-</tr>
-<tr>
 <td>^</td>
 <td>XOR</td>
 <td>&#x6309;&#x4F4D;&#x5F02;&#x6216;</td>
@@ -192,6 +184,7 @@
 </tr>
 </tbody>
 </table>
+<p>&#x6309;&#x4F4D;&#x6216;&#x7684;&#x7B26;&#x53F7;&#x4E0E;MD&#x8868;&#x683C;&#x51B2;&#x7A81;&#xFF0C;&#x5217;&#x5728;&#x8868;&#x683C;&#x5916;&#xFF1A;<br><code>|</code>   OR    &#x6309;&#x4F4D;&#x6216;    <code>var res = 3 | 7</code>  </p>
 <h4 id="2&#x4F4D;&#x64CD;&#x4F5C;&#x7B26;&#x5E94;&#x7528;&#x573A;&#x666F;-2-3-4&#xFF1A;"><a href="#2&#x4F4D;&#x64CD;&#x4F5C;&#x7B26;&#x5E94;&#x7528;&#x573A;&#x666F;-2-3-4&#xFF1A;" class="headerlink" title="2&#x4F4D;&#x64CD;&#x4F5C;&#x7B26;&#x5E94;&#x7528;&#x573A;&#x666F;^2^3^4&#xFF1A;"></a>2&#x4F4D;&#x64CD;&#x4F5C;&#x7B26;&#x5E94;&#x7528;&#x573A;&#x666F;^2^3^4&#xFF1A;</h4><p>&#x5217;&#x4E3E;&#x5E38;&#x7528;&#x7684;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF0C;&#x5C3D;&#x91CF;&#x5C11;&#x7528;&#xFF0C;&#x4F1A;&#x4F7F;&#x9605;&#x8BFB;&#x8005;&#x7406;&#x89E3;&#x56F0;&#x96BE;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x5F53;&#x522B;&#x4EBA;&#x88C5;13&#x65F6;&#xFF0C;&#x81EA;&#x5DF1;&#x4E0D;&#x81F3;&#x4E8E;&#x8499;&#x5708;</p>
 <ol>
 <li><p>~-1 = 0&#xFF0C;&#x914D;&#x5408;&#x5229;&#x7528;arr.indexOf(xxx) = -1&#x4EE3;&#x8868;arr&#x4E2D;&#x4E0D;&#x5B58;&#x5728;xxx</p>
