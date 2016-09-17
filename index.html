@@ -269,6 +269,300 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/17/read-book-professional-javascript3/" itemprop="url">
+                  Javascript基础3--高程读书笔记+自我扩展知识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-17T16:00:00+08:00" content="2016-09-17">
+              2016-09-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/17/read-book-professional-javascript3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/17/read-book-professional-javascript3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/17/read-book-professional-javascript3/" class="leancloud_visitors" data-flag-title="Javascript基础3--高程读书笔记+自我扩展知识">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&#x6458;&#x8981;&#xFF1A;</p>
+<ol>
+<li>&#x4E00;&#x5207;&#x5BF9;&#x8C61;&#x539F;&#x578B;&#x94FE;&#x7EC8;&#x70B9;&#x90FD;&#x662F;Object&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;DOM&#x5BF9;&#x8C61;&#x3001;BOM&#x5BF9;&#x8C61;&#xFF0C;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x5B9A;&#x4E49;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</li>
+<li>&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;constructor&#x3001;isPrototypeOf&#x3001;hasOwnProperty&#x3001;toString; valueOf&#x3001;toLocalString&#x3001;propertyIsEnumberable</li>
+<li>&#x5BF9;&#x8C61;&#x4F7F;&#x7528;toString()&#x4E00;&#x822C;&#x5F97;&#x5230;&#x201D;[object Object]&#x201D;</li>
+<li>&#x9664;null&#x548C;undefined&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x64CD;&#x4F5C;&#x7B26;&#xFF1B;</li>
+<li>Object&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#x64CD;&#x4F5C;&#x7B26;&#x65F6;&#x4F1A;&#x5148;&#x4F7F;&#x7528;toString&#x6216;&#x8005;valueOf&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x7684;&#x662F;&#x6570;&#x503C;&#xFF0C;&#x518D;&#x4F7F;&#x7528;Number&#x8F6C;&#x6362;&#x6210;&#x6570;&#x503C;&#xFF0C;&#x4E4B;&#x540E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</li>
+<li>++i&#x4E0E;i++&#x7684;&#x533A;&#x522B;&#xFF1A;i&#x503C;&#x6539;&#x53D8;&#xFF0C;&#x4E0E;&#x6240;&#x5728;&#x8BED;&#x53E5;&#x6C42;&#x503C;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x987A;&#x5E8F;&#x7684;&#x4E0D;&#x540C;</li>
+<li>&#x52A0;&#x6027;&#x64CD;&#x4F5C;&#x3001;&#x4E58;&#x6027;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x6D89;&#x53CA;NaN&#x3001;0&#x3001;Infinity&#x7684;&#x7279;&#x6B8A;&#x72B6;&#x51B5;</li>
+<li>&#x903B;&#x8F91;&#x4E0E;&amp;&amp;&#x6216;||&#xFF0C;&#x77ED;&#x8DEF;&#x64CD;&#x4F5C;&#xFF0C;&#x5F53;&#x6709;&#x4E00;&#x4E2A;&#x503C;&#x662F;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7ED3;&#x679C;&#x600E;&#x6837;&#xFF0C;&#x5F53;&#x6709;&#x4E00;&#x4E2A;&#x503C;null&#x3001;undefined&#x3001;NaN&#x65F6;&#xFF0C;&#x7ED3;&#x679C;&#x600E;&#x6837;</li>
+<li>&#x4F4D;&#x64CD;&#x4F5C;~ &amp; | ^ &lt;&lt; &gt;&gt; &gt;&gt;&gt;&#x975E;&#x4E0E;&#x6216;&#xFF0C;&#x5F02;&#x6216;&#xFF0C;&#x5DE6;&#x79FB;&#xFF0C;&#x6709;&#x7B26;&#x53F7;&#x53F3;&#x79FB;&#xFF0C;&#x65E0;&#x7B26;&#x53F7;&#x53F3;&#x79FB;</li>
+<li>&#x4F4D;&#x64CD;&#x4F5C;&#x5E38;&#x7528;&#x573A;&#x666F;&#xFF1A;~&#x4E0E;indexOf&#x914D;&#x5408;&#x3001;&#x6C42;&#x6574;&#x3001;&#x5224;&#x5947;&#x5076;&#x3001;&#x5224;&#x6B63;&#x8D1F;&#x3001;&#x968F;&#x673A;&#x989C;&#x8272;</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/17/read-book-professional-javascript3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/17/read-book-professional-javascript2/" itemprop="url">
+                  Javascript基础2--高程读书笔记+自我扩展知识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-17T15:00:00+08:00" content="2016-09-17">
+              2016-09-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/17/read-book-professional-javascript2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/17/read-book-professional-javascript2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/17/read-book-professional-javascript2/" class="leancloud_visitors" data-flag-title="Javascript基础2--高程读书笔记+自我扩展知识">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&#x6458;&#x8981;&#xFF1A;</p>
+<ol>
+<li><code>&lt;script&gt;</code>&#x7684;&#x5C5E;&#x6027;defer&#x3001;async&#x3001;src&#x3001;type</li>
+<li>MINE&#x7C7B;&#x578B;&#x3001;load&#x4E8B;&#x4EF6;&#x3001;DOMContentLoaded&#x4E8B;&#x4EF6;</li>
+<li>&#x6587;&#x6863;&#x6A21;&#x5F0F;</li>
+<li>&#x62A5;&#x9519;&#x201D;Identifier Expected&#x201D;&#x662F;&#x56E0;&#x4E3A;&#x6807;&#x8BC6;&#x7B26;&#x547D;&#x540D;&#x4F7F;&#x7528;&#x4E86;&#x5173;&#x952E;&#x5B57;</li>
+<li>&#x7528;var&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x548C;&#x7701;&#x7565;var&#x9020;&#x6210;&#x7684;&#x5F71;&#x54CD;</li>
+<li>5&#x79CD;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x79CD;&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;typeof&#x5206;&#x522B;&#x8FD4;&#x56DE;&#x4EC0;&#x4E48;&#x503C;</li>
+<li>null&#x548C;undefined&#x7684;&#x533A;&#x522B;&#x548C;&#x8054;&#x7CFB;&#xFF0C;&#x5404;&#x81EA;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF0C;&#x4E8C;&#x8005;&#x76F8;&#x7B49;(==)&#xFF0C;&#x5206;&#x522B;&#x4F7F;&#x7528;Number()&#x548C;parseInt/parseFloat&#x5F97;&#x5230;&#x7684;&#x503C;</li>
+<li>typeof&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x672A;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x800C;&#x4E0D;&#x62A5;&#x9519;</li>
+<li>&#x4F1A;&#x8F6C;&#x6362;&#x4E3A;false&#x7684;&#x4E94;&#x4E2A;&#x503C;</li>
+<li>NaN&#x7684;&#x4E24;&#x4E2A;&#x7279;&#x6027;&#xFF0C;isNaN&#x51FD;&#x6570;&#x5224;&#x65AD;&#x662F;&#x4E0D;&#x662F;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;</li>
+<li>&#x4F7F;&#x7528;&#x65F6;&#x4E00;&#x822C;&#x7528;Number&#x65B9;&#x6CD5;&#x8F6C;&#x6362;&#x9664;string&#x5916;&#x7684;&#x503C;&#xFF0C;parseInt/parseFloat&#x53EA;&#x80FD;&#x89E3;&#x6790;string&#x503C;</li>
+<li>parseInt/parseFloat&#x89E3;&#x6790;&#x5B57;&#x7B26;&#x4E32;&#x89C4;&#x5219;&#x662F;&#xFF0C;&#x7B2C;&#x4E00;&#x4F4D;&#x975E;&#x7A7A;&#x683C;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x6570;&#x5B57;&#xFF0C;&#x5426;&#x5219;&#x7ED3;&#x679C;&#x5C31;&#x662F;NaN</li>
+<li>&#x4F7F;&#x7528;parseInt&#x6700;&#x597D;&#x6307;&#x660E;&#x8FDB;&#x5236;&#xFF0C;parseInt(&#x2018;070&#x2019;,10)</li>
+<li>parseFloat&#x53EA;&#x80FD;&#x89E3;&#x6790;&#x5341;&#x8FDB;&#x5236;</li>
+<li>string&#x5B57;&#x7B26;&#x5B57;&#x9762;&#x91CF;&#x3001;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#xFF0C;\ntrbf,<code>\\</code> ,\&#x201D;,\&#x2019;,\xnn,\unnnn</li>
+<li>string&#x7684;length&#x5BF9;&#x53CC;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x4E0D;&#x51C6;</li>
+<li>null&#x548C;undefined&#x6CA1;&#x6709;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x90FD;&#x6709;String()&#x65B9;&#x6CD5;</li>
+<li>number&#x7C7B;&#x578B;&#x7684;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x53C2;&#xFF0C;2&#x3001;8&#x3001;10&#x3001;16&#xFF0C;&#x4EE3;&#x8868;&#x8FDB;&#x5236;</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/17/read-book-professional-javascript2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/11/read-book-professional-javascript1/" itemprop="url">
                   Javascript基础--高程读书笔记+自我扩展知识
                 </a>
@@ -1310,140 +1604,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/16/Question_About_Onunload/" itemprop="url">
-                  onunload用于移除事件处理程序的疑问
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-16T13:30:00+08:00" content="2016-05-16">
-              2016-05-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/16/Question_About_Onunload/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/16/Question_About_Onunload/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/16/Question_About_Onunload/" class="leancloud_visitors" data-flag-title="onunload用于移除事件处理程序的疑问">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#x770B;&#x7EA2;&#x76AE;&#x4E66;&#x7684;&#x65F6;&#x5019;&#x770B;&#x5230;13.4.1 &#x201C;UI&#x4E8B;&#x4EF6;&#x201D;&#xFF0C;&#x5BF9;onunload&#x4E8B;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x4EA7;&#x751F;&#x4E86;&#x7591;&#x95EE;&#xFF0C;&#x6587;&#x4E2D;&#x8BF4;&#x6CD5;&#x7591;&#x4F3C;&#x6709;&#x524D;&#x540E;&#x77DB;&#x76FE;&#x7684;&#x5730;&#x65B9;&#x3002;&#x95EE;&#x51E0;&#x4E2A;&#x4EBA;&#x4EE5;&#x53CA;&#x67E5;&#x8D44;&#x6599;&#x6682;&#x65F6;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5B58;&#x7591;&#xFF0C;&#x5F85;&#x6211;&#x89E3;&#x51B3;&#x540E;&#x518D;&#x66F4;&#x65B0;&#x7ED3;&#x679C;&#x3002;<br></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/16/Question_About_Onunload/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1482,7 +1649,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

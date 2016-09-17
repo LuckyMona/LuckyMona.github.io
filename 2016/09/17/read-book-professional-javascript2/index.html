@@ -1,0 +1,956 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="红皮书,读书笔记,Javascript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mary's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
+
+&amp;lt;script&amp;gt;&amp;#x7684;&amp;#x5C5E;&amp;#x6027;defer&amp;#x3001;async&amp;#x3001;src&amp;#x3001;type
+MINE&amp;#x7C7B;&amp;#x578B;&amp;#x3001;load&amp;#x4E8B;&amp;#x4EF6;&amp;#x3001;DOMContentLoaded&amp;#x4E8B;&amp;#x4EF6;
+&amp;#x65">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript基础2--高程读书笔记+自我扩展知识">
+<meta property="og:url" content="http://yoursite.com/2016/09/17/read-book-professional-javascript2/index.html">
+<meta property="og:site_name" content="Mary's blog">
+<meta property="og:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
+
+&amp;lt;script&amp;gt;&amp;#x7684;&amp;#x5C5E;&amp;#x6027;defer&amp;#x3001;async&amp;#x3001;src&amp;#x3001;type
+MINE&amp;#x7C7B;&amp;#x578B;&amp;#x3001;load&amp;#x4E8B;&amp;#x4EF6;&amp;#x3001;DOMContentLoaded&amp;#x4E8B;&amp;#x4EF6;
+&amp;#x65">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/var.png">
+<meta property="og:updated_time" content="2016-09-17T07:58:08.163Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript基础2--高程读书笔记+自我扩展知识">
+<meta name="twitter:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
+
+&amp;lt;script&amp;gt;&amp;#x7684;&amp;#x5C5E;&amp;#x6027;defer&amp;#x3001;async&amp;#x3001;src&amp;#x3001;type
+MINE&amp;#x7C7B;&amp;#x578B;&amp;#x3001;load&amp;#x4E8B;&amp;#x4EF6;&amp;#x3001;DOMContentLoaded&amp;#x4E8B;&amp;#x4EF6;
+&amp;#x65">
+<meta name="twitter:image" content="http://o798x2hdw.bkt.clouddn.com/var.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/17/read-book-professional-javascript2/"/>
+
+  <title> Javascript基础2--高程读书笔记+自我扩展知识 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-MaryIsTheBest', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?e5105bc5db77c7c5a84291b9d0e212c8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript基础2--高程读书笔记+自我扩展知识
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-17T15:00:00+08:00" content="2016-09-17">
+              2016-09-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/17/read-book-professional-javascript2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/17/read-book-professional-javascript2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/17/read-book-professional-javascript2/" class="leancloud_visitors" data-flag-title="Javascript基础2--高程读书笔记+自我扩展知识">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x6458;&#x8981;&#xFF1A;</p>
+<ol>
+<li><code>&lt;script&gt;</code>&#x7684;&#x5C5E;&#x6027;defer&#x3001;async&#x3001;src&#x3001;type</li>
+<li>MINE&#x7C7B;&#x578B;&#x3001;load&#x4E8B;&#x4EF6;&#x3001;DOMContentLoaded&#x4E8B;&#x4EF6;</li>
+<li>&#x6587;&#x6863;&#x6A21;&#x5F0F;</li>
+<li>&#x62A5;&#x9519;&#x201D;Identifier Expected&#x201D;&#x662F;&#x56E0;&#x4E3A;&#x6807;&#x8BC6;&#x7B26;&#x547D;&#x540D;&#x4F7F;&#x7528;&#x4E86;&#x5173;&#x952E;&#x5B57;</li>
+<li>&#x7528;var&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x548C;&#x7701;&#x7565;var&#x9020;&#x6210;&#x7684;&#x5F71;&#x54CD;</li>
+<li>5&#x79CD;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x79CD;&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;typeof&#x5206;&#x522B;&#x8FD4;&#x56DE;&#x4EC0;&#x4E48;&#x503C;</li>
+<li>null&#x548C;undefined&#x7684;&#x533A;&#x522B;&#x548C;&#x8054;&#x7CFB;&#xFF0C;&#x5404;&#x81EA;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF0C;&#x4E8C;&#x8005;&#x76F8;&#x7B49;(==)&#xFF0C;&#x5206;&#x522B;&#x4F7F;&#x7528;Number()&#x548C;parseInt/parseFloat&#x5F97;&#x5230;&#x7684;&#x503C;</li>
+<li>typeof&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x672A;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x800C;&#x4E0D;&#x62A5;&#x9519;</li>
+<li>&#x4F1A;&#x8F6C;&#x6362;&#x4E3A;false&#x7684;&#x4E94;&#x4E2A;&#x503C;</li>
+<li>NaN&#x7684;&#x4E24;&#x4E2A;&#x7279;&#x6027;&#xFF0C;isNaN&#x51FD;&#x6570;&#x5224;&#x65AD;&#x662F;&#x4E0D;&#x662F;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;</li>
+<li>&#x4F7F;&#x7528;&#x65F6;&#x4E00;&#x822C;&#x7528;Number&#x65B9;&#x6CD5;&#x8F6C;&#x6362;&#x9664;string&#x5916;&#x7684;&#x503C;&#xFF0C;parseInt/parseFloat&#x53EA;&#x80FD;&#x89E3;&#x6790;string&#x503C;</li>
+<li>parseInt/parseFloat&#x89E3;&#x6790;&#x5B57;&#x7B26;&#x4E32;&#x89C4;&#x5219;&#x662F;&#xFF0C;&#x7B2C;&#x4E00;&#x4F4D;&#x975E;&#x7A7A;&#x683C;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x6570;&#x5B57;&#xFF0C;&#x5426;&#x5219;&#x7ED3;&#x679C;&#x5C31;&#x662F;NaN</li>
+<li>&#x4F7F;&#x7528;parseInt&#x6700;&#x597D;&#x6307;&#x660E;&#x8FDB;&#x5236;&#xFF0C;parseInt(&#x2018;070&#x2019;,10)</li>
+<li>parseFloat&#x53EA;&#x80FD;&#x89E3;&#x6790;&#x5341;&#x8FDB;&#x5236;</li>
+<li>string&#x5B57;&#x7B26;&#x5B57;&#x9762;&#x91CF;&#x3001;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#xFF0C;\ntrbf,<code>\\</code> ,\&#x201D;,\&#x2019;,\xnn,\unnnn</li>
+<li>string&#x7684;length&#x5BF9;&#x53CC;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x4E0D;&#x51C6;</li>
+<li>null&#x548C;undefined&#x6CA1;&#x6709;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x90FD;&#x6709;String()&#x65B9;&#x6CD5;</li>
+<li>number&#x7C7B;&#x578B;&#x7684;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x53C2;&#xFF0C;2&#x3001;8&#x3001;10&#x3001;16&#xFF0C;&#x4EE3;&#x8868;&#x8FDB;&#x5236;</li>
+</ol>
+<a id="more"></a>
+<blockquote>
+<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="external">http://supermaryy.com</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://luckymona.github.io/2016/09/17/read-book-professional-javascript2" target="_blank" rel="external">http://supermaryy.com/2016/09/17/read-book-professional-javascript2</a></p>
+</blockquote>
+<h1 id="&#x4E00;&#x3001;&#x4F7F;&#x7528;Javascript"><a href="#&#x4E00;&#x3001;&#x4F7F;&#x7528;Javascript" class="headerlink" title="&#x4E00;&#x3001;&#x4F7F;&#x7528;Javascript"></a>&#x4E00;&#x3001;&#x4F7F;&#x7528;Javascript</h1><h2 id="1-&#x4F7F;&#x7528;Javascript&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;"><a href="#1-&#x4F7F;&#x7528;Javascript&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;" class="headerlink" title="1.&#x4F7F;&#x7528;Javascript&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;"></a>1.&#x4F7F;&#x7528;Javascript&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</h2><p>&#x4F7F;&#x7528;<code>&lt;script&gt;</code>&#x5185;&#x5D4C;&#x6216;&#x8005;&#x5F15;&#x5165;&#x5916;&#x90E8;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x80FD;&#x65E2;&#x5185;&#x5D4C;&#x53C8;&#x5F15;&#x5165;&#xFF0C;&#x4F8B;&#x5982;&#x8FD9;&#x6837;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;xxx.js&quot;&gt;</div><div class="line">console.log(&apos;js&apos;);</div><div class="line">&lt;/script</div></pre></td></tr></table></figure></p>
+<p>&#x6B64;&#x65F6;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x89E3;&#x6790;&#x5185;&#x5D4C;&#x7684;JS&#x4EE3;&#x7801;&#xFF0C;&#x53EA;&#x89E3;&#x6790;&#x5F15;&#x5165;&#x7684;&#x4EE3;&#x7801;&#x3002;<br>&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x662F;&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x975E;&#x5D4C;&#x5165;&#xFF0C;&#x4F18;&#x70B9;&#x6709;&#xFF1A;&#x6613;&#x7EF4;&#x62A4;&#x3001;&#x53EF;&#x7F13;&#x5B58;&#xFF08;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x591A;&#x9664;&#x5F15;&#x7528;&#xFF09;&#x3001;&#x9002;&#x5E94;&#x672A;&#x6765;</p>
+<h2 id="2-lt-script-gt-&#x6807;&#x7B7E;&#x7684;&#x5E38;&#x7528;&#x5C5E;&#x6027;&#x6709;&#xFF1A;src-defer-async-type"><a href="#2-lt-script-gt-&#x6807;&#x7B7E;&#x7684;&#x5E38;&#x7528;&#x5C5E;&#x6027;&#x6709;&#xFF1A;src-defer-async-type" class="headerlink" title="2.&lt;script&gt;&#x6807;&#x7B7E;&#x7684;&#x5E38;&#x7528;&#x5C5E;&#x6027;&#x6709;&#xFF1A;src, defer, async,type"></a>2.<code>&lt;script&gt;</code>&#x6807;&#x7B7E;&#x7684;&#x5E38;&#x7528;&#x5C5E;&#x6027;&#x6709;&#xFF1A;src, defer, async,type</h2><ul>
+<li>type, &#x63CF;&#x8FF0;&#x5F15;&#x5165;&#x6587;&#x4EF6;&#x7684;MIME&#x7C7B;&#x578B;</li>
+<li>src&#xFF0C;&#x6709;src&#x5C5E;&#x6027;&#x7684;&#x6807;&#x7B7E;&#x90FD;&#x53EF;&#x4EE5;&#x8DE8;&#x57DF;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x6807;&#x7B7E;&#x6709;<code>&lt;script&gt;</code>, <code>&lt;img&gt;</code>,<code>&lt;iframe&gt;</code></li>
+<li>defer, &#x53EA;&#x80FD;&#x5728;&#x5916;&#x90E8;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E0A;&#x4F7F;&#x7528;&#xFF0C;&#x8868;&#x793A;&#x5EF6;&#x8FDF;&#x5230;&#x6587;&#x6863;&#x5B8C;&#x5168;&#x88AB;&#x89E3;&#x6790;&#x548C;&#x663E;&#x793A;&#x540E;&#x518D;&#x52A0;&#x8F7D;&#xFF0C;&#x7167;HTML5&#x89C4;&#x5B9A;&#xFF0C;&#x4F1A;&#x5728;DOMContentLoaded&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x524D;&#x6267;&#x884C;(&#x6D4F;&#x89C8;&#x5668;&#x5B9E;&#x73B0;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#x6267;&#x884C;)&#xFF0C;&#x5373;&#x9047;&#x5230;<code>&lt;/html&gt;</code>&#x6807;&#x7B7E;&#x5728;&#x6267;&#x884C;&#xFF0C;&#x7528;&#x6CD5;&#xFF1A;<code>&lt;script defer scr=&quot;xx.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>async&#xFF0C;HTML5&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EA;&#x80FD;&#x5728;&#x5916;&#x90E8;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E0A;&#x4F7F;&#x7528;&#xFF0C;&#x8868;&#x793A;&#x5F00;&#x59CB;&#x6267;&#x884C;JS&#x811A;&#x672C;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x963B;&#x585E;&#x540E;&#x9762;&#x811A;&#x672C;&#x7684;&#x6267;&#x884C;&#x3002;&#x6807;&#x8BB0;&#x4E3A;async&#x7684;&#x591A;&#x4E2A;<code>&lt;script&gt;</code>&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x6309;&#x7167;&#x524D;&#x540E;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x3002;async&#x811A;&#x672C;&#x4E00;&#x5B9A;&#x4F1A;&#x5728;load&#x4E8B;&#x4EF6;&#x4E4B;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x4F1A;&#x5728;DOMContentLoaded&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E4B;&#x524D;&#x6216;&#x4E4B;&#x540E;&#x6267;&#x884C;</li>
+</ul>
+<p>&#x628A;<code>&lt;script&gt;</code>&#x5F15;&#x5165;&#x6587;&#x4EF6;&#x653E;&#x5728;body&#x6807;&#x7B7E;&#x7684;&#x6700;&#x540E;&#xFF0C;&#x9632;&#x6B62;&#x963B;&#x585E;&#x9875;&#x9762;&#x5C55;&#x73B0;</p>
+<p><strong>MIME&#xFF1A;</strong>&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x524D;&#x9762;&#x662F;&#x6570;&#x636E;&#x7684;&#x5927;&#x7C7B;&#x578B;&#xFF0C;&#x540E;&#x9762;&#x662F;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x5982;text/html&#x3001;img/gif&#x7B49;<br><strong>load&#x4E8B;&#x4EF6;&#xFF1A;</strong>&#x5728;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x4E00;&#x5207;&#x90FD;&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x5305;&#x62EC;JS&#x811A;&#x672C;&#x3001;CSS&#x3001;&#x56FE;&#x7247;&#x7B49;<br><strong>DOMContentLoaded&#x4E8B;&#x4EF6;&#xFF1A;</strong>DOM&#x8282;&#x70B9;&#x6811;&#x6620;&#x5C04;&#x5B8C;&#x6210;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x9AD8;&#x7A0B;P408</p>
+<h2 id="3-&#x6587;&#x6863;&#x6A21;&#x5F0F;"><a href="#3-&#x6587;&#x6863;&#x6A21;&#x5F0F;" class="headerlink" title="3.&#x6587;&#x6863;&#x6A21;&#x5F0F;"></a>3.&#x6587;&#x6863;&#x6A21;&#x5F0F;</h2><p>&#x901A;&#x8FC7;DOCTYPE&#x533A;&#x5206;&#x6587;&#x6863;&#x6A21;&#x5F0F;&#xFF0C;&#x5206;&#x4E3A;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;&#x3001;&#x6807;&#x51C6;&#x6A21;&#x5F0F;&#x548C;&#x51C6;&#x6807;&#x51C6;&#x6A21;&#x5F0F;&#xFF0C;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;&#x4F1A;&#x8BA9;IE&#x8868;&#x73B0;&#x51FA;&#x4E0E;IE5&#x76F8;&#x540C;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x52A0;DOCTYPE&#x4F1A;&#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x6309;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;&#x89E3;&#x6790;&#x3002;&#x6807;&#x51C6;&#x6A21;&#x5F0F;&#x548C;&#x51C6;&#x6807;&#x51C6;&#x6A21;&#x5F0F;&#x6709;&#x5F88;&#x5C0F;&#x7684;&#x5DEE;&#x522B;&#xFF0C;<strong>&#x6807;&#x51C6;&#x6A21;&#x5F0F;</strong>(&#x4E0D;&#x63A2;&#x8BA8;XHTML)&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML 4.01 &#x4E25;&#x683C;&#x578B; --&gt;</div><div class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;</div><div class="line">&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</div><div class="line"></div><div class="line">&lt;!-- HTML 5 --&gt;</div><div class="line">&lt;!DOCTYPE html&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>&#x51C6;&#x6807;&#x51C6;&#x6A21;&#x5F0F;</strong>&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML 4.01 &#x8FC7;&#x6E21;&#x578B; --&gt;</div><div class="line">&lt;!DOCTYPE HTML PUBLIC</div><div class="line">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</div><div class="line">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</div><div class="line"></div><div class="line">&lt;!-- HTML 4.01 &#x6846;&#x67B6;&#x96C6;&#x578B; --&gt;</div><div class="line">&lt;!DOCTYPE HTML PUBLIC</div><div class="line">&quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot;</div><div class="line">&quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p>&#x73B0;&#x5728;&#x4E00;&#x822C;&#x4F7F;&#x7528;html5&#x7684;DOCTYPE&#x58F0;&#x660E;</p>
+<h1 id="&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x6982;&#x5FF5;</h1><ol>
+<li>JS&#x4E2D;&#x7684;&#x4E00;&#x5207;&#x90FD; <strong>&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</strong></li>
+<li>&#x6807;&#x8BC6;&#x7B26;&#x7684;&#x7B2C;&#x4E00;&#x4F4D;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x6BCD;&#x3001;&#x4E0B;&#x5212;&#x7EBF;&#x3001;&#x7F8E;&#x5143;&#x7B26;$: aa&#x3001; _a&#x3001; $a&#xFF1B;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x4E2D;&#x6587;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x63A8;&#x8350;</li>
+<li>&#x4E25;&#x683C;&#x6A21;&#x5F0F;<code>use strict</code>&#xFF0C;IE10+</li>
+<li>&#x5173;&#x952E;&#x5B57;&#x548C;&#x4FDD;&#x7559;&#x5B57;&#x90FD;&#x4E0D;&#x80FD;&#x505A;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x5173;&#x952E;&#x5B57;&#x505A;&#xFF0C;&#x4F1A;&#x62A5;&#x9519; <strong>&#x201C;Identifier Expected&#x201D;</strong></li>
+<li>JS&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x677E;&#x6563;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#xFF0C;<strong>&#x53D8;&#x91CF;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;</strong></li>
+<li><strong>&#x7528;var&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4F1A;&#x6210;&#x4E3A;&#x6240;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</strong>&#xFF0C;&#x4E0E;&#x5916;&#x754C;&#x65E0;&#x5173;&#xFF0C;&#x5F53;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;<img src="http://o798x2hdw.bkt.clouddn.com/var.png" alt="var"></li>
+<li><strong>&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x7701;&#x7565;var&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;</strong>&#xFF0C;&#x975E;&#x5E38;&#x4E0D;&#x5EFA;&#x8BAE;&#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x5C40;&#x90E8;&#x4F5C;&#x7528;&#x57DF;&#x5B9A;&#x4E49;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5F88;&#x96BE;&#x7EF4;&#x62A4;</li>
+</ol>
+<h1 id="&#x4E09;&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x4E09;&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x4E09;&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x4E09;&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;</h1><p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5728;if else&#x63A7;&#x5236;&#x6D41;&#x7A0B;&#x65F6;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x3002;</p>
+<p>JS&#x4E2D;&#x5171;6&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;5&#x79CD;&#x57FA;&#x672C;(&#x7B80;&#x5355;)&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;Null&#x3001;Undefined&#x3001;String&#x3001;Number&#x3001;Boolean<br>1&#x79CD;&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;Object</p>
+<h2 id="3-1&#x68C0;&#x6D4B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4F7F;&#x7528;typeof"><a href="#3-1&#x68C0;&#x6D4B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4F7F;&#x7528;typeof" class="headerlink" title="3.1&#x68C0;&#x6D4B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4F7F;&#x7528;typeof"></a>3.1&#x68C0;&#x6D4B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4F7F;&#x7528;typeof</h2><p>&#x5BF9;&#x5E94;&#x7684;&#x53EF;&#x4EE5;&#x68C0;&#x6D4B;&#x51FA;&#x6765;&#x7684;&#x503C;&#x6709;&#xFF1A;&#x8FD8;&#x662F;&#x516D;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;null&#x4F1A;&#x88AB;&#x68C0;&#x6D4B;&#x4E3A;&#x201D;object&#x201D;, function&#x4E0D;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x88AB;&#x68C0;&#x6D4B;&#x4E3A;&#x201D;function&#x201D;<br>|  &#x6570;&#x636E;&#x7C7B;&#x578B; | typeof &#x68C0;&#x6D4B;&#x503C; |<br>|&#x2014;&#x2014;&#x2014;&#x2013;|&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;|<br>| null      | &#x201C;object&#x201D;      |<br>| undefined | &#x201C;undefined&#x201D;   |<br>| string    | &#x201C;string&#x201D;      |<br>| number    | &#x201C;number&#x201D;      |<br>| boolean   | &#x201C;boolean&#x201D;     |<br>| object    | &#x201C;object&#x201D; / &#x201C;function&#x201D; |<br>&#x4F8B;&#x5916;:&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5728;Safari 5&#x548C;Chrome 7&#x524D;&#x7248;&#x672C;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;typeof&#x503C;&#x4E3A;&#x201D;function&#x201D;&#xFF0C;&#x65B0;&#x7248;&#x672C;&#x4E3A;&#x201D;object&#x201D;</p>
+<h2 id="3-2-null&#x4E0E;undefined&#x533A;&#x522B;"><a href="#3-2-null&#x4E0E;undefined&#x533A;&#x522B;" class="headerlink" title="3.2 null&#x4E0E;undefined&#x533A;&#x522B;"></a>3.2 null&#x4E0E;undefined&#x533A;&#x522B;</h2><h3 id="1-undefined"><a href="#1-undefined" class="headerlink" title="1. undefined"></a>1. undefined</h3><ol>
+<li>&#x5B9A;&#x4E49;&#xFF1A;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x4F46;&#x6CA1;&#x6709;&#x8D4B;&#x503C;&#xFF0C;&#x5373;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;&#x7684;&#x53D8;&#x91CF; <code>var a; // a === undefined</code></li>
+<li>&#x6CA1;&#x5FC5;&#x8981;&#x663E;&#x5F0F;&#x8D4B;&#x503C;&#xFF0C;&#x53D8;&#x91CF;&#x672A;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x9ED8;&#x8BA4;&#x662F;undefined</li>
+<li><p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<ul>
+<li><code>var a</code>&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x800C;&#x4E0D;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;undefined</li>
+<li><code>if (a=== undefined)</code>&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x65F6;&#x505A;&#x5224;&#x65AD;&#x6761;&#x4EF6;</li>
+<li>&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x6CA1;&#x6709;&#x8D4B;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>undefined</code>^1<br><code>var a={bb:&quot;xx&quot;}; console.log(a.aa);</code></li>
+<li><p>&#x51FD;&#x6570;&#x4E0D;&#x663E;&#x5F0F;&#x5B9A;&#x4E49;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;<code>undefined</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function aa(){</div><div class="line">    var a=1;</div><div class="line">    a++;</div><div class="line">}</div><div class="line">console.log(aa()); // undefined</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x8C03;&#x7528;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x8BE5;&#x63D0;&#x4F9B;&#x7684;&#x53C2;&#x6570;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#xFF0C;&#x53C2;&#x6570;&#x503C;&#x9ED8;&#x8BA4;&#x4E3A;<code>undefined</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function aa(bb){</div><div class="line">           console.log(bb);</div><div class="line">       }</div><div class="line">       aa();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-null"><a href="#2-null" class="headerlink" title="2.null"></a>2.null</h3><ol>
+<li>&#x5B9A;&#x4E49;: &#x7A7A;&#x5BF9;&#x8C61;&#x6307;&#x9488;</li>
+<li>&#x5E94;&#x8BE5;&#x663E;&#x5F0F;&#x8D4B;&#x503C;  &#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x672A;&#x6765;&#x4FDD;&#x5B58;object&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4E3A;null</li>
+<li>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</li>
+</ol>
+<ul>
+<li>&#x4F5C;&#x4E3A;&#x5BF9;&#x8C61;&#x521D;&#x59CB;&#x5316;&#x7684;&#x503C;<code>var timer = null;</code></li>
+<li>&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#xFF08;&#x8FD9;&#x4E00;&#x6761;&#x7684;&#x7528;&#x6CD5;&#x4E0D;&#x662F;&#x5F88;&#x7406;&#x89E3;&#xFF0C;&#x8C01;&#x77E5;&#x9053;&#x5417;&#xFF1F;&#x544A;&#x8BC9;&#x6211;&#x4E00;&#x4E0B;&#xFF09;</li>
+<li>null&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x662F;&#x662F;&#x5BF9;&#x8C61;&#x539F;&#x578B;&#x94FE;&#x7684;&#x7EC8;&#x70B9;<code>Object.prototype.__proto__&#xFF1B; // null</code>&#x800C;null&#x6CA1;&#x6709;prototype&#xFF1B;</li>
+<li><code>var dom = document.getElementById(&apos;domId&apos;);</code>&#x5982;&#x679C;domId&#x4E0D;&#x5B58;&#x5728;&#xFF0C;dom&#x53D8;&#x91CF;&#x4E3A;null</li>
+</ul>
+<h3 id="3-&#x5176;&#x4ED6;"><a href="#3-&#x5176;&#x4ED6;" class="headerlink" title="3. &#x5176;&#x4ED6;"></a>3. &#x5176;&#x4ED6;</h3><ol>
+<li>undefined &#x503C;&#x662F;&#x6D3E;&#x751F;&#x81EA; null &#x503C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;<code>null == undefined&#xFF1B;//true</code>&#x4F46;&#x662F;<code>null === undefined //false</code></li>
+<li><code>Number(undefined) = NaN; Number(null) = 0</code>&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;parseInt&#x548C;parseFloat&#x90FD;&#x662F;NaN</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var aa;</div><div class="line">console.log(aa); //undefined</div><div class="line">console.log(bb); // &#x62A5;&#x9519;</div><div class="line">console.log(typeof bb) //undefined</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="3-3-Number&#x7C7B;&#x578B;"><a href="#3-3-Number&#x7C7B;&#x578B;" class="headerlink" title="3.3 Number&#x7C7B;&#x578B;"></a>3.3 Number&#x7C7B;&#x578B;</h2><ol>
+<li>Boolean()&#x51FD;&#x6570;&#xFF0C;&#x4F5C;&#x4E3A;if&#x6761;&#x4EF6;&#xFF0C;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A;Boolean&#x503C;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;false&#x7684;&#x503C;&#xFF1A;null&#x3001;undefined&#x3001;&#x201D;&#x201D;&#x3001;0&#x548C;NaN&#x3001;</li>
+<li>&#x516B;&#x8FDB;&#x5236;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x5931;&#x6548;&#xFF0C;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x4EE5;&#x2019;0x&#x2019;&#x5F00;&#x5934;</li>
+<li><code>1.</code>&#x548C;<code>1.0</code>&#x90FD;&#x4F1A;&#x88AB;&#x89E3;&#x6790;&#x6210;1&#xFF0C;&#x6D6E;&#x70B9;&#x6570;&#x8BA1;&#x7B97;&#x4E0D;&#x51C6;&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x4F8B;&#x5982;0.1+0.2&#x5E76;&#x4E0D;&#x7B49;&#x4E8E;0.3</li>
+<li>&#x79D1;&#x5B66;&#x8BA1;&#x6570;&#x6CD5;3.123e7</li>
+<li><code>Number.MIN_VALUE&gt;0</code>&#x662F;&#x6700;&#x63A5;&#x8FD1;0&#x7684;&#x6B63;&#x6570;&#xFF0C;isFinite(Number.MAX_VALUE)&#xFF0C;Infinity&#x4E5F;&#x662F;&#x4E00;&#x4E2A;number</li>
+<li><code>typeof -Infinity //&apos;number&apos;</code></li>
+</ol>
+<h3 id="1-NaN"><a href="#1-NaN" class="headerlink" title="1.NaN"></a>1.NaN</h3><ol>
+<li>NaN&#xFF0C;&#x5373;&#x975E;&#x6570;&#x503C;&#xFF08;Not a Number&#xFF09;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x503C;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x672C;&#x6765;&#x8981;&#x8FD4;&#x56DE;&#x6570;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x672A;&#x8FD4;&#x56DE;&#x6570;&#x503C;&#x7684;&#x60C5;&#x51B5;&#xFF08;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x4E86;&#xFF09;&#x3002;</li>
+<li><code>0/0 = NaN; 1/0 = Infinity; -1/0 = -Infinity</code></li>
+<li>NaN&#x7684;&#x4E24;&#x4E2A;&#x7279;&#x6027;&#xFF1A;</li>
+</ol>
+<ul>
+<li>&#x4EFB;&#x4F55;&#x6D89;&#x53CA;NaN&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x7ED3;&#x679C;&#x90FD;&#x662F;NaN</li>
+<li>NaN&#x4E0E;&#x8C01;&#x90FD;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;<code>NaN==NaN;//false</code></li>
+</ul>
+<ol>
+<li>isNaN() </li>
+</ol>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x8F6C;&#x5316;&#x4E3A;&#x6570;&#x503C;&#x7684;&#x8FD4;&#x56DE;false&#xFF0C;&#x5305;&#x62EC;&#xFF1A;null&#xFF08;&#x8F6C;&#x5316;&#x4E3A;0&#xFF09;&#xFF0C;boolean&#xFF0C;number&#x7C7B;&#x578B;&#xFF08;&#x4E0D;&#x542B;NaN&#xFF09;,&#x201D;&#x201D;,&#x201D;10&#x201D;;</li>
+<li>&#x4E0D;&#x53EF;&#x4EE5;&#x8F6C;&#x5316;&#x4E3A;&#x6570;&#x503C;&#x7684;&#x8FD4;&#x56DE;true&#xFF0C;&#x5305;&#x62EC;&#xFF1A;undefined&#xFF0C;NaN&#xFF0C;Object&#xFF0C;&#x201D;10aa&#x201D;</li>
+</ul>
+<h3 id="2-&#x6570;&#x503C;&#x8F6C;&#x6362;Number&#x3001;parseFloat&#x3001;parseInt"><a href="#2-&#x6570;&#x503C;&#x8F6C;&#x6362;Number&#x3001;parseFloat&#x3001;parseInt" class="headerlink" title="2. &#x6570;&#x503C;&#x8F6C;&#x6362;Number&#x3001;parseFloat&#x3001;parseInt"></a>2. &#x6570;&#x503C;&#x8F6C;&#x6362;Number&#x3001;parseFloat&#x3001;parseInt</h3><p>&#x4E09;&#x79CD;&#x65B9;&#x6CD5;:</p>
+<ol>
+<li>Nubmer()&#x9002;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x89C4;&#x5219;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x6240;&#x4EE5; <strong>Number&#x4E00;&#x822C;&#x7528;&#x6765;&#x8F6C;&#x6362;&#x9664;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5176;&#x4ED6;&#x7C7B;&#x578B;</strong></li>
+<li><strong>parseFloat&#x548C;parseInt&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6570;&#x503C;</strong>&#xFF0C;&#x8F6C;&#x6362;&#x975E;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x90FD;&#x8FD4;&#x56DE;NaN<br>3.parseInt&#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x89C4;&#x5219;&#x662F;:<strong>&#x67E5;&#x770B;&#x5B57;&#x7B26;&#x4E32;&#x7B2C;&#x4E00;&#x4F4D;&#x975E;&#x7A7A;&#x683C;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x6570;&#x5B57;&#x6216;&#x8005;&#x8D1F;&#x53F7;&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x6570;&#x503C;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x662F;NaN</strong>&#xFF0C;&#x6240;&#x4EE5;<code>parseInt(&quot;&quot;) = NaN</code></li>
+</ol>
+<ul>
+<li>parseInt(&#x2018;22.5&#x2019;)=22,&#x56E0;&#x4E3A;&#x5C0F;&#x6570;&#x70B9;&#x4E0D;&#x662F;&#x6709;&#x6548;&#x6570;&#x5B57;&#x5B57;&#x7B26;</li>
+<li><p>&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x6570;&#x5B57;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x4EE5;0&#x5F00;&#x5934;&#x540E;&#x8DDF;&#x6570;&#x5B57;&#x7684;&#x516B;&#x8FDB;&#x5236;&#x548C;0x&#x5F00;&#x5934;&#x540E;&#x8DDF;&#x6570;&#x5B57;&#x7684;16&#x8FDB;&#x5236;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">parseInt(&apos;070&apos;)=70; </div><div class="line">parseInt(&apos;070&apos;,8) = 56; </div><div class="line">parseInt(&apos;0x11&apos;) = 17; </div><div class="line">parseInt(&apos;1f&apos;) = 1; </div><div class="line">parseInt(&apos;1f&apos;,16)=31</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>&#x5EFA;&#x8BAE;<code>parseInt</code>&#x65E0;&#x8BBA;&#x5728;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x57FA;&#x6570;</strong>:<code>parseInt(&apos;070&apos;,10)</code></p>
+</li>
+</ul>
+<ol>
+<li>parseFloat&#x4E5F;&#x662F;&#x4ECE;&#x9996;&#x4E2A;&#x975E;&#x7A7A;&#x683C;&#x5B57;&#x7B26;&#x5F00;&#x59CB;&#x89E3;&#x6790;&#xFF0C;&#x76F4;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x5C0F;&#x6570;&#x70B9;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x90FD;&#x5FFD;&#x7565;&#xFF0C;&#x4E0E;parseIn&#x7684;&#x533A;&#x522B;&#xFF1A;</li>
+</ol>
+<ul>
+<li>&#x9996;&#x4E2A;&#x5C0F;&#x6570;&#x70B9;&#x6709;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x90FD;&#x662F;0&#xFF0C;&#x5C06;&#x89E3;&#x6790;&#x4E3A;&#x6574;&#x6570;</li>
+<li>&#x53EA;&#x80FD;&#x89E3;&#x6790;&#x5341;&#x8FDB;&#x5236;&#xFF0C;&#x9996;&#x4F4D;0&#x90FD;&#x5FFD;&#x7565;</li>
+</ul>
+<h2 id="3-4-String"><a href="#3-4-String" class="headerlink" title="3.4 String"></a>3.4 String</h2><ol>
+<li>&#x5B57;&#x7B26;&#x5B57;&#x9762;&#x91CF;&#xFF0C;&#x53C8;&#x53EB;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;: <code>\ntbrf, \\, \&apos;, \&quot;,  \xnn, \unnnn</code></li>
+</ol>
+<ul>
+<li>&#x2018;\xnn&#x2019;&#x4EE5;16&#x8FDB;&#x5236;&#x4EE3;&#x7801;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x201D;\x41&#x201D; &#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;&#x201D;A&#x201D;</li>
+<li>&#x2018;\unnnn&#x2019;16&#x8FDB;&#x5236;&#x4EE3;&#x7801;&#x8868;&#x793A;&#x4E00;&#x4E2A;unicode&#x5B57;&#x7B26;&#xFF0C;&#x4E3A;unicode&#x7801;&#xFF0C;&#x2019;\u7530&#x2019;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;&#x6C49;&#x5B57;&#x201D;&#x7530;&#x201D;</li>
+</ul>
+<ol>
+<li>string&#x7684;length&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x8BA1;&#x7B97;&#x5305;&#x542B;&#x53CC;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x65F6;&#x53EF;&#x80FD;&#x4F1A;&#x4E0D;&#x51C6;&#xFF0C;</li>
+</ol>
+<ul>
+<li>&#x5B57;&#x8282;&#x77E5;&#x8BC6;&#xFF1A;&#x6700;&#x5C0F;&#x5355;&#x4F4D;&#x4E3A;bit&#x6BD4;&#x7279;/&#x4F4D;&#xFF0C;8bit = 1byte &#x5B57;&#x8282;&#xFF0C;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x5355;&#x5B57;&#x8282;8bit&#xFF0C;&#x6C49;&#x5B57;&#x53CC;&#x5B57;&#x8282;16bit</li>
+</ul>
+<ol>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x53EF;&#x53D8;&#xFF0C;&#x6539;&#x53D8;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#xFF0C;&#x5C31;&#x662F;&#x9500;&#x6BC1;&#x91CD;&#x5EFA;&#x4E00;&#x4E2A;&#xFF0C;IE6-&#x6548;&#x7387;&#x5F88;&#x4F4E;</li>
+<li>&#x9664;&#x4E86;null&#x548C;undefined&#xFF0C;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x6709;toString()&#x65B9;&#x6CD5;&#xFF0C;&#x6570;&#x503C;&#x7684;toString&#x65B9;&#x6CD5;&#x6709;&#x53C2;&#x6570;&#xFF0C;2&#x3001;8&#x3001;10&#x3001;16&#xFF0C;&#x8868;&#x793A;&#x8F6C;&#x6210;&#x4EC0;&#x4E48;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x7684;&#x5B57;&#x7B26;&#x4E32;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var num = 2;</div><div class="line">console.log(num.toString(2)); //&apos;10&apos;</div><div class="line">console.log(NaN.toString()); //&apos;NaN&apos;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x5199;&#x4F5C;&#xFF1A;<code>2.toString(2)</code>&#xFF0C;&#x4F1A;&#x62A5;&#x9519;</p>
+<ol>
+<li>&#x6BD4;toString()&#x66F4;&#x5305;&#x5BB9;&#x7684;String(), &#x4E5F;&#x53EF;&#x4EE5;&#x628A;null&#x548C;undefined&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;<code>String(null)=&quot;null&quot;; String(070)=&quot;56&quot;; String(0x1f)=&quot;31&quot;</code></li>
+<li>&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;<code>var b = 1+&quot;&quot;; var a = null + &quot;&quot;;</code></li>
+</ol>
+<hr>
+<blockquote>
+<p>&#x672C;&#x6587;&#x4E3A;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x5C0A;&#x91CD;&#x8F9B;&#x52E4;&#x52B3;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x6458;&#x8981;&#x3001;&#x63A8;&#x8350;&#x6216;&#x805A;&#x5408;&#xFF0C;&#x4F46;&#x5B8C;&#x6574;&#x8F6C;&#x8F7D;&#x9700;&#x7ECF;&#x8FC7;&#x672C;&#x4EBA;&#x540C;&#x610F;&#xFF0C;&#x672C;&#x4EBA;&#x90AE;&#x7BB1; miao.hnlk@gmail.com<br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://luckymona.github.io/2016/09/17/read-book-professional-javascript2" target="_blank" rel="external">http://supermaryy.com/2016/09/17/read-book-professional-javascript2</a></p>
+</blockquote>
+<p>Reference&#xFF1A;</p>
+<p>^1:<a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html" target="_blank" rel="external">undefined&#x4E0E;null&#x7684;&#x533A;&#x522B;</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/红皮书/" rel="tag">#红皮书</a>
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/11/read-book-professional-javascript1/" rel="next" title="Javascript基础--高程读书笔记+自我扩展知识">
+                <i class="fa fa-chevron-left"></i> Javascript基础--高程读书笔记+自我扩展知识
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/17/read-book-professional-javascript3/" rel="prev" title="Javascript基础3--高程读书笔记+自我扩展知识">
+                Javascript基础3--高程读书笔记+自我扩展知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description">有志者自有千计万计，无志者只感千难万难</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、使用Javascript"><span class="nav-text">一、使用Javascript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-使用Javascript的两种方式"><span class="nav-text">1.使用Javascript的两种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-lt-script-gt-标签的常用属性有：src-defer-async-type"><span class="nav-text">2.<script>标签的常用属性有：src, defer, async,type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-文档模式"><span class="nav-text">3.文档模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、基本概念"><span class="nav-text">二、基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、数据类型"><span class="nav-text">三、数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1检测数据类型使用typeof"><span class="nav-text">3.1检测数据类型使用typeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-null与undefined区别"><span class="nav-text">3.2 null与undefined区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-undefined"><span class="nav-text">1. undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-null"><span class="nav-text">2.null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-其他"><span class="nav-text">3. 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Number类型"><span class="nav-text">3.3 Number类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-NaN"><span class="nav-text">1.NaN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数值转换Number、parseFloat、parseInt"><span class="nav-text">2. 数值转换Number、parseFloat、parseInt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-String"><span class="nav-text">3.4 String</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'supermaryyy';
+      var disqus_identifier = '2016/09/17/read-book-professional-javascript2/';
+      var disqus_title = "Javascript基础2--高程读书笔记+自我扩展知识";
+      var disqus_url = 'http://yoursite.com/2016/09/17/read-book-professional-javascript2/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("viqvtCrDXybVezVWV8Rjug5j-gzGzoHsz", "26hWjxk9tYLU0r9HPP8dKz2l");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
