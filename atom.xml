@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-19T01:28:15.603Z</updated>
+  <updated>2016-09-19T01:35:47.098Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://yoursite.com/2016/09/17/read-book-professional-javascript3/"/>
     <id>http://yoursite.com/2016/09/17/read-book-professional-javascript3/</id>
     <published>2016-09-17T08:00:00.000Z</published>
-    <updated>2016-09-19T01:28:15.603Z</updated>
+    <updated>2016-09-19T01:35:47.098Z</updated>
     
     <content type="html"><![CDATA[<p>&#x6458;&#x8981;&#xFF1A;</p>
 <ol>
-<li>&#x4E00;&#x5207;&#x5BF9;&#x8C61;&#x539F;&#x578B;&#x94FE;&#x7EC8;&#x70B9;&#x90FD;&#x662F;Object&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;DOM&#x5BF9;&#x8C61;&#x3001;BOM&#x5BF9;&#x8C61;&#xFF0C;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x5B9A;&#x4E49;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</li>
+<li>&#x4E00;&#x5207;&#x5BF9;&#x8C61;&#x90FD;&#x7EE7;&#x627F;&#x81EA;Object&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;DOM&#x5BF9;&#x8C61;&#x3001;BOM&#x5BF9;&#x8C61;&#xFF0C;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x5B9A;&#x4E49;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</li>
 <li>&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#xFF1A;constructor&#x3001;isPrototypeOf&#x3001;hasOwnProperty&#x3001;toString; valueOf&#x3001;toLocalString&#x3001;propertyIsEnumberable</li>
 <li>&#x5BF9;&#x8C61;&#x4F7F;&#x7528;toString()&#x4E00;&#x822C;&#x5F97;&#x5230;&#x201D;[object Object]&#x201D;</li>
 <li>&#x9664;null&#x548C;undefined&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x64CD;&#x4F5C;&#x7B26;&#xFF1B;</li>
@@ -219,7 +219,7 @@
     
       &lt;p&gt;&amp;#x6458;&amp;#x8981;&amp;#xFF1A;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&amp;#x4E00;&amp;#x5207;&amp;#x5BF9;&amp;#x8C61;&amp;#x539F;&amp;#x578B;&amp;#x94FE;&amp;#x7EC8;&amp;#x70B9;&amp;#x90FD;&amp;#x662F;Object&amp;#xFF0C;&amp;#x4F46;&amp;#x4E0D;&amp;#x5305;&amp;#x62EC;&amp;#x5BBF;&amp;#x4E3B;&amp;#x5BF9;&amp;#x8C61;&amp;#xFF0C;&amp;#x5982;DOM&amp;#x5BF9;&amp;#x8C61;&amp;#x3001;BOM&amp;#x5BF9;&amp;#x8C61;&amp;#xFF0C;&amp;#x5BBF;&amp;#x4E3B;&amp;#x73AF;&amp;#x5883;&amp;#x5B9A;&amp;#x4E49;&amp;#x5BBF;&amp;#x4E3B;&amp;#x5BF9;&amp;#x8C61;&lt;/li&gt;
+&lt;li&gt;&amp;#x4E00;&amp;#x5207;&amp;#x5BF9;&amp;#x8C61;&amp;#x90FD;&amp;#x7EE7;&amp;#x627F;&amp;#x81EA;Object&amp;#xFF0C;&amp;#x4F46;&amp;#x4E0D;&amp;#x5305;&amp;#x62EC;&amp;#x5BBF;&amp;#x4E3B;&amp;#x5BF9;&amp;#x8C61;&amp;#xFF0C;&amp;#x5982;DOM&amp;#x5BF9;&amp;#x8C61;&amp;#x3001;BOM&amp;#x5BF9;&amp;#x8C61;&amp;#xFF0C;&amp;#x5BBF;&amp;#x4E3B;&amp;#x73AF;&amp;#x5883;&amp;#x5B9A;&amp;#x4E49;&amp;#x5BBF;&amp;#x4E3B;&amp;#x5BF9;&amp;#x8C61;&lt;/li&gt;
 &lt;li&gt;&amp;#x6240;&amp;#x6709;&amp;#x5BF9;&amp;#x8C61;&amp;#x90FD;&amp;#x6709;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;&amp;#x6709;&amp;#xFF1A;constructor&amp;#x3001;isPrototypeOf&amp;#x3001;hasOwnProperty&amp;#x3001;toString; valueOf&amp;#x3001;toLocalString&amp;#x3001;propertyIsEnumberable&lt;/li&gt;
 &lt;li&gt;&amp;#x5BF9;&amp;#x8C61;&amp;#x4F7F;&amp;#x7528;toString()&amp;#x4E00;&amp;#x822C;&amp;#x5F97;&amp;#x5230;&amp;#x201D;[object Object]&amp;#x201D;&lt;/li&gt;
 &lt;li&gt;&amp;#x9664;null&amp;#x548C;undefined&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;&amp;#x64CD;&amp;#x4F5C;&amp;#x7B26;&amp;#xFF1B;&lt;/li&gt;
