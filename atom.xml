@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-19T01:35:47.098Z</updated>
+  <updated>2016-09-20T15:09:31.711Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Javascript基础4--面向对象的程序设计</title>
+    <link href="http://yoursite.com/2016/09/20/read-book-professional-javascript4/"/>
+    <id>http://yoursite.com/2016/09/20/read-book-professional-javascript4/</id>
+    <published>2016-09-20T14:00:00.000Z</published>
+    <updated>2016-09-20T15:09:31.711Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x6458;&#x8981;&#xFF1A;</p>
+<ol>
+<li>for in &#x5FAA;&#x73AF;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x503C;&#x4E3A;null&#x548C;undefined&#xFF0C;ES3&#x62A5;&#x9519;&#xFF0C;ES5&#x7EC8;&#x6B62;&#x5FAA;&#x73AF;&#xFF0C;&#x6545;&#x4F7F;&#x7528;&#x524D;&#x9700;&#x8981;&#x68C0;&#x6D4B;&#x503C;&#x662F;&#x5426;&#x4E3A;null&#x548C;undefined</li>
+<li>JS&#x4E0D;&#x5B58;&#x5728;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x6240;&#x4EE5;for&#x5FAA;&#x73AF;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5FAA;&#x73AF;&#x5916;&#x53EF;&#x8BBF;&#x95EE;</li>
+<li>label&#x8BED;&#x53E5;&#xFF0C;&#x7ED9;&#x5FAA;&#x73AF;&#x8D77;&#x4E2A;&#x540D;&#x5B57;loopName&#xFF0C;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x5FAA;&#x73AF;&#x4E2D;&#x7528;break loopName&#x6765;&#x8C03;&#x51FA;&#x5FAA;&#x73AF;&#xFF0C;&#x6216;&#x8005;continue loopName</li>
+<li></li>
+</ol>
+<a id="more"></a>
+<blockquote>
+<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="external">http://supermaryy.com</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/09/20/read-book-professional-javascript4" target="_blank" rel="external">http://supermaryy.com/2016/09/20/read-book-professional-javascript4</a></p>
+</blockquote>
+<h1 id="&#x4E00;&#x3001;&#x8BED;&#x53E5;"><a href="#&#x4E00;&#x3001;&#x8BED;&#x53E5;" class="headerlink" title="&#x4E00;&#x3001;&#x8BED;&#x53E5;"></a>&#x4E00;&#x3001;&#x8BED;&#x53E5;</h1><ol>
+<li>for&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;Boolean()&#x51FD;&#x6570;&#xFF0C;&#x628A;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x5E03;&#x5C14;&#x503C;&#x3002;</li>
+<li>for(var i=0; i&lt;3; i++){} &#x5FAA;&#x73AF;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;i&#xFF0C;&#x5FAA;&#x73AF;&#x5916;&#x90E8;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#xFF0C;&#x56E0;&#x4E3A;JS&#x4E0D;&#x5B58;&#x5728;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</li>
+<li><p>for in&#x5FAA;&#x73AF;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6CA1;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x503C;&#x4E3A;null&#x548C;undefined&#xFF0C;ES3&#x4E0B;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#xFF0C;ES5&#x4E2D;&#x4F1A;&#x4E2D;&#x65AD;&#x5FAA;&#x73AF;&#xFF0C;<del>&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x5E76;&#x6CA1;&#x6709;&#x4E2D;&#x65AD;</del>&#xFF0C;&#x6240;&#x4EE5;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x524D;&#x6700;&#x597D;&#x68C0;&#x6D4B;&#x503C;&#x662F;&#x5426;&#x4E3A;null&#x6216;&#x8005;&#x662F;undefined&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// &#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#xFF1A;</div><div class="line">var x;</div><div class="line">var aa = { </div><div class="line">    bb:null,</div><div class="line">    cc:x,</div><div class="line">    dd:&quot;1&quot;</div><div class="line">}</div><div class="line"></div><div class="line">for(var propName in aa){</div><div class="line">console.log(aa[propName]);</div><div class="line">}</div><div class="line">// &#x7ED3;&#x679C;&#xFF1A;null/undefined/1</div><div class="line"></div><div class="line">// &#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x4F1A;&#x4E2D;&#x65AD;&#xFF1A;</div><div class="line">arr = new Array(3); // [undefined &#xD7; 3]</div><div class="line">arr.forEach(()=&gt;console.log(&apos;have done&apos;));  // &#x6CA1;&#x6709;&#x6253;&#x5370;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x503C;undefined</div><div class="line">for(var i in arr) console.log(&apos;have done&apos;); // &#x6CA1;&#x6709;&#x6253;&#x5370;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x503C;undefined</div><div class="line">for(var i of arr) console.log(&apos;have done&apos;); //3&#x6B21;&quot;have done&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>label&#x8BED;&#x53E5;<br>&#x7528;&#x4E86;&#x90A3;&#x4E48;&#x4E45;JS&#xFF0C;&#x4ECA;&#x5929;&#x4E4B;&#x524D;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;label&#x8FD9;&#x4E2A;&#x8BED;&#x53E5;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x6240;&#x4EE5;&#x8BF4;JS&#x5165;&#x95E8;&#x5BB9;&#x6613;&#xFF0C;&#x7CBE;&#x901A;&#x96BE;&#x554A;&#x554A;&#x3002;&#x3002;label&#x8BED;&#x53E5;&#x4E3B;&#x8981;&#x662F;&#x4E0E;for&#x5FAA;&#x73AF;&#x914D;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x7ED3;&#x5408;break&#x548C;continue&#xFF0C;&#x53EF;&#x4EE5;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;&#x3002;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x7ED3;&#x5408;break&#xFF0C;continue&#x540C;&#x7406;</div><div class="line">outLoop:</div><div class="line">for(var i=0; i&lt;4; i++){</div><div class="line">    innerLoop:</div><div class="line">    for(var j=0; j&lt;4; j++){</div><div class="line">        if(i==2 &amp;&amp; j==2){</div><div class="line">            break outLoop;</div><div class="line">        }</div><div class="line">        console.log(&apos;i:&apos;+i+&quot;,j:&quot;+j);</div><div class="line">    }</div><div class="line">}</div><div class="line">// &#x8F93;&#x51FA;&#x503C;&#xFF1A;</div><div class="line"> i:0,j:0</div><div class="line"> i:0,j:1</div><div class="line"> i:0,j:2</div><div class="line"> i:1,j:0</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p>&#x672C;&#x6587;&#x4E3A;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x5C0A;&#x91CD;&#x8F9B;&#x52E4;&#x52B3;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x6458;&#x8981;&#x3001;&#x63A8;&#x8350;&#x6216;&#x805A;&#x5408;&#xFF0C;&#x4F46;&#x5B8C;&#x6574;&#x8F6C;&#x8F7D;&#x9700;&#x7ECF;&#x8FC7;&#x672C;&#x4EBA;&#x540C;&#x610F;&#xFF0C;&#x672C;&#x4EBA;&#x90AE;&#x7BB1; miao.hnlk@gmail.com<br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/09/20/read-book-professional-javascript4" target="_blank" rel="external">http://supermaryy.com/2016/09/20/read-book-professional-javascript4</a></p>
+</blockquote>
+<p>Reference&#xFF1A;</p>
+<p>^2:<a href="http://www.tuicool.com/articles/VJryYb" target="_blank" rel="external">js&#x4E2D;&#x4F4D;&#x8FD0;&#x7B97;&#x7684;&#x8FD0;&#x7528;</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x6458;&amp;#x8981;&amp;#xFF1A;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&amp;#x503C;&amp;#x4E3A;null&amp;#x548C;undefined&amp;#xFF0C;ES3&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;ES5&amp;#x7EC8;&amp;#x6B62;&amp;#x5FAA;&amp;#x73AF;&amp;#xFF0C;&amp;#x6545;&amp;#x4F7F;&amp;#x7528;&amp;#x524D;&amp;#x9700;&amp;#x8981;&amp;#x68C0;&amp;#x6D4B;&amp;#x503C;&amp;#x662F;&amp;#x5426;&amp;#x4E3A;null&amp;#x548C;undefined&lt;/li&gt;
+&lt;li&gt;JS&amp;#x4E0D;&amp;#x5B58;&amp;#x5728;&amp;#x5757;&amp;#x7EA7;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#xFF0C;&amp;#x6240;&amp;#x4EE5;for&amp;#x5FAA;&amp;#x73AF;&amp;#x4E2D;&amp;#x5B9A;&amp;#x4E49;&amp;#x7684;&amp;#x53D8;&amp;#x91CF;&amp;#xFF0C;&amp;#x5FAA;&amp;#x73AF;&amp;#x5916;&amp;#x53EF;&amp;#x8BBF;&amp;#x95EE;&lt;/li&gt;
+&lt;li&gt;label&amp;#x8BED;&amp;#x53E5;&amp;#xFF0C;&amp;#x7ED9;&amp;#x5FAA;&amp;#x73AF;&amp;#x8D77;&amp;#x4E2A;&amp;#x540D;&amp;#x5B57;loopName&amp;#xFF0C;&amp;#x9700;&amp;#x8981;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x5C31;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;&amp;#x5FAA;&amp;#x73AF;&amp;#x4E2D;&amp;#x7528;break loopName&amp;#x6765;&amp;#x8C03;&amp;#x51FA;&amp;#x5FAA;&amp;#x73AF;&amp;#xFF0C;&amp;#x6216;&amp;#x8005;continue loopName&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+    
+    
+      <category term="红皮书" scheme="http://yoursite.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
+    
+      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>Javascript基础3</title>
@@ -1075,35 +1134,6 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
   </entry>
   
   <entry>
-    <title>MongoDB使用过程踩坑小记</title>
-    <link href="http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/"/>
-    <id>http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</id>
-    <published>2016-06-02T05:30:00.000Z</published>
-    <updated>2016-09-11T11:30:21.958Z</updated>
-    
-    <content type="html"><![CDATA[<p>&#x5728;windows&#x4E0B;&#x4F7F;&#x7528;Mongodb&#x8C8C;&#x4F3C;&#x6709;&#x597D;&#x591A;&#x5751;&#xFF0C;&#x5FEB;&#x641E;&#x5B8C;&#x4E86;&#x624D;&#x60F3;&#x5230;&#x8981;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x4E8E;&#x662F;&#x53EA;&#x8BB0;&#x4E86;&#x6700;&#x540E;&#x51E0;&#x4E2A;&#x5751;&#x5751;&#xFF0C;&#x6709;&#x7684;&#x8FD8;&#x8BB0;&#x5F97;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#xFF0C;Anyway&#xFF0C;&#x80FD;&#x5E2E;&#x52A9;&#x5230;&#x9700;&#x8981;&#x7684;&#x4EBA;&#x5C31;&#x597D;~ Why so serious&#xFF1F;<br><a id="more"></a><br>&#x4E00;&#x5F00;&#x59CB;&#x62A5;&#x9519;rc=56&#xFF0C;&#x6709;&#x4E2A;&#x63D2;&#x4EF6;&#x6CA1;&#x88C5;&#xFF0C;&#x53C2;&#x8003;&#x4E86;&#x597D;&#x591A;&#x6559;&#x7A0B;&#xFF0C;&#x6700;&#x540E;&#x6309;&#x8FD9;&#x4E2A;<a href="http://www.tuicool.com/articles/ruqU32" title="win7 &#x5B89;&#x88C5; mongodb &#x7EDD;&#x5BF9;&#x6B63;&#x786E;" target="_blank" rel="external">&#x94FE;&#x63A5;</a>&#x88C5;&#x4E0B;&#x6765;&#x6BD4;&#x8F83;&#x987A;&#x5229;&#xFF1A;</p>
-<p>&#x88C5;&#x597D;&#x4EE5;&#x540E;&#x542F;&#x52A8;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x63D0;&#x793A;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hotfix KB2731284 or later update is installed, no need to zero-out data files?</div></pre></td></tr></table></figure></p>
-<p>&#x627E;&#x5230;<a href="http://stackoverflow.com/questions/30246428/hotfix-kb2731284-or-later-update-is-installed-no-need-to-zero-out-data-files?s=1|3.2969" target="_blank" rel="external">stackoverflow&#x4E0A;&#x4E00;&#x4E2A;&#x95EE;&#x9898;</a>&#xFF0C;&#x6700;&#x7EC8;&#x6307;&#x5411;<a href="http://mongodb.2344371.n4.nabble.com/mongod-don-t-start-after-server-crash-td1096.html" target="_blank" rel="external">&#x8FD9;&#x4E2A;&#x5730;&#x5740;</a></p>
-<p>&#x8BF4;&#x662F;windows&#x7684;&#x670D;&#x52A1;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x592A;&#x77ED;&#xFF0C;&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#x589E;&#x52A0;&#x5230;2min&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;<br>&#x8FD9;&#x90E8;&#x5206;&#x6CA1;&#x770B;&#x61C2;&#xFF1A;Here is a snippet of Powershell code that I use to make the edits to all of my MongoDB servers remotely.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Invoke-Command -ConnectionUri $uri -Credential $localCredentials `</div><div class="line">        -ScriptBlock {set-itemproperty -path HKLM:\SYSTEM\CurrentControlSet\Control -name WaitToKillServiceTimeout -value 120000}</div></pre></td></tr></table></figure></p>
-<p>&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#xFF1A; Windows&#x670D;&#x52A1;&#x7684;&#x542F;&#x52A8;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x9ED8;&#x8BA4;&#x662F;30&#x79D2;&#xFF0C;&#x4F46;&#x8FD9;&#x5E76;&#x5BF9;&#x5BF9;&#x6240;&#x6709;&#x670D;&#x52A1;&#x90FD;&#x6709;&#x6548;&#xFF0C;&#x6709;&#x4E9B;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x95F4;&#x53EF;&#x80FD;&#x8D85;&#x8FC7;30&#x79D2;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x6CE8;&#x518C;&#x8868;&#x9879;&#x4E3A;<code>HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/ServicesPipeTimeout</code>,&#x8FD9;&#x4E2A;&#x503C;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x3002;&#x7C7B;&#x578B;&#x4E3A;DWORD&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;&#x3002;&#x5F15;&#x7528;&#x81EA;<a href="http://blog.csdn.net/hanyu1980/article/details/2197455" target="_blank" rel="external">&#x8FD9;&#x91CC;</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;#x5728;windows&amp;#x4E0B;&amp;#x4F7F;&amp;#x7528;Mongodb&amp;#x8C8C;&amp;#x4F3C;&amp;#x6709;&amp;#x597D;&amp;#x591A;&amp;#x5751;&amp;#xFF0C;&amp;#x5FEB;&amp;#x641E;&amp;#x5B8C;&amp;#x4E86;&amp;#x624D;&amp;#x60F3;&amp;#x5230;&amp;#x8981;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E0B;&amp;#x6765;&amp;#xFF0C;&amp;#x4E8E;&amp;#x662F;&amp;#x53EA;&amp;#x8BB0;&amp;#x4E86;&amp;#x6700;&amp;#x540E;&amp;#x51E0;&amp;#x4E2A;&amp;#x5751;&amp;#x5751;&amp;#xFF0C;&amp;#x6709;&amp;#x7684;&amp;#x8FD8;&amp;#x8BB0;&amp;#x5F97;&amp;#x4E0D;&amp;#x592A;&amp;#x6E05;&amp;#x695A;&amp;#xFF0C;Anyway&amp;#xFF0C;&amp;#x80FD;&amp;#x5E2E;&amp;#x52A9;&amp;#x5230;&amp;#x9700;&amp;#x8981;&amp;#x7684;&amp;#x4EBA;&amp;#x5C31;&amp;#x597D;~ Why so serious&amp;#xFF1F;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="NodeJS" scheme="http://yoursite.com/categories/NodeJS/"/>
-    
-    
-      <category term="踩坑" scheme="http://yoursite.com/tags/%E8%B8%A9%E5%9D%91/"/>
-    
-      <category term="mongoDB" scheme="http://yoursite.com/tags/mongoDB/"/>
-    
-  </entry>
-  
-  <entry>
     <title>npm ERR! shasum check failed for报错，解决办法</title>
     <link href="http://yoursite.com/2016/06/02/npm%20ERR!%20shasum%20check%20failed%20for/"/>
     <id>http://yoursite.com/2016/06/02/npm ERR! shasum check failed for/</id>
@@ -1145,6 +1175,35 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
       <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
     
       <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB使用过程踩坑小记</title>
+    <link href="http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/"/>
+    <id>http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</id>
+    <published>2016-06-02T05:30:00.000Z</published>
+    <updated>2016-09-11T11:30:21.958Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x5728;windows&#x4E0B;&#x4F7F;&#x7528;Mongodb&#x8C8C;&#x4F3C;&#x6709;&#x597D;&#x591A;&#x5751;&#xFF0C;&#x5FEB;&#x641E;&#x5B8C;&#x4E86;&#x624D;&#x60F3;&#x5230;&#x8981;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x4E8E;&#x662F;&#x53EA;&#x8BB0;&#x4E86;&#x6700;&#x540E;&#x51E0;&#x4E2A;&#x5751;&#x5751;&#xFF0C;&#x6709;&#x7684;&#x8FD8;&#x8BB0;&#x5F97;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#xFF0C;Anyway&#xFF0C;&#x80FD;&#x5E2E;&#x52A9;&#x5230;&#x9700;&#x8981;&#x7684;&#x4EBA;&#x5C31;&#x597D;~ Why so serious&#xFF1F;<br><a id="more"></a><br>&#x4E00;&#x5F00;&#x59CB;&#x62A5;&#x9519;rc=56&#xFF0C;&#x6709;&#x4E2A;&#x63D2;&#x4EF6;&#x6CA1;&#x88C5;&#xFF0C;&#x53C2;&#x8003;&#x4E86;&#x597D;&#x591A;&#x6559;&#x7A0B;&#xFF0C;&#x6700;&#x540E;&#x6309;&#x8FD9;&#x4E2A;<a href="http://www.tuicool.com/articles/ruqU32" title="win7 &#x5B89;&#x88C5; mongodb &#x7EDD;&#x5BF9;&#x6B63;&#x786E;" target="_blank" rel="external">&#x94FE;&#x63A5;</a>&#x88C5;&#x4E0B;&#x6765;&#x6BD4;&#x8F83;&#x987A;&#x5229;&#xFF1A;</p>
+<p>&#x88C5;&#x597D;&#x4EE5;&#x540E;&#x542F;&#x52A8;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x63D0;&#x793A;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hotfix KB2731284 or later update is installed, no need to zero-out data files?</div></pre></td></tr></table></figure></p>
+<p>&#x627E;&#x5230;<a href="http://stackoverflow.com/questions/30246428/hotfix-kb2731284-or-later-update-is-installed-no-need-to-zero-out-data-files?s=1|3.2969" target="_blank" rel="external">stackoverflow&#x4E0A;&#x4E00;&#x4E2A;&#x95EE;&#x9898;</a>&#xFF0C;&#x6700;&#x7EC8;&#x6307;&#x5411;<a href="http://mongodb.2344371.n4.nabble.com/mongod-don-t-start-after-server-crash-td1096.html" target="_blank" rel="external">&#x8FD9;&#x4E2A;&#x5730;&#x5740;</a></p>
+<p>&#x8BF4;&#x662F;windows&#x7684;&#x670D;&#x52A1;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x592A;&#x77ED;&#xFF0C;&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#x589E;&#x52A0;&#x5230;2min&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;<br>&#x8FD9;&#x90E8;&#x5206;&#x6CA1;&#x770B;&#x61C2;&#xFF1A;Here is a snippet of Powershell code that I use to make the edits to all of my MongoDB servers remotely.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Invoke-Command -ConnectionUri $uri -Credential $localCredentials `</div><div class="line">        -ScriptBlock {set-itemproperty -path HKLM:\SYSTEM\CurrentControlSet\Control -name WaitToKillServiceTimeout -value 120000}</div></pre></td></tr></table></figure></p>
+<p>&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#xFF1A; Windows&#x670D;&#x52A1;&#x7684;&#x542F;&#x52A8;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x9ED8;&#x8BA4;&#x662F;30&#x79D2;&#xFF0C;&#x4F46;&#x8FD9;&#x5E76;&#x5BF9;&#x5BF9;&#x6240;&#x6709;&#x670D;&#x52A1;&#x90FD;&#x6709;&#x6548;&#xFF0C;&#x6709;&#x4E9B;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x95F4;&#x53EF;&#x80FD;&#x8D85;&#x8FC7;30&#x79D2;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x6CE8;&#x518C;&#x8868;&#x9879;&#x4E3A;<code>HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/ServicesPipeTimeout</code>,&#x8FD9;&#x4E2A;&#x503C;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x3002;&#x7C7B;&#x578B;&#x4E3A;DWORD&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;&#x3002;&#x5F15;&#x7528;&#x81EA;<a href="http://blog.csdn.net/hanyu1980/article/details/2197455" target="_blank" rel="external">&#x8FD9;&#x91CC;</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x5728;windows&amp;#x4E0B;&amp;#x4F7F;&amp;#x7528;Mongodb&amp;#x8C8C;&amp;#x4F3C;&amp;#x6709;&amp;#x597D;&amp;#x591A;&amp;#x5751;&amp;#xFF0C;&amp;#x5FEB;&amp;#x641E;&amp;#x5B8C;&amp;#x4E86;&amp;#x624D;&amp;#x60F3;&amp;#x5230;&amp;#x8981;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E0B;&amp;#x6765;&amp;#xFF0C;&amp;#x4E8E;&amp;#x662F;&amp;#x53EA;&amp;#x8BB0;&amp;#x4E86;&amp;#x6700;&amp;#x540E;&amp;#x51E0;&amp;#x4E2A;&amp;#x5751;&amp;#x5751;&amp;#xFF0C;&amp;#x6709;&amp;#x7684;&amp;#x8FD8;&amp;#x8BB0;&amp;#x5F97;&amp;#x4E0D;&amp;#x592A;&amp;#x6E05;&amp;#x695A;&amp;#xFF0C;Anyway&amp;#xFF0C;&amp;#x80FD;&amp;#x5E2E;&amp;#x52A9;&amp;#x5230;&amp;#x9700;&amp;#x8981;&amp;#x7684;&amp;#x4EBA;&amp;#x5C31;&amp;#x597D;~ Why so serious&amp;#xFF1F;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="NodeJS" scheme="http://yoursite.com/categories/NodeJS/"/>
+    
+    
+      <category term="踩坑" scheme="http://yoursite.com/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="mongoDB" scheme="http://yoursite.com/tags/mongoDB/"/>
     
   </entry>
   
