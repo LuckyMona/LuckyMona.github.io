@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-22T03:26:35.842Z</updated>
+  <updated>2016-10-29T04:43:13.006Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/10/22/developing-a-simple-web-server-with-node-js/"/>
     <id>http://yoursite.com/2016/10/22/developing-a-simple-web-server-with-node-js/</id>
     <published>2016-10-21T16:30:00.000Z</published>
-    <updated>2016-10-22T03:26:35.842Z</updated>
+    <updated>2016-10-29T04:43:13.006Z</updated>
     
     <content type="html"><![CDATA[<p>&#x6458;&#x8981;&#xFF1A;</p>
 <ol>
@@ -29,7 +29,7 @@
 </ol>
 <a id="more"></a>
 <blockquote>
-<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="external">http://supermaryy.com</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="developing-a-simple-web-server-with-node-js">developing-a-simple-web-server-with-node-js</a></p>
+<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="external">http://supermaryy.com</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/" target="_blank" rel="external">developing-a-simple-web-server-with-node-js</a></p>
 </blockquote>
 <h1 id="&#x4E00;&#x3001;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#xFF1A;Ubuntu&#x4E0B;node&#x548C;express&#x5B89;&#x88C5;"><a href="#&#x4E00;&#x3001;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#xFF1A;Ubuntu&#x4E0B;node&#x548C;express&#x5B89;&#x88C5;" class="headerlink" title="&#x4E00;&#x3001;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#xFF1A;Ubuntu&#x4E0B;node&#x548C;express&#x5B89;&#x88C5;"></a>&#x4E00;&#x3001;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#xFF1A;Ubuntu&#x4E0B;node&#x548C;express&#x5B89;&#x88C5;</h1><p>&#x7B2C;&#x4E00;&#x6B21;&#x73A9;ubuntu&#x52A0;&#x4E0A;&#x516C;&#x53F8;&#x7F51;&#x7EDC;&#x6BD4;&#x8F83;&#x5F31;&#x9E21;&#x9650;&#x5236;&#x4E86;&#x597D;&#x591A;&#x7F51;&#x7AD9;&#xFF0C;node&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x5B89;&#x88C5;&#x5305;&#x4E0B;&#x8F7D;&#x4E0D;&#x4E86;&#xFF0C;&#x4E00;&#x5F00;&#x59CB;&#x88C5;node&#x8FD8;&#x8D39;&#x4E86;&#x8001;&#x5927;&#x52B2;&#xFF0C;&#x8FDE;&#x6EDA;&#x5E26;&#x722C;&#x88C5;&#x4E0A;&#x4E86;node&#xFF0C;&#x73B0;&#x5728;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x600E;&#x4E48;&#x5B89;&#x88C5;&#x7684;&#xFF0C;&#x4E0D;&#x7136;&#x4EE5;&#x540E;&#x7528;&#x5230;&#x8FD8;&#x5F97;&#x91CD;&#x65B0;&#x6478;&#x7D22;&#x3002;&#x5982;&#x6709;&#x9519;&#x6F0F;&#xFF0C;&#x6B22;&#x8FCE;&#x6279;&#x8BC4;&#x3002;</p>
 <h2 id="1-Node&#x5B89;&#x88C5;"><a href="#1-Node&#x5B89;&#x88C5;" class="headerlink" title="1. Node&#x5B89;&#x88C5;"></a>1. Node&#x5B89;&#x88C5;</h2><h3 id="1-1&#x5173;&#x4E8E;node&#x7248;&#x672C;"><a href="#1-1&#x5173;&#x4E8E;node&#x7248;&#x672C;" class="headerlink" title="1.1&#x5173;&#x4E8E;node&#x7248;&#x672C;"></a>1.1&#x5173;&#x4E8E;node&#x7248;&#x672C;</h3><p>node&#x67E5;&#x770B;&#x7248;&#x672C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;node &#x2013;v&#xFF0C;&#x6211;&#x88C5;&#x4E0A;&#x540E;&#x67E5;&#x770B;&#x663E;&#x793A;&#x662F;0.10.x&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4F46;&#x662F;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x90FD;&#x662F;4.x.x&#x548C;6.x.x&#x7684;&#x7248;&#x672C;&#x4E86;&#xFF0C;&#x5F88;&#x660E;&#x663E;&#x8FD9;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x540C;&#x7684;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x4F53;&#x7CFB;&#x3002;&#x67E5;&#x5230;&#x4E8C;&#x8005;&#x533A;&#x522B;&#x8BF4;&#xFF1A;0.x.x&#x662F;Joyent&#x516C;&#x53F8;&#x7EF4;&#x62A4;.&#x8FDB;&#x5C55;&#x7F13;&#x6162;&#xFF0C;&#x4F46;&#x662F;&#x7A33;&#x5B9A;&#xFF1B;4.,5.*&#x90FD;&#x662F;&#x7531;&#x7F51;&#x53CB;&#x7EF4;&#x62A4;&#x7684;&#xFF0C;&#x76F8;&#x5BF9;&#x7684;&#x8FDB;&#x5C55;&#x5FEB;&#xFF0C;&#x589E;&#x52A0;&#x548C;&#x8BB8;&#x591A;&#x65B0;&#x529F;&#x80FD;&#xFF0C;io.js&#x4E5F;&#x662F;&#x6307;&#x7684;&#x8FD9;&#x4E2A;&#x5F00;&#x6E90;&#x7248;&#x672C;&#x3002;&#x5076;&#x6570;&#x5F00;&#x5934;&#x7684;&#x662F;&#x7A33;&#x5B9A;&#x7248;&#xFF0C;&#x5947;&#x6570;&#x5F00;&#x5934;&#x7684;&#x5F00;&#x53D1;&#x7248;&#x5C31;&#x662F;&#x4F1A;&#x4E0D;&#x65AD;&#x53D8;&#x5316;&#x66F4;&#x65B0;&#xFF0C;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x7A33;&#x5B9A;&#x7248;&#x672C;&#x505A;&#x6D4B;&#x8BD5;&#x5DEE;&#x4E0D;&#x591A;&#x7684;&#x610F;&#x601D;^1&#x3002;&#x5173;&#x4E8E;node.js&#x548C;io.js&#x80CC;&#x540E;&#x8FD8;&#x6709;&#x4E00;&#x6BB5;&#x7CBE;&#x5F69;&#x7684;&#x6545;&#x4E8B;^2&#x3002;</p>
@@ -48,7 +48,7 @@
 <p>&#x5176;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x662F;&#xFF1A;<code>app.METHOD(PATH, HANDLER)</code>&#xFF0C;&#x8FD9;&#x91CC;&#x7684;method&#x53EF;&#x4EE5;&#x662F;get&#x3001;post&#xFF0C;PATH&#x5C31;&#x662F;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;&#x7684;&#x5730;&#x5740;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;HANDLER&#x51FD;&#x6570;&#x91CC;&#x9762;&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x8BBE;&#x5B9A;&#x3002;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x8FD9;&#x4E09;&#x9879;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x548C;&#x670D;&#x52A1;&#x5668;&#x76F8;&#x5E94;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x4E86;&#x3002;                                             </p>
 <hr>
 <blockquote>
-<p>&#x672C;&#x6587;&#x4E3A;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x5C0A;&#x91CD;&#x8F9B;&#x52E4;&#x52B3;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x6458;&#x8981;&#x3001;&#x63A8;&#x8350;&#x6216;&#x805A;&#x5408;&#xFF0C;&#x4F46;&#x5B8C;&#x6574;&#x8F6C;&#x8F7D;&#x9700;&#x7ECF;&#x8FC7;&#x672C;&#x4EBA;&#x540C;&#x610F;&#xFF0C;&#x672C;&#x4EBA;&#x90AE;&#x7BB1; miao.hnlk@gmail.com<br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="developing-a-simple-web-server-with-node-js">developing-a-simple-web-server-with-node-js</a></p>
+<p>&#x672C;&#x6587;&#x4E3A;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x5C0A;&#x91CD;&#x8F9B;&#x52E4;&#x52B3;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x6458;&#x8981;&#x3001;&#x63A8;&#x8350;&#x6216;&#x805A;&#x5408;&#xFF0C;&#x4F46;&#x5B8C;&#x6574;&#x8F6C;&#x8F7D;&#x9700;&#x7ECF;&#x8FC7;&#x672C;&#x4EBA;&#x540C;&#x610F;&#xFF0C;&#x672C;&#x4EBA;&#x90AE;&#x7BB1; miao.hnlk@gmail.com<br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/" target="_blank" rel="external">developing-a-simple-web-server-with-node-js</a></p>
 </blockquote>
 <p>Reference&#xFF1A;</p>
 <p>^1:<a href="http://cnodejs.org/topic/5762549a50312f1107e615d7" target="_blank" rel="external"> nodejs&#x5404;&#x7248;&#x672C;&#x7684;&#x533A;&#x522B;</a><br>^2:<a href="http://www.infoq.com/cn/articles/node-js-and-io-js/" target="_blank" rel="external"> Node.js&#x4E0E;io.js&#x90A3;&#x4E9B;&#x4E8B;&#x513F;</a><br>^3:<a href="http://www.cnblogs.com/chenxizhang/p/5222918.html" target="_blank" rel="external">&#x5728;Linux&#xFF08;ubuntu server&#xFF09;&#x4E0A;&#x9762;&#x5B89;&#x88C5;NodeJS&#x7684;&#x6B63;&#x786E;&#x59FF;&#x52BF;</a><br>^4:<a href="http://expressjs.com/en/starter/installing.html" target="_blank" rel="external">expressjs &#x5B98;&#x7F51;</a></p>
