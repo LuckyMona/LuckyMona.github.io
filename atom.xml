@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://supermaryy.com/"/>
   <updated>2016-10-30T14:55:55.636Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://supermaryy.com/</id>
   
   <author>
     <name>superMaryyy</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>前端中关于编码和转码的知识小总结</title>
-    <link href="http://yoursite.com/2016/10/30/knowledge-about-encoding-and-transcoding/"/>
-    <id>http://yoursite.com/2016/10/30/knowledge-about-encoding-and-transcoding/</id>
+    <link href="http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/"/>
+    <id>http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</id>
     <published>2016-10-30T06:30:00.000Z</published>
     <updated>2016-10-30T14:55:55.636Z</updated>
     
@@ -142,21 +142,21 @@
     
     </summary>
     
-      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/categories/Javascript/"/>
     
     
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://supermaryy.com/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+      <category term="编码" scheme="http://supermaryy.com/tags/%E7%BC%96%E7%A0%81/"/>
     
-      <category term="转码" scheme="http://yoursite.com/tags/%E8%BD%AC%E7%A0%81/"/>
+      <category term="转码" scheme="http://supermaryy.com/tags/%E8%BD%AC%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>使用Node.js搭建简单Web服务器</title>
-    <link href="http://yoursite.com/2016/10/22/developing-a-simple-web-server-with-node-js/"/>
-    <id>http://yoursite.com/2016/10/22/developing-a-simple-web-server-with-node-js/</id>
+    <link href="http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/"/>
+    <id>http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/</id>
     <published>2016-10-21T16:30:00.000Z</published>
     <updated>2016-10-29T04:43:13.006Z</updated>
     
@@ -202,23 +202,23 @@
     
     </summary>
     
-      <category term="Node.js" scheme="http://yoursite.com/categories/Node-js/"/>
+      <category term="Node.js" scheme="http://supermaryy.com/categories/Node-js/"/>
     
     
-      <category term="Node.js" scheme="http://yoursite.com/tags/Node-js/"/>
+      <category term="Node.js" scheme="http://supermaryy.com/tags/Node-js/"/>
     
-      <category term="Express" scheme="http://yoursite.com/tags/Express/"/>
+      <category term="Express" scheme="http://supermaryy.com/tags/Express/"/>
     
-      <category term="web server" scheme="http://yoursite.com/tags/web-server/"/>
+      <category term="web server" scheme="http://supermaryy.com/tags/web-server/"/>
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="http://supermaryy.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Javascript基础4</title>
-    <link href="http://yoursite.com/2016/09/20/read-book-professional-javascript4/"/>
-    <id>http://yoursite.com/2016/09/20/read-book-professional-javascript4/</id>
+    <link href="http://supermaryy.com/2016/09/20/read-book-professional-javascript4/"/>
+    <id>http://supermaryy.com/2016/09/20/read-book-professional-javascript4/</id>
     <published>2016-09-20T14:00:00.000Z</published>
     <updated>2016-09-28T14:58:47.580Z</updated>
     
@@ -279,21 +279,21 @@
     
     </summary>
     
-      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/categories/Javascript/"/>
     
     
-      <category term="红皮书" scheme="http://yoursite.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
+      <category term="红皮书" scheme="http://supermaryy.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
     
-      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://supermaryy.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>Javascript基础3</title>
-    <link href="http://yoursite.com/2016/09/17/read-book-professional-javascript3/"/>
-    <id>http://yoursite.com/2016/09/17/read-book-professional-javascript3/</id>
+    <link href="http://supermaryy.com/2016/09/17/read-book-professional-javascript3/"/>
+    <id>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</id>
     <published>2016-09-17T08:00:00.000Z</published>
     <updated>2016-09-19T01:35:47.098Z</updated>
     
@@ -508,21 +508,21 @@
     
     </summary>
     
-      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/categories/Javascript/"/>
     
     
-      <category term="红皮书" scheme="http://yoursite.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
+      <category term="红皮书" scheme="http://supermaryy.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
     
-      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://supermaryy.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>Javascript基础2</title>
-    <link href="http://yoursite.com/2016/09/17/read-book-professional-javascript2/"/>
-    <id>http://yoursite.com/2016/09/17/read-book-professional-javascript2/</id>
+    <link href="http://supermaryy.com/2016/09/17/read-book-professional-javascript2/"/>
+    <id>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</id>
     <published>2016-09-17T07:00:00.000Z</published>
     <updated>2016-09-19T01:28:21.488Z</updated>
     
@@ -711,21 +711,21 @@
     
     </summary>
     
-      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/categories/Javascript/"/>
     
     
-      <category term="红皮书" scheme="http://yoursite.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
+      <category term="红皮书" scheme="http://supermaryy.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
     
-      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://supermaryy.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>Javascript基础</title>
-    <link href="http://yoursite.com/2016/09/11/read-book-professional-javascript1/"/>
-    <id>http://yoursite.com/2016/09/11/read-book-professional-javascript1/</id>
+    <link href="http://supermaryy.com/2016/09/11/read-book-professional-javascript1/"/>
+    <id>http://supermaryy.com/2016/09/11/read-book-professional-javascript1/</id>
     <published>2016-09-11T11:10:00.000Z</published>
     <updated>2016-09-19T01:27:52.116Z</updated>
     
@@ -832,19 +832,19 @@
     
     </summary>
     
-      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/categories/Javascript/"/>
     
     
-      <category term="红皮书" scheme="http://yoursite.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
+      <category term="红皮书" scheme="http://supermaryy.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
     
-      <category term="Javascript" scheme="http://yoursite.com/tags/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>总结向↗CSS居中常用套路</title>
-    <link href="http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/"/>
-    <id>http://yoursite.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/</id>
+    <link href="http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/"/>
+    <id>http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/</id>
     <published>2016-09-08T13:00:00.000Z</published>
     <updated>2016-09-10T11:23:03.853Z</updated>
     
@@ -982,25 +982,25 @@
     
     </summary>
     
-      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+      <category term="CSS" scheme="http://supermaryy.com/categories/CSS/"/>
     
     
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+      <category term="CSS" scheme="http://supermaryy.com/tags/CSS/"/>
     
-      <category term="垂直居中" scheme="http://yoursite.com/tags/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+      <category term="垂直居中" scheme="http://supermaryy.com/tags/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
     
-      <category term="水平居中" scheme="http://yoursite.com/tags/%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/"/>
+      <category term="水平居中" scheme="http://supermaryy.com/tags/%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/"/>
     
-      <category term="方案总结" scheme="http://yoursite.com/tags/%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/"/>
+      <category term="方案总结" scheme="http://supermaryy.com/tags/%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/"/>
     
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://supermaryy.com/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>支持离线和拍照上传的Hybrid APP开发小记</title>
-    <link href="http://yoursite.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/"/>
-    <id>http://yoursite.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/</id>
+    <link href="http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/"/>
+    <id>http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/</id>
     <published>2016-08-06T08:30:00.000Z</published>
     <updated>2016-09-11T11:27:21.553Z</updated>
     
@@ -1154,21 +1154,21 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
     
     </summary>
     
-      <category term="框架" scheme="http://yoursite.com/categories/%E6%A1%86%E6%9E%B6/"/>
+      <category term="框架" scheme="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="Hybrid APP" scheme="http://yoursite.com/tags/Hybrid-APP/"/>
+      <category term="Hybrid APP" scheme="http://supermaryy.com/tags/Hybrid-APP/"/>
     
-      <category term="离线应用" scheme="http://yoursite.com/tags/%E7%A6%BB%E7%BA%BF%E5%BA%94%E7%94%A8/"/>
+      <category term="离线应用" scheme="http://supermaryy.com/tags/%E7%A6%BB%E7%BA%BF%E5%BA%94%E7%94%A8/"/>
     
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://supermaryy.com/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>ion-view、ng-repeat遇到$watch时产生的一个小坑</title>
-    <link href="http://yoursite.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/"/>
-    <id>http://yoursite.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/</id>
+    <link href="http://supermaryy.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/"/>
+    <id>http://supermaryy.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/</id>
     <published>2016-07-11T13:31:00.000Z</published>
     <updated>2016-09-11T11:28:25.099Z</updated>
     
@@ -1194,23 +1194,23 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
     
     </summary>
     
-      <category term="框架" scheme="http://yoursite.com/categories/%E6%A1%86%E6%9E%B6/"/>
+      <category term="框架" scheme="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="ionic" scheme="http://yoursite.com/tags/ionic/"/>
+      <category term="ionic" scheme="http://supermaryy.com/tags/ionic/"/>
     
-      <category term="angularJS" scheme="http://yoursite.com/tags/angularJS/"/>
+      <category term="angularJS" scheme="http://supermaryy.com/tags/angularJS/"/>
     
-      <category term="scope" scheme="http://yoursite.com/tags/scope/"/>
+      <category term="scope" scheme="http://supermaryy.com/tags/scope/"/>
     
-      <category term="ion-radio" scheme="http://yoursite.com/tags/ion-radio/"/>
+      <category term="ion-radio" scheme="http://supermaryy.com/tags/ion-radio/"/>
     
   </entry>
   
   <entry>
     <title>使用Hexo踩坑小记</title>
-    <link href="http://yoursite.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/"/>
-    <id>http://yoursite.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/</id>
+    <link href="http://supermaryy.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/"/>
+    <id>http://supermaryy.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/</id>
     <published>2016-07-02T05:30:00.000Z</published>
     <updated>2016-09-11T11:29:37.362Z</updated>
     
@@ -1266,23 +1266,23 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
     
     </summary>
     
-      <category term="框架" scheme="http://yoursite.com/categories/%E6%A1%86%E6%9E%B6/"/>
+      <category term="框架" scheme="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://supermaryy.com/tags/Hexo/"/>
     
-      <category term="踩坑" scheme="http://yoursite.com/tags/%E8%B8%A9%E5%9D%91/"/>
+      <category term="踩坑" scheme="http://supermaryy.com/tags/%E8%B8%A9%E5%9D%91/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://supermaryy.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="七牛云" scheme="http://yoursite.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+      <category term="七牛云" scheme="http://supermaryy.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>ionic + angularJS开发Hybrid App开发环境配置及打包踩坑记</title>
-    <link href="http://yoursite.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/"/>
-    <id>http://yoursite.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/</id>
+    <link href="http://supermaryy.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/"/>
+    <id>http://supermaryy.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/</id>
     <published>2016-06-14T05:30:00.000Z</published>
     <updated>2016-09-11T11:29:18.226Z</updated>
     
@@ -1336,23 +1336,23 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
     
     </summary>
     
-      <category term="框架" scheme="http://yoursite.com/categories/%E6%A1%86%E6%9E%B6/"/>
+      <category term="框架" scheme="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="ionic" scheme="http://yoursite.com/tags/ionic/"/>
+      <category term="ionic" scheme="http://supermaryy.com/tags/ionic/"/>
     
-      <category term="angularJS2" scheme="http://yoursite.com/tags/angularJS2/"/>
+      <category term="angularJS2" scheme="http://supermaryy.com/tags/angularJS2/"/>
     
-      <category term="开发环境" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+      <category term="开发环境" scheme="http://supermaryy.com/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     
-      <category term="webapp" scheme="http://yoursite.com/tags/webapp/"/>
+      <category term="webapp" scheme="http://supermaryy.com/tags/webapp/"/>
     
   </entry>
   
   <entry>
     <title>npm ERR! shasum check failed for报错，解决办法</title>
-    <link href="http://yoursite.com/2016/06/02/npm%20ERR!%20shasum%20check%20failed%20for/"/>
-    <id>http://yoursite.com/2016/06/02/npm ERR! shasum check failed for/</id>
+    <link href="http://supermaryy.com/2016/06/02/npm%20ERR!%20shasum%20check%20failed%20for/"/>
+    <id>http://supermaryy.com/2016/06/02/npm ERR! shasum check failed for/</id>
     <published>2016-06-02T05:30:00.000Z</published>
     <updated>2016-09-11T11:30:18.745Z</updated>
     
@@ -1383,21 +1383,21 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
     
     </summary>
     
-      <category term="NodeJS" scheme="http://yoursite.com/categories/NodeJS/"/>
+      <category term="NodeJS" scheme="http://supermaryy.com/categories/NodeJS/"/>
     
     
-      <category term="踩坑" scheme="http://yoursite.com/tags/%E8%B8%A9%E5%9D%91/"/>
+      <category term="踩坑" scheme="http://supermaryy.com/tags/%E8%B8%A9%E5%9D%91/"/>
     
-      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+      <category term="npm" scheme="http://supermaryy.com/tags/npm/"/>
     
-      <category term="nodeJS" scheme="http://yoursite.com/tags/nodeJS/"/>
+      <category term="nodeJS" scheme="http://supermaryy.com/tags/nodeJS/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB使用过程踩坑小记</title>
-    <link href="http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/"/>
-    <id>http://yoursite.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</id>
+    <link href="http://supermaryy.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/"/>
+    <id>http://supermaryy.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</id>
     <published>2016-06-02T05:30:00.000Z</published>
     <updated>2016-09-11T11:30:21.958Z</updated>
     
@@ -1414,19 +1414,19 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
     
     </summary>
     
-      <category term="NodeJS" scheme="http://yoursite.com/categories/NodeJS/"/>
+      <category term="NodeJS" scheme="http://supermaryy.com/categories/NodeJS/"/>
     
     
-      <category term="踩坑" scheme="http://yoursite.com/tags/%E8%B8%A9%E5%9D%91/"/>
+      <category term="踩坑" scheme="http://supermaryy.com/tags/%E8%B8%A9%E5%9D%91/"/>
     
-      <category term="mongoDB" scheme="http://yoursite.com/tags/mongoDB/"/>
+      <category term="mongoDB" scheme="http://supermaryy.com/tags/mongoDB/"/>
     
   </entry>
   
   <entry>
     <title>onunload用于移除事件处理程序的疑问</title>
-    <link href="http://yoursite.com/2016/05/16/Question_About_Onunload/"/>
-    <id>http://yoursite.com/2016/05/16/Question_About_Onunload/</id>
+    <link href="http://supermaryy.com/2016/05/16/Question_About_Onunload/"/>
+    <id>http://supermaryy.com/2016/05/16/Question_About_Onunload/</id>
     <published>2016-05-16T05:30:00.000Z</published>
     <updated>2016-09-11T11:31:00.382Z</updated>
     
@@ -1448,18 +1448,18 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
     
     </summary>
     
-      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+      <category term="Javascript" scheme="http://supermaryy.com/categories/Javascript/"/>
     
     
-      <category term="onunload" scheme="http://yoursite.com/tags/onunload/"/>
+      <category term="onunload" scheme="http://supermaryy.com/tags/onunload/"/>
     
-      <category term="红皮书" scheme="http://yoursite.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
+      <category term="红皮书" scheme="http://supermaryy.com/tags/%E7%BA%A2%E7%9A%AE%E4%B9%A6/"/>
     
-      <category term="高程" scheme="http://yoursite.com/tags/%E9%AB%98%E7%A8%8B/"/>
+      <category term="高程" scheme="http://supermaryy.com/tags/%E9%AB%98%E7%A8%8B/"/>
     
-      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://supermaryy.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="存疑" scheme="http://yoursite.com/tags/%E5%AD%98%E7%96%91/"/>
+      <category term="存疑" scheme="http://supermaryy.com/tags/%E5%AD%98%E7%96%91/"/>
     
   </entry>
   
