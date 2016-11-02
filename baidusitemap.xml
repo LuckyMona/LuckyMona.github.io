@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</loc>
+    <lastmod>2016-10-30T14:55:55.636Z</lastmod>
+    <data>
+        <display>
+        <title>前端中关于编码和转码的知识小总结</title>
+        <pubTime>2016-10-30T06:30:00.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+        <tag>编码</tag>
+         
+        <tag>转码</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/</loc>
+    <lastmod>2016-10-29T04:43:13.006Z</lastmod>
+    <data>
+        <display>
+        <title>使用Node.js搭建简单Web服务器</title>
+        <pubTime>2016-10-21T16:30:00.000Z</pubTime>
+        
+        <tag>Node.js</tag>
+         
+        <tag>Express</tag>
+         
+        <tag>web server</tag>
+         
+        <tag>教程</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node.js" url="http://supermaryy.com/categories/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/09/20/read-book-professional-javascript4/</loc>
+    <lastmod>2016-09-28T14:58:47.580Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript基础4</title>
+        <pubTime>2016-09-20T14:00:00.000Z</pubTime>
+        
+        <tag>红皮书</tag>
+         
+        <tag>读书笔记</tag>
+         
+        <tag>Javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
+    <lastmod>2016-09-19T01:35:47.098Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript基础3</title>
+        <pubTime>2016-09-17T08:00:00.000Z</pubTime>
+        
+        <tag>红皮书</tag>
+         
+        <tag>读书笔记</tag>
+         
+        <tag>Javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
+    <lastmod>2016-09-19T01:28:21.488Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript基础2</title>
+        <pubTime>2016-09-17T07:00:00.000Z</pubTime>
+        
+        <tag>红皮书</tag>
+         
+        <tag>读书笔记</tag>
+         
+        <tag>Javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/09/11/read-book-professional-javascript1/</loc>
+    <lastmod>2016-09-19T01:27:52.116Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript基础</title>
+        <pubTime>2016-09-11T11:10:00.000Z</pubTime>
+        
+        <tag>红皮书</tag>
+         
+        <tag>Javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/05/16/Question_About_Onunload/</loc>
+    <lastmod>2016-09-11T11:31:00.382Z</lastmod>
+    <data>
+        <display>
+        <title>onunload用于移除事件处理程序的疑问</title>
+        <pubTime>2016-05-16T05:30:00.000Z</pubTime>
+        
+        <tag>onunload</tag>
+         
+        <tag>红皮书</tag>
+         
+        <tag>高程</tag>
+         
+        <tag>读书笔记</tag>
+         
+        <tag>存疑</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</loc>
+    <lastmod>2016-09-11T11:30:21.958Z</lastmod>
+    <data>
+        <display>
+        <title>MongoDB使用过程踩坑小记</title>
+        <pubTime>2016-06-02T05:30:00.000Z</pubTime>
+        
+        <tag>踩坑</tag>
+         
+        <tag>mongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="NodeJS" url="http://supermaryy.com/categories/NodeJS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/06/02/npm%20ERR!%20shasum%20check%20failed%20for/</loc>
+    <lastmod>2016-09-11T11:30:18.745Z</lastmod>
+    <data>
+        <display>
+        <title>npm ERR! shasum check failed for报错，解决办法</title>
+        <pubTime>2016-06-02T05:30:00.000Z</pubTime>
+        
+        <tag>踩坑</tag>
+         
+        <tag>npm</tag>
+         
+        <tag>nodeJS</tag>
+         
+         
+           
+             
+              <breadCrumb title="NodeJS" url="http://supermaryy.com/categories/NodeJS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/</loc>
+    <lastmod>2016-09-11T11:29:37.362Z</lastmod>
+    <data>
+        <display>
+        <title>使用Hexo踩坑小记</title>
+        <pubTime>2016-07-02T05:30:00.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>踩坑</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>七牛云</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/</loc>
+    <lastmod>2016-09-11T11:29:18.226Z</lastmod>
+    <data>
+        <display>
+        <title>ionic + angularJS开发Hybrid App开发环境配置及打包踩坑记</title>
+        <pubTime>2016-06-14T05:30:00.000Z</pubTime>
+        
+        <tag>ionic</tag>
+         
+        <tag>angularJS2</tag>
+         
+        <tag>开发环境</tag>
+         
+        <tag>webapp</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/</loc>
+    <lastmod>2016-09-11T11:28:25.099Z</lastmod>
+    <data>
+        <display>
+        <title>ion-view、ng-repeat遇到$watch时产生的一个小坑</title>
+        <pubTime>2016-07-11T13:31:00.000Z</pubTime>
+        
+        <tag>ionic</tag>
+         
+        <tag>angularJS</tag>
+         
+        <tag>scope</tag>
+         
+        <tag>ion-radio</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/</loc>
+    <lastmod>2016-09-11T11:27:21.553Z</lastmod>
+    <data>
+        <display>
+        <title>支持离线和拍照上传的Hybrid APP开发小记</title>
+        <pubTime>2016-08-06T08:30:00.000Z</pubTime>
+        
+        <tag>Hybrid APP</tag>
+         
+        <tag>离线应用</tag>
+         
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/</loc>
+    <lastmod>2016-09-10T11:23:03.853Z</lastmod>
+    <data>
+        <display>
+        <title>总结向↗CSS居中常用套路</title>
+        <pubTime>2016-09-08T13:00:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+        <tag>垂直居中</tag>
+         
+        <tag>水平居中</tag>
+         
+        <tag>方案总结</tag>
+         
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://supermaryy.com/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>
