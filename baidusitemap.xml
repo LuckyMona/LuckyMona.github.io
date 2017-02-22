@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2016/09/20/read-book-professional-javascript4/</loc>
+    <lastmod>2017-02-12T12:25:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript基础4</title>
+        <pubTime>2016-09-20T14:00:00.000Z</pubTime>
+        
+        <tag>红皮书</tag>
+         
+        <tag>读书笔记</tag>
+         
+        <tag>Javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</loc>
     <lastmod>2016-10-30T14:55:55.636Z</lastmod>
     <data>
@@ -47,30 +71,6 @@
            
              
               <breadCrumb title="Node.js" url="http://supermaryy.com/categories/Node-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2016/09/20/read-book-professional-javascript4/</loc>
-    <lastmod>2016-09-28T14:58:47.580Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript基础4</title>
-        <pubTime>2016-09-20T14:00:00.000Z</pubTime>
-        
-        <tag>红皮书</tag>
-         
-        <tag>读书笔记</tag>
-         
-        <tag>Javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
           
         </display>
     </data>
