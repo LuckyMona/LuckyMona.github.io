@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
-    <lastmod>2018-01-11T15:24:21.580Z</lastmod>
+    <lastmod>2018-01-13T13:12:46.831Z</lastmod>
     <data>
         <display>
         <title>前端常用存储技术总结</title>
@@ -273,9 +273,9 @@
         <title>使用Hexo踩坑小记</title>
         <pubTime>2016-07-02T05:30:00.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>踩坑</tag>
+         
+        <tag>Hexo</tag>
          
         <tag>博客</tag>
          
