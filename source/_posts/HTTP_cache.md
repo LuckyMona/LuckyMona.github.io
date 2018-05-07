@@ -20,7 +20,7 @@ comments: true
 
 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。设置缓存的好处：减少资源显示时间提升性能；减少服务器压力。HTTP缓存机制使用多个字段来实现缓存控制，把这些字段进行分类有利于记忆和加深理解，经过梳理总结我发现大家会对这些字段有以下几种分类方法：
 
-###1. 按照缓存判断的执行过程，分为：###
+### 1. 按照缓存判断的执行过程，分为：###
 
 参考自[【腾讯Bugly干货分享】彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法](https://zhuanlan.zhihu.com/p/24467558)
 
@@ -66,7 +66,7 @@ Expires:<当前时间>
 - 主要字段：Expires、Cache-Control、Etag / If-None-Match、Last-Modified / If-Modified-Since
 - 辅助字段：Vary、Date、Age
 
-###4.按照能否被请求头、响应头支持，分为：###
+### 4.按照能否被请求头、响应头支持，分为：###
 
 参考自[rfc2616 14.Header Field Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)
 
@@ -141,20 +141,20 @@ Expires:<当前时间>
 
 若报文中同时出现了 Pragma、Expires 和 Cache-Control，会以 Cache-Control 为准，其它Cache-Control值略
 
-####3.Etag / If-None-Match
+#### 3.Etag / If-None-Match
 
 - 服务器端为资源打的一个标记，标记资源有无修改，服务端资源修改后就修改Etag值
 - “W\”开头的Etag表示开启弱校验，当有了较多修改之后才会修改Etag值，默认使用强校验，即按字节进行对比
 
-####4.Last-Modified / If-Modified-Since
+#### 4.Last-Modified / If-Modified-Since
 
 - Last-Modified标记资源最后被修改的时间，是一个GMT格式的时间值
 - 如果在服务器上，一个资源被修改了，但其实际内容根本没发生改变，会因为Last-Modified时间匹配不上而返回了整个实体给客户端*（即使客户端缓存里有个一模一样的资源）*，所以通常配合Etag一起使用，可以达到较好的控制缓存的效果
 - 如果 Last-Modified 和 ETag 同时被使用，则要求它们的验证都必须通过才会返回304，若其中某个验证没通过，则服务器会按常规返回资源实体及200状态码。
 
-###2. 辅助字段：
+### 2. 辅助字段：
 
-####1.Vary
+#### 1.Vary
 
 参考[MDN|HTTP缓存](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ)
 
@@ -164,7 +164,7 @@ Expires:<当前时间>
 
 使用vary头有利于内容服务的动态多样性。例如，使用Vary: User-Agent头，缓存服务器需要通过UA判断是否使用缓存的页面。如果需要区分移动端和桌面端的展示内容，利用这种方式就能避免在不同的终端展示错误的布局。另外，它可以帮助google或者其他搜索引擎更好地发现页面的移动版本，并且告诉搜索引擎没有引入[Cloaking](https://en.wikipedia.org/wiki/Cloaking)。
 
-####2.Date和Age
+#### 2.Date和Age
 
 Date 是原服务器发送该资源响应报文的时间（GMT格式），如果你发现 Date 的时间与“当前时间”差别较大，或者连续F5刷新发现 Date 的值都没变化，则说明你当前请求是命中了代理服务器的缓存。
 
