@@ -86,31 +86,24 @@
 
 
 
-<meta name="description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-JS&amp;#x4E09;&amp;#x4E2A;&amp;#x7EC4;&amp;#x6210;&amp;#x90E8;&amp;#x5206;&amp;#xFF1A;ECMAScript &amp;#x3001;DOM&amp;#x3001;BOM&amp;#xFF1B;
-DOM&amp;#x4E09;&amp;#x7EA7;&amp;#x5206;&amp;#x522B;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4EC0;&amp;#x4E48">
+<meta name="description" content="摘要：  JS三个组成部分：ECMAScript 、DOM、BOM； DOM三级分别定义了什么； BOM主要定义了什么； BOM对象location、navigator、screen各自的属性和方法； If-Modified-Since； replace方法的特殊之处； screen、window、document概念区分及宽高属性获取； clientHeight / offsetHeight /">
+<meta name="keywords" content="红皮书,Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript基础">
 <meta property="og:url" content="http://supermaryy.com/2016/09/11/read-book-professional-javascript1/index.html">
-<meta property="og:site_name" content="Mary's blog">
-<meta property="og:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-JS&amp;#x4E09;&amp;#x4E2A;&amp;#x7EC4;&amp;#x6210;&amp;#x90E8;&amp;#x5206;&amp;#xFF1A;ECMAScript &amp;#x3001;DOM&amp;#x3001;BOM&amp;#xFF1B;
-DOM&amp;#x4E09;&amp;#x7EA7;&amp;#x5206;&amp;#x522B;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4EC0;&amp;#x4E48">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="摘要：  JS三个组成部分：ECMAScript 、DOM、BOM； DOM三级分别定义了什么； BOM主要定义了什么； BOM对象location、navigator、screen各自的属性和方法； If-Modified-Since； replace方法的特殊之处； screen、window、document概念区分及宽高属性获取； clientHeight / offsetHeight /">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/screen_availH.png?imageView/2/w/500/q/90">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/window_innerW.png?imageView/2/w/500/q/90">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/jquery_window_width.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/Dimensions-client.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/Dimensions-offset.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/Dimensions-scroll.png">
-<meta property="og:updated_time" content="2016-09-19T01:27:52.116Z">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript基础">
-<meta name="twitter:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-JS&amp;#x4E09;&amp;#x4E2A;&amp;#x7EC4;&amp;#x6210;&amp;#x90E8;&amp;#x5206;&amp;#xFF1A;ECMAScript &amp;#x3001;DOM&amp;#x3001;BOM&amp;#xFF1B;
-DOM&amp;#x4E09;&amp;#x7EA7;&amp;#x5206;&amp;#x522B;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E86;&amp;#x4EC0;&amp;#x4E48">
+<meta name="twitter:description" content="摘要：  JS三个组成部分：ECMAScript 、DOM、BOM； DOM三级分别定义了什么； BOM主要定义了什么； BOM对象location、navigator、screen各自的属性和方法； If-Modified-Since； replace方法的特殊之处； screen、window、document概念区分及宽高属性获取； clientHeight / offsetHeight /">
 <meta name="twitter:image" content="http://o798x2hdw.bkt.clouddn.com/screen_availH.png?imageView/2/w/500/q/90">
 
 
@@ -373,90 +366,90 @@ DOM&amp;#x4E09;&amp;#x7EA7;&amp;#x5206;&amp;#x522B;&amp;#x5B9A;&amp;#x4E49;&amp;
       
 
       
-        <p>&#x6458;&#x8981;&#xFF1A;</p>
-<ol>
-<li>JS&#x4E09;&#x4E2A;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF1A;ECMAScript &#x3001;DOM&#x3001;BOM&#xFF1B;</li>
-<li>DOM&#x4E09;&#x7EA7;&#x5206;&#x522B;&#x5B9A;&#x4E49;&#x4E86;&#x4EC0;&#x4E48;&#xFF1B;</li>
-<li>BOM&#x4E3B;&#x8981;&#x5B9A;&#x4E49;&#x4E86;&#x4EC0;&#x4E48;&#xFF1B;</li>
-<li>BOM&#x5BF9;&#x8C61;location&#x3001;navigator&#x3001;screen&#x5404;&#x81EA;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1B;</li>
-<li>If-Modified-Since&#xFF1B;</li>
-<li>replace&#x65B9;&#x6CD5;&#x7684;&#x7279;&#x6B8A;&#x4E4B;&#x5904;&#xFF1B;</li>
-<li>screen&#x3001;window&#x3001;document&#x6982;&#x5FF5;&#x533A;&#x5206;&#x53CA;&#x5BBD;&#x9AD8;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#xFF1B;</li>
-<li>clientHeight / offsetHeight / scrollHeight &#x4E09;&#x8005;&#x533A;&#x5206;&#xFF1B;</li>
-<li>&#x600E;&#x4E48;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6EDA;&#x5230;&#x5E95;&#xFF1B; </li>
+        <p>摘要：</p>
+<ol start="0">
+<li>JS三个组成部分：ECMAScript 、DOM、BOM；</li>
+<li>DOM三级分别定义了什么；</li>
+<li>BOM主要定义了什么；</li>
+<li>BOM对象location、navigator、screen各自的属性和方法；</li>
+<li>If-Modified-Since；</li>
+<li>replace方法的特殊之处；</li>
+<li>screen、window、document概念区分及宽高属性获取；</li>
+<li>clientHeight / offsetHeight / scrollHeight 三者区分；</li>
+<li>怎么判断是否滚到底； </li>
 </ol>
 <a id="more"></a>
 <blockquote>
-<p>by MaryTien from  <a href="http://supermaryy.com">http://supermaryy.com</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://luckymona.github.io/2016/09/11/read-book-professional-javascript1" target="_blank" rel="external">http://supermaryy.com/2016/09/11/read-book-professional-javascript1</a></p>
+<p>by MaryTien from  <a href="http://supermaryy.com">http://supermaryy.com</a><br>本文地址：<a href="http://luckymona.github.io/2016/09/11/read-book-professional-javascript1" target="_blank" rel="noopener">http://supermaryy.com/2016/09/11/read-book-professional-javascript1</a></p>
 </blockquote>
-<h1 id="&#x4E00;&#x3001;Javascript&#x57FA;&#x7840;"><a href="#&#x4E00;&#x3001;Javascript&#x57FA;&#x7840;" class="headerlink" title="&#x4E00;&#x3001;Javascript&#x57FA;&#x7840;"></a>&#x4E00;&#x3001;Javascript&#x57FA;&#x7840;</h1><h2 id="1-Javascript&#x7531;ECMAScript-DOM-BOM-&#x7EC4;&#x6210;"><a href="#1-Javascript&#x7531;ECMAScript-DOM-BOM-&#x7EC4;&#x6210;" class="headerlink" title="1. Javascript&#x7531;ECMAScript\DOM\BOM &#x7EC4;&#x6210;"></a>1. Javascript&#x7531;ECMAScript\DOM\BOM &#x7EC4;&#x6210;</h2><p>ECMAScript&#x89C4;&#x5B9A;&#x4E86;&#x8FD9;&#x95E8;&#x8BED;&#x8A00;&#x7684;&#x57FA;&#x7840;&#x8BED;&#x6CD5;&#xFF0C;Web&#x6D4F;&#x89C8;&#x5668;&#x53EA;&#x662F;ECMAScript&#x7684;&#x5BBF;&#x4E3B;&#x73AF;&#x5883;&#x4E4B;&#x4E00;&#xFF0C;&#x5176;&#x4ED6;&#x5B9E;&#x73B0;&#x8FD8;&#x6709;NodeJS&#x3001;AS&#x3002;</p>
-<h2 id="2-DOM"><a href="#2-DOM" class="headerlink" title="2. DOM"></a>2. DOM</h2><p>Document Object Model&#xFF0C;&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x8BBF;&#x95EE;&#x548C;&#x64CD;&#x4F5C;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#x7684;&#x63A5;&#x53E3;&#x548C;&#x65B9;&#x6CD5;</p>
+<h1 id="一、Javascript基础"><a href="#一、Javascript基础" class="headerlink" title="一、Javascript基础"></a>一、Javascript基础</h1><h2 id="1-Javascript由ECMAScript-DOM-BOM-组成"><a href="#1-Javascript由ECMAScript-DOM-BOM-组成" class="headerlink" title="1. Javascript由ECMAScript\DOM\BOM 组成"></a>1. Javascript由ECMAScript\DOM\BOM 组成</h2><p>ECMAScript规定了这门语言的基础语法，Web浏览器只是ECMAScript的宿主环境之一，其他实现还有NodeJS、AS。</p>
+<h2 id="2-DOM"><a href="#2-DOM" class="headerlink" title="2. DOM"></a>2. DOM</h2><p>Document Object Model，文档对象模型，定义了访问和操作网页内容的接口和方法</p>
 <ul>
-<li>DOM&#x4E00;&#x7EA7;&#xFF0C;&#x5B83;&#x628A;html&#x6587;&#x6863;&#x6620;&#x5C04;&#x4E3A;&#x8282;&#x70B9;&#x6811;&#xFF0C;</li>
-<li><p>DOM&#x4E8C;&#x7EA7;&#x5B9A;&#x4E49;&#x4E86;&#x64CD;&#x4F5C;&#x8282;&#x70B9;&#x7684;&#x65B9;&#x6CD5;&#x8303;&#x56F4;&#x548C;&#x904D;&#x5386;&#x3001;&#x9F20;&#x6807;&#x548C;&#x7528;&#x6237;&#x754C;&#x9762;&#x4E8B;&#x4EF6;&#x3001;&#x64CD;&#x7EB5;css&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<li>DOM一级，它把html文档映射为节点树，</li>
+<li><p>DOM二级定义了操作节点的方法范围和遍历、鼠标和用户界面事件、操纵css的方法：</p>
 <ul>
-<li>DOM&#x89C6;&#x56FE;&#xFF08;DOM Views&#xFF09;</li>
-<li>DOM&#x4E8B;&#x4EF6;&#xFF08;DOM Events&#xFF09;</li>
-<li>DOM&#x6837;&#x5F0F;&#xFF08;DOM Styles&#xFF09;</li>
-<li>DOM&#x8303;&#x56F4;&#x548C;&#x904D;&#x5386;&#xFF08;DOM Traversal and Range&#xFF09;</li>
+<li>DOM视图（DOM Views）</li>
+<li>DOM事件（DOM Events）</li>
+<li>DOM样式（DOM Styles）</li>
+<li>DOM范围和遍历（DOM Traversal and Range）</li>
 </ul>
 </li>
-<li><p>DOM&#x4E09;&#x7EA7;&#x8FDB;&#x4E00;&#x6B65;&#x6269;&#x5C55;&#xFF0C;&#x65B0;&#x589E;DOM&#x52A0;&#x8F7D;&#x548C;&#x4FDD;&#x5B58;&#x6A21;&#x5757;&#xFF08;DOM Load and save&#xFF09;&#xFF0C;DOM&#x9A8C;&#x8BC1;&#x6A21;&#x5757;&#xFF08;DOM Validation&#xFF09;</p>
+<li><p>DOM三级进一步扩展，新增DOM加载和保存模块（DOM Load and save），DOM验证模块（DOM Validation）</p>
 </li>
 </ul>
-<h2 id="3-BOM"><a href="#3-BOM" class="headerlink" title="3.BOM"></a>3.BOM</h2><p>Browser Object Model&#xFF0C;&#x5B9A;&#x4E49;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x4EA4;&#x4E92;&#x7684;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x3002;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;</p>
+<h2 id="3-BOM"><a href="#3-BOM" class="headerlink" title="3.BOM"></a>3.BOM</h2><p>Browser Object Model，定义与浏览器交互的接口方法。主要包括：</p>
 <ul>
-<li>&#x5F39;&#x51FA;&#x65B0;&#x7A97;&#x53E3;<code>window.open();</code></li>
-<li>&#x5BF9;&#x7A97;&#x53E3;&#x8FDB;&#x884C;&#x79FB;&#x52A8;&#x3001;&#x7F29;&#x653E;&#x3001;&#x5173;&#x95ED; <code>window.moveTo(); window.resizeTo(); window.close();</code></li>
-<li>location&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x52A0;&#x8F7D;&#x7F51;&#x9875;&#x7684;&#x4FE1;&#x606F;</li>
-<li>navigator&#x5BF9;&#x8C61;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#x4FE1;&#x606F;</li>
-<li>screen&#x5BF9;&#x8C61;&#xFF0C;&#x63D0;&#x4F9B;&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#x4FE1;&#x606F;</li>
+<li>弹出新窗口<code>window.open();</code></li>
+<li>对窗口进行移动、缩放、关闭 <code>window.moveTo(); window.resizeTo(); window.close();</code></li>
+<li>location对象，所加载网页的信息</li>
+<li>navigator对象，浏览器版本信息</li>
+<li>screen对象，提供屏幕分辨率信息</li>
 </ul>
-<h3 id="3-1-BOM&#x4E4B;location&#x5BF9;&#x8C61;"><a href="#3-1-BOM&#x4E4B;location&#x5BF9;&#x8C61;" class="headerlink" title="3.1 BOM&#x4E4B;location&#x5BF9;&#x8C61;"></a>3.1 BOM&#x4E4B;location&#x5BF9;&#x8C61;</h3><ul>
-<li>&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;window.location&#xFF0C;</li>
-<li>&#x5C5E;&#x6027;&#xFF1A;hash&#xFF08;&#x5F97;&#x5230;URL&#x4ECE;#&#x5F00;&#x59CB;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#xFF0C;host&#xFF0C;hostname&#xFF0C;href&#xFF0C;pathname&#xFF0C;port&#xFF0C;protocol&#xFF0C;search&#xFF08;&#x5F97;&#x5230;URL&#x4ECE;?&#x5F00;&#x59CB;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF09;</li>
-<li>&#x65B9;&#x6CD5;&#xFF1A;assign&#x3001;reload&#x3001;replace</li>
+<h3 id="3-1-BOM之location对象"><a href="#3-1-BOM之location对象" class="headerlink" title="3.1 BOM之location对象"></a>3.1 BOM之location对象</h3><ul>
+<li>访问方式window.location，</li>
+<li>属性：hash（得到URL从#开始的字符串），host，hostname，href，pathname，port，protocol，search（得到URL从?开始的字符串）</li>
+<li>方法：assign、reload、replace</li>
 </ul>
-<h4 id="assign&#x65B9;&#x6CD5;&#xFF1A;"><a href="#assign&#x65B9;&#x6CD5;&#xFF1A;" class="headerlink" title="assign&#x65B9;&#x6CD5;&#xFF1A;"></a>assign&#x65B9;&#x6CD5;&#xFF1A;</h4><p>window.location.assign(URL),&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x52A0;&#x8F7D;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x6863;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function assign(){</div><div class="line">        window.location.assign(&apos;anotherDoc.html&apos;);</div><div class="line">    }</div><div class="line">        </div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;p onclick=&quot;assign()&quot;&gt;hello&lt;/p&gt;</div></pre></td></tr></table></figure></p>
-<h4 id="reload&#x65B9;&#x6CD5;&#xFF1A;"><a href="#reload&#x65B9;&#x6CD5;&#xFF1A;" class="headerlink" title="reload&#x65B9;&#x6CD5;&#xFF1A;"></a>reload&#x65B9;&#x6CD5;&#xFF1A;</h4><p>window.location.reload(flase||force),&#x53EF;&#x4EE5;&#x6A21;&#x62DF;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5237;&#x65B0;&#x6309;&#x94AE;</p>
+<h4 id="assign方法："><a href="#assign方法：" class="headerlink" title="assign方法："></a>assign方法：</h4><p>window.location.assign(URL),会在当前窗口加载另一个文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    function assign()&#123;</span><br><span class="line">        window.location.assign(&apos;anotherDoc.html&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;p onclick=&quot;assign()&quot;&gt;hello&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="reload方法："><a href="#reload方法：" class="headerlink" title="reload方法："></a>reload方法：</h4><p>window.location.reload(flase||force),可以模拟浏览器的刷新按钮</p>
 <ul>
-<li>&#x53C2;&#x6570;&#x503C;&#x4E3A;false&#x6216;&#x4E0D;&#x586B;&#xFF0C;&#x6548;&#x679C;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x5237;&#x65B0;&#x6309;&#x94AE;&#x4E00;&#x6837;&#xFF0C;&#x4F7F;&#x7528;http&#x5934;If-Modified-Since&#x68C0;&#x6D4B;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6587;&#x6863;&#x6709;&#x6CA1;&#x6709;&#x6539;&#x53D8;&#xFF0C;&#x6CA1;&#x6709;&#x6539;&#x53D8;&#x5C31;&#x628A;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x663E;&#x793A;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6539;&#x53D8;&#x4E86;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x52A0;&#x8F7D;</li>
-<li>&#x53C2;&#x6570;&#x4E3A;force&#xFF0C;&#x6548;&#x679C;&#x4E0E;shift+&#x6D4F;&#x89C8;&#x5668;&#x5237;&#x65B0;&#x6309;&#x94AE;&#xFF0C;&#x76F8;&#x540C;&#xFF0C;&#x5F3A;&#x5236;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x52A0;&#x8F7D;<h4 id="http&#x5934;If-Modified-Since&#x5B9E;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;"><a href="#http&#x5934;If-Modified-Since&#x5B9E;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;" class="headerlink" title="http&#x5934;If-Modified-Since&#x5B9E;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;"></a>http&#x5934;If-Modified-Since&#x5B9E;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;</h4>&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x5199;&#x5728;http request header&#x91CC;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x9875;&#x9762;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x52A0;&#x8F7D;&#x5219;&#x4E0D;&#x5199;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x56DE;&#x6765;&#x540E;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;200&#xFF0C;&#x5E76;&#x5728;response header&#x4E2D;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Last-Modified&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x4EE3;&#x8868;&#x8BF7;&#x6C42;&#x7684;&#x6587;&#x4EF6;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x548C;&#x8BF7;&#x6C42;&#x6765;&#x7684;&#x8D44;&#x6E90;&#x7F13;&#x5B58;&#x4E0B;&#x6765;&#xFF0C;&#x8FD9;&#x65F6;&#xFF0C;&#x6309;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5237;&#x65B0;&#x6309;&#x94AE;&#x4E4B;&#x540E;&#xFF0C;&#x53D1;&#x8D77;&#x7B2C;&#x4E8C;&#x6B21;&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x5728;request header&#x4E2D;&#x52A0;&#x4E0A;If-Modified-Since&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x503C;&#x4E3A;&#x521A;&#x624D;&#x7684;Last-Modified&#x503C;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#x5C31;&#x628A;IMS&#x503C;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;Last-Modified&#x503C;&#x505A;&#x5BF9;&#x6BD4;&#xFF0C;&#x5982;&#x679C;&#x76F8;&#x540C;&#xFF0C;&#x8BC1;&#x660E;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;304(Not Modified)&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x4ECE;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x52A0;&#x8F7D;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;&#x8BC1;&#x660E;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x6539;&#x53D8;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;200&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x663E;&#x793A;&#x8BF7;&#x6C42;&#x56DE;&#x7684;&#x65B0;&#x5185;&#x5BB9;&#x3002;<h4 id="replace&#x65B9;&#x6CD5;&#xFF1A;"><a href="#replace&#x65B9;&#x6CD5;&#xFF1A;" class="headerlink" title="replace&#x65B9;&#x6CD5;&#xFF1A;"></a>replace&#x65B9;&#x6CD5;&#xFF1A;</h4>window.location.replace(newURL)&#xFF0C;&#x52A0;&#x8F7D;&#x65B0;URL&#x7684;&#x6587;&#x6863;&#x5185;&#x5BB9;&#xFF0C;&#x65B0;URL&#x5C06;&#x8986;&#x76D6;History&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5F53;&#x524D;&#x8BB0;&#x5F55;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x65B0;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x3002;&#x60F3;&#x4E0D;&#x5230;&#x4EC0;&#x4E48;&#x573A;&#x666F;&#x4F1A;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x6709;&#x4E00;&#x79CD;&#x573A;&#x666F;&#x662F;^1&#xFF0C;&#x4E25;&#x683C;&#x9650;&#x5236;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4E3A;&#x9632;&#x6B62;&#x540E;&#x9000;&#x540E;&#x91CD;&#x590D;&#x63D0;&#x4EA4;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8DF3;&#x8F6C;&#x65F6;&#x4F7F;&#x7528;replace&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x80FD;&#x540E;&#x9000;&#xFF0C;&#x9632;&#x6B62;&#x91CD;&#x590D;&#x63D0;&#x4EA4;&#x3002;</li>
+<li>参数值为false或不填，效果与浏览器刷新按钮一样，使用http头If-Modified-Since检测服务器上的文档有没有改变，没有改变就把浏览器缓存文件显示到浏览器中，如果改变了从服务器加载</li>
+<li>参数为force，效果与shift+浏览器刷新按钮，相同，强制从服务器加载<h4 id="http头If-Modified-Since实现浏览器缓存"><a href="#http头If-Modified-Since实现浏览器缓存" class="headerlink" title="http头If-Modified-Since实现浏览器缓存"></a>http头If-Modified-Since实现浏览器缓存</h4>发送请求时，写在http request header里面，如果页面是第一次加载则不写这个参数，第一次请求回来后，服务器返回200，并在response header中会返回一个Last-Modified，这是一个时间戳，代表请求的文件在服务器中最后修改的时间。浏览器会把这个时间戳和请求来的资源缓存下来，这时，按浏览器的刷新按钮之后，发起第二次请求，会在request header中加上If-Modified-Since这个字段，值为刚才的Last-Modified值，服务器收到请求就把IMS值与服务器上的Last-Modified值做对比，如果相同，证明文件没有发生改变，就返回304(Not Modified)，浏览器就从本地缓存加载文件，如果不相同，证明服务器上的文件已经改变，就返回200，浏览器显示请求回的新内容。<h4 id="replace方法："><a href="#replace方法：" class="headerlink" title="replace方法："></a>replace方法：</h4>window.location.replace(newURL)，加载新URL的文档内容，新URL将覆盖History对象中的当前记录，也就是不会产生新历史记录。想不到什么场景会需要这个功能，查了一下，有一种场景是^1，严格限制用户操作时，为防止后退后重复提交，可以在跳转时使用replace，这样就不能后退，防止重复提交。</li>
 </ul>
-<h4 id="&#x91CD;&#x5B9A;&#x5411;&#x65B9;&#x6CD5;&#x603B;&#x7ED3;"><a href="#&#x91CD;&#x5B9A;&#x5411;&#x65B9;&#x6CD5;&#x603B;&#x7ED3;" class="headerlink" title="&#x91CD;&#x5B9A;&#x5411;&#x65B9;&#x6CD5;&#x603B;&#x7ED3;"></a>&#x91CD;&#x5B9A;&#x5411;&#x65B9;&#x6CD5;&#x603B;&#x7ED3;</h4><p>window.location.href = newURL;<br>window.location.assign(newURL);<br>window.location.replace(newURL); &#x9644;&#x52A0;&#x4F5C;&#x7528;&#xFF1A;&#x4E0D;&#x4EA7;&#x751F;&#x65B0;History&#x8BB0;&#x5F55;</p>
-<h3 id="3-2-BOM&#x4E4B;Navigator&#x5BF9;&#x8C61;"><a href="#3-2-BOM&#x4E4B;Navigator&#x5BF9;&#x8C61;" class="headerlink" title="3.2 BOM&#x4E4B;Navigator&#x5BF9;&#x8C61;"></a>3.2 BOM&#x4E4B;Navigator&#x5BF9;&#x8C61;</h3><ol>
-<li>&#x81EA;&#x8BA4;&#x4E3A;&#x6BD4;&#x8F83;&#x6709;&#x7528;&#x7684;&#x5C5E;&#x6027;&#xFF1A;plugins&#xFF0C;userAgent&#xFF0C;cookieEnabled&#xFF0C;appVersion,onLine,&#x90FD;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;<br><code>window.navigator.plugins</code></li>
-<li>&#x4E00;&#x4E2A;&#x8FF7;&#x601D;&#xFF1A;&#x6211;&#x7CFB;&#x7EDF;&#x662F;win7 64&#x4F4D;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x7528;window.navigator.platform&#xFF0C;&#x51FA;&#x6765;&#x662F;&#x201D;win32&#x201D;<br>&#x67E5;&#x5230;<code>With windows xp64-bit, it depends if you have Internet Explorer 64-bit. If it&apos;s the case: Win64. If it&apos;s the normal edition: Win32.</code>^2</li>
-<li>platform&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4E0D;&#x662F;&#x5F88;&#x53EF;&#x9760;&#xFF0C;&#x5B9A;&#x4E49;&#x7ECF;&#x5E38;&#x53D8;&#x52A8;^3&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x662F;&#xFF0C;&#x4FEE;&#x6539;&#x5B83;&#x4EE5;&#x6A21;&#x62DF;&#x4E0D;&#x540C;&#x7CFB;&#x7EDF;^4</li>
+<h4 id="重定向方法总结"><a href="#重定向方法总结" class="headerlink" title="重定向方法总结"></a>重定向方法总结</h4><p>window.location.href = newURL;<br>window.location.assign(newURL);<br>window.location.replace(newURL); 附加作用：不产生新History记录</p>
+<h3 id="3-2-BOM之Navigator对象"><a href="#3-2-BOM之Navigator对象" class="headerlink" title="3.2 BOM之Navigator对象"></a>3.2 BOM之Navigator对象</h3><ol>
+<li>自认为比较有用的属性：plugins，userAgent，cookieEnabled，appVersion,onLine,都是只读的属性，使用方法：<br><code>window.navigator.plugins</code></li>
+<li>一个迷思：我系统是win7 64位，然后我用window.navigator.platform，出来是”win32”<br>查到<code>With windows xp64-bit, it depends if you have Internet Explorer 64-bit. If it&#39;s the case: Win64. If it&#39;s the normal edition: Win32.</code>^2</li>
+<li>platform这个属性不是很可靠，定义经常变动^3，这个属性使用场景是，修改它以模拟不同系统^4</li>
 </ol>
-<h3 id="3-3-BOM&#x4E4B;Screen&#x5BF9;&#x8C61;"><a href="#3-3-BOM&#x4E4B;Screen&#x5BF9;&#x8C61;" class="headerlink" title="3.3 BOM&#x4E4B;Screen&#x5BF9;&#x8C61;"></a>3.3 BOM&#x4E4B;Screen&#x5BF9;&#x8C61;</h3><p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;<code>window.screen.height</code>&#xFF0C;window&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x4E0D;&#x5199;<br>&#x91CD;&#x8981;&#x5C5E;&#x6027;&#xFF1A;<br><code>screen.availHeight</code>&#x3001;<code>screen.availWidth</code>&#x3001;<code>screen.height</code>&#x3001;<code>screen.width</code></p>
-<h4 id="screen&#x3001;window&#x3001;document&#x6982;&#x5FF5;&#x533A;&#x5206;&#x53CA;&#x5BBD;&#x9AD8;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#xFF1A;"><a href="#screen&#x3001;window&#x3001;document&#x6982;&#x5FF5;&#x533A;&#x5206;&#x53CA;&#x5BBD;&#x9AD8;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#xFF1A;" class="headerlink" title="screen&#x3001;window&#x3001;document&#x6982;&#x5FF5;&#x533A;&#x5206;&#x53CA;&#x5BBD;&#x9AD8;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#xFF1A;"></a>screen&#x3001;window&#x3001;document&#x6982;&#x5FF5;&#x533A;&#x5206;&#x53CA;&#x5BBD;&#x9AD8;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#xFF1A;</h4><p><strong>1. screen</strong>&#xFF1A;&#x6307;&#x5C4F;&#x5E55;&#xFF0C;&#x5C4F;&#x5E55;&#x7684;&#x6982;&#x5FF5;&#x5C31;&#x662F;&#x663E;&#x793A;&#x5668;&#x3001;&#x663E;&#x793A;&#x5C4F;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;<code>screen.width\screen.height</code>&#x6307;&#x7684;&#x662F;&#x6574;&#x4E2A;&#x5C4F;&#x5E55;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x5C31;&#x662F;&#x663E;&#x793A;&#x5668;&#x7684;&#x53D1;&#x5149;&#x7684;&#x8FD9;&#x5757;&#x5BBD;&#x9AD8;&#xFF0C;&#x800C;<code>screen.availWidth\screen.availHeight</code>&#x6307;&#x7684;&#x662F;window&#x53EF;&#x83B7;&#x53D6;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;availHeight&#x662F;&#x5C4F;&#x5E55;&#x9AD8;&#x5EA6;&#x51CF;&#x53BB;windows&#x7CFB;&#x7EDF;&#x4EFB;&#x52A1;&#x680F;&#x7684;&#x9AD8;&#x5EA6;&#xFF08;&#x5982;&#x4E0B;&#x56FE;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x628A;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x680F;&#x653E;&#x5728;&#x4E86;&#x5DE6;&#x53F3;&#x67D0;&#x4E00;&#x4FA7;&#xFF0C;&#x90A3;&#x4E48;screen.availHeight===screen.height&#xFF0C;&#x8FD9;&#x65F6;&#x5019;availWidth&#x7B49;&#x4E8E;screen.width&#x51CF;&#x53BB;&#x4EFB;&#x52A1;&#x680F;&#x5360;&#x53BB;&#x7684;&#x5BBD;&#x5EA6;<br><img src="http://o798x2hdw.bkt.clouddn.com/screen_availH.png?imageView/2/w/500/q/90" alt="availHeight"></p>
-<p><strong>2. window</strong>&#xFF1A;&#x6307;&#x7A97;&#x53E3;&#xFF0C;&#x4E00;&#x4E2A;&#x5C4F;&#x5E55;&#x4E0A;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x7A97;&#x53E3;,&#x5173;&#x4E8E;&#x5BBD;&#x9AD8;&#x6709;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;:<code>window.innerHeight / window.outerHeight</code>:<img src="http://o798x2hdw.bkt.clouddn.com/window_innerW.png?imageView/2/w/500/q/90" alt="window_innerW"></p>
-<p>jquery&#x4E2D;$(window)[0] ===window,<br><code>$(window).width() / $(window).height();</code>&#x4E0D;&#x5305;&#x62EC;&#x6EDA;&#x52A8;&#x6761;&#x5BBD;&#x5EA6;/&#x9AD8;&#x5EA6;&#xFF0C;<br><code>window.innerWidth / window.innerheight</code>&#x5305;&#x62EC;&#x6EDA;&#x52A8;&#x6761;&#x5BBD;&#x5EA6;/&#x9AD8;&#x5EA6;</p>
+<h3 id="3-3-BOM之Screen对象"><a href="#3-3-BOM之Screen对象" class="headerlink" title="3.3 BOM之Screen对象"></a>3.3 BOM之Screen对象</h3><p>使用方法：<code>window.screen.height</code>，window可以省略不写<br>重要属性：<br><code>screen.availHeight</code>、<code>screen.availWidth</code>、<code>screen.height</code>、<code>screen.width</code></p>
+<h4 id="screen、window、document概念区分及宽高属性获取："><a href="#screen、window、document概念区分及宽高属性获取：" class="headerlink" title="screen、window、document概念区分及宽高属性获取："></a>screen、window、document概念区分及宽高属性获取：</h4><p><strong>1. screen</strong>：指屏幕，屏幕的概念就是显示器、显示屏，所以这里<code>screen.width\screen.height</code>指的是整个屏幕的宽高，就是显示器的发光的这块宽高，而<code>screen.availWidth\screen.availHeight</code>指的是window可获取的宽高，具体来说，一般情况下，availHeight是屏幕高度减去windows系统任务栏的高度（如下图），如果你把这个任务栏放在了左右某一侧，那么screen.availHeight===screen.height，这时候availWidth等于screen.width减去任务栏占去的宽度<br><img src="http://o798x2hdw.bkt.clouddn.com/screen_availH.png?imageView/2/w/500/q/90" alt="availHeight"></p>
+<p><strong>2. window</strong>：指窗口，一个屏幕上可以有多个窗口,关于宽高有两个属性:<code>window.innerHeight / window.outerHeight</code>:<img src="http://o798x2hdw.bkt.clouddn.com/window_innerW.png?imageView/2/w/500/q/90" alt="window_innerW"></p>
+<p>jquery中$(window)[0] ===window,<br><code>$(window).width() / $(window).height();</code>不包括滚动条宽度/高度，<br><code>window.innerWidth / window.innerheight</code>包括滚动条宽度/高度</p>
 <p><img src="http://o798x2hdw.bkt.clouddn.com/jquery_window_width.png" alt="jquery_window_width"></p>
-<p><strong>3. document</strong>:&#x6307;&#x6587;&#x6863;&#xFF0C;</p>
-<p>document.body.clientHeight&#xFF1A;body&#x5143;&#x7D20;&#x7684;&#x5BBD;&#x9AD8;<br>document.documentElement.clientHeight&#xFF1A;&#x89C6;&#x53E3;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x6EDA;&#x52A8;&#x6761;&#xFF0C;&#x7B49;&#x4E8E;window.innerHeight&#x51CF;&#x53BB;&#x6EDA;&#x52A8;&#x6761;&#x9AD8;&#x5EA6;</p>
-<h4 id="&#x51E0;&#x79CD;size&#x8FA8;&#x6790;"><a href="#&#x51E0;&#x79CD;size&#x8FA8;&#x6790;" class="headerlink" title="&#x51E0;&#x79CD;size&#x8FA8;&#x6790;"></a>&#x51E0;&#x79CD;size&#x8FA8;&#x6790;</h4><p><strong>1. client size</strong>^5</p>
+<p><strong>3. document</strong>:指文档，</p>
+<p>document.body.clientHeight：body元素的宽高<br>document.documentElement.clientHeight：视口，不包含滚动条，等于window.innerHeight减去滚动条高度</p>
+<h4 id="几种size辨析"><a href="#几种size辨析" class="headerlink" title="几种size辨析"></a>几种size辨析</h4><p><strong>1. client size</strong>^5</p>
 <blockquote>
-<p>Element.clientHeight read-only property is zero for elements with no CSS or inline layout boxes, otherwise it&#x2019;s  the inner height of an element in pixels, including padding but not the horizontal scrollbar height, border, or margin.</p>
+<p>Element.clientHeight read-only property is zero for elements with no CSS or inline layout boxes, otherwise it’s  the inner height of an element in pixels, including padding but not the horizontal scrollbar height, border, or margin.</p>
 </blockquote>
-<p>&#x51E1;&#x662F;client size&#xFF0C;&#x5305;&#x542B;padding&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x6EDA;&#x52A8;&#x6761;&#x3001;&#x8FB9;&#x6846;&#x3001;margin:<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-client.png" alt="Dimensions-client"></p>
+<p>凡是client size，包含padding，不包含滚动条、边框、margin:<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-client.png" alt="Dimensions-client"></p>
 <p><strong>2.offset size</strong></p>
 <blockquote>
 <p>The HTMLElement.offsetHeight read-only property is the height of the element including vertical padding and borders, in pixels, as an integer.</p>
 </blockquote>
-<p>&#x51E1;&#x662F;offset size&#xFF0C;&#x5305;&#x542B;border&#x548C;padding<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-offset.png" alt="Dimensions-offset"></p>
+<p>凡是offset size，包含border和padding<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-offset.png" alt="Dimensions-offset"></p>
 <p><strong>3.scroll size</strong></p>
 <blockquote>
-<p>The Element.scrollHeight read-only attribute is a measurement of the height of an element&#x2019;s content, including content not visible on the screen due to overflow.</p>
+<p>The Element.scrollHeight read-only attribute is a measurement of the height of an element’s content, including content not visible on the screen due to overflow.</p>
 </blockquote>
-<p>Element.scrollHeight&#xFF1A;&#x5305;&#x542B;&#x56E0;&#x6EDA;&#x52A8;&#x800C;&#x4E0D;&#x53EF;&#x89C1;&#x90E8;&#x5206;&#x7684;&#x6574;&#x4F53;&#x9AD8;&#x5EA6;<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-scroll.png" alt="Dimensions-scroll"></p>
-<p>&#x7528;&#x8FD9;&#x4E2A;&#x516C;&#x5F0F;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6EDA;&#x5230;&#x5E95;&#x90E8;&#x4E86;&#xFF0C;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x662F;&#x201C;&#x6211;&#x5DF2;&#x7ECF;&#x9605;&#x8BFB;&#x4E86;xxx&#x201D;&#xFF1A;<br><code>element.scrollHeight - element.scrollTop === element.clientHeight</code></p>
+<p>Element.scrollHeight：包含因滚动而不可见部分的整体高度<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-scroll.png" alt="Dimensions-scroll"></p>
+<p>用这个公式判断是否滚到底部了，使用场景是“我已经阅读了xxx”：<br><code>element.scrollHeight - element.scrollTop === element.clientHeight</code></p>
 <blockquote>
-<p>&#x672C;&#x6587;&#x4E3A;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x5C0A;&#x91CD;&#x8F9B;&#x52E4;&#x52B3;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x6458;&#x8981;&#x3001;&#x63A8;&#x8350;&#x6216;&#x805A;&#x5408;&#xFF0C;&#x4F46;&#x5B8C;&#x6574;&#x8F6C;&#x8F7D;&#x9700;&#x7ECF;&#x8FC7;&#x672C;&#x4EBA;&#x540C;&#x610F;&#xFF0C;&#x672C;&#x4EBA;&#x90AE;&#x7BB1; miao.hnlk@gmail.com<br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://luckymona.github.io/2016/09/11/read-book-professional-javascript1" target="_blank" rel="external">http://supermaryy.com/2016/09/11/read-book-professional-javascript1</a></p>
+<p>本文为原创文章，尊重辛勤劳动，可以免费摘要、推荐或聚合，但完整转载需经过本人同意，本人邮箱 <a href="mailto:miao.hnlk@gmail.com" target="_blank" rel="noopener">miao.hnlk@gmail.com</a><br>本文地址：本文地址：<a href="http://luckymona.github.io/2016/09/11/read-book-professional-javascript1" target="_blank" rel="noopener">http://supermaryy.com/2016/09/11/read-book-professional-javascript1</a></p>
 </blockquote>
-<p>&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;</p>
-<p>^1:<a href="http://www.jb51.net/article/54781.htm" target="_blank" rel="external">&#x901A;&#x8FC7;location.replace&#x7981;&#x6B62;&#x6D4F;&#x89C8;&#x5668;&#x540E;&#x9000;&#x9632;&#x6B62;&#x91CD;&#x590D;&#x63D0;&#x4EA4;</a><br>^2:<a href="https://www.nczonline.net/blog/2007/12/17/don-t-forget-navigator-platform/" target="_blank" rel="external">Don&#x2019;t forget navigator.platform</a><br>^3:<a href="http://stackoverflow.com/questions/19877924/what-is-the-list-of-possible-values-for-navigator-platform-as-of-today" target="_blank" rel="external">What is the list of possible values for navigator.platform as of today?</a><br>^4:<a href="https://www.zhihu.com/question/36609103" target="_blank" rel="external">&#x5982;&#x4F55;&#x4FEE;&#x6539;&#x6E38;&#x89C8;&#x5668;&#x7684;navigator.platform&#x5C5E;&#x6027;&#xFF1F;</a><br>^5:<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight" target="_blank" rel="external">MDN Element.clientHeight</a></p>
+<p>参考链接：</p>
+<p>^1:<a href="http://www.jb51.net/article/54781.htm" target="_blank" rel="noopener">通过location.replace禁止浏览器后退防止重复提交</a><br>^2:<a href="https://www.nczonline.net/blog/2007/12/17/don-t-forget-navigator-platform/" target="_blank" rel="noopener">Don’t forget navigator.platform</a><br>^3:<a href="http://stackoverflow.com/questions/19877924/what-is-the-list-of-possible-values-for-navigator-platform-as-of-today" target="_blank" rel="noopener">What is the list of possible values for navigator.platform as of today?</a><br>^4:<a href="https://www.zhihu.com/question/36609103" target="_blank" rel="noopener">如何修改游览器的navigator.platform属性？</a><br>^5:<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight" target="_blank" rel="noopener">MDN Element.clientHeight</a></p>
 
       
     </div>
@@ -574,7 +567,7 @@ DOM&amp;#x4E09;&amp;#x7EA7;&amp;#x5206;&amp;#x522B;&amp;#x5B9A;&amp;#x4E49;&amp;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -582,7 +575,7 @@ DOM&amp;#x4E09;&amp;#x7EA7;&amp;#x5206;&amp;#x522B;&amp;#x5B9A;&amp;#x4E49;&amp;
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -591,7 +584,7 @@ DOM&amp;#x4E09;&amp;#x7EA7;&amp;#x5206;&amp;#x522B;&amp;#x5B9A;&amp;#x4E49;&amp;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

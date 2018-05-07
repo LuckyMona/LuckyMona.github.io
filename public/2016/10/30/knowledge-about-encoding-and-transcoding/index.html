@@ -86,32 +86,19 @@
 
 
 
-<meta name="description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-url&amp;#x7F16;&amp;#x7801;%uxxxx
-base64
-unicode&amp;#x8F6C;&amp;#x4E49;&amp;#x5E8F;&amp;#x5217;\uxxxx
-&amp;#x5B57;&amp;#x7B26;&amp;#x7F16;&amp;#x7801;&amp;#x77E5;&amp;#x8BC6;&amp;#xFF1A;ASCII,Unicode,Utf-8,GB2312,GBK">
+<meta name="description" content="摘要：  url编码%uxxxx base64 unicode转义序列\uxxxx 字符编码知识：ASCII,Unicode,Utf-8,GB2312,GBK">
+<meta name="keywords" content="总结,编码,转码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端中关于编码和转码的知识小总结">
 <meta property="og:url" content="http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/index.html">
-<meta property="og:site_name" content="Mary's blog">
-<meta property="og:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-url&amp;#x7F16;&amp;#x7801;%uxxxx
-base64
-unicode&amp;#x8F6C;&amp;#x4E49;&amp;#x5E8F;&amp;#x5217;\uxxxx
-&amp;#x5B57;&amp;#x7B26;&amp;#x7F16;&amp;#x7801;&amp;#x77E5;&amp;#x8BC6;&amp;#xFF1A;ASCII,Unicode,Utf-8,GB2312,GBK">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="摘要：  url编码%uxxxx base64 unicode转义序列\uxxxx 字符编码知识：ASCII,Unicode,Utf-8,GB2312,GBK">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/stickers/11.jpeg?imageView2/1/w/100/h/100/q/100">
-<meta property="og:updated_time" content="2016-10-30T14:56:43.206Z">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端中关于编码和转码的知识小总结">
-<meta name="twitter:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-url&amp;#x7F16;&amp;#x7801;%uxxxx
-base64
-unicode&amp;#x8F6C;&amp;#x4E49;&amp;#x5E8F;&amp;#x5217;\uxxxx
-&amp;#x5B57;&amp;#x7B26;&amp;#x7F16;&amp;#x7801;&amp;#x77E5;&amp;#x8BC6;&amp;#xFF1A;ASCII,Unicode,Utf-8,GB2312,GBK">
+<meta name="twitter:description" content="摘要：  url编码%uxxxx base64 unicode转义序列\uxxxx 字符编码知识：ASCII,Unicode,Utf-8,GB2312,GBK">
 <meta name="twitter:image" content="http://o798x2hdw.bkt.clouddn.com/stickers/11.jpeg?imageView2/1/w/100/h/100/q/100">
 
 
@@ -374,112 +361,112 @@ unicode&amp;#x8F6C;&amp;#x4E49;&amp;#x5E8F;&amp;#x5217;\uxxxx
       
 
       
-        <p>&#x6458;&#x8981;&#xFF1A;</p>
+        <p>摘要：</p>
 <ol>
-<li>url&#x7F16;&#x7801;%uxxxx</li>
+<li>url编码%uxxxx</li>
 <li>base64</li>
-<li>unicode&#x8F6C;&#x4E49;&#x5E8F;&#x5217;\uxxxx</li>
-<li>&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x77E5;&#x8BC6;&#xFF1A;ASCII,Unicode,Utf-8,GB2312,GBK</li>
+<li>unicode转义序列\uxxxx</li>
+<li>字符编码知识：ASCII,Unicode,Utf-8,GB2312,GBK</li>
 </ol>
 <a id="more"></a>
 <blockquote>
-<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="external">http://supermaryy.com</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/">http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</a></p>
+<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="noopener">http://supermaryy.com</a><br>本文地址：<a href="http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/">http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</a></p>
 </blockquote>
-<h1 id="&#x4E00;&#x3001;&#x524D;&#x8A00;"><a href="#&#x4E00;&#x3001;&#x524D;&#x8A00;" class="headerlink" title="&#x4E00;&#x3001;&#x524D;&#x8A00;"></a>&#x4E00;&#x3001;&#x524D;&#x8A00;</h1><p>&#x81EA;&#x4ECE;&#x5B66;&#x524D;&#x7AEF;&#x4EE5;&#x6765;&#xFF0C;&#x5173;&#x4E8E;&#x7F16;&#x7801;&#x548C;&#x8F6C;&#x7801;&#x8FD9;&#x4E00;&#x5757;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x4E0D;&#x8BBA;&#x662F;&#x4E66;&#x8FD8;&#x662F;&#x535A;&#x5BA2;&#xFF0C;&#x4ECE;&#x6765;&#x6CA1;&#x6709;&#x770B;&#x5230;&#x8FC7;&#x4F5C;&#x7CFB;&#x7EDF;&#x4ECB;&#x7ECD;&#x7684;&#x6587;&#x7AE0;&#xFF0C;&#x81EA;&#x5DF1;&#x4E5F;&#x90FD;&#x662F;&#x4E09;&#x4E0D;&#x4E94;&#x65F6;&#x96F6;&#x788E;&#x5730;&#x9047;&#x5230;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x52A0;&#x4E0A;&#x8FD9;&#x5757;&#x7684;&#x77E5;&#x8BC6;&#x4E5F;&#x633A;&#x590D;&#x6742;&#x7410;&#x788E;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x76F4;&#x90FD;&#x6BD4;&#x8F83;&#x7CCA;&#x6D82;&#xFF0C;&#x4E8E;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x6DF1;&#x5733;&#x521A;&#x521A;&#x964D;&#x6E29;&#xFF0C;&#x79CB;&#x9AD8;&#x6C14;&#x723D;&#x7684;&#x4E0B;&#x5348;&#xFF0C;&#x65E0;&#x6BD4;&#x5730;&#x9700;&#x8981;&#x5199;&#x4E0A;&#x8FD9;&#x4E48;&#x4E00;&#x7BC7;&#x603B;&#x7ED3;&#x5566;&#x5566;&#x5566;&#x3002;&#x603B;&#x7ED3;&#x6765;&#x81EA;&#x4E8E;&#x7F51;&#x4E0A;&#x8D44;&#x6599;&#x6574;&#x7406;&#x548C;&#x81EA;&#x5DF1;&#x7684;&#x6D45;&#x8584;&#x7ECF;&#x9A8C;&#xFF0C;&#x6BD4;&#x8F83;&#x80A4;&#x6D45;&#xFF0C;&#x7B49;&#x6211;&#x628A;&#x80A4;&#x6D45;&#x7684;&#x4E1C;&#x897F;&#x5F04;&#x719F;&#x4E4B;&#x540E;&#x518D;&#x6DFB;&#x52A0;&#x6DF1;&#x5165;&#x7684;&#x4E1C;&#x897F;(&#xE07; &#x2022;&#x300;_&#x2022;&#x301; )&#xE07;</p>
-<h1 id="&#x4E8C;&#x3001;url&#x7F16;&#x7801;-uxxxx"><a href="#&#x4E8C;&#x3001;url&#x7F16;&#x7801;-uxxxx" class="headerlink" title="&#x4E8C;&#x3001;url&#x7F16;&#x7801;%uxxxx"></a>&#x4E8C;&#x3001;url&#x7F16;&#x7801;%uxxxx</h1><ol>
-<li><p>%uxxxx&#x662F;url&#x7F16;&#x7801;&#x7684;&#x7ED3;&#x679C;</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>自从学前端以来，关于编码和转码这一块的知识，不论是书还是博客，从来没有看到过作系统介绍的文章，自己也都是三不五时零碎地遇到这方面的问题，加上这块的知识也挺复杂琐碎的，所以一直都比较糊涂，于是在这个深圳刚刚降温，秋高气爽的下午，无比地需要写上这么一篇总结啦啦啦。总结来自于网上资料整理和自己的浅薄经验，比较肤浅，等我把肤浅的东西弄熟之后再添加深入的东西(ง •̀_•́ )ง</p>
+<h1 id="二、url编码-uxxxx"><a href="#二、url编码-uxxxx" class="headerlink" title="二、url编码%uxxxx"></a>二、url编码%uxxxx</h1><ol>
+<li><p>%uxxxx是url编码的结果</p>
 </li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FDB;&#x884C;URL&#x7F16;&#x7801;?<br>&#x3010;&#x6587;&#x6863;&#x6807;&#x51C6;&#x3011;<br>RFC3986&#x6587;&#x6863;&#x89C4;&#x5B9A;&#xFF0C;Url&#x4E2D;&#x53EA;&#x5141;&#x8BB8;&#x5305;&#x542B;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#xFF08;a-zA-Z&#xFF09;&#x3001;&#x6570;&#x5B57;&#xFF08;0-9&#xFF09;&#x3001;-_.~4&#x4E2A;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4EE5;&#x53CA;&#x6240;&#x6709;&#x4FDD;&#x7559;&#x5B57;&#x7B26;&#x3002;RFC3986&#x6587;&#x6863;&#x5BF9;Url&#x7684;&#x7F16;&#x89E3;&#x7801;&#x95EE;&#x9898;&#x505A;&#x51FA;&#x4E86;&#x8BE6;&#x7EC6;&#x7684;&#x5EFA;&#x8BAE;&#xFF0C;&#x6307;&#x51FA;&#x4E86;&#x54EA;&#x4E9B;&#x5B57;&#x7B26;&#x9700;&#x8981;&#x88AB;&#x7F16;&#x7801;&#x624D;&#x4E0D;&#x4F1A;&#x5F15;&#x8D77;Url&#x8BED;&#x4E49;&#x7684;&#x8F6C;&#x53D8;&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x9700;&#x8981;&#x7F16;&#x7801;&#x505A;&#x51FA;&#x4E86;&#x76F8;&#x5E94;&#x7684;&#x89E3;&#x91CA;&#x3002;<br>HTTP&#x534F;&#x8BAE;&#x4E2D;&#x901A;&#x8FC7;URL&#x4F20;&#x53C2;&#x662F;&#x901A;&#x8FC7;&#x952E;&#x503C;&#x5BF9;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x7684;&#xFF0C;&#x683C;&#x5F0F;&#x4E0A;&#x662F;&#x4EE5;&#xFF1F;&#x3001;&amp;&#x548C;=&#x4E3A;&#x7279;&#x5F81;&#x6807;&#x8BC6;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x5982;&#x679C;&#x952E;&#x6216;&#x8005;&#x503C;&#x7684;&#x5185;&#x5BB9;&#x4E2D;&#x5305;&#x542B;&#x8FD9;&#x4E9B;&#x7B26;&#x53F7;&#xFF0C;&#x5C31;&#x4F1A;&#x9020;&#x6210;&#x89E3;&#x6790;&#x9519;&#x8BEF;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#xFF0C;&#x7528;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x6B67;&#x4E49;&#x7684;&#x7B26;&#x53F7;&#x4EE3;&#x66FF;&#x6709;&#x6B67;&#x4E49;&#x7684;&#x7B26;&#x53F7;&#x3002;</p>
+<li><p>为什么要进行URL编码?<br>【文档标准】<br>RFC3986文档规定，Url中只允许包含英文字母（a-zA-Z）、数字（0-9）、-_.~4个特殊字符以及所有保留字符。RFC3986文档对Url的编解码问题做出了详细的建议，指出了哪些字符需要被编码才不会引起Url语义的转变，以及对为什么这些字符需要编码做出了相应的解释。<br>HTTP协议中通过URL传参是通过键值对形式进行的，格式上是以？、&amp;和=为特征标识进行解析，如果键或者值的内容中包含这些符号，就会造成解析错误，所以要进行编码，用不会造成歧义的符号代替有歧义的符号。</p>
 </li>
-<li><p>&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#xFF1A;<br>&#x5728;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x524D;&#x52A0;&#x4E0A;%&#xFF0C;&#x4F8B;&#x5982;&#x201C;name1=value1&#x201D;,&#x5176;&#x4E2D;value1&#x7684;&#x503C;&#x662F;&#x201C;va&amp;lu=e1&#x201D;&#xFF0C;&#x5BF9;&#x5176;&#x8FDB;&#x884C;URL&#x7F16;&#x7801;&#x540E;&#xFF1A;&#x201C;name1=va%26lu%3D&#x201D;&#xFF0C;&#x8FD9;&#x6837;&#x670D;&#x52A1;&#x7AEF;&#x4F1A;&#x628A;&#x7D27;&#x8DDF;&#x5728;&#x201C;%&#x201D;&#x540E;&#x7684;&#x5B57;&#x8282;&#x5F53;&#x6210;&#x666E;&#x901A;&#x7684;&#x5B57;&#x8282;&#xFF0C;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x628A;&#x5B83;&#x5F53;&#x6210;&#x5404;&#x4E2A;&#x53C2;&#x6570;&#x6216;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5206;&#x9694;&#x7B26;&#x3002;&#x56E0;&#x6B64;&#xFF0C;Url&#x7F16;&#x7801;&#x901A;&#x5E38;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x767E;&#x5206;&#x53F7;&#x7F16;&#x7801;</p>
+<li><p>编码方式：<br>在特殊字符前加上%，例如“name1=value1”,其中value1的值是“va&amp;lu=e1”，对其进行URL编码后：“name1=va%26lu%3D”，这样服务端会把紧跟在“%”后的字节当成普通的字节，就是不会把它当成各个参数或键值对的分隔符。因此，Url编码通常也被称为百分号编码</p>
 </li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x6C49;&#x5B57;&#x4E5F;&#x8981;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#xFF1A;URL&#x4E2D;&#x7684;&#x4F20;&#x53C2;&#x5B57;&#x7B26;&#x4E32;&#x662F;ASCII&#x7F16;&#x7801;&#x800C;&#x975E;unicode&#xFF0C;&#x6240;&#x4EE5;URL&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x975E;ASCII&#x5B57;&#x7B26;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x51FA;&#x95EE;&#x9898;&#x3002;</p>
+<li><p>为什么汉字也要进行编码：URL中的传参字符串是ASCII编码而非unicode，所以URL中不能包含任何非ASCII字符，否则可能出问题。</p>
 </li>
-<li><p>JS&#x4E2D;&#x7684;escape()&#x548C;encodeURI()&#x7684;&#x533A;&#x522B;&#xFF1A;<br>escape()&#x662F;&#x628A;&#x975E;ASCII&#x5B57;&#x7B26;&#x5148;&#x8FDB;&#x884C;unicode&#x7F16;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x56DB;&#x4F4D;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x524D;&#x9762;&#x52A0;%&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5DF2;&#x7ECF;&#x88AB;W3C&#x5E9F;&#x5F03;&#xFF0C;&#x800C;&#x540E;&#x4E2A;&#x662F;&#x628A;&#x975E;ASCII&#x5B57;&#x7B26;&#x5148;&#x8FDB;&#x884C;UTF-8&#x7F16;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x52A0;&#x767E;&#x5206;&#x53F7;&#xFF0C;&#x8FD9;&#x662F;RFC&#x63A8;&#x8350;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x5BF9;url&#x7F16;&#x7801;&#x90FD;&#x662F;&#x4F7F;&#x7528;encodeURI&#x4E86;&#x3002;<br>escape()&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x7528;&#x4E8E;URL&#x7F16;&#x7801;&#xFF0C;&#x5B83;&#x7684;&#x771F;&#x6B63;&#x4F5C;&#x7528;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7684;Unicode&#x7F16;&#x7801;&#x503C;&#x3002;&#x6BD4;&#x5982;&#x201C;&#x6625;&#x8282;&#x201D;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x662F;%u6625%u8282&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5728;Unicode&#x5B57;&#x7B26;&#x96C6;&#x4E2D;&#xFF0C;&#x201C;&#x6625;&#x201D;&#x662F;&#x7B2C;6625&#x4E2A;&#xFF08;&#x5341;&#x516D;&#x8FDB;&#x5236;&#xFF09;&#x5B57;&#x7B26;&#xFF0C;&#x201C;&#x8282;&#x201D;&#x662F;&#x7B2C;8282&#x4E2A;&#xFF08;&#x5341;&#x516D;&#x8FDB;&#x5236;&#xFF09;&#x5B57;&#x7B26;&#x3002;</p>
+<li><p>JS中的escape()和encodeURI()的区别：<br>escape()是把非ASCII字符先进行unicode编码，然后把四位十六进制字符前面加%，这种方式已经被W3C废弃，而后个是把非ASCII字符先进行UTF-8编码，然后加百分号，这是RFC推荐的，所以现在对url编码都是使用encodeURI了。<br>escape()不能直接用于URL编码，它的真正作用是返回一个字符的Unicode编码值。比如“春节”的返回结果是%u6625%u8282，也就是说在Unicode字符集中，“春”是第6625个（十六进制）字符，“节”是第8282个（十六进制）字符。</p>
 </li>
-<li><p>encodeURI&#x548C;encodeURIComponent&#x7684;&#x533A;&#x522B;&#xFF1A;<br>encodeURI()&#x5BF9;&#x5B8C;&#x6574;&#x7684;URI&#x7F16;&#x7801;&#xFF0C;&#x540E;&#x8005;&#x5BF9;URI&#x7684;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x3002;&#x8FD9;&#x6837;&#x5206;&#x9694;URI&#x7EC4;&#x4EF6;&#x7684;&#x90A3;&#x4E9B;&#x7279;&#x6B8A;&#x7B26;&#x53F7;&#x4E0D;&#x4F1A;&#x88AB;encodeURI&#x7F16;&#x7801;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x4F7F;&#x7528;encodeURIComponent()&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;encodeURI&#x4E0D;&#x4F1A;&#x5BF9;&#x5355;&#x5F15;&#x53F7;&#x8FDB;&#x884C;&#x7F16;&#x7801;</p>
+<li><p>encodeURI和encodeURIComponent的区别：<br>encodeURI()对完整的URI编码，后者对URI的一个组件进行编码。这样分隔URI组件的那些特殊符号不会被encodeURI编码，但如果使用encodeURIComponent()，就会进行编码。需要注意的是，encodeURI不会对单引号进行编码</p>
 </li>
-<li><p>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;encodeURI()&#xFF1F;&#x56DB;&#x79CD;&#x6D89;&#x53CA;URL&#x7F16;&#x7801;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x53CA;&#x8BE5;&#x573A;&#x666F;&#x4E0B;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;^1&#xFF1A;</p>
+<li><p>什么时候使用encodeURI()？四种涉及URL编码的场景，及该场景下的编码方式^1：</p>
 <ul>
-<li>&#x7F51;&#x5740;&#x8DEF;&#x5F84;&#x4E2D;&#x5305;&#x542B;&#x6C49;&#x5B57;&#x3010;UTF-8&#x3011;</li>
-<li>&#x7F51;&#x5740;&#x7684;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x5305;&#x542B;&#x6C49;&#x5B57;&#x3010;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7F16;&#x7801;&#x3011;</li>
-<li>Get&#x65B9;&#x6CD5;&#x751F;&#x6210;&#x7684;URL&#x5305;&#x542B;&#x6C49;&#x5B57;&#xFF0C;&#x5728;&#x5DF2;&#x6253;&#x5F00;&#x7684;&#x7F51;&#x9875;&#x4E0A;&#xFF0C;&#x76F4;&#x63A5;&#x7528;Get&#x6216;Post&#x65B9;&#x6CD5;&#x53D1;&#x51FA;HTTP&#x8BF7;&#x6C42;&#xFF0C;&#x4F8B;form&#x65B9;&#x5F0F;&#xFF1A;&#x3010;meta&#x6807;&#x7B7E;&#x7684;charset&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x7684;&#x7F16;&#x7801;&#x3011;</li>
-<li>Ajax&#x8C03;&#x7528;&#x7684;URL&#x5305;&#x542B;&#x6C49;&#x5B57;:&#x3010;&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#x3011;<br>&#x5BF9;&#x5305;&#x542B;&#x4E2D;&#x6587;&#x7684;URL&#x7684;&#x5904;&#x7406;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x8868;&#x73B0;&#x4E0D;&#x540C;&#xFF0C;&#x5F88;&#x6DF7;&#x4E71;&#xFF0C;&#x4FDD;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x53EA;&#x7528;&#x4E00;&#x79CD;&#x7F16;&#x7801;&#x65B9;&#x6CD5;&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;&#x4F7F;&#x7528;Javascript&#x5148;&#x5BF9;URL&#x7F16;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5411;&#x670D;&#x52A1;&#x5668;&#x63D0;&#x4EA4;&#xFF0C;&#x4E0D;&#x8981;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x63D2;&#x624B;&#x7684;&#x673A;&#x4F1A;&#x3002;&#x56E0;&#x4E3A;Javascript&#x7684;&#x8F93;&#x51FA;&#x603B;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4FDD;&#x8BC1;&#x4E86;&#x670D;&#x52A1;&#x5668;&#x5F97;&#x5230;&#x7684;&#x6570;&#x636E;&#x662F;&#x683C;&#x5F0F;&#x7EDF;&#x4E00;&#x7684;&#x3002;</li>
+<li>网址路径中包含汉字【UTF-8】</li>
+<li>网址的查询字符串包含汉字【操作系统编码】</li>
+<li>Get方法生成的URL包含汉字，在已打开的网页上，直接用Get或Post方法发出HTTP请求，例form方式：【meta标签的charset属性定义的编码】</li>
+<li>Ajax调用的URL包含汉字:【不同浏览器的编码方式不同】<br>对包含中文的URL的处理问题，不同浏览器表现不同，很混乱，保证客户端只用一种编码方法向服务器发出请求的解决方案：使用Javascript先对URL编码，然后再向服务器提交，不要给浏览器插手的机会。因为Javascript的输出总是一致的，所以就保证了服务器得到的数据是格式统一的。</li>
 </ul>
 </li>
-<li><p>&#x51FA;&#x73B0;&#x4E71;&#x7801;&#x95EE;&#x9898;&#x65F6;&#x7684;&#x6392;&#x67E5;&#xFF1A;</p>
+<li><p>出现乱码问题时的排查：</p>
 <ul>
-<li>&#x68C0;&#x67E5;&#x7F16;&#x8F91;&#x5668;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x548C;<meta>&#x6807;&#x7B7E;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x662F;&#x5426;&#x4E00;&#x81F4;</li>
-<li>&#x4E24;&#x6B21;encodeURI&#x540E;&#x63D0;&#x4EA4;&#x7ED9;&#x540E;&#x53F0;&#xFF0C;&#x89E3;&#x51B3;&#x540E;&#x53F0;&#x6536;&#x5230;&#x4E71;&#x7801;&#x7684;&#x95EE;&#x9898;^5</li>
-<li>&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5934;Content-Type&#x6CA1;&#x6709;&#x6307;&#x660E;&#x5B57;&#x7B26;&#x7F16;&#x7801;</li>
+<li>检查编辑器保存文件的字符集，和<meta>标签中指定的字符集是否一致</li>
+<li>两次encodeURI后提交给后台，解决后台收到乱码的问题^5</li>
+<li>服务器返回的响应头Content-Type没有指明字符编码</li>
 </ul>
 </li>
-<li><p>win7&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7F16;&#x7801;&#x662F;gbk&#xFF0C;winXP&#x662F;gb2312</p>
+<li><p>win7操作系统默认编码是gbk，winXP是gb2312</p>
 </li>
 </ol>
-<h1 id="&#x4E09;&#x3001;base64&#x7F16;&#x7801;"><a href="#&#x4E09;&#x3001;base64&#x7F16;&#x7801;" class="headerlink" title="&#x4E09;&#x3001;base64&#x7F16;&#x7801;"></a>&#x4E09;&#x3001;base64&#x7F16;&#x7801;</h1><ol>
-<li><p>base64&#x662F;&#x4EC0;&#x4E48;&#xFF1F;^6<br>base&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x5230;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x5728;URL&#x3001;Cookie&#x3001;&#x7F51;&#x9875;&#x4E2D;&#x4F20;&#x8F93;&#x5C11;&#x91CF;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x3002;</p>
+<h1 id="三、base64编码"><a href="#三、base64编码" class="headerlink" title="三、base64编码"></a>三、base64编码</h1><ol>
+<li><p>base64是什么？^6<br>base是二进制到文本字符串的转换方法，常用于在URL、Cookie、网页中传输少量二进制数据。</p>
 </li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FDB;&#x884C;base64&#x7F16;&#x7801;&#xFF1A;<br>&#x7528;&#x8BB0;&#x4E8B;&#x672C;&#x6253;&#x5F00;pdf&#x3001;exe&#x3001;jpg&#x7B49;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x4F1A;&#x663E;&#x793A;&#x4E71;&#x7801;&#xFF0C;&#x56E0;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x6709;&#x8BB8;&#x591A;&#x4E0D;&#x80FD;&#x663E;&#x793A;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8BA9;&#x8BB0;&#x4E8B;&#x672C;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x628A;&#x4E8C;&#x8FDB;&#x5236;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;base64&#x662F;&#x5E38;&#x89C1;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#x3002;</p>
+<li><p>为什么要进行base64编码：<br>用记事本打开pdf、exe、jpg等文件时，会显示乱码，因为二进制有许多不能显示的字符，如果想让记事本可以打开二进制文件，就需要把二进制转换成字符串，base64是常见的二进制转换方法。</p>
 </li>
-<li><p>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8FDB;&#x884C;base64&#x7F16;&#x7801;&#xFF1A;</p>
+<li><p>什么时候进行base64编码：</p>
 <ul>
-<li>&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x3001;&#x6587;&#x4EF6;&#x65F6;</li>
-<li>&#x62FC;URL&#x7684;&#x65F6;&#x5019;&#xFF0C;base64&#x7F16;&#x7801;&#x540E;&#xFF0C;&#x8089;&#x773C;&#x770B;&#x4E0D;&#x51FA;&#x4FE1;&#x606F;</li>
+<li>上传图片、文件时</li>
+<li>拼URL的时候，base64编码后，肉眼看不出信息</li>
 </ul>
 </li>
-<li><p>&#x5176;&#x4ED6;&#xFF1A;</p>
+<li><p>其他：</p>
 <ul>
-<li>Base64&#x7F16;&#x7801;&#x4F1A;&#x628A;3&#x5B57;&#x8282;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7F16;&#x7801;&#x4E3A;4&#x5B57;&#x8282;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#xFF0C;&#x957F;&#x5EA6;&#x589E;&#x52A0;33%&#xFF0C;&#x597D;&#x5904;&#x662F;&#x7F16;&#x7801;&#x540E;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x5728;&#x90AE;&#x4EF6;&#x6B63;&#x6587;&#x3001;&#x7F51;&#x9875;&#x7B49;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x3002;</li>
-<li>Base64&#x662F;&#x4E00;&#x79CD;&#x901A;&#x8FC7;&#x67E5;&#x8868;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x80FD;&#x7528;&#x4E8E;&#x52A0;&#x5BC6;&#xFF0C;&#x5373;&#x4F7F;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7F16;&#x7801;&#x8868;&#x4E5F;&#x4E0D;&#x884C;</li>
+<li>Base64编码会把3字节的二进制数据编码为4字节的文本数据，长度增加33%，好处是编码后的文本数据可以在邮件正文、网页等直接显示。</li>
+<li>Base64是一种通过查表的编码方法，不能用于加密，即使使用自定义的编码表也不行</li>
 </ul>
 </li>
-<li><p>JS&#x81EA;&#x5E26;&#x7684;base64&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#xFF1A;btoa()&#x548C;atob()<br>&#x8D1F;&#x8D23;ASCII&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x4E0E;base64&#x7F16;&#x7801;&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x3002;&#x547D;&#x540D;&#x4E0E;&#x5B9E;&#x9645;&#x4F5C;&#x7528;&#x76F8;&#x53CD;&#xFF1A;</p>
+<li><p>JS自带的base64转换方法：btoa()和atob()<br>负责ASCII字符串或二进制数据与base64编码的相互转换。命名与实际作用相反：</p>
 <ul>
-<li>btoa&#xFF1A;&#x6309;&#x540D;&#x5B57;&#x7406;&#x89E3;&#x662F;base64&#x5230;ASCII&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x5457;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4F5C;&#x7528;&#x662F;&#x53CD;&#x8FC7;&#x6765;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x4F5C;&#x7528;&#x4E8E;Unicode&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;btoa(&#x2018;&#x4F60;&#x597D;&#x2019;)&#xFF0C;&#x4F1A;&#x62A5;&#x9519;&#x3002;</li>
-<li>atob&#xFF1A;&#x5BF9;base64&#x7801;&#x8FDB;&#x884C;&#x89E3;&#x7801;&#x3002;</li>
-<li>&#x5982;&#x679C;&#x8981;&#x5BF9;&#x4E2D;&#x6587;&#x8FDB;&#x884C;base64&#x7F16;&#x7801;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x4E2D;&#x6587;&#x8FDB;&#x884C;encodeURIComponent&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x4E4B;&#x540E;&#x518D;&#x8FDB;&#x884C; base64&#x7F16;&#x7801;&#x5373;&#x53EF;&#x3002;</li>
+<li>btoa：按名字理解是base64到ASCII字符串或二进制数据呗，但实际作用是反过来。该方法不能直接作用于Unicode字符串，所以如果btoa(‘你好’)，会报错。</li>
+<li>atob：对base64码进行解码。</li>
+<li>如果要对中文进行base64编码，只需要将中文进行encodeURIComponent进行编码之后再进行 base64编码即可。</li>
 </ul>
 </li>
 </ol>
-<h1 id="&#x56DB;&#x3001;-unnnn&#x662F;&#x4EC0;&#x4E48;"><a href="#&#x56DB;&#x3001;-unnnn&#x662F;&#x4EC0;&#x4E48;" class="headerlink" title="&#x56DB;&#x3001;\unnnn&#x662F;&#x4EC0;&#x4E48;"></a>&#x56DB;&#x3001;\unnnn&#x662F;&#x4EC0;&#x4E48;</h1><p>\unnnn&#x6709;&#x4E24;&#x79CD;&#x542B;&#x4E49;&#xFF1A;</p>
+<h1 id="四、-unnnn是什么"><a href="#四、-unnnn是什么" class="headerlink" title="四、\unnnn是什么"></a>四、\unnnn是什么</h1><p>\unnnn有两种含义：</p>
 <ol>
-<li>\unnnn&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B57;&#x7B26;&#x5B57;&#x9762;&#x91CF;&#xFF0C;&#x53C8;&#x53EB;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;\ntbrf&#x3001;\&#x3001;\&#x2019;&#x3001;\&#x201D;&#x3001;\xnn&#xFF0C;nnnn&#x662F;&#x56DB;&#x4F4D;16&#x8FDB;&#x5236;&#x6570;&#x8868;&#x793A;&#x7684;unicode&#x5B57;&#x7B26;&#xFF0C;</li>
-<li>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5143;&#x5B57;&#x7B26;:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &quot;Visit W3Schools. Hello World!&quot;;</div><div class="line">var patt1 = /\u0057/g;</div><div class="line">var result = str.match(patt1);   //W,W</div></pre></td></tr></table></figure>
+<li>\unnnn字符串的字符字面量，又叫转义序列，还包括\ntbrf、\、\’、\”、\xnn，nnnn是四位16进制数表示的unicode字符，</li>
+<li>正则表达式元字符:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Visit W3Schools. Hello World!&quot;;</span><br><span class="line">var patt1 = /\u0057/g;</span><br><span class="line">var result = str.match(patt1);   //W,W</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>&#x53EF;&#x4EE5;&#x5229;&#x7528;nnnn&#x662F;unicode&#x7F16;&#x7801;&#xFF0C;&#x548C;escape(),unescape()&#x6765;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;^7</p>
-<h1 id="&#x4E94;&#x3001;&#x603B;&#x7ED3;&#x4EE5;&#x4E0A;"><a href="#&#x4E94;&#x3001;&#x603B;&#x7ED3;&#x4EE5;&#x4E0A;" class="headerlink" title="&#x4E94;&#x3001;&#x603B;&#x7ED3;&#x4EE5;&#x4E0A;"></a>&#x4E94;&#x3001;&#x603B;&#x7ED3;&#x4EE5;&#x4E0A;</h1><ol>
-<li>URL&#x4E2D;&#x7684;&#x4F20;&#x53C2;&#x5B57;&#x7B26;&#x4E32;&#x5FC5;&#x987B;&#x662F;ASCII&#x7F16;&#x7801;</li>
-<li>escape()&#xFF1A;&#x662F;&#x628A;&#x975E;ASCII&#x5B57;&#x7B26;&#x5148;&#x8FDB;&#x884C;unicode&#x7F16;&#x7801;&#xFF0C;&#x52A0;%&#xFF0C;&#x5DF2;&#x5E9F;&#x5F03;&#x3002;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x7528;&#x4E8E;URL&#x7F16;&#x7801;&#xFF0C;&#x5B83;&#x7684;&#x771F;&#x6B63;&#x4F5C;&#x7528;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7684;Unicode&#x7F16;&#x7801;&#x503C;</li>
-<li>encodeURI&#xFF1A;&#x628A;&#x975E;ASCII&#x5B57;&#x7B26;&#x5148;&#x8FDB;&#x884C;UTF-8&#x7F16;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x52A0;&#x767E;&#x5206;&#x53F7;&#xFF0C;&#x63A8;&#x8350;&#xFF01;</li>
-<li>btoa()&#x548C;atob()&#x8D1F;&#x8D23;ASCII&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A;base64&#xFF0C;&#x4E0D;&#x80FD;&#x5BF9;unicode&#x5B57;&#x7B26;&#xFF08;&#x5982;&#x4E2D;&#x6587;&#xFF09;&#x4F7F;&#x7528;&#xFF0C;&#x4F1A;&#x62A5;&#x9519;</li>
+<p>可以利用nnnn是unicode编码，和escape(),unescape()来进行编码和解码^7</p>
+<h1 id="五、总结以上"><a href="#五、总结以上" class="headerlink" title="五、总结以上"></a>五、总结以上</h1><ol>
+<li>URL中的传参字符串必须是ASCII编码</li>
+<li>escape()：是把非ASCII字符先进行unicode编码，加%，已废弃。不能直接用于URL编码，它的真正作用是返回一个字符的Unicode编码值</li>
+<li>encodeURI：把非ASCII字符先进行UTF-8编码，然后加百分号，推荐！</li>
+<li>btoa()和atob()负责ASCII字符串或二进制数据转换成一个base64，不能对unicode字符（如中文）使用，会报错</li>
 </ol>
-<h1 id="&#x516D;&#x3001;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x77E5;&#x8BC6;&#x603B;&#x7ED3;"><a href="#&#x516D;&#x3001;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x77E5;&#x8BC6;&#x603B;&#x7ED3;" class="headerlink" title="&#x516D;&#x3001;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x77E5;&#x8BC6;&#x603B;&#x7ED3;"></a>&#x516D;&#x3001;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x77E5;&#x8BC6;&#x603B;&#x7ED3;</h1><ol>
-<li>&#x6240;&#x6709;&#x5B57;&#x7B26;&#x96C6;&#x6E90;&#x4E8E;ASCII&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x662F;&#x5355;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x6700;&#x5F00;&#x59CB;&#x6709;128&#x4E2A;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x62EC;26&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x7B26;&#x548C;&#x6570;&#x5B57;&#xFF0C;&#x53CA;&#x5176;&#x4ED6;&#x7B26;&#x53F7;&#x548C;&#x63A7;&#x5236;&#x7B26;^8</li>
-<li>ASCII&#x5B57;&#x7B26;&#x96C6;&#x540E;&#x6765;&#x6269;&#x5C55;&#x5230;256&#x4E2A;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x6DFB;&#x52A0;&#x4E86;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x7B26;&#x53F7;</li>
-<li>&#x8BA1;&#x7B97;&#x673A;&#x4F20;&#x5230;&#x4E9A;&#x6D32;&#xFF0C;&#x53D1;&#x5C55;&#x51FA;&#x591A;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x96C6;&#x3002;</li>
-<li><p>&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x96C6;&#xFF1A;</p>
+<h1 id="六、字符编码知识总结"><a href="#六、字符编码知识总结" class="headerlink" title="六、字符编码知识总结"></a>六、字符编码知识总结</h1><ol>
+<li>所有字符集源于ASCII字符集，是单字节字符集，最开始有128个，主要包括26个英文字符和数字，及其他符号和控制符^8</li>
+<li>ASCII字符集后来扩展到256个，主要是添加了其他一些符号</li>
+<li>计算机传到亚洲，发展出多字节字符集。</li>
+<li><p>中文字符集：</p>
 <ul>
-<li>GB2312&#x8F83;&#x5E38;&#x7528;&#xFF0C;&#x6DB5;&#x76D6;&#x4E86;&#x6240;&#x6709;&#x7B80;&#x4F53;&#x5B57;&#x7B26;&#x4EE5;&#x53CA;&#x4E00;&#x90E8;&#x5206;&#x5176;&#x4ED6;&#x5B57;&#x7B26;&#xFF1B;</li>
-<li>GBK(k&#x662F;&#x6269;&#x5C55;&#x7684;&#x610F;&#x601D;)&#xFF0C;&#x5728;GB2312&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x6DFB;&#x52A0;&#x4E86;&#x7E41;&#x4F53;&#x5B57;</li>
-<li>GB18030 &#x4E0D;&#x662F;&#x53CC;&#x5B57;&#x8282;&#x5B57;&#x7B26;&#x96C6;</li>
+<li>GB2312较常用，涵盖了所有简体字符以及一部分其他字符；</li>
+<li>GBK(k是扩展的意思)，在GB2312的基础上添加了繁体字</li>
+<li>GB18030 不是双字节字符集</li>
 </ul>
 </li>
-<li><p>&#x66F4;&#x591A;ASCII&#x884D;&#x751F;&#x5B57;&#x7B26;&#x96C6;&#x51FA;&#x73B0;&#x540E;&#xFF0C;&#x4E16;&#x754C;&#x5404;&#x4E2A;&#x7EC4;&#x7EC7;&#x8FDB;&#x884C;&#x6807;&#x51C6;&#x5316;&#x6D41;&#x7A0B;&#xFF0C;ANSI&#x7EC4;&#x7EC7;&#x63D0;&#x51FA;ANSI&#x6807;&#x51C6;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x901A;&#x5E38;&#x8BF4;&#x5230;ANSI&#x7F16;&#x7801;&#xFF0C;&#x901A;&#x5E38;&#x6307;&#x7684;&#x662F;&#x5E73;&#x53F0;&#x7684;&#x9ED8;&#x8BA4;&#x7F16;&#x7801;&#xFF0C;&#x4F8B;&#x5982;&#x82F1;&#x6587;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x662F;ISO-8859-1&#xFF0C;&#x4E2D;&#x6587;&#x7CFB;&#x7EDF;&#x662F;GBK&#x3002;&#x7136;&#x540E;&#x5404;&#x4E2A;&#x56FD;&#x5BB6;&#x4E5F;&#x90FD;&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x8BED;&#x8A00;&#x7684;&#x5B57;&#x7B26;&#x96C6;</p>
+<li><p>更多ASCII衍生字符集出现后，世界各个组织进行标准化流程，ANSI组织提出ANSI标准字符编码，我们现在通常说到ANSI编码，通常指的是平台的默认编码，例如英文操作系统中是ISO-8859-1，中文系统是GBK。然后各个国家也都编写自己语言的字符集</p>
 </li>
-<li>&#x65B0;&#x7684;&#x9700;&#x6C42;&#x51FA;&#x73B0;&#x4E86;&#xFF1A;<strong>&#x5728;&#x4E00;&#x4EFD;&#x6587;&#x6863;&#x4E2D;&#x663E;&#x793A;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x3002;</strong>&#x6B64;&#x65F6;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5168;&#x4EBA;&#x7C7B;&#x8FBE;&#x6210;&#x5171;&#x8BC6;&#x7684;&#x5DE8;&#x5927;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x8FD9;&#x5C31;&#x662F; <strong>Unicode&#x5B57;&#x7B26;&#x96C6;</strong>&#xFF0C;<img src="http://o798x2hdw.bkt.clouddn.com/stickers/11.jpeg?imageView2/1/w/100/h/100/q/100" alt="sticker"></li>
-<li>&#x5728;Unicode&#x51FA;&#x73B0;&#x4E4B;&#x524D;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x90FD;&#x662F;&#x548C;&#x5177;&#x4F53;&#x7F16;&#x7801;&#x65B9;&#x6848;&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#x7684;&#xFF0C;Unicode&#x5C06;&#x5B57;&#x7B26;&#x96C6;&#x548C;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x65B9;&#x6848;&#x5206;&#x79BB;&#x5F00;&#x3002;&#x6240;&#x4EE5;&#x4EA7;&#x751F;&#x4E86;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x7684;Unicode&#x7F16;&#x7801;&#x96C6;&#xFF0C;<strong>UTF-8&#x662F;&#x76EE;&#x524D;&#x5E94;&#x7528;&#x6700;&#x5E7F;&#x6CDB;&#x7684;&#x4E00;&#x79CD;Unicode&#x7F16;&#x7801;&#x65B9;&#x6848;</strong>&#x3002;&#x4E2D;&#x56FD;&#x7684;GB18030&#x7F16;&#x7801;&#xFF0C;&#x8986;&#x76D6;&#x4E86;Unicode&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x7B97;&#x662F;&#x4E00;&#x79CD;Unicode&#x7F16;&#x7801;&#x3002;</li>
-<li>Unicode&#x5B57;&#x7B26;&#x96C6;&#x53EA;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x5B57;&#x7B26;&#x7684;&#x96C6;&#x5408;&#x548C;&#x552F;&#x4E00;&#x7F16;&#x53F7;&#xFF0C;Unicode&#x7F16;&#x7801;&#xFF0C;&#x5219;&#x662F;&#x5BF9;UTF-8&#x3001;UCS-2/UTF-16&#x7B49;&#x5177;&#x4F53;&#x7F16;&#x7801;&#x65B9;&#x6848;&#x7684;&#x7EDF;&#x79F0;&#x800C;&#x5DF2;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x5177;&#x4F53;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x6848;&#x3002;&#x6240;&#x4EE5;&#x5F53;&#x9700;&#x8981;&#x7528;&#x5230;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5199;gb2312&#xFF0C;codepage936&#xFF0C;utf-8&#xFF0C;utf-16&#xFF0C;&#x4F46;&#x8BF7;&#x4E0D;&#x8981;&#x5199;unicode&#xFF08;&#x770B;&#x8FC7;&#x522B;&#x4EBA;&#x5728;&#x7F51;&#x9875;&#x7684;meta&#x6807;&#x7B7E;&#x91CC;&#x5934;&#x5199;charset=unicode&#xFF0C;&#x6709;&#x611F;&#x800C;&#x53D1;&#xFF09;</li>
-<li>&#x9020;&#x6210; <strong>&#x4E71;&#x7801;</strong>&#x7684;&#x539F;&#x56E0;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#x4F7F;&#x7528;&#x4E86;&#x9519;&#x8BEF;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x53BB;&#x89E3;&#x7801;&#x5B57;&#x8282;&#x6D41;&#xFF0C;&#x56E0;&#x6B64;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x601D;&#x8003;&#x4EFB;&#x4F55;&#x8DDF;&#x6587;&#x672C;&#x663E;&#x793A;&#x6709;&#x5173;&#x7684;&#x95EE;&#x9898;&#x65F6;&#xFF0C;&#x8BF7;&#x65F6;&#x523B;&#x4FDD;&#x6301;&#x6E05;&#x9192;&#xFF1A;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x662F;&#x4EC0;&#x4E48;&#x3002;</li>
-<li><strong>&#x672F;&#x8BED;</strong>&#xFF1A;&#x7F16;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x5C06;&#x5B57;&#x7B26;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x8282;&#x6D41;&#x3002; &#x89E3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x5C06;&#x5B57;&#x8282;&#x6D41;&#x89E3;&#x6790;&#x4E3A;&#x5B57;&#x7B26;&#x3002;</li>
+<li>新的需求出现了：<strong>在一份文档中显示所有字符。</strong>此时需要一个全人类达成共识的巨大的字符集，这就是 <strong>Unicode字符集</strong>，<img src="http://o798x2hdw.bkt.clouddn.com/stickers/11.jpeg?imageView2/1/w/100/h/100/q/100" alt="sticker"></li>
+<li>在Unicode出现之前，所有的字符集都是和具体编码方案绑定在一起的，Unicode将字符集和字符编码方案分离开。所以产生了多种不同的Unicode编码集，<strong>UTF-8是目前应用最广泛的一种Unicode编码方案</strong>。中国的GB18030编码，覆盖了Unicode所有的字符，因此也算是一种Unicode编码。</li>
+<li>Unicode字符集只是定义了字符的集合和唯一编号，Unicode编码，则是对UTF-8、UCS-2/UTF-16等具体编码方案的统称而已，并不是具体的编码方案。所以当需要用到字符编码的时候，你可以写gb2312，codepage936，utf-8，utf-16，但请不要写unicode（看过别人在网页的meta标签里头写charset=unicode，有感而发）</li>
+<li>造成 <strong>乱码</strong>的原因就是因为使用了错误的字符编码去解码字节流，因此当我们在思考任何跟文本显示有关的问题时，请时刻保持清醒：当前使用的字符编码是什么。</li>
+<li><strong>术语</strong>：编码的过程是将字符转换成字节流。 解码的过程是将字节流解析为字符。</li>
 </ol>
 <hr>
 <blockquote>
-<p>&#x672C;&#x6587;&#x4E3A;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x5C0A;&#x91CD;&#x8F9B;&#x52E4;&#x52B3;&#x52A8;&#xFF0C;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x6458;&#x8981;&#x3001;&#x63A8;&#x8350;&#x6216;&#x805A;&#x5408;&#xFF0C;&#x4F46;&#x5B8C;&#x6574;&#x8F6C;&#x8F7D;&#x9700;&#x7ECF;&#x8FC7;&#x672C;&#x4EBA;&#x540C;&#x610F;&#xFF0C;&#x672C;&#x4EBA;&#x90AE;&#x7BB1; miao.hnlk@gmail.com<br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/">http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</a></p>
+<p>本文为原创文章，尊重辛勤劳动，可以免费摘要、推荐或聚合，但完整转载需经过本人同意，本人邮箱 <a href="mailto:miao.hnlk@gmail.com" target="_blank" rel="noopener">miao.hnlk@gmail.com</a><br>本文地址：<a href="http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/">http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</a></p>
 </blockquote>
-<p>Reference&#xFF1A;</p>
-<p>^1: <a href="http://fengqing888.blog.163.com/blog/static/330114162013101522549676/" target="_blank" rel="external">URL&#x7F16;&#x7801;&#x4E3A;&#x4EC0;&#x4E48;&#x4E2D;&#x6587;&#x52A0;%&#x539F;&#x56E0;</a><br>^2: <a href="http://blog.csdn.net/java2009cgh/article/details/11214081" target="_blank" rel="external">Unicode&#x8F6C;&#x4E49;(\uXXXX)&#x7684;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;</a><br>^3: <a href="http://www.cnblogs.com/jerrysion/p/5522673.html" target="_blank" rel="external">&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FDB;&#x884C;URL&#x7F16;&#x7801;</a><br>^4: <a href="http://www.cnblogs.com/shytong/p/5102256.html" target="_blank" rel="external">encodeURI&#x3001;encodeURIComponent&#x3001;btoa&#x53CA;&#x5176;&#x5E94;&#x7528;&#x573A;&#x666F;</a><br>^5: <a href="http://www.cnblogs.com/jx270/p/4829589.html" target="_blank" rel="external">encodeURI&#x6765;&#x89E3;&#x51B3;URL&#x4F20;&#x9012;&#x65F6;&#x7684;&#x4E2D;&#x6587;&#x95EE;&#x9898;</a><br>^6: <a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001399413803339f4bbda5c01fc479cbea98b1387390748000" target="_blank" rel="external">base64</a><br>^7: <a href="http://netwjx.github.io/blog/2012/07/07/encode-and-decode-unicode-escape-string/" target="_blank" rel="external">Unicode&#x8F6C;&#x4E49;(\uXXXX)&#x7684;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;</a><br>^8: <a href="http://www.imkevinyang.com/2010/06/%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%EF%BC%8C%E4%BD%A0%E6%89%80%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84.html" target="_blank" rel="external">&#x5173;&#x4E8E;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#xFF0C;&#x4F60;&#x6240;&#x9700;&#x8981;&#x77E5;&#x9053;&#x7684;&#xFF08;ASCII,Unicode,Utf-8,GB2312&#x2026;&#xFF09;</a></p>
+<p>Reference：</p>
+<p>^1: <a href="http://fengqing888.blog.163.com/blog/static/330114162013101522549676/" target="_blank" rel="noopener">URL编码为什么中文加%原因</a><br>^2: <a href="http://blog.csdn.net/java2009cgh/article/details/11214081" target="_blank" rel="noopener">Unicode转义(\uXXXX)的编码和解码</a><br>^3: <a href="http://www.cnblogs.com/jerrysion/p/5522673.html" target="_blank" rel="noopener">为什么要进行URL编码</a><br>^4: <a href="http://www.cnblogs.com/shytong/p/5102256.html" target="_blank" rel="noopener">encodeURI、encodeURIComponent、btoa及其应用场景</a><br>^5: <a href="http://www.cnblogs.com/jx270/p/4829589.html" target="_blank" rel="noopener">encodeURI来解决URL传递时的中文问题</a><br>^6: <a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001399413803339f4bbda5c01fc479cbea98b1387390748000" target="_blank" rel="noopener">base64</a><br>^7: <a href="http://netwjx.github.io/blog/2012/07/07/encode-and-decode-unicode-escape-string/" target="_blank" rel="noopener">Unicode转义(\uXXXX)的编码和解码</a><br>^8: <a href="http://www.imkevinyang.com/2010/06/%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%EF%BC%8C%E4%BD%A0%E6%89%80%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84.html" target="_blank" rel="noopener">关于字符编码，你所需要知道的（ASCII,Unicode,Utf-8,GB2312…）</a></p>
 
       
     </div>
@@ -599,7 +586,7 @@ unicode&amp;#x8F6C;&amp;#x4E49;&amp;#x5E8F;&amp;#x5217;\uxxxx
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -607,7 +594,7 @@ unicode&amp;#x8F6C;&amp;#x4E49;&amp;#x5E8F;&amp;#x5217;\uxxxx
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -616,7 +603,7 @@ unicode&amp;#x8F6C;&amp;#x4E49;&amp;#x5E8F;&amp;#x5217;\uxxxx
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

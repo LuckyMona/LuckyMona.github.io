@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="&amp;#x5728;windows&amp;#x4E0B;&amp;#x4F7F;&amp;#x7528;Mongodb&amp;#x8C8C;&amp;#x4F3C;&amp;#x6709;&amp;#x597D;&amp;#x591A;&amp;#x5751;&amp;#xFF0C;&amp;#x5FEB;&amp;#x641E;&amp;#x5B8C;&amp;#x4E86;&amp;#x624D;&amp;#x60F3;&amp;#x5230;&amp;#x8981;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E0B;&amp;#x6765;&amp;#">
+<meta name="description" content="在windows下使用Mongodb貌似有好多坑，快搞完了才想到要记录下来，于是只记了最后几个坑坑，有的还记得不太清楚，Anyway，能帮助到需要的人就好~ Why so serious？">
+<meta name="keywords" content="踩坑,mongoDB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB使用过程踩坑小记">
 <meta property="og:url" content="http://supermaryy.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/index.html">
-<meta property="og:site_name" content="Mary's blog">
-<meta property="og:description" content="&amp;#x5728;windows&amp;#x4E0B;&amp;#x4F7F;&amp;#x7528;Mongodb&amp;#x8C8C;&amp;#x4F3C;&amp;#x6709;&amp;#x597D;&amp;#x591A;&amp;#x5751;&amp;#xFF0C;&amp;#x5FEB;&amp;#x641E;&amp;#x5B8C;&amp;#x4E86;&amp;#x624D;&amp;#x60F3;&amp;#x5230;&amp;#x8981;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E0B;&amp;#x6765;&amp;#">
-<meta property="og:updated_time" content="2016-09-11T11:30:21.958Z">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="在windows下使用Mongodb貌似有好多坑，快搞完了才想到要记录下来，于是只记了最后几个坑坑，有的还记得不太清楚，Anyway，能帮助到需要的人就好~ Why so serious？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB使用过程踩坑小记">
-<meta name="twitter:description" content="&amp;#x5728;windows&amp;#x4E0B;&amp;#x4F7F;&amp;#x7528;Mongodb&amp;#x8C8C;&amp;#x4F3C;&amp;#x6709;&amp;#x597D;&amp;#x591A;&amp;#x5751;&amp;#xFF0C;&amp;#x5FEB;&amp;#x641E;&amp;#x5B8C;&amp;#x4E86;&amp;#x624D;&amp;#x60F3;&amp;#x5230;&amp;#x8981;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E0B;&amp;#x6765;&amp;#">
+<meta name="twitter:description" content="在windows下使用Mongodb貌似有好多坑，快搞完了才想到要记录下来，于是只记了最后几个坑坑，有的还记得不太清楚，Anyway，能帮助到需要的人就好~ Why so serious？">
 
 
 
@@ -357,11 +359,11 @@
       
 
       
-        <p>&#x5728;windows&#x4E0B;&#x4F7F;&#x7528;Mongodb&#x8C8C;&#x4F3C;&#x6709;&#x597D;&#x591A;&#x5751;&#xFF0C;&#x5FEB;&#x641E;&#x5B8C;&#x4E86;&#x624D;&#x60F3;&#x5230;&#x8981;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x4E8E;&#x662F;&#x53EA;&#x8BB0;&#x4E86;&#x6700;&#x540E;&#x51E0;&#x4E2A;&#x5751;&#x5751;&#xFF0C;&#x6709;&#x7684;&#x8FD8;&#x8BB0;&#x5F97;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#xFF0C;Anyway&#xFF0C;&#x80FD;&#x5E2E;&#x52A9;&#x5230;&#x9700;&#x8981;&#x7684;&#x4EBA;&#x5C31;&#x597D;~ Why so serious&#xFF1F;<br><a id="more"></a><br>&#x4E00;&#x5F00;&#x59CB;&#x62A5;&#x9519;rc=56&#xFF0C;&#x6709;&#x4E2A;&#x63D2;&#x4EF6;&#x6CA1;&#x88C5;&#xFF0C;&#x53C2;&#x8003;&#x4E86;&#x597D;&#x591A;&#x6559;&#x7A0B;&#xFF0C;&#x6700;&#x540E;&#x6309;&#x8FD9;&#x4E2A;<a href="http://www.tuicool.com/articles/ruqU32" title="win7 &#x5B89;&#x88C5; mongodb &#x7EDD;&#x5BF9;&#x6B63;&#x786E;" target="_blank" rel="external">&#x94FE;&#x63A5;</a>&#x88C5;&#x4E0B;&#x6765;&#x6BD4;&#x8F83;&#x987A;&#x5229;&#xFF1A;</p>
-<p>&#x88C5;&#x597D;&#x4EE5;&#x540E;&#x542F;&#x52A8;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x63D0;&#x793A;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hotfix KB2731284 or later update is installed, no need to zero-out data files?</div></pre></td></tr></table></figure></p>
-<p>&#x627E;&#x5230;<a href="http://stackoverflow.com/questions/30246428/hotfix-kb2731284-or-later-update-is-installed-no-need-to-zero-out-data-files?s=1|3.2969" target="_blank" rel="external">stackoverflow&#x4E0A;&#x4E00;&#x4E2A;&#x95EE;&#x9898;</a>&#xFF0C;&#x6700;&#x7EC8;&#x6307;&#x5411;<a href="http://mongodb.2344371.n4.nabble.com/mongod-don-t-start-after-server-crash-td1096.html" target="_blank" rel="external">&#x8FD9;&#x4E2A;&#x5730;&#x5740;</a></p>
-<p>&#x8BF4;&#x662F;windows&#x7684;&#x670D;&#x52A1;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x592A;&#x77ED;&#xFF0C;&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#x589E;&#x52A0;&#x5230;2min&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;<br>&#x8FD9;&#x90E8;&#x5206;&#x6CA1;&#x770B;&#x61C2;&#xFF1A;Here is a snippet of Powershell code that I use to make the edits to all of my MongoDB servers remotely.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Invoke-Command -ConnectionUri $uri -Credential $localCredentials `</div><div class="line">        -ScriptBlock {set-itemproperty -path HKLM:\SYSTEM\CurrentControlSet\Control -name WaitToKillServiceTimeout -value 120000}</div></pre></td></tr></table></figure></p>
-<p>&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#xFF1A; Windows&#x670D;&#x52A1;&#x7684;&#x542F;&#x52A8;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x9ED8;&#x8BA4;&#x662F;30&#x79D2;&#xFF0C;&#x4F46;&#x8FD9;&#x5E76;&#x5BF9;&#x5BF9;&#x6240;&#x6709;&#x670D;&#x52A1;&#x90FD;&#x6709;&#x6548;&#xFF0C;&#x6709;&#x4E9B;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x95F4;&#x53EF;&#x80FD;&#x8D85;&#x8FC7;30&#x79D2;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x6CE8;&#x518C;&#x8868;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x6CE8;&#x518C;&#x8868;&#x9879;&#x4E3A;<code>HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/ServicesPipeTimeout</code>,&#x8FD9;&#x4E2A;&#x503C;&#x6709;&#x53EF;&#x80FD;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x3002;&#x7C7B;&#x578B;&#x4E3A;DWORD&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;&#x3002;&#x5F15;&#x7528;&#x81EA;<a href="http://blog.csdn.net/hanyu1980/article/details/2197455" target="_blank" rel="external">&#x8FD9;&#x91CC;</a></p>
+        <p>在windows下使用Mongodb貌似有好多坑，快搞完了才想到要记录下来，于是只记了最后几个坑坑，有的还记得不太清楚，Anyway，能帮助到需要的人就好~ Why so serious？<br><a id="more"></a><br>一开始报错rc=56，有个插件没装，参考了好多教程，最后按这个<a href="http://www.tuicool.com/articles/ruqU32" title="win7 安装 mongodb 绝对正确" target="_blank" rel="noopener">链接</a>装下来比较顺利：</p>
+<p>装好以后启动服务时，会出现这个提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hotfix KB2731284 or later update is installed, no need to zero-out data files?</span><br></pre></td></tr></table></figure></p>
+<p>找到<a href="http://stackoverflow.com/questions/30246428/hotfix-kb2731284-or-later-update-is-installed-no-need-to-zero-out-data-files?s=1|3.2969" target="_blank" rel="noopener">stackoverflow上一个问题</a>，最终指向<a href="http://mongodb.2344371.n4.nabble.com/mongod-don-t-start-after-server-crash-td1096.html" target="_blank" rel="noopener">这个地址</a></p>
+<p>说是windows的服务超时时间太短，修改注册表增加到2min后就可以了，<br>这部分没看懂：Here is a snippet of Powershell code that I use to make the edits to all of my MongoDB servers remotely.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Invoke-Command -ConnectionUri $uri -Credential $localCredentials `</span><br><span class="line">        -ScriptBlock &#123;set-itemproperty -path HKLM:\SYSTEM\CurrentControlSet\Control -name WaitToKillServiceTimeout -value 120000&#125;</span><br></pre></td></tr></table></figure></p>
+<p>修改注册表： Windows服务的启动超时时间默认是30秒，但这并对对所有服务都有效，有些服务的时间可能超过30秒，这时候需要修改注册表来解决这个问题。注册表项为<code>HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/ServicesPipeTimeout</code>,这个值有可能不存在，如果不存在需要添加。类型为DWORD，单位是毫秒。引用自<a href="http://blog.csdn.net/hanyu1980/article/details/2197455" target="_blank" rel="noopener">这里</a></p>
 
       
     </div>
@@ -394,16 +396,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/02/npm ERR! shasum check failed for/" rel="next" title="npm ERR! shasum check failed for报错，解决办法">
-                <i class="fa fa-chevron-left"></i> npm ERR! shasum check failed for报错，解决办法
+              <a href="/2016/05/16/Question_About_Onunload/" rel="next" title="onunload用于移除事件处理程序的疑问">
+                <i class="fa fa-chevron-left"></i> onunload用于移除事件处理程序的疑问
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/" rel="prev" title="ionic + angularJS开发Hybrid App开发环境配置及打包踩坑记">
-                ionic + angularJS开发Hybrid App开发环境配置及打包踩坑记 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/02/npm ERR! shasum check failed for/" rel="prev" title="npm ERR! shasum check failed for报错，解决办法">
+                npm ERR! shasum check failed for报错，解决办法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -479,7 +481,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -487,7 +489,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -496,7 +498,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

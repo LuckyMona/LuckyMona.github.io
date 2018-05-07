@@ -86,22 +86,18 @@
 
 
 
-<meta name="description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&amp;#x503C;&amp;#x4E3A;null&amp;#x548C;undefined&amp;#xFF0C;ES3&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;ES5&amp;#x7EC8;&amp;#x6B62;&amp;#x5FAA;&amp;#x73AF;&amp;#xFF0C;&amp;#x6">
+<meta name="description" content="摘要：  for in 循环如果属性值为null和undefined，ES3报错，ES5终止循环，故使用前需要检测值是">
+<meta name="keywords" content="红皮书,读书笔记,Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript基础5-Date">
 <meta property="og:url" content="http://supermaryy.com/2016/09/20/read-book-professional-javascript5/index.html">
-<meta property="og:site_name" content="Mary's blog">
-<meta property="og:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&amp;#x503C;&amp;#x4E3A;null&amp;#x548C;undefined&amp;#xFF0C;ES3&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;ES5&amp;#x7EC8;&amp;#x6B62;&amp;#x5FAA;&amp;#x73AF;&amp;#xFF0C;&amp;#x6">
-<meta property="og:updated_time" content="2018-01-04T15:07:55.592Z">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="摘要：  for in 循环如果属性值为null和undefined，ES3报错，ES5终止循环，故使用前需要检测值是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript基础5-Date">
-<meta name="twitter:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;
-
-for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&amp;#x503C;&amp;#x4E3A;null&amp;#x548C;undefined&amp;#xFF0C;ES3&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;ES5&amp;#x7EC8;&amp;#x6B62;&amp;#x5FAA;&amp;#x73AF;&amp;#xFF0C;&amp;#x6">
+<meta name="twitter:description" content="摘要：  for in 循环如果属性值为null和undefined，ES3报错，ES5终止循环，故使用前需要检测值是">
 
 
 
@@ -363,224 +359,224 @@ for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&
       
 
       
-        <p>&#x6458;&#x8981;&#xFF1A;</p>
+        <p>摘要：</p>
 <ol>
-<li>for in &#x5FAA;&#x73AF;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x503C;&#x4E3A;null&#x548C;undefined&#xFF0C;ES3&#x62A5;&#x9519;&#xFF0C;ES5&#x7EC8;&#x6B62;&#x5FAA;&#x73AF;&#xFF0C;&#x6545;&#x4F7F;&#x7528;&#x524D;&#x9700;&#x8981;&#x68C0;&#x6D4B;&#x503C;&#x662F;</li>
+<li>for in 循环如果属性值为null和undefined，ES3报错，ES5终止循环，故使用前需要检测值是</li>
 </ol>
 <a id="more"></a>
 <blockquote>
-<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="external">http://supermaryy.com</a><br>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/09/20/read-book-professional-javascript4">http://supermaryy.com/2016/09/20/read-book-professional-javascript4</a></p>
+<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="noopener">http://supermaryy.com</a><br>本文地址：<a href="http://supermaryy.com/2016/09/20/read-book-professional-javascript4">http://supermaryy.com/2016/09/20/read-book-professional-javascript4</a></p>
 </blockquote>
-<h1 id="&#x4E00;&#x3001;Date&#x7C7B;&#x578B;"><a href="#&#x4E00;&#x3001;Date&#x7C7B;&#x578B;" class="headerlink" title="&#x4E00;&#x3001;Date&#x7C7B;&#x578B;"></a>&#x4E00;&#x3001;Date&#x7C7B;&#x578B;</h1><ol>
-<li><p>for&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;Boolean()&#x51FD;&#x6570;&#xFF0C;&#x628A;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x5E03;&#x5C14;&#x503C;&#x3002;</p>
+<h1 id="一、Date类型"><a href="#一、Date类型" class="headerlink" title="一、Date类型"></a>一、Date类型</h1><ol>
+<li><p>for会自动调用Boolean()函数，把条件语句，转换成布尔值。</p>
 </li>
-<li><p>for(var i=0; i&lt;3; i++){} &#x5FAA;&#x73AF;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;i&#xFF0C;&#x5FAA;&#x73AF;&#x5916;&#x90E8;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#xFF0C;&#x56E0;&#x4E3A;JS&#x4E0D;&#x5B58;&#x5728;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</p>
+<li><p>for(var i=0; i&lt;3; i++){} 循环中定义的变量i，循环外部也可以访问，因为JS不存在块级作用域</p>
 </li>
-<li><p><strong>for in&#x5FAA;&#x73AF;</strong>&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6CA1;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x503C;&#x4E3A;null&#x548C;undefined&#xFF0C;ES3&#x4E0B;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#xFF0C;ES5&#x4E2D;&#x4F1A;&#x4E2D;&#x65AD;&#x5FAA;&#x73AF;&#xFF0C;<del>&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x5E76;&#x6CA1;&#x6709;&#x4E2D;&#x65AD;</del>&#xFF0C;&#x6240;&#x4EE5;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x524D;&#x6700;&#x597D;&#x68C0;&#x6D4B;&#x503C;&#x662F;&#x5426;&#x4E3A;null&#x6216;&#x8005;&#x662F;undefined&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// &#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#xFF1A;</div><div class="line">var x;</div><div class="line">var aa = { </div><div class="line">    bb:null,</div><div class="line">    cc:x,</div><div class="line">    dd:&quot;1&quot;</div><div class="line">}</div><div class="line"></div><div class="line">for(var propName in aa){</div><div class="line">console.log(aa[propName]);</div><div class="line">}</div><div class="line">// &#x7ED3;&#x679C;&#xFF1A;null/undefined/1</div><div class="line"></div><div class="line">// &#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x4F1A;&#x4E2D;&#x65AD;&#xFF1A;</div><div class="line">arr = new Array(3); // [undefined &#xD7; 3]</div><div class="line">arr.forEach(()=&gt;console.log(&apos;have done&apos;));  // &#x6CA1;&#x6709;&#x6253;&#x5370;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x503C;undefined</div><div class="line">for(var i in arr) console.log(&apos;have done&apos;); // &#x6CA1;&#x6709;&#x6253;&#x5370;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x503C;undefined</div><div class="line">for(var i of arr) console.log(&apos;have done&apos;); //3&#x6B21;&quot;have done&quot;</div></pre></td></tr></table></figure>
+<li><p><strong>for in循环</strong>可以遍历对象的属性，没有一定的顺序，如果属性值为null和undefined，ES3下会抛出错误，ES5中会中断循环，<del>但是实际执行时并没有中断</del>，所以实际使用前最好检测值是否为null或者是undefined：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 这种写法不会中断：</span><br><span class="line">var x;</span><br><span class="line">var aa = &#123; </span><br><span class="line">    bb:null,</span><br><span class="line">    cc:x,</span><br><span class="line">    dd:&quot;1&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(var propName in aa)&#123;</span><br><span class="line">console.log(aa[propName]);</span><br><span class="line">&#125;</span><br><span class="line">// 结果：null/undefined/1</span><br><span class="line"></span><br><span class="line">// 这种写法会中断：</span><br><span class="line">arr = new Array(3); // [undefined × 3]</span><br><span class="line">arr.forEach(()=&gt;console.log(&apos;have done&apos;));  // 没有打印，浏览器语句返回值undefined</span><br><span class="line">for(var i in arr) console.log(&apos;have done&apos;); // 没有打印，浏览器语句返回值undefined</span><br><span class="line">for(var i of arr) console.log(&apos;have done&apos;); //3次&quot;have done&quot;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>label &#x8BED;&#x53E5;</strong><br>label&#x8BED;&#x53E5;&#x4E3B;&#x8981;&#x662F;&#x4E0E;for&#x5FAA;&#x73AF;&#x914D;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x7ED3;&#x5408;break&#x548C;continue&#xFF0C;&#x53EF;&#x4EE5;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;&#x3002;&#x591A;&#x7528;&#x5728;&#x5FAA;&#x73AF;&#x5D4C;&#x5957;&#x7684;&#x65F6;&#x5019;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x7ED3;&#x5408;break&#xFF0C;continue&#x540C;&#x7406;</div><div class="line">outLoop:</div><div class="line">for(var i=0; i&lt;4; i++){</div><div class="line">    innerLoop:</div><div class="line">    for(var j=0; j&lt;4; j++){</div><div class="line">        if(i==2 &amp;&amp; j==2){</div><div class="line">            break outLoop;</div><div class="line">        }</div><div class="line">        console.log(&apos;i:&apos;+i+&quot;,j:&quot;+j);</div><div class="line">    }</div><div class="line">}</div><div class="line">// &#x8F93;&#x51FA;&#x503C;&#xFF1A;</div><div class="line"> i:0,j:0</div><div class="line"> i:0,j:1</div><div class="line"> i:0,j:2</div><div class="line"> i:1,j:0</div></pre></td></tr></table></figure>
+<li><p><strong>label 语句</strong><br>label语句主要是与for循环配合使用，结合break和continue，可以跳出循环。多用在循环嵌套的时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//下面例子结合break，continue同理</span><br><span class="line">outLoop:</span><br><span class="line">for(var i=0; i&lt;4; i++)&#123;</span><br><span class="line">    innerLoop:</span><br><span class="line">    for(var j=0; j&lt;4; j++)&#123;</span><br><span class="line">        if(i==2 &amp;&amp; j==2)&#123;</span><br><span class="line">            break outLoop;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(&apos;i:&apos;+i+&quot;,j:&quot;+j);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 输出值：</span><br><span class="line"> i:0,j:0</span><br><span class="line"> i:0,j:1</span><br><span class="line"> i:0,j:2</span><br><span class="line"> i:1,j:0</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>with &#x8BED;&#x53E5;</strong><br>&#x7B80;&#x5316;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x591A;&#x6B21;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var obj = {a:&apos;11&apos;, b:&apos;22&apos;}&#xFF1B;</div><div class="line">obj.a = &apos;aa&apos;;</div><div class="line">obj.b = &apos;bb&apos;;</div><div class="line"></div><div class="line">// &#x7B80;&#x5316;&#x540E;&#xFF1A;</div><div class="line">var obj = {a:&apos;11&apos;, b:&apos;22&apos;}&#xFF1B;</div><div class="line">with(obj){</div><div class="line">    var c = &quot;cc&quot;</div><div class="line">    a = &apos;aa&apos;;</div><div class="line">    b = &apos;bb&apos;;</div><div class="line">}</div></pre></td></tr></table></figure>
+<li><p><strong>with 语句</strong><br>简化对同一个对象的多次操作，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:&apos;11&apos;, b:&apos;22&apos;&#125;；</span><br><span class="line">obj.a = &apos;aa&apos;;</span><br><span class="line">obj.b = &apos;bb&apos;;</span><br><span class="line"></span><br><span class="line">// 简化后：</span><br><span class="line">var obj = &#123;a:&apos;11&apos;, b:&apos;22&apos;&#125;；</span><br><span class="line">with(obj)&#123;</span><br><span class="line">    var c = &quot;cc&quot;</span><br><span class="line">    a = &apos;aa&apos;;</span><br><span class="line">    b = &apos;bb&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>with&#x4EE3;&#x7801;&#x5757;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5C31;&#x662F;obj&#x3002;JS&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;with&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;a/b/c&#x5F53;&#x505A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x5B9A;&#x4E49;a/b&#xFF0C;&#x5C31;&#x4ECE;obj&#x7684;&#x5C5E;&#x6027;&#x4E2D;&#x67E5;&#x627E;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x5230;&#x4E86;&#x5C31;&#x8986;&#x76D6;obj&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x5C31;&#x4ECE;with&#x6240;&#x5728;&#x7684;&#x5916;&#x90E8;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x627E;&#x3002;</p>
+<p>with代码块形成一个作用域，就是obj。JS解析时，会将with代码块中的所有变量a/b/c当做局部变量，如果局部环境中找不到定义a/b，就从obj的属性中查找，如果找到了就覆盖obj中的变量，如果找不到，就从with所在的外部作用域中找。</p>
 <blockquote>
-<p>&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5728; with &#x8BED;&#x53E5;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x5185;&#x90E8;&#xFF0C;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x9996;&#x5148;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x800C;&#x5982;&#x679C;&#x5728;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x5C31;&#x4F1A;&#x67E5;&#x8BE2;location &#x5BF9;&#x8C61;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x540C;&#x540D;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x4E86;&#x540C;&#x540D;&#x5C5E;&#x6027;&#xFF0C; &#x5219;&#x4EE5; location &#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x4E0B;&#x964D;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x3002;</p>
+<p>这意味着在 with 语句的代码块内部，每个变量首先被认为是一个局部变量，而如果在局部环境中找不到该变量的定义，就会查询location 对象中是否有同名的属性。如果发现了同名属性， 则以 location 对象属性的值作为变量的值。这样会导致性能下降，不推荐使用。</p>
 </blockquote>
+<ol start="6">
+<li><strong>switch</strong><br>需要混合的时候，要加注释：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">switch(i)&#123;</span><br><span class="line">    case 12:</span><br><span class="line">        //合并两种情形</span><br><span class="line">    case 13:</span><br><span class="line">        console.log(&apos;hhh&apos;);</span><br><span class="line">        break;</span><br><span class="line">    case 14:</span><br><span class="line">        console.log(&apos;14&apos;);</span><br><span class="line">        bresak;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>据JS精粹这本书，贯穿的时候，每个都写break：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">switch(i)&#123;</span><br><span class="line">    case 12:</span><br><span class="line">    case 13:</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//上面写法易出错，且很难发现，应该这么写</span><br><span class="line">switch(i)&#123;</span><br><span class="line">    case 12:</span><br><span class="line">        break;</span><br><span class="line">    case 13:</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>switch使用的全等操作符，所以并不会进行数据类型转换</strong></p>
+<ol start="7">
+<li><p><strong>函数</strong></p>
+<ul>
+<li>函数定义时不必指定是否返回值；</li>
+<li>如果加了return，只执行到return语句，后面的永远不会被执行，</li>
+<li>例外：try catch语句，如果有finally，即使在try 或catch中写了return，仍然会执行finally里的代码</li>
+<li>如果return语句不加返回值，默认将返回undefined</li>
+</ul>
+</li>
+<li><p><strong>参数</strong></p>
+<ul>
+<li>arguments可以与命名参数一起使用</li>
+<li>arguments与数组相似：可以用arguments[n]来访问值，有length属性。但不是数组，没有数组的方法：slice、splice、shift、unshift、push、pop、concat、join、sort、reverse</li>
+<li>arguments的值永远与命名参数的值保持同步，其与命名参数并不是访问相同的内存空间，但是值会同步，没有传递值的；命名参数值默认被赋予undefined</li>
+<li><p><strong> 函数所有传参都是按值传递，不可能通过引用传参 </strong><br>结论：对于数字、字符串等是将它们的值传递给了函数参数，函数参数的改变不会影响函数外部的变量；对于数组和对象等是将对象(数组)变量的值传递给了函数参数，这个值是指向对象(数组)的地址。</p>
+<p><strong>函数传参的过程是把函数外部的变量的值复制给函数的局部变量，这个局部变量是指arguments的某个值。</strong><br>这句话对于理解引用类型传参时也是按值传递非常重要，检验是否理解引用类型按值传参的一段代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function setName(obj) &#123;</span><br><span class="line">    obj.name = &apos;aaa&apos;;</span><br><span class="line">    var obj = new Object();</span><br><span class="line">    obj.name = &apos;ccc&apos;;</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line">var person = new Object();</span><br><span class="line">person.name = &apos;bbb&apos;;</span><br><span class="line"></span><br><span class="line">var newPerson = setName(person);</span><br><span class="line">console.log(person.name + &apos; | &apos; + newPerson.name); // aaa | ccc</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="二、变量、作用域和内存问题"><a href="#二、变量、作用域和内存问题" class="headerlink" title="二、变量、作用域和内存问题"></a>二、变量、作用域和内存问题</h1><ol>
+<li><p><strong>基本类型和引用类型的值</strong></p>
+<ul>
+<li>定义基本类型值和引用类型值的过程：创建一个变量并为该变量赋值</li>
+<li>基本类型值指的是简单的数据段，而引用类型值指可能有多个值构成的对象</li>
+<li>5种基本数据类型是按值访问的，因为可以操作保存在变量中的实际的值</li>
+<li>引用类型的值是保存在内存中的对象的地址。JavaScript不允许直接访问内存中的位置，也就是说不能直接操作对象的内存空间。</li>
+<li>操作对象时，实际上是在操作对象的引用而不是实际的对象。为此，引用类型的值是按引用访问的</li>
+</ul>
+</li>
+<li><p><strong>堆栈</strong></p>
+<p> 堆存储：类似书架与书，存取没有顺序，只要知道书的名字，就可以方便的取出想要的书<br> 栈存储：类似羽毛球筒与羽毛球，先存后取，后存先取，要拿中间某一个球必须先把它上面的球全拿出来</p>
+<p> 栈的优势是存取速度比堆快，缺点是存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。堆的优势是可以动态分配内存大小，生存期也不必事先告诉编译器，垃圾收集器会自动地收走这些不再使用的数据，但是缺点是由于在运行时动态分配内存，所以存取速度较慢。</p>
+<p> 基本类型值，一旦赋值，大小就固定了，因此存储在栈内存中。引用类型的值，可以动态的改变，例如定义一个对象之后，还可以给它添加变量和方法，因此大小不固定，所以存储在堆内存中。</p>
+<p> js中的基础类型变量，都是存放在变量对象中，JavaScript属于高级语言，高级语言中严格意义上来说并没有堆栈的区分。但是一些特殊场景会在逻辑上实现栈的存取方式，这才有了堆与栈的不同。</p>
+<p> 理解堆栈存储：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Person(id,name,age)&#123; </span><br><span class="line">    this.id = id; </span><br><span class="line">    this.name = name; </span><br><span class="line">    this.age = age; </span><br><span class="line">&#125; </span><br><span class="line">var num = 10; </span><br><span class="line">var bol = true; </span><br><span class="line">var str = &quot;abc&quot;; </span><br><span class="line">var obj = new Object(); </span><br><span class="line">var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]; </span><br><span class="line">var person = new Person(100,&quot;jxl&quot;,22);</span><br></pre></td></tr></table></figure>
+<p> <a href="http://o798x2hdw.bkt.clouddn.com/stack.png" target="_blank" rel="noopener">stack-pic</a></p>
+</li>
+<li><p><strong>赋值变量值</strong></p>
+<ul>
+<li>从一个变量向另一个变量复制基本类型值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</li>
+<li>当复制引用类型的值时，会将原变量的值复制一份放到为新变量分配的空间中。不同的是这个值是一个指针，改变其中一个变量会影响到另一个变量<br><a href="http://o798x2hdw.bkt.clouddn.com/copy-variable.png" target="_blank" rel="noopener">copy_variable-pic</a></li>
+</ul>
+</li>
+<li><p><strong>传递参数</strong></p>
+<ul>
+<li>JS中所有参数都是按值传递的</li>
+<li>把函数外部的值复制给函数内部参数，就和把值从一个变量复制到另一个变量一样</li>
+<li>传递引用类型值时传递的是指针，因此在函数中对局部变量参数的修改会反映到函数外部</li>
+<li>可以把函数参数想象成局部变量</li>
+</ul>
+</li>
+<li><p><strong>检测类型</strong></p>
+<ul>
+<li>检测基本类型值（number\string\undefined\boolean）用typeof，检测引用类型值用instanceof</li>
+<li>如果是对象或<strong>null</strong>，typeof会返回”object”</li>
+<li>如果是function，typeof会返回”function”</li>
+<li><p>如果变量是给定引用类型的实例，instanceof 操作符就会返回 true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var person = function()&#123;</span><br><span class="line">  this.name = &quot;aa&quot;;</span><br><span class="line">&#125;</span><br><span class="line">var bill  = new person();</span><br><span class="line">console.log(bill instanceof person)  //true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用instanceof检测基本类型值，始终返回false，因为基本类型值不是对象</p>
+</li>
+</ul>
+</li>
+<li><p><strong>执行环境及作用域</strong></p>
+<ul>
+<li><strong>执行环境（execution context）</strong>定义了变量或函数有权访问的其他数据</li>
+<li>每个函数有自己的执行环境，每个执行环境有一个相关联的<strong>变量对象(variable object)</strong>，保存环境中所有的变量和函数</li>
+<li>全局执行环境是最外围的执行环境，在web浏览器中是window对象，所有全局的变量和函数都是作为window的属性和方法</li>
+<li>某个执行环境的所有代码执行完毕后，该环境其中的变量和函数全部销毁</li>
+<li>而全局执行环境在程序退出时销毁，web浏览器中对应关闭网页时</li>
+<li><strong>ECMAScript程序的执行流：</strong>每个函数都有自己的执行环境，当执行流进入一个函数时，函数的环境就被推入一个环境栈中。函数执行后，栈将其环境弹出，把控制权返还给之前的执行环境</li>
+<li><strong>作用域链</strong>，作用域链前端，是当前执行的代码所在环境的变量对象，如果环境是函数，就把函数的<strong>活动对象（activation object）</strong>作为变量对象。活动对象最开始只包含一个变量，即arguments对象（全局环境中不包含），作用域链下一个变量对象来自包含环境，这样一直延续到全局环境。</li>
+<li><strong>延长作用域链</strong>：with和try catch中的catch块可以延长作用域链，即在作用域链的前端临时添加一个变量对象，该变量对象在代码执行完毕后被移除。</li>
+<li>对于catch语句，会创建一个新的变量对象，其中包含对被抛出的错误对象的声明。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function withLocation()&#123;</span><br><span class="line">    with(location)&#123;</span><br><span class="line">        var url = href;</span><br><span class="line">    &#125;</span><br><span class="line">    reutrn url</span><br><span class="line">&#125;</span><br><span class="line">// with语句内部，定义了一个url变量，因而url就成了函数执行环境的一部分，所以可以作为函数的值被返回。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>- 标识符解析会沿着作用域链一级一级进行查找，直到找到声明变量的地方，假设局部环境有`var color = &quot;red&quot;`,此时在局部环境中只有使用`window.color`才可以访问在全局变量中定义的color
+- 变量查询有代价会比较慢，所以访问局部变量会比访问全局变量快，但现在差距几乎可以忽略
+</code></pre><ol start="7">
+<li><p><strong>垃圾收集</strong></p>
+<ul>
+<li>JS具有自动垃圾收集机制，执行环境会负责管理代码执行过程中使用的内存，即内存分配和无用内存的回收</li>
+<li>这种自动垃圾收集机制的原理是：找出不再使用的变量，然后销毁释放其占用的内存。垃圾收集器会隔段时间就周期性地执行这一操作</li>
+<li>浏览器中对垃圾收集的实现方式包含：引用计数和标记清除两种</li>
+<li><strong>标记清除</strong>：当变量进入环境时（如在函数中声明一个变量）标记为“进入环境”，当变量离开环境时，标记为“离开环境”</li>
+<li><strong>引用计数</strong>：跟踪每个值被引用的次数，当引用次数为0时就在下一次垃圾收集器运行时销毁这个变量。</li>
+<li>当循环引用时，引用计数不能清除变量，会造成内存泄漏</li>
+<li>IE9之前版本中部分DOM和BOM对象不是原生JS对象，而是C++实现的COM对象，涉及到COM对象与原生JS对象的相互引用时，即使页面中的BOM对象\DOM对象从页面移除了，他也不会被回收</li>
+<li>为了避免此类问题，在不使用的时候，手动断开DOM元素与原生JS对象间的连接</li>
+</ul>
+</li>
+<li><p><strong>管理内存</strong></p>
+<ul>
+<li>电脑分配给Web浏览器的内存比分给桌面程序的少，以避免浏览器耗尽内存引发系统崩溃</li>
+<li>这个内存限制，会对给变量分配内存造成影响，并影响调用栈以及在一个线程中同时执行的语句数量。</li>
+<li>所以为了获得更好的页面性能，需要注意<strong>优化内存使用</strong>，就是不使用的变量就解除引用，局部变量会在离开执行环境时自动解除引用，所以要注意的就是全局变量不使用时就解除引用。</li>
+</ul>
+</li>
+</ol>
+<h1 id="三、引用类型"><a href="#三、引用类型" class="headerlink" title="三、引用类型"></a>三、引用类型</h1><ol>
+<li><p><strong>Object类型</strong></p>
+<ul>
+<li>创建Object实例包含两种方法：<code>new Object()</code>和对象字面量<code>var obj = {}</code>，使用对象字面量创建对象，不会调用Object构造函数</li>
+<li><code>var obj = {}</code>是一个表达式上下文，表达式上下文指的是能够返回一个值；<code>if(a==b)</code>是一个语句上下文</li>
+<li>在最后一个属性后面添加逗号，会在一些浏览器中导致错误</li>
+<li>属性名可以是数值，此时会自动转换为数值字符串</li>
+<li>在向函数传递大量可选参数时，最好的做法是对那些必需值使用命名参数，而使用对象字面量来封装多个可选参数</li>
+<li>访问对象属性有两种：点和方括号，方括号的优点是可以通过变量来访问属性<code>var a = &quot;name&quot;; console.log(person[a])</code>，并且可以兼容比较奇怪的属性名：<code>person[&quot;first name&quot;] = &quot;Nicholas&quot;;</code>通常使用点方法访问</li>
+</ul>
+</li>
+<li><p><strong>Array类型</strong></p>
+<ul>
+<li><p>创建Array实例的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// Array构造函数方式</span><br><span class="line">var arr1 = new Array(&quot;a&quot;,&quot;b&quot;);</span><br><span class="line">var arr2 = Array(&quot;a&quot;, &quot;b&quot;);</span><br><span class="line">var arr3 = Array(3);        </span><br><span class="line"></span><br><span class="line">// 数组字面量方式</span><br><span class="line">var arr4 = [1,2,3];</span><br><span class="line"></span><br><span class="line">var arrFault = [,,,];  //不推荐!</span><br><span class="line">var arrFault2 = [1,2,] //不推荐!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在使用数组字面量表示法时，也不会调用 Array 构造函数【？】</p>
+</li>
+<li><p>关于length:</p>
 <ol>
-<li><strong>switch</strong><br>&#x9700;&#x8981;&#x6DF7;&#x5408;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x52A0;&#x6CE8;&#x91CA;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">switch(i){</div><div class="line">    case 12:</div><div class="line">        //&#x5408;&#x5E76;&#x4E24;&#x79CD;&#x60C5;&#x5F62;</div><div class="line">    case 13:</div><div class="line">        console.log(&apos;hhh&apos;);</div><div class="line">        break;</div><div class="line">    case 14:</div><div class="line">        console.log(&apos;14&apos;);</div><div class="line">        bresak;</div><div class="line">}</div></pre></td></tr></table></figure>
+<li><p>如果索引值超出length，会自动以undefined补全长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3]</span><br><span class="line">console.log(arr[5])      //undefined</span><br><span class="line">console.log(arr.length)  //5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过设置length值，修改数组，截短或加长</p>
 </li>
 </ol>
-<p>&#x636E;JS&#x7CBE;&#x7CB9;&#x8FD9;&#x672C;&#x4E66;&#xFF0C;&#x8D2F;&#x7A7F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BCF;&#x4E2A;&#x90FD;&#x5199;break&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">switch(i){</div><div class="line">    case 12:</div><div class="line">    case 13:</div><div class="line">        break;</div><div class="line">}</div><div class="line"></div><div class="line">//&#x4E0A;&#x9762;&#x5199;&#x6CD5;&#x6613;&#x51FA;&#x9519;&#xFF0C;&#x4E14;&#x5F88;&#x96BE;&#x53D1;&#x73B0;&#xFF0C;&#x5E94;&#x8BE5;&#x8FD9;&#x4E48;&#x5199;</div><div class="line">switch(i){</div><div class="line">    case 12:</div><div class="line">        break;</div><div class="line">    case 13:</div><div class="line">        break;</div><div class="line">}</div></pre></td></tr></table></figure></p>
-<p><strong>switch&#x4F7F;&#x7528;&#x7684;&#x5168;&#x7B49;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;&#x5E76;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</strong></p>
+</li>
+<li><p>检测数组</p>
 <ol>
-<li><p><strong>&#x51FD;&#x6570;</strong></p>
-<ul>
-<li>&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x65F6;&#x4E0D;&#x5FC5;&#x6307;&#x5B9A;&#x662F;&#x5426;&#x8FD4;&#x56DE;&#x503C;&#xFF1B;</li>
-<li>&#x5982;&#x679C;&#x52A0;&#x4E86;return&#xFF0C;&#x53EA;&#x6267;&#x884C;&#x5230;return&#x8BED;&#x53E5;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;</li>
-<li>&#x4F8B;&#x5916;&#xFF1A;try catch&#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C;&#x6709;finally&#xFF0C;&#x5373;&#x4F7F;&#x5728;try &#x6216;catch&#x4E2D;&#x5199;&#x4E86;return&#xFF0C;&#x4ECD;&#x7136;&#x4F1A;&#x6267;&#x884C;finally&#x91CC;&#x7684;&#x4EE3;&#x7801;</li>
-<li>&#x5982;&#x679C;return&#x8BED;&#x53E5;&#x4E0D;&#x52A0;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C06;&#x8FD4;&#x56DE;undefined</li>
-</ul>
-</li>
-<li><p><strong>&#x53C2;&#x6570;</strong></p>
-<ul>
-<li>arguments&#x53EF;&#x4EE5;&#x4E0E;&#x547D;&#x540D;&#x53C2;&#x6570;&#x4E00;&#x8D77;&#x4F7F;&#x7528;</li>
-<li>arguments&#x4E0E;&#x6570;&#x7EC4;&#x76F8;&#x4F3C;&#xFF1A;&#x53EF;&#x4EE5;&#x7528;arguments[n]&#x6765;&#x8BBF;&#x95EE;&#x503C;&#xFF0C;&#x6709;length&#x5C5E;&#x6027;&#x3002;&#x4F46;&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x6CA1;&#x6709;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;slice&#x3001;splice&#x3001;shift&#x3001;unshift&#x3001;push&#x3001;pop&#x3001;concat&#x3001;join&#x3001;sort&#x3001;reverse</li>
-<li>arguments&#x7684;&#x503C;&#x6C38;&#x8FDC;&#x4E0E;&#x547D;&#x540D;&#x53C2;&#x6570;&#x7684;&#x503C;&#x4FDD;&#x6301;&#x540C;&#x6B65;&#xFF0C;&#x5176;&#x4E0E;&#x547D;&#x540D;&#x53C2;&#x6570;&#x5E76;&#x4E0D;&#x662F;&#x8BBF;&#x95EE;&#x76F8;&#x540C;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x4F46;&#x662F;&#x503C;&#x4F1A;&#x540C;&#x6B65;&#xFF0C;&#x6CA1;&#x6709;&#x4F20;&#x9012;&#x503C;&#x7684;&#xFF1B;&#x547D;&#x540D;&#x53C2;&#x6570;&#x503C;&#x9ED8;&#x8BA4;&#x88AB;&#x8D4B;&#x4E88;undefined</li>
-<li><p><strong> &#x51FD;&#x6570;&#x6240;&#x6709;&#x4F20;&#x53C2;&#x90FD;&#x662F;&#x6309;&#x503C;&#x4F20;&#x9012;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x901A;&#x8FC7;&#x5F15;&#x7528;&#x4F20;&#x53C2; </strong><br>&#x7ED3;&#x8BBA;&#xFF1A;&#x5BF9;&#x4E8E;&#x6570;&#x5B57;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x7B49;&#x662F;&#x5C06;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x4F20;&#x9012;&#x7ED9;&#x4E86;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x6539;&#x53D8;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x7684;&#x53D8;&#x91CF;&#xFF1B;&#x5BF9;&#x4E8E;&#x6570;&#x7EC4;&#x548C;&#x5BF9;&#x8C61;&#x7B49;&#x662F;&#x5C06;&#x5BF9;&#x8C61;(&#x6570;&#x7EC4;)&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4F20;&#x9012;&#x7ED9;&#x4E86;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x6307;&#x5411;&#x5BF9;&#x8C61;(&#x6570;&#x7EC4;)&#x7684;&#x5730;&#x5740;&#x3002;</p>
-<p><strong>&#x51FD;&#x6570;&#x4F20;&#x53C2;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x628A;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x590D;&#x5236;&#x7ED9;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x662F;&#x6307;arguments&#x7684;&#x67D0;&#x4E2A;&#x503C;&#x3002;</strong><br>&#x8FD9;&#x53E5;&#x8BDD;&#x5BF9;&#x4E8E;&#x7406;&#x89E3;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x4F20;&#x53C2;&#x65F6;&#x4E5F;&#x662F;&#x6309;&#x503C;&#x4F20;&#x9012;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x68C0;&#x9A8C;&#x662F;&#x5426;&#x7406;&#x89E3;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x6309;&#x503C;&#x4F20;&#x53C2;&#x7684;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function setName(obj) {</div><div class="line">    obj.name = &apos;aaa&apos;;</div><div class="line">    var obj = new Object();</div><div class="line">    obj.name = &apos;ccc&apos;;</div><div class="line">    return obj;</div><div class="line">}</div><div class="line">var person = new Object();</div><div class="line">person.name = &apos;bbb&apos;;</div><div class="line"></div><div class="line">var newPerson = setName(person);</div><div class="line">console.log(person.name + &apos; | &apos; + newPerson.name); // aaa | ccc</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<li>instanceof检测法<code>if(value instanceof Array)</code>，问题在于它假定只有一个全局执行环境，因为Array是window的属性。如果网页中包含多个frame，那实际上就存在多个window，即两个以上不同的全局执行环境，从而存在两个以上不同版本的 Array 构造函数。如果你从一个框架向另一个框架传入一个数组，那么传入的数组与在第二个框架中原生创建的数组分别具有各自不同的构造函数。</li>
+<li>ECMAScript 5 新增了 Array.isArray()方法。这个方法的目的是最终确定某个值到底是不是数组，而不管它是在哪个全局执行环境中创建的。兼容性IE9+</li>
+<li><p>22.1.1章节中的安全的类型检测的方法，可以解决低版本浏览器的类型检测问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function isArray(value)&#123;</span><br><span class="line">    return Object.prototype.toString().call(value)==&quot;[object Array]&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：在任何值上调用 Object 原生的 toString()方法，都会返回一个[object NativeConstructorName]格式的字符串。用来区分是否是JS原生对象，任何开发人员自定义的构造函数都将返回”[object Object]”。</p>
 </li>
 </ol>
-<h1 id="&#x4E8C;&#x3001;&#x53D8;&#x91CF;&#x3001;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x5185;&#x5B58;&#x95EE;&#x9898;"><a href="#&#x4E8C;&#x3001;&#x53D8;&#x91CF;&#x3001;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x5185;&#x5B58;&#x95EE;&#x9898;" class="headerlink" title="&#x4E8C;&#x3001;&#x53D8;&#x91CF;&#x3001;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x5185;&#x5B58;&#x95EE;&#x9898;"></a>&#x4E8C;&#x3001;&#x53D8;&#x91CF;&#x3001;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x5185;&#x5B58;&#x95EE;&#x9898;</h1><ol>
-<li><p><strong>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;</strong></p>
-<ul>
-<li>&#x5B9A;&#x4E49;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5E76;&#x4E3A;&#x8BE5;&#x53D8;&#x91CF;&#x8D4B;&#x503C;</li>
-<li>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x6307;&#x7684;&#x662F;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x6BB5;&#xFF0C;&#x800C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;&#x6307;&#x53EF;&#x80FD;&#x6709;&#x591A;&#x4E2A;&#x503C;&#x6784;&#x6210;&#x7684;&#x5BF9;&#x8C61;</li>
-<li>5&#x79CD;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x6309;&#x503C;&#x8BBF;&#x95EE;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x4FDD;&#x5B58;&#x5728;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x5B9E;&#x9645;&#x7684;&#x503C;</li>
-<li>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x3002;JavaScript&#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;</li>
-<li>&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5728;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x800C;&#x4E0D;&#x662F;&#x5B9E;&#x9645;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x662F;&#x6309;&#x5F15;&#x7528;&#x8BBF;&#x95EE;&#x7684;</li>
-</ul>
 </li>
-<li><p><strong>&#x5806;&#x6808;</strong></p>
-<p> &#x5806;&#x5B58;&#x50A8;&#xFF1A;&#x7C7B;&#x4F3C;&#x4E66;&#x67B6;&#x4E0E;&#x4E66;&#xFF0C;&#x5B58;&#x53D6;&#x6CA1;&#x6709;&#x987A;&#x5E8F;&#xFF0C;&#x53EA;&#x8981;&#x77E5;&#x9053;&#x4E66;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x53D6;&#x51FA;&#x60F3;&#x8981;&#x7684;&#x4E66;<br> &#x6808;&#x5B58;&#x50A8;&#xFF1A;&#x7C7B;&#x4F3C;&#x7FBD;&#x6BDB;&#x7403;&#x7B52;&#x4E0E;&#x7FBD;&#x6BDB;&#x7403;&#xFF0C;&#x5148;&#x5B58;&#x540E;&#x53D6;&#xFF0C;&#x540E;&#x5B58;&#x5148;&#x53D6;&#xFF0C;&#x8981;&#x62FF;&#x4E2D;&#x95F4;&#x67D0;&#x4E00;&#x4E2A;&#x7403;&#x5FC5;&#x987B;&#x5148;&#x628A;&#x5B83;&#x4E0A;&#x9762;&#x7684;&#x7403;&#x5168;&#x62FF;&#x51FA;&#x6765;</p>
-<p> &#x6808;&#x7684;&#x4F18;&#x52BF;&#x662F;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x6BD4;&#x5806;&#x5FEB;&#xFF0C;&#x7F3A;&#x70B9;&#x662F;&#x5B58;&#x5728;&#x6808;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#x4E0E;&#x751F;&#x5B58;&#x671F;&#x5FC5;&#x987B;&#x662F;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x7F3A;&#x4E4F;&#x7075;&#x6D3B;&#x6027;&#x3002;&#x5806;&#x7684;&#x4F18;&#x52BF;&#x662F;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5206;&#x914D;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x751F;&#x5B58;&#x671F;&#x4E5F;&#x4E0D;&#x5FC5;&#x4E8B;&#x5148;&#x544A;&#x8BC9;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4F1A;&#x81EA;&#x52A8;&#x5730;&#x6536;&#x8D70;&#x8FD9;&#x4E9B;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x7F3A;&#x70B9;&#x662F;&#x7531;&#x4E8E;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x6240;&#x4EE5;&#x5B58;&#x53D6;&#x901F;&#x5EA6;&#x8F83;&#x6162;&#x3002;</p>
-<p> &#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x4E00;&#x65E6;&#x8D4B;&#x503C;&#xFF0C;&#x5927;&#x5C0F;&#x5C31;&#x56FA;&#x5B9A;&#x4E86;&#xFF0C;&#x56E0;&#x6B64;&#x5B58;&#x50A8;&#x5728;&#x6808;&#x5185;&#x5B58;&#x4E2D;&#x3002;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x4F8B;&#x5982;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7ED9;&#x5B83;&#x6DFB;&#x52A0;&#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x5927;&#x5C0F;&#x4E0D;&#x56FA;&#x5B9A;&#xFF0C;&#x6240;&#x4EE5;&#x5B58;&#x50A8;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x3002;</p>
-<p> js&#x4E2D;&#x7684;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#xFF0C;&#x90FD;&#x662F;&#x5B58;&#x653E;&#x5728;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;JavaScript&#x5C5E;&#x4E8E;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#xFF0C;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x4E2D;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x6765;&#x8BF4;&#x5E76;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x533A;&#x5206;&#x3002;&#x4F46;&#x662F;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x573A;&#x666F;&#x4F1A;&#x5728;&#x903B;&#x8F91;&#x4E0A;&#x5B9E;&#x73B0;&#x6808;&#x7684;&#x5B58;&#x53D6;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x624D;&#x6709;&#x4E86;&#x5806;&#x4E0E;&#x6808;&#x7684;&#x4E0D;&#x540C;&#x3002;</p>
-<p> &#x7406;&#x89E3;&#x5806;&#x6808;&#x5B58;&#x50A8;&#xFF1A;</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function Person(id,name,age){ </div><div class="line">    this.id = id; </div><div class="line">    this.name = name; </div><div class="line">    this.age = age; </div><div class="line">} </div><div class="line">var num = 10; </div><div class="line">var bol = true; </div><div class="line">var str = &quot;abc&quot;; </div><div class="line">var obj = new Object(); </div><div class="line">var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]; </div><div class="line">var person = new Person(100,&quot;jxl&quot;,22);</div></pre></td></tr></table></figure>
-<p> <a href="http://o798x2hdw.bkt.clouddn.com/stack.png" target="_blank" rel="external">stack-pic</a></p>
-</li>
-<li><p><strong>&#x8D4B;&#x503C;&#x53D8;&#x91CF;&#x503C;</strong></p>
-<ul>
-<li>&#x4ECE;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x590D;&#x5236;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x4F1A;&#x5728;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x8BE5;&#x503C;&#x590D;&#x5236;&#x5230;&#x4E3A;&#x65B0;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;&#x3002;</li>
-<li>&#x5F53;&#x590D;&#x5236;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x539F;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x653E;&#x5230;&#x4E3A;&#x65B0;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x6539;&#x53D8;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;<br><a href="http://o798x2hdw.bkt.clouddn.com/copy-variable.png" target="_blank" rel="external">copy_variable-pic</a></li>
-</ul>
-</li>
-<li><p><strong>&#x4F20;&#x9012;&#x53C2;&#x6570;</strong></p>
-<ul>
-<li>JS&#x4E2D;&#x6240;&#x6709;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x6309;&#x503C;&#x4F20;&#x9012;&#x7684;</li>
-<li>&#x628A;&#x51FD;&#x6570;&#x5916;&#x90E8;&#x7684;&#x503C;&#x590D;&#x5236;&#x7ED9;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x548C;&#x628A;&#x503C;&#x4ECE;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4E00;&#x6837;</li>
-<li>&#x4F20;&#x9012;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;&#x65F6;&#x4F20;&#x9012;&#x7684;&#x662F;&#x6307;&#x9488;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5BF9;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x53C2;&#x6570;&#x7684;&#x4FEE;&#x6539;&#x4F1A;&#x53CD;&#x6620;&#x5230;&#x51FD;&#x6570;&#x5916;&#x90E8;</li>
-<li>&#x53EF;&#x4EE5;&#x628A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x60F3;&#x8C61;&#x6210;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</li>
-</ul>
-</li>
-<li><p><strong>&#x68C0;&#x6D4B;&#x7C7B;&#x578B;</strong></p>
-<ul>
-<li>&#x68C0;&#x6D4B;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF08;number\string\undefined\boolean&#xFF09;&#x7528;typeof&#xFF0C;&#x68C0;&#x6D4B;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;&#x7528;instanceof</li>
-<li>&#x5982;&#x679C;&#x662F;&#x5BF9;&#x8C61;&#x6216;<strong>null</strong>&#xFF0C;typeof&#x4F1A;&#x8FD4;&#x56DE;&#x201D;object&#x201D;</li>
-<li>&#x5982;&#x679C;&#x662F;function&#xFF0C;typeof&#x4F1A;&#x8FD4;&#x56DE;&#x201D;function&#x201D;</li>
-<li><p>&#x5982;&#x679C;&#x53D8;&#x91CF;&#x662F;&#x7ED9;&#x5B9A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;instanceof &#x64CD;&#x4F5C;&#x7B26;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE; true</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var person = function(){</div><div class="line">  this.name = &quot;aa&quot;;</div><div class="line">}</div><div class="line">var bill  = new person();</div><div class="line">console.log(bill instanceof person)  //true</div></pre></td></tr></table></figure>
-</li>
-<li><p>&#x7528;instanceof&#x68C0;&#x6D4B;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#xFF0C;&#x59CB;&#x7EC8;&#x8FD4;&#x56DE;false&#xFF0C;&#x56E0;&#x4E3A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x503C;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;</p>
-</li>
-</ul>
-</li>
-<li><p><strong>&#x6267;&#x884C;&#x73AF;&#x5883;&#x53CA;&#x4F5C;&#x7528;&#x57DF;</strong></p>
-<ul>
-<li><strong>&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF08;execution context&#xFF09;</strong>&#x5B9A;&#x4E49;&#x4E86;&#x53D8;&#x91CF;&#x6216;&#x51FD;&#x6570;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x7684;&#x5176;&#x4ED6;&#x6570;&#x636E;</li>
-<li>&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x6BCF;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x5173;&#x8054;&#x7684;<strong>&#x53D8;&#x91CF;&#x5BF9;&#x8C61;(variable object)</strong>&#xFF0C;&#x4FDD;&#x5B58;&#x73AF;&#x5883;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;</li>
-<li>&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x662F;&#x6700;&#x5916;&#x56F4;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x5728;web&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x662F;window&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x6709;&#x5168;&#x5C40;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x4F5C;&#x4E3A;window&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</li>
-<li>&#x67D0;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x8BE5;&#x73AF;&#x5883;&#x5176;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x5168;&#x90E8;&#x9500;&#x6BC1;</li>
-<li>&#x800C;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x5728;&#x7A0B;&#x5E8F;&#x9000;&#x51FA;&#x65F6;&#x9500;&#x6BC1;&#xFF0C;web&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5BF9;&#x5E94;&#x5173;&#x95ED;&#x7F51;&#x9875;&#x65F6;</li>
-<li><strong>ECMAScript&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x6D41;&#xFF1A;</strong>&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x5F53;&#x6267;&#x884C;&#x6D41;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x73AF;&#x5883;&#x5C31;&#x88AB;&#x63A8;&#x5165;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x6808;&#x4E2D;&#x3002;&#x51FD;&#x6570;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x6808;&#x5C06;&#x5176;&#x73AF;&#x5883;&#x5F39;&#x51FA;&#xFF0C;&#x628A;&#x63A7;&#x5236;&#x6743;&#x8FD4;&#x8FD8;&#x7ED9;&#x4E4B;&#x524D;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;</li>
-<li><strong>&#x4F5C;&#x7528;&#x57DF;&#x94FE;</strong>&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x524D;&#x7AEF;&#xFF0C;&#x662F;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x6240;&#x5728;&#x73AF;&#x5883;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C;&#x73AF;&#x5883;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x628A;&#x51FD;&#x6570;&#x7684;<strong>&#x6D3B;&#x52A8;&#x5BF9;&#x8C61;&#xFF08;activation object&#xFF09;</strong>&#x4F5C;&#x4E3A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x3002;&#x6D3B;&#x52A8;&#x5BF9;&#x8C61;&#x6700;&#x5F00;&#x59CB;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5373;arguments&#x5BF9;&#x8C61;&#xFF08;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x4E2D;&#x4E0D;&#x5305;&#x542B;&#xFF09;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E0B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x6765;&#x81EA;&#x5305;&#x542B;&#x73AF;&#x5883;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x76F4;&#x5EF6;&#x7EED;&#x5230;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x3002;</li>
-<li><strong>&#x5EF6;&#x957F;&#x4F5C;&#x7528;&#x57DF;&#x94FE;</strong>&#xFF1A;with&#x548C;try catch&#x4E2D;&#x7684;catch&#x5757;&#x53EF;&#x4EE5;&#x5EF6;&#x957F;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#xFF0C;&#x5373;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x524D;&#x7AEF;&#x4E34;&#x65F6;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x5728;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x88AB;&#x79FB;&#x9664;&#x3002;</li>
-<li>&#x5BF9;&#x4E8E;catch&#x8BED;&#x53E5;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x5BF9;&#x88AB;&#x629B;&#x51FA;&#x7684;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#x7684;&#x58F0;&#x660E;&#x3002;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function withLocation(){</div><div class="line">    with(location){</div><div class="line">        var url = href;</div><div class="line">    }</div><div class="line">    reutrn url</div><div class="line">}</div><div class="line">// with&#x8BED;&#x53E5;&#x5185;&#x90E8;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;url&#x53D8;&#x91CF;&#xFF0C;&#x56E0;&#x800C;url&#x5C31;&#x6210;&#x4E86;&#x51FD;&#x6570;&#x6267;&#x884C;&#x73AF;&#x5883;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x503C;&#x88AB;&#x8FD4;&#x56DE;&#x3002;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
+<li>转换方法：toString、toLocaleString返回由每一项调用toString、toLocaleString得到的字符串组成的数组；valueOf返回原数组；arr.join(“”)拼接数组成字符串</li>
+<li>栈方法（后进先出）与队列方法（先进先出）<ol>
+<li>push / pop：数组末尾添加/删除，push可添加多项，返回数组长度；pop移除一项，返回被移除的项</li>
+<li>shift / unshift：在数组前端移除 / 添加一项，shift返回移除的项，unshift可添加多项，返回新数组长度</li>
+<li>shift和pop，都只能移除一项，返回移除的项；unshift和push都可增加多项，并返回新数组长度。</li>
 </ol>
-<pre><code>- &#x6807;&#x8BC6;&#x7B26;&#x89E3;&#x6790;&#x4F1A;&#x6CBF;&#x7740;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E00;&#x7EA7;&#x4E00;&#x7EA7;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5047;&#x8BBE;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#x6709;`var color = &quot;red&quot;`,&#x6B64;&#x65F6;&#x5728;&#x5C40;&#x90E8;&#x73AF;&#x5883;&#x4E2D;&#x53EA;&#x6709;&#x4F7F;&#x7528;`window.color`&#x624D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5728;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;color
-- &#x53D8;&#x91CF;&#x67E5;&#x8BE2;&#x6709;&#x4EE3;&#x4EF7;&#x4F1A;&#x6BD4;&#x8F83;&#x6162;&#xFF0C;&#x6240;&#x4EE5;&#x8BBF;&#x95EE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4F1A;&#x6BD4;&#x8BBF;&#x95EE;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5FEB;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x5DEE;&#x8DDD;&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;
-</code></pre><ol>
-<li><p><strong>&#x5783;&#x573E;&#x6536;&#x96C6;</strong></p>
-<ul>
-<li>JS&#x5177;&#x6709;&#x81EA;&#x52A8;&#x5783;&#x573E;&#x6536;&#x96C6;&#x673A;&#x5236;&#xFF0C;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4F1A;&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5373;&#x5185;&#x5B58;&#x5206;&#x914D;&#x548C;&#x65E0;&#x7528;&#x5185;&#x5B58;&#x7684;&#x56DE;&#x6536;</li>
-<li>&#x8FD9;&#x79CD;&#x81EA;&#x52A8;&#x5783;&#x573E;&#x6536;&#x96C6;&#x673A;&#x5236;&#x7684;&#x539F;&#x7406;&#x662F;&#xFF1A;&#x627E;&#x51FA;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x9500;&#x6BC1;&#x91CA;&#x653E;&#x5176;&#x5360;&#x7528;&#x7684;&#x5185;&#x5B58;&#x3002;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4F1A;&#x9694;&#x6BB5;&#x65F6;&#x95F4;&#x5C31;&#x5468;&#x671F;&#x6027;&#x5730;&#x6267;&#x884C;&#x8FD9;&#x4E00;&#x64CD;&#x4F5C;</li>
-<li>&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5BF9;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x5305;&#x542B;&#xFF1A;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x548C;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x4E24;&#x79CD;</li>
-<li><strong>&#x6807;&#x8BB0;&#x6E05;&#x9664;</strong>&#xFF1A;&#x5F53;&#x53D8;&#x91CF;&#x8FDB;&#x5165;&#x73AF;&#x5883;&#x65F6;&#xFF08;&#x5982;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF09;&#x6807;&#x8BB0;&#x4E3A;&#x201C;&#x8FDB;&#x5165;&#x73AF;&#x5883;&#x201D;&#xFF0C;&#x5F53;&#x53D8;&#x91CF;&#x79BB;&#x5F00;&#x73AF;&#x5883;&#x65F6;&#xFF0C;&#x6807;&#x8BB0;&#x4E3A;&#x201C;&#x79BB;&#x5F00;&#x73AF;&#x5883;&#x201D;</li>
-<li><strong>&#x5F15;&#x7528;&#x8BA1;&#x6570;</strong>&#xFF1A;&#x8DDF;&#x8E2A;&#x6BCF;&#x4E2A;&#x503C;&#x88AB;&#x5F15;&#x7528;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x5F53;&#x5F15;&#x7528;&#x6B21;&#x6570;&#x4E3A;0&#x65F6;&#x5C31;&#x5728;&#x4E0B;&#x4E00;&#x6B21;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x9500;&#x6BC1;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x3002;</li>
-<li>&#x5F53;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x65F6;&#xFF0C;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x4E0D;&#x80FD;&#x6E05;&#x9664;&#x53D8;&#x91CF;&#xFF0C;&#x4F1A;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</li>
-<li>IE9&#x4E4B;&#x524D;&#x7248;&#x672C;&#x4E2D;&#x90E8;&#x5206;DOM&#x548C;BOM&#x5BF9;&#x8C61;&#x4E0D;&#x662F;&#x539F;&#x751F;JS&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;C++&#x5B9E;&#x73B0;&#x7684;COM&#x5BF9;&#x8C61;&#xFF0C;&#x6D89;&#x53CA;&#x5230;COM&#x5BF9;&#x8C61;&#x4E0E;&#x539F;&#x751F;JS&#x5BF9;&#x8C61;&#x7684;&#x76F8;&#x4E92;&#x5F15;&#x7528;&#x65F6;&#xFF0C;&#x5373;&#x4F7F;&#x9875;&#x9762;&#x4E2D;&#x7684;BOM&#x5BF9;&#x8C61;\DOM&#x5BF9;&#x8C61;&#x4ECE;&#x9875;&#x9762;&#x79FB;&#x9664;&#x4E86;&#xFF0C;&#x4ED6;&#x4E5F;&#x4E0D;&#x4F1A;&#x88AB;&#x56DE;&#x6536;</li>
-<li>&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x6B64;&#x7C7B;&#x95EE;&#x9898;&#xFF0C;&#x5728;&#x4E0D;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624B;&#x52A8;&#x65AD;&#x5F00;DOM&#x5143;&#x7D20;&#x4E0E;&#x539F;&#x751F;JS&#x5BF9;&#x8C61;&#x95F4;&#x7684;&#x8FDE;&#x63A5;</li>
-</ul>
 </li>
-<li><p><strong>&#x7BA1;&#x7406;&#x5185;&#x5B58;</strong></p>
-<ul>
-<li>&#x7535;&#x8111;&#x5206;&#x914D;&#x7ED9;Web&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5185;&#x5B58;&#x6BD4;&#x5206;&#x7ED9;&#x684C;&#x9762;&#x7A0B;&#x5E8F;&#x7684;&#x5C11;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x6D4F;&#x89C8;&#x5668;&#x8017;&#x5C3D;&#x5185;&#x5B58;&#x5F15;&#x53D1;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;</li>
-<li>&#x8FD9;&#x4E2A;&#x5185;&#x5B58;&#x9650;&#x5236;&#xFF0C;&#x4F1A;&#x5BF9;&#x7ED9;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x9020;&#x6210;&#x5F71;&#x54CD;&#xFF0C;&#x5E76;&#x5F71;&#x54CD;&#x8C03;&#x7528;&#x6808;&#x4EE5;&#x53CA;&#x5728;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x540C;&#x65F6;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;&#x6570;&#x91CF;&#x3002;</li>
-<li>&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x9875;&#x9762;&#x6027;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;<strong>&#x4F18;&#x5316;&#x5185;&#x5B58;&#x4F7F;&#x7528;</strong>&#xFF0C;&#x5C31;&#x662F;&#x4E0D;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x5C31;&#x89E3;&#x9664;&#x5F15;&#x7528;&#xFF0C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4F1A;&#x5728;&#x79BB;&#x5F00;&#x6267;&#x884C;&#x73AF;&#x5883;&#x65F6;&#x81EA;&#x52A8;&#x89E3;&#x9664;&#x5F15;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5C31;&#x662F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0D;&#x4F7F;&#x7528;&#x65F6;&#x5C31;&#x89E3;&#x9664;&#x5F15;&#x7528;&#x3002;</li>
-</ul>
-</li>
-</ol>
-<h1 id="&#x4E09;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;"><a href="#&#x4E09;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;" class="headerlink" title="&#x4E09;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;"></a>&#x4E09;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;</h1><ol>
-<li><p><strong>Object&#x7C7B;&#x578B;</strong></p>
-<ul>
-<li>&#x521B;&#x5EFA;Object&#x5B9E;&#x4F8B;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;<code>new Object()</code>&#x548C;&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;<code>var obj = {}</code>&#xFF0C;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;Object&#x6784;&#x9020;&#x51FD;&#x6570;</li>
-<li><code>var obj = {}</code>&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F;&#x4E0A;&#x4E0B;&#x6587;&#x6307;&#x7684;&#x662F;&#x80FD;&#x591F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#xFF1B;<code>if(a==b)</code>&#x662F;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x4E0A;&#x4E0B;&#x6587;</li>
-<li>&#x5728;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x540E;&#x9762;&#x6DFB;&#x52A0;&#x9017;&#x53F7;&#xFF0C;&#x4F1A;&#x5728;&#x4E00;&#x4E9B;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;</li>
-<li>&#x5C5E;&#x6027;&#x540D;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x503C;&#xFF0C;&#x6B64;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x503C;&#x5B57;&#x7B26;&#x4E32;</li>
-<li>&#x5728;&#x5411;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x5927;&#x91CF;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5BF9;&#x90A3;&#x4E9B;&#x5FC5;&#x9700;&#x503C;&#x4F7F;&#x7528;&#x547D;&#x540D;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x5B57;&#x9762;&#x91CF;&#x6765;&#x5C01;&#x88C5;&#x591A;&#x4E2A;&#x53EF;&#x9009;&#x53C2;&#x6570;</li>
-<li>&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x6709;&#x4E24;&#x79CD;&#xFF1A;&#x70B9;&#x548C;&#x65B9;&#x62EC;&#x53F7;&#xFF0C;&#x65B9;&#x62EC;&#x53F7;&#x7684;&#x4F18;&#x70B9;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53D8;&#x91CF;&#x6765;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;<code>var a = &quot;name&quot;; console.log(person[a])</code>&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x517C;&#x5BB9;&#x6BD4;&#x8F83;&#x5947;&#x602A;&#x7684;&#x5C5E;&#x6027;&#x540D;&#xFF1A;<code>person[&quot;first name&quot;] = &quot;Nicholas&quot;;</code>&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x70B9;&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;</li>
-</ul>
-</li>
-<li><p><strong>Array&#x7C7B;&#x578B;</strong></p>
-<ul>
-<li><p>&#x521B;&#x5EFA;Array&#x5B9E;&#x4F8B;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// Array&#x6784;&#x9020;&#x51FD;&#x6570;&#x65B9;&#x5F0F;</div><div class="line">var arr1 = new Array(&quot;a&quot;,&quot;b&quot;);</div><div class="line">var arr2 = Array(&quot;a&quot;, &quot;b&quot;);</div><div class="line">var arr3 = Array(3);        </div><div class="line"></div><div class="line">// &#x6570;&#x7EC4;&#x5B57;&#x9762;&#x91CF;&#x65B9;&#x5F0F;</div><div class="line">var arr4 = [1,2,3];</div><div class="line"></div><div class="line">var arrFault = [,,,];  //&#x4E0D;&#x63A8;&#x8350;!</div><div class="line">var arrFault2 = [1,2,] //&#x4E0D;&#x63A8;&#x8350;!</div></pre></td></tr></table></figure>
-</li>
-<li><p>&#x5728;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x5B57;&#x9762;&#x91CF;&#x8868;&#x793A;&#x6CD5;&#x65F6;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x8C03;&#x7528; Array &#x6784;&#x9020;&#x51FD;&#x6570;&#x3010;&#xFF1F;&#x3011;</p>
-</li>
-<li><p>&#x5173;&#x4E8E;length:</p>
+<li><p>排序：reverse反序和sort排序</p>
 <ol>
-<li><p>&#x5982;&#x679C;&#x7D22;&#x5F15;&#x503C;&#x8D85;&#x51FA;length&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x4EE5;undefined&#x8865;&#x5168;&#x957F;&#x5EA6;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr=[1,2,3]</div><div class="line">console.log(arr[5])      //undefined</div><div class="line">console.log(arr.length)  //5</div></pre></td></tr></table></figure>
-</li>
-<li><p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;length&#x503C;&#xFF0C;&#x4FEE;&#x6539;&#x6570;&#x7EC4;&#xFF0C;&#x622A;&#x77ED;&#x6216;&#x52A0;&#x957F;</p>
+<li>sort用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(fun)</span><br><span class="line">function fun(a,b)&#123;</span><br><span class="line">    return a-b</span><br><span class="line">    // 返回负值，a排在前面；返回0，顺序不变；返回正值，a排在后面</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
-<li><p>&#x68C0;&#x6D4B;&#x6570;&#x7EC4;</p>
+<li><p>操作方法：concat、slice、splice</p>
 <ol>
-<li>instanceof&#x68C0;&#x6D4B;&#x6CD5;<code>if(value instanceof Array)</code>&#xFF0C;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x5B83;&#x5047;&#x5B9A;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x56E0;&#x4E3A;Array&#x662F;window&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x7F51;&#x9875;&#x4E2D;&#x5305;&#x542B;&#x591A;&#x4E2A;frame&#xFF0C;&#x90A3;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x5B58;&#x5728;&#x591A;&#x4E2A;window&#xFF0C;&#x5373;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x4E0D;&#x540C;&#x7684;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x4ECE;&#x800C;&#x5B58;&#x5728;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684; Array &#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4ECE;&#x4E00;&#x4E2A;&#x6846;&#x67B6;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x6846;&#x67B6;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x4F20;&#x5165;&#x7684;&#x6570;&#x7EC4;&#x4E0E;&#x5728;&#x7B2C;&#x4E8C;&#x4E2A;&#x6846;&#x67B6;&#x4E2D;&#x539F;&#x751F;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x7EC4;&#x5206;&#x522B;&#x5177;&#x6709;&#x5404;&#x81EA;&#x4E0D;&#x540C;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</li>
-<li>ECMAScript 5 &#x65B0;&#x589E;&#x4E86; Array.isArray()&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x76EE;&#x7684;&#x662F;&#x6700;&#x7EC8;&#x786E;&#x5B9A;&#x67D0;&#x4E2A;&#x503C;&#x5230;&#x5E95;&#x662F;&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x800C;&#x4E0D;&#x7BA1;&#x5B83;&#x662F;&#x5728;&#x54EA;&#x4E2A;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x517C;&#x5BB9;&#x6027;IE9+</li>
-<li><p>22.1.1&#x7AE0;&#x8282;&#x4E2D;&#x7684;&#x5B89;&#x5168;&#x7684;&#x7C7B;&#x578B;&#x68C0;&#x6D4B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4F4E;&#x7248;&#x672C;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7C7B;&#x578B;&#x68C0;&#x6D4B;&#x95EE;&#x9898;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function isArray(value){</div><div class="line">    return Object.prototype.toString().call(value)==&quot;[object Array]&quot;;</div><div class="line">}</div></pre></td></tr></table></figure>
-<p>&#x539F;&#x7406;&#xFF1A;&#x5728;&#x4EFB;&#x4F55;&#x503C;&#x4E0A;&#x8C03;&#x7528; Object &#x539F;&#x751F;&#x7684; toString()&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;[object NativeConstructorName]&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x7528;&#x6765;&#x533A;&#x5206;&#x662F;&#x5426;&#x662F;JS&#x539F;&#x751F;&#x5BF9;&#x8C61;&#xFF0C;&#x4EFB;&#x4F55;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x90FD;&#x5C06;&#x8FD4;&#x56DE;&#x201D;[object Object]&#x201D;&#x3002;</p>
+<li>concat参数为数组时，是把每一项添加到原数组中，可以用来给多维数组降维</li>
+<li>slice方法可接受一或两个参数，即要返回项的起始和结束位置，不会影响原始数组，若参数中有一个负数，则用数组长度加上该数来确定相应的位置</li>
+<li>splice最强大的数组方法，可以删除、插入和替换，主要用途是向数组的中部插入项，会改变原数组。返回一个数组，包含从原数组中删除的项（如果没有删除任何项，返回空数组）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">splice(0,2)</span><br><span class="line">  //删除数组中的前两项</span><br><span class="line">splice(2,0,&quot;red&quot;,&quot;green&quot;)</span><br><span class="line">  //从当前数组的位置 2 开始插入字符串&quot;red&quot;和&quot;green&quot;</span><br><span class="line">splice (2,1,&quot;red&quot;,&quot;green&quot;)</span><br><span class="line">  //删除当前数组位置 2 的项，然后再从位置 2 开始插入字符串&quot;red&quot;和&quot;green&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
-<li>&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#xFF1A;toString&#x3001;toLocaleString&#x8FD4;&#x56DE;&#x7531;&#x6BCF;&#x4E00;&#x9879;&#x8C03;&#x7528;toString&#x3001;toLocaleString&#x5F97;&#x5230;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#xFF1B;valueOf&#x8FD4;&#x56DE;&#x539F;&#x6570;&#x7EC4;&#xFF1B;arr.join(&#x201C;&#x201D;)&#x62FC;&#x63A5;&#x6570;&#x7EC4;&#x6210;&#x5B57;&#x7B26;&#x4E32;</li>
-<li>&#x6808;&#x65B9;&#x6CD5;&#xFF08;&#x540E;&#x8FDB;&#x5148;&#x51FA;&#xFF09;&#x4E0E;&#x961F;&#x5217;&#x65B9;&#x6CD5;&#xFF08;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#xFF09;<ol>
-<li>push / pop&#xFF1A;&#x6570;&#x7EC4;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;/&#x5220;&#x9664;&#xFF0C;push&#x53EF;&#x6DFB;&#x52A0;&#x591A;&#x9879;&#xFF0C;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#xFF1B;pop&#x79FB;&#x9664;&#x4E00;&#x9879;&#xFF0C;&#x8FD4;&#x56DE;&#x88AB;&#x79FB;&#x9664;&#x7684;&#x9879;</li>
-<li>shift / unshift&#xFF1A;&#x5728;&#x6570;&#x7EC4;&#x524D;&#x7AEF;&#x79FB;&#x9664; / &#x6DFB;&#x52A0;&#x4E00;&#x9879;&#xFF0C;shift&#x8FD4;&#x56DE;&#x79FB;&#x9664;&#x7684;&#x9879;&#xFF0C;unshift&#x53EF;&#x6DFB;&#x52A0;&#x591A;&#x9879;&#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x6570;&#x7EC4;&#x957F;&#x5EA6;</li>
-<li>shift&#x548C;pop&#xFF0C;&#x90FD;&#x53EA;&#x80FD;&#x79FB;&#x9664;&#x4E00;&#x9879;&#xFF0C;&#x8FD4;&#x56DE;&#x79FB;&#x9664;&#x7684;&#x9879;&#xFF1B;unshift&#x548C;push&#x90FD;&#x53EF;&#x589E;&#x52A0;&#x591A;&#x9879;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65B0;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x3002;</li>
+<li><p>位置方法：indexOf()和 lastIndexOf()，二者的区别在于，从头查和从尾查，在没查到的情况下返回-1。在比较第一个参数<br>与数组中的每一项时，<strong>使用全等（===）操作符</strong>。</p>
+</li>
+<li>迭代方法：every、filter、forEach、map、some，都不会修改原数组，传入的函数接收三个参数：数组项的值、该项在数组中的位置和数组对象本身。<code>function(item, index, arr){}</code><ol>
+<li>every()：对数组中的每一项运行给定函数，若该函数对每一项都返回 true，则返回 true</li>
+<li>filter()：对数组中的每一项运行给定函数，返回该函数会返回true项组成的数组</li>
+<li>forEach()：对数组中的每一项运行给定函数。这个方法没有返回值</li>
+<li>map()：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组</li>
+<li>some()：对数组中的每一项运行给定函数，如果该函数对任一项返回 true，则返回 true</li>
 </ol>
 </li>
-<li><p>&#x6392;&#x5E8F;&#xFF1A;reverse&#x53CD;&#x5E8F;&#x548C;sort&#x6392;&#x5E8F;</p>
-<ol>
-<li>sort&#x7528;&#x6CD5;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">arr.sort(fun)</div><div class="line">function fun(a,b){</div><div class="line">    return a-b</div><div class="line">    // &#x8FD4;&#x56DE;&#x8D1F;&#x503C;&#xFF0C;a&#x6392;&#x5728;&#x524D;&#x9762;&#xFF1B;&#x8FD4;&#x56DE;0&#xFF0C;&#x987A;&#x5E8F;&#x4E0D;&#x53D8;&#xFF1B;&#x8FD4;&#x56DE;&#x6B63;&#x503C;&#xFF0C;a&#x6392;&#x5728;&#x540E;&#x9762;</div><div class="line">}</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#xFF1A;concat&#x3001;slice&#x3001;splice</p>
-<ol>
-<li>concat&#x53C2;&#x6570;&#x4E3A;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x662F;&#x628A;&#x6BCF;&#x4E00;&#x9879;&#x6DFB;&#x52A0;&#x5230;&#x539F;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x7ED9;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x964D;&#x7EF4;</li>
-<li>slice&#x65B9;&#x6CD5;&#x53EF;&#x63A5;&#x53D7;&#x4E00;&#x6216;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5373;&#x8981;&#x8FD4;&#x56DE;&#x9879;&#x7684;&#x8D77;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#xFF0C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x539F;&#x59CB;&#x6570;&#x7EC4;&#xFF0C;&#x82E5;&#x53C2;&#x6570;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x8D1F;&#x6570;&#xFF0C;&#x5219;&#x7528;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x52A0;&#x4E0A;&#x8BE5;&#x6570;&#x6765;&#x786E;&#x5B9A;&#x76F8;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;</li>
-<li>splice&#x6700;&#x5F3A;&#x5927;&#x7684;&#x6570;&#x7EC4;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x3001;&#x63D2;&#x5165;&#x548C;&#x66FF;&#x6362;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x9014;&#x662F;&#x5411;&#x6570;&#x7EC4;&#x7684;&#x4E2D;&#x90E8;&#x63D2;&#x5165;&#x9879;&#xFF0C;&#x4F1A;&#x6539;&#x53D8;&#x539F;&#x6570;&#x7EC4;&#x3002;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x4ECE;&#x539F;&#x6570;&#x7EC4;&#x4E2D;&#x5220;&#x9664;&#x7684;&#x9879;&#xFF08;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5220;&#x9664;&#x4EFB;&#x4F55;&#x9879;&#xFF0C;&#x8FD4;&#x56DE;&#x7A7A;&#x6570;&#x7EC4;&#xFF09;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">splice(0,2)</div><div class="line">  //&#x5220;&#x9664;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x524D;&#x4E24;&#x9879;</div><div class="line">splice(2,0,&quot;red&quot;,&quot;green&quot;)</div><div class="line">  //&#x4ECE;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x7684;&#x4F4D;&#x7F6E; 2 &#x5F00;&#x59CB;&#x63D2;&#x5165;&#x5B57;&#x7B26;&#x4E32;&quot;red&quot;&#x548C;&quot;green&quot;</div><div class="line">splice (2,1,&quot;red&quot;,&quot;green&quot;)</div><div class="line">  //&#x5220;&#x9664;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x4F4D;&#x7F6E; 2 &#x7684;&#x9879;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4ECE;&#x4F4D;&#x7F6E; 2 &#x5F00;&#x59CB;&#x63D2;&#x5165;&#x5B57;&#x7B26;&#x4E32;&quot;red&quot;&#x548C;&quot;green&quot;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>&#x4F4D;&#x7F6E;&#x65B9;&#x6CD5;&#xFF1A;indexOf()&#x548C; lastIndexOf()&#xFF0C;&#x4E8C;&#x8005;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x4ECE;&#x5934;&#x67E5;&#x548C;&#x4ECE;&#x5C3E;&#x67E5;&#xFF0C;&#x5728;&#x6CA1;&#x67E5;&#x5230;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8FD4;&#x56DE;-1&#x3002;&#x5728;&#x6BD4;&#x8F83;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;<br>&#x4E0E;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x65F6;&#xFF0C;<strong>&#x4F7F;&#x7528;&#x5168;&#x7B49;&#xFF08;===&#xFF09;&#x64CD;&#x4F5C;&#x7B26;</strong>&#x3002;</p>
-</li>
-<li>&#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;every&#x3001;filter&#x3001;forEach&#x3001;map&#x3001;some&#xFF0C;&#x90FD;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x539F;&#x6570;&#x7EC4;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x6570;&#x7EC4;&#x9879;&#x7684;&#x503C;&#x3001;&#x8BE5;&#x9879;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x548C;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x3002;<code>function(item, index, arr){}</code><ol>
-<li>every()&#xFF1A;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x82E5;&#x8BE5;&#x51FD;&#x6570;&#x5BF9;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x8FD4;&#x56DE; true&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true</li>
-<li>filter()&#xFF1A;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5;&#x51FD;&#x6570;&#x4F1A;&#x8FD4;&#x56DE;true&#x9879;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;</li>
-<li>forEach()&#xFF1A;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;</li>
-<li>map()&#xFF1A;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x6BCF;&#x6B21;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x7ED3;&#x679C;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;</li>
-<li>some()&#xFF1A;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x51FD;&#x6570;&#x5BF9;&#x4EFB;&#x4E00;&#x9879;&#x8FD4;&#x56DE; true&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true</li>
-</ol>
-</li>
-<li>&#x5F52;&#x5E76;&#x65B9;&#x6CD5;ruduce&#x548C;reduceRight&#xFF0C;&#x8FED;&#x4EE3;&#x6570;&#x7EC4;&#x7684;&#x6240;&#x6709;&#x9879;&#xFF0C;&#x7136;&#x540E;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6700;&#x7EC8;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#xFF0C;&#x533A;&#x522B;&#x662F;&#x5DE6;&#x8D77;&#x904D;&#x5386;&#x8FD8;&#x662F;&#x53F3;&#x8D77;&#x904D;&#x5386;&#x3002;&#x4F20;&#x7ED9; reduce()&#x548C; reduceRight()&#x7684;&#x51FD;&#x6570;&#x63A5;&#x6536;4&#x53C2;&#x6570;&#xFF1A;&#x524D;&#x4E00;&#x4E2A;&#x503C;&#x3001;&#x5F53;&#x524D;&#x503C;&#x3001;&#x9879;&#x7684;&#x7D22;&#x5F15;&#x548C;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x4F1A;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x81EA;&#x52A8;&#x4F20;&#x7ED9;&#x4E0B;&#x4E00;&#x9879;&#x3002;&#x7B2C;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x53D1;&#x751F;&#x5728;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E8C;&#x9879;&#x4E0A;&#xFF0C;&#x56E0;&#x6B64;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x9879;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5C31;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E8C;&#x9879;&#x3002;&#x8FED;&#x4EE3;&#x548C;&#x5F52;&#x5E76;&#x65B9;&#x6CD5;&#x662F;ES5&#x5F15;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;IE9+&#x652F;&#x6301;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var values = [1,2,3,4,5];</div><div class="line">var sum = values.reduce(function(prev, cur, index, array){</div><div class="line">return prev + cur;</div><div class="line">});</div><div class="line">alert(sum); //15</div></pre></td></tr></table></figure>
+<li>归并方法ruduce和reduceRight，迭代数组的所有项，然后构建一个最终返回的值，区别是左起遍历还是右起遍历。传给 reduce()和 reduceRight()的函数接收4参数：前一个值、当前值、项的索引和数组对象。该函数返回的值会作为第一个参数自动传给下一项。第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个参数就是数组的第二项。迭代和归并方法是ES5引入的方法，IE9+支持<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var values = [1,2,3,4,5];</span><br><span class="line">var sum = values.reduce(function(prev, cur, index, array)&#123;</span><br><span class="line">return prev + cur;</span><br><span class="line">&#125;);</span><br><span class="line">alert(sum); //15</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
 <blockquote>
-<p>&#x672C;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://supermaryy.com/2016/09/20/read-book-professional-javascript4">http://supermaryy.com/2016/09/20/read-book-professional-javascript4</a></p>
+<p>本文地址：<a href="http://supermaryy.com/2016/09/20/read-book-professional-javascript4">http://supermaryy.com/2016/09/20/read-book-professional-javascript4</a></p>
 </blockquote>
-<p>Reference&#xFF1A;</p>
+<p>Reference：</p>
 <ol>
-<li><a href="http://www.jianshu.com/p/996671d4dcc4#" target="_blank" rel="external">&#x524D;&#x7AEF;&#x57FA;&#x7840;&#x8FDB;&#x9636;&#xFF08;&#x4E00;&#xFF09;&#xFF1A;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x8BE6;&#x7EC6;&#x56FE;&#x89E3;</a></li>
-<li><a href="http://www.2cto.com/kf/201506/409654.html" target="_blank" rel="external">&#x6DF1;&#x5165;&#x7406;&#x89E3;javascript&#x4E4B;&#x5185;&#x5B58;&#x5206;&#x914D;</a></li>
+<li><a href="http://www.jianshu.com/p/996671d4dcc4#" target="_blank" rel="noopener">前端基础进阶（一）：内存空间详细图解</a></li>
+<li><a href="http://www.2cto.com/kf/201506/409654.html" target="_blank" rel="noopener">深入理解javascript之内存分配</a></li>
 </ol>
 
       
@@ -701,7 +697,7 @@ for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -709,7 +705,7 @@ for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -718,7 +714,7 @@ for in &amp;#x5FAA;&amp;#x73AF;&amp;#x5982;&amp;#x679C;&amp;#x5C5E;&amp;#x6027;&
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

