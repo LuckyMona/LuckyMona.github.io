@@ -24,7 +24,7 @@ Obstacles_I_Met_When_Using_Hexo
 A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures
 
 
-汇总向↗CSS居中需求和方案总结
+汇总向ㄊCSS居中需求和方案总结
 Summary_Of_Aligning_To_Center_Solutions_In_CSS
 
 Javascript基础--高程读书笔记+自我扩展知识
@@ -42,3 +42,6 @@ developing-a-simple-web-server-with-node-js.md
 
 knowledge-about-encoding-and-transcoding.md
 前端中关于编码和转码的知识小总结
+
+HTTP_cache.md
+HTTP缓存机制大局观
