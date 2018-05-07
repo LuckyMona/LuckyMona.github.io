@@ -1,0 +1,40 @@
+<% if (theme.fancybox){ %>
+  <%- css('fancybox/jquery.fancybox') %>
+<% } %>
+
+<script>
+	var yiliaConfig = {
+		fancybox: <%=theme.fancybox%>,
+		mathjax: <%=theme.mathjax%>,
+		animate: <%=theme.animate%>,
+		isHome: <%=is_home()%>,
+		isPost: <%=is_post()%>,
+		isArchive: <%=is_archive()%>,
+		isTag: <%=is_tag()%>,
+		isCategory: <%=is_category()%>,
+		open_in_new: <%=theme.open_in_new%>
+	}
+</script>
+<%- js('http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min') %>
+<%- js('js/main') %>
+
+
+<%- partial('google-analytics') %>
+
+<% if (theme.mathjax){ %>
+<%- partial('mathjax') %>
+<% } %>
+
+<% if (config.disqus_shortname){ %>
+    <script type="text/javascript">
+    var disqus_shortname = '<%= config.disqus_shortname %>';
+
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments){ %>embed.js<% } else { %>count.js<% } %>';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+    </script>
+<% } %>
