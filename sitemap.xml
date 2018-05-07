@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://supermaryy.com/2018/03/02/HTTP_cache/</loc>
+    
+    <lastmod>2018-05-07T10:55:40.234Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://supermaryy.com/tags/index.html</loc>
     
     <lastmod>2018-05-07T10:29:59.605Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>http://supermaryy.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/</loc>
     
     <lastmod>2018-05-07T10:29:59.527Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://supermaryy.com/2018/03/02/HTTP_cache/</loc>
-    
-    <lastmod>2018-05-07T10:29:59.526Z</lastmod>
     
   </url>
   

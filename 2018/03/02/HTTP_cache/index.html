@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://mdn.mozillademos.org/files/13769/HTTPVary.png">
 <meta property="og:image" content="http://7xpsmd.com1.z0.glb.clouddn.com/16-2-23/28130284.jpg">
 <meta property="og:image" content="http://7xpsmd.com1.z0.glb.clouddn.com/16-2-23/8668139.jpg">
-<meta property="og:updated_time" content="2018-05-07T10:29:59.526Z">
+<meta property="og:updated_time" content="2018-05-07T10:55:40.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP缓存机制大局观">
 <meta name="twitter:description" content="网上介绍HTTP缓存机制的博客思路通常是挨个介绍HTTP缓存涉及的多个字段，这样通读下来感觉印象不深刻，并且缺少大局观，本文将尝试从更总览的角度进行总结和概括，以帮助建立知识体系。">
@@ -375,8 +375,7 @@
 <h2 id="前言及缓存字段分类"><a href="#前言及缓存字段分类" class="headerlink" title="前言及缓存字段分类"></a>前言及缓存字段分类</h2><p>前端涉及到缓存这一概念的地方包括HTTP缓存、以<code>localStorage</code>为代表的本地存储缓存（<code>sessionStorage</code>、<code>indexDB</code>、<code>web SQL</code>等），本文主要介绍HTTP缓存。HTTP请求中只有GET请求可以被缓存。</p>
 <p>网上介绍HTTP缓存机制的博客思路通常是挨个介绍HTTP缓存涉及的多个字段，这样通读下来感觉印象不深刻，并且缺少大局观，本文将尝试从更总览的角度进行总结，阅读这篇文章可以帮助你产生一点大菊观，明白轻重缓急，如果看了却产生不了，那你当我是浮夸吧，夸张只因我孩怕XDD。。</p>
 <p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。设置缓存的好处：减少资源显示时间提升性能；减少服务器压力。HTTP缓存机制使用多个字段来实现缓存控制，把这些字段进行分类有利于记忆和加深理解，经过梳理总结我发现大家会对这些字段有以下几种分类方法：</p>
-<p>###1. 按照缓存判断的执行过程，分为：###</p>
-<p>参考自<a href="https://zhuanlan.zhihu.com/p/24467558" target="_blank" rel="noopener">【腾讯Bugly干货分享】彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a></p>
+<h3 id="1-按照缓存判断的执行过程，分为："><a href="#1-按照缓存判断的执行过程，分为：" class="headerlink" title="1. 按照缓存判断的执行过程，分为："></a>1. 按照缓存判断的执行过程，分为：</h3><p>参考自<a href="https://zhuanlan.zhihu.com/p/24467558" target="_blank" rel="noopener">【腾讯Bugly干货分享】彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a></p>
 <ul>
 <li><p>缓存存储策略：<code>Cache-Control: public、private、no-cache、max-age、no-store</code></p>
 <p>前4项都可以缓存数据到本地，后者 <code>no-store</code> 则不会在客户端缓存任何响应数据。</p>
@@ -407,8 +406,7 @@
 <li>主要字段：Expires、Cache-Control、Etag / If-None-Match、Last-Modified / If-Modified-Since</li>
 <li>辅助字段：Vary、Date、Age</li>
 </ul>
-<p>###4.按照能否被请求头、响应头支持，分为：###</p>
-<p>参考自<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html" target="_blank" rel="noopener">rfc2616 14.Header Field Definitions</a></p>
+<h3 id="4-按照能否被请求头、响应头支持，分为："><a href="#4-按照能否被请求头、响应头支持，分为：" class="headerlink" title="4.按照能否被请求头、响应头支持，分为："></a>4.按照能否被请求头、响应头支持，分为：</h3><p>参考自<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html" target="_blank" rel="noopener">rfc2616 14.Header Field Definitions</a></p>
 <p>​           <a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">浅谈浏览器http的缓存机制-Vajoy</a></p>
 <ul>
 <li><p>请求头字段(request-header)：If-Match、If-None-Match、If-Modified-Since、If-Unmodified-Since</p>
@@ -457,25 +455,20 @@
 </li>
 </ul>
 <p>若报文中同时出现了 Pragma、Expires 和 Cache-Control，会以 Cache-Control 为准，其它Cache-Control值略</p>
-<p>####3.Etag / If-None-Match</p>
-<ul>
+<h4 id="3-Etag-If-None-Match"><a href="#3-Etag-If-None-Match" class="headerlink" title="3.Etag / If-None-Match"></a>3.Etag / If-None-Match</h4><ul>
 <li>服务器端为资源打的一个标记，标记资源有无修改，服务端资源修改后就修改Etag值</li>
 <li>“W\”开头的Etag表示开启弱校验，当有了较多修改之后才会修改Etag值，默认使用强校验，即按字节进行对比</li>
 </ul>
-<p>####4.Last-Modified / If-Modified-Since</p>
-<ul>
+<h4 id="4-Last-Modified-If-Modified-Since"><a href="#4-Last-Modified-If-Modified-Since" class="headerlink" title="4.Last-Modified / If-Modified-Since"></a>4.Last-Modified / If-Modified-Since</h4><ul>
 <li>Last-Modified标记资源最后被修改的时间，是一个GMT格式的时间值</li>
 <li>如果在服务器上，一个资源被修改了，但其实际内容根本没发生改变，会因为Last-Modified时间匹配不上而返回了整个实体给客户端<em>（即使客户端缓存里有个一模一样的资源）</em>，所以通常配合Etag一起使用，可以达到较好的控制缓存的效果</li>
 <li>如果 Last-Modified 和 ETag 同时被使用，则要求它们的验证都必须通过才会返回304，若其中某个验证没通过，则服务器会按常规返回资源实体及200状态码。</li>
 </ul>
-<p>###2. 辅助字段：</p>
-<p>####1.Vary</p>
-<p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ" target="_blank" rel="noopener">MDN|HTTP缓存</a></p>
+<h3 id="2-辅助字段："><a href="#2-辅助字段：" class="headerlink" title="2. 辅助字段："></a>2. 辅助字段：</h3><h4 id="1-Vary"><a href="#1-Vary" class="headerlink" title="1.Vary"></a>1.Vary</h4><p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ" target="_blank" rel="noopener">MDN|HTTP缓存</a></p>
 <p>控制代理服务器直接使用缓存资源返回还是向源服务器发起请求。当缓存服务器收到一个请求，只有当前的请求和原始（缓存）的请求头跟缓存的响应头里的Vary都匹配，才能使用缓存的响应。</p>
 <p><img src="https://mdn.mozillademos.org/files/13769/HTTPVary.png" alt="The Vary header leads cache to use more HTTP headers as key for the cache."></p>
 <p>使用vary头有利于内容服务的动态多样性。例如，使用Vary: User-Agent头，缓存服务器需要通过UA判断是否使用缓存的页面。如果需要区分移动端和桌面端的展示内容，利用这种方式就能避免在不同的终端展示错误的布局。另外，它可以帮助google或者其他搜索引擎更好地发现页面的移动版本，并且告诉搜索引擎没有引入<a href="https://en.wikipedia.org/wiki/Cloaking" target="_blank" rel="noopener">Cloaking</a>。</p>
-<p>####2.Date和Age</p>
-<p>Date 是原服务器发送该资源响应报文的时间（GMT格式），如果你发现 Date 的时间与“当前时间”差别较大，或者连续F5刷新发现 Date 的值都没变化，则说明你当前请求是命中了代理服务器的缓存。</p>
+<h4 id="2-Date和Age"><a href="#2-Date和Age" class="headerlink" title="2.Date和Age"></a>2.Date和Age</h4><p>Date 是原服务器发送该资源响应报文的时间（GMT格式），如果你发现 Date 的时间与“当前时间”差别较大，或者连续F5刷新发现 Date 的值都没变化，则说明你当前请求是命中了代理服务器的缓存。</p>
 <p>Age表示资源在代理服务器中存在的时间<em>（秒）</em>，如文件被修改或替换，Age会重新由0开始累计。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">静态资源Age + 静态资源Date = 原服务端Date</span><br></pre></td></tr></table></figure>
 <p>不过这条规则也不一定准确，特别是当原服务器经常修改系统时间的情况下。</p>
@@ -743,7 +736,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言及缓存字段分类"><span class="nav-text">前言及缓存字段分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-按照HTTP不同版本的字段，分为："><span class="nav-text">2.按照HTTP不同版本的字段，分为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-按照使用频率，分为："><span class="nav-text">3.按照使用频率，分为：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、常用缓存字段"><span class="nav-text">一、常用缓存字段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-主要字段："><span class="nav-text">1. 主要字段：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Expires"><span class="nav-text">1.Expires</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Cache-control"><span class="nav-text">2.Cache-control</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、缓存判断流程"><span class="nav-text">二、缓存判断流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、前端设置"><span class="nav-text">三、前端设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTTP-header字段设置"><span class="nav-text">1. HTTP header字段设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Meta-http-equiv设置缓存"><span class="nav-text">2. Meta http-equiv设置缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-给静态资源加版本号Revved-Resource"><span class="nav-text">3.给静态资源加版本号Revved Resource</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、设置规则"><span class="nav-text">四、设置规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、用户刷新-访问行为"><span class="nav-text">五、用户刷新/访问行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言及缓存字段分类"><span class="nav-text">前言及缓存字段分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-按照缓存判断的执行过程，分为："><span class="nav-text">1. 按照缓存判断的执行过程，分为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-按照HTTP不同版本的字段，分为："><span class="nav-text">2.按照HTTP不同版本的字段，分为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-按照使用频率，分为："><span class="nav-text">3.按照使用频率，分为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-按照能否被请求头、响应头支持，分为："><span class="nav-text">4.按照能否被请求头、响应头支持，分为：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、常用缓存字段"><span class="nav-text">一、常用缓存字段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-主要字段："><span class="nav-text">1. 主要字段：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Expires"><span class="nav-text">1.Expires</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Cache-control"><span class="nav-text">2.Cache-control</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Etag-If-None-Match"><span class="nav-text">3.Etag / If-None-Match</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Last-Modified-If-Modified-Since"><span class="nav-text">4.Last-Modified / If-Modified-Since</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-辅助字段："><span class="nav-text">2. 辅助字段：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Vary"><span class="nav-text">1.Vary</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Date和Age"><span class="nav-text">2.Date和Age</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、缓存判断流程"><span class="nav-text">二、缓存判断流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、前端设置"><span class="nav-text">三、前端设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTTP-header字段设置"><span class="nav-text">1. HTTP header字段设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Meta-http-equiv设置缓存"><span class="nav-text">2. Meta http-equiv设置缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-给静态资源加版本号Revved-Resource"><span class="nav-text">3.给静态资源加版本号Revved Resource</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、设置规则"><span class="nav-text">四、设置规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、用户刷新-访问行为"><span class="nav-text">五、用户刷新/访问行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>
