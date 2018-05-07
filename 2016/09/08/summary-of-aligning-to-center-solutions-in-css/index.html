@@ -1,0 +1,937 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="总结,CSS,垂直居中,水平居中,方案总结," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mary's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="by MaryTien from http://luckymona.github.io本文地址：http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css  之前差不多有小半年时间做切图仔，虽然居中的方法来来去去常用的就那么几个，但是由于没有认真总结过每种方案适用的场景，有时遇到居中需求">
+<meta name="keywords" content="总结,CSS,垂直居中,水平居中,方案总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结向↗CSS居中常用套路">
+<meta property="og:url" content="http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/index.html">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="by MaryTien from http://luckymona.github.io本文地址：http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css  之前差不多有小半年时间做切图仔，虽然居中的方法来来去去常用的就那么几个，但是由于没有认真总结过每种方案适用的场景，有时遇到居中需求">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/align/1.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/align/2.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/align/3.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/align/4.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/align/5.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/align/6.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/align/7.png">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.604Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总结向↗CSS居中常用套路">
+<meta name="twitter:description" content="by MaryTien from http://luckymona.github.io本文地址：http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css  之前差不多有小半年时间做切图仔，虽然居中的方法来来去去常用的就那么几个，但是由于没有认真总结过每种方案适用的场景，有时遇到居中需求">
+<meta name="twitter:image" content="http://o798x2hdw.bkt.clouddn.com/align/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/"/>
+
+  <title> 总结向↗CSS居中常用套路 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-MaryIsTheBest', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7384dce190b7167fd4c04afca4b3467c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                总结向↗CSS居中常用套路
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-08T21:00:00+08:00" content="2016-09-08">
+              2016-09-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/08/summary-of-aligning-to-center-solutions-in-css/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/" class="leancloud_visitors" data-flag-title="总结向↗CSS居中常用套路">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>by MaryTien from <a href="http://luckymona.github.io" target="_blank" rel="noopener">http://luckymona.github.io</a><br>本文地址：<a href="http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css" target="_blank" rel="noopener">http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css</a></p>
+</blockquote>
+<p>之前差不多有小半年时间做切图仔，虽然居中的方法来来去去常用的就那么几个，但是由于没有认真总结过每种方案适用的场景，有时遇到居中需求还是不能一下就用对方法，试来试去浪费时间。本文就对CSS中的常用的居中方案来个总结，本想来个最强总结，但是CSS套路太多，写着写着就不想写了==!，于是变成了常用方案的总结。（文中例子均为以chrome测试结果）<br><a id="more"></a></p>
+<h1 id="常用元素分类–按照块元素、行内元素"><a href="#常用元素分类–按照块元素、行内元素" class="headerlink" title="常用元素分类–按照块元素、行内元素"></a>常用元素分类–按照块元素、行内元素</h1><p>居中的需求常常涉及这些因素：内联元素居中、块元素居中，块元素居中又分为定宽度、不定宽度，还有各种定位、浮动、父元素宽高，等等。于是我先把常用元素按照display值分一下类。根据二八原则，仅举常用的比较重要的小朋友，且不包括HTML5那些新标签（多了人家记不住嘛，脑细胞要想更重要的事 <del>嗯，一个借口</del>）</p>
+<h2 id="常用block元素："><a href="#常用block元素：" class="headerlink" title="常用block元素："></a>常用block元素：</h2><p>文档类：head \ html \ body<br>文章类：h \ h1~h6 \ p<br>布局类：div \ br \ hr<br>列表类：ol \ ul \ li \ dl \ dt \ dd<br>表单类：form<br>需注意的：<strong>hr是块元素，可以设定宽高</strong></p>
+<h2 id="常用inline元素："><a href="#常用inline元素：" class="headerlink" title="常用inline元素："></a>常用inline元素：</h2><p>a \ span \ strong \ i \ em \ del \ q </p>
+<h2 id="常用的inline-block元素："><a href="#常用的inline-block元素：" class="headerlink" title="常用的inline-block元素："></a>常用的inline-block元素：</h2><p>img \ input \ button \ select \ textarea</p>
+<h2 id="其他元素："><a href="#其他元素：" class="headerlink" title="其他元素："></a>其他元素：</h2><ol>
+<li>与select搭配使用的option、optgroup，虽然是display:block的元素，但是却不能设定宽高</li>
+<li>起配置作用的元素：meta、script、style</li>
+<li>table元素：（markdown中写表格很费劲，推荐一个插件TableEditor）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">table元素名</th>
+<th style="text-align:center">display值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">table</td>
+<td style="text-align:center">table</td>
+</tr>
+<tr>
+<td style="text-align:center">thead</td>
+<td style="text-align:center">table-header-group</td>
+</tr>
+<tr>
+<td style="text-align:center">tbody</td>
+<td style="text-align:center">table-row-group</td>
+</tr>
+<tr>
+<td style="text-align:center">tfoot</td>
+<td style="text-align:center">table-footer-group</td>
+</tr>
+<tr>
+<td style="text-align:center">tr</td>
+<td style="text-align:center">table-row</td>
+</tr>
+<tr>
+<td style="text-align:center">th / td</td>
+<td style="text-align:center">table-cell</td>
+</tr>
+</tbody>
+</table>
+<p>inline元素不存在宽高，也就不存在居不居中的问题。所以讨论居中主要是讨论block / inline-block元素的居中。</p>
+<h1 id="居中主要用到的技术"><a href="#居中主要用到的技术" class="headerlink" title="居中主要用到的技术"></a>居中主要用到的技术</h1><h2 id="line-height–垂直居中"><a href="#line-height–垂直居中" class="headerlink" title="line-height–垂直居中"></a>line-height–垂直居中</h2><p>block / inline-block元素，通过使height值等于line-height值，使 <strong>单行文本内容</strong> 或者 <strong>单行display:inline的元素</strong>垂直居中:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.block_center &#123; height:200px; line-height:200px; border:1px solid red; &#125;</span><br><span class="line">.inlineB_center &#123; display:inline-block; height:200px; line-height:200px; border:1px solid red; &#125;</span><br><span class="line"></span><br><span class="line">&lt;p class=&quot;block_Center&quot;&gt;dfasdfadfa&lt;/p&gt;</span><br><span class="line">&lt;p class=&quot;inlineB_center&quot;&gt;dfasdfadfa&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">.origin_inlineB_center &#123; height:200px; line-height:200px; border:1px solid red; &#125;</span><br><span class="line">&lt;input class=&quot;origin_inlineB_center&quot; type=&quot;text&quot; value=&quot;aaaaa&quot;&gt;</span><br><span class="line">&lt;button class=&quot;origin_inlineB_center&quot; &gt;aaaaa&lt;/button&gt;</span><br><span class="line">&lt;textarea sclass=&quot;origin_inlineB_center&quot; &gt;aaaaa&lt;/textarea&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>需注意:</strong></p>
+<ol>
+<li>子元素为inline-block元素，父级加line-height等于height，并不能使子元素居中：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.father &#123; height: 200px; width:100px; line-height: 200px; border:1px solid red; &#125;</span><br><span class="line">.child &#123; height: 100px; width:100px; background: red; display: inline-block; &#125;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 或者原生inline-block元素也不行,class内容同上，.child 去掉display:inline-block --&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;input class=&quot;child&quot; type=&quot;button&quot; name=&quot;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- or --&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;1.jpg&quot; class=&quot;child&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>都是这样的结果：<br><img src="http://o798x2hdw.bkt.clouddn.com/align/1.png" alt="align/1"> <img src="http://o798x2hdw.bkt.clouddn.com/align/2.png" alt="align/2"></p>
+<h2 id="text-align-center–水平居中"><a href="#text-align-center–水平居中" class="headerlink" title="text-align:center–水平居中"></a>text-align:center–水平居中</h2><p>text-align顾名思义，其主要作用是对齐text的，具体说来：</p>
+<ol>
+<li><p>是使block / inline-block元素的内容文本水平居中，但对inline-block元素select无效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- div元素 --&gt;</span><br><span class="line">.center &#123; text-align:center &#125;</span><br><span class="line">&lt;div class=&quot;center&quot;&gt;This text will be in the center&lt;/div&gt;</span><br><span class="line">&lt;p class=&quot;center&quot;&gt;dsfadfadfafgdfs&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- inline-block元素 --&gt;</span><br><span class="line">.inlineB_center &#123; text-align:center; width:100px; &#125;</span><br><span class="line">&lt;input class=&quot;inlineB_center&quot; value=&quot;aaaaa&quot; type=&quot;text&quot;&gt;</span><br><span class="line">&lt;button class=&quot;inlineB_center&quot;&gt;aaaaa&lt;/button&gt;</span><br><span class="line">&lt;textarea class=&quot;inlineB_center&quot;&gt;aaaaa&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>此外，还可以使作为子元素的inline / inline-block元素在父元素内水平居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.center &#123; text-align:center; width: 200px; height:100px; border:1px solid red; &#125;</span><br><span class="line">.centerChild &#123; width:100px; height:100px; &#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;center&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;display:inline&quot;&gt;aaa&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;center&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;display:inline-block&quot;&gt;aaa&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- or 原生inline-block元素 --&gt;</span><br><span class="line">&lt;div class=&quot;center&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;1.jpg&quot; class=&quot;centerChild&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="padding–水平垂直居中"><a href="#padding–水平垂直居中" class="headerlink" title="padding–水平垂直居中"></a>padding–水平垂直居中</h2><p>通过在内容的上下左右添加同样的距离，来反向达到内容居中的效果。通过这种方法实现居中，限制条件比较多。这种居中相当于在模拟标准盒模型，父级相当于border，子级相当于content，二者的宽高通过padding相互制约。所以一般不使用padding来做居中，它经常的使用场景是，在一块内容分区的边线内的四面留白。如下图红线框起来的内容区和外边框之间的留白<br><img src="http://o798x2hdw.bkt.clouddn.com/align/3.png" alt="align/3"></p>
+<h2 id="margin-0-auto–水平居中"><a href="#margin-0-auto–水平居中" class="headerlink" title="margin 0 auto–水平居中"></a>margin 0 auto–水平居中</h2><p>最常使用的是margin:xx auto，可以令子级水平居中，但是在上下margin上设定auto却不能令其垂直居中，这是由CSS2规范的规定决定的^1。</p>
+<p>原理是，CSS2规范规定：</p>
+<blockquote>
+<p>块级元素在普通流内布局按以下公式：左m+左b+左p+w+右p+右b+右m = 包含块宽度<br>如果宽度w不是auto，并且左margin和右margin都是auto的话，两者相等。</p>
+</blockquote>
+<p>然而纵向margin没有规定，于是就不能垂直居中。</p>
+<p><strong>限制条件是：</strong></p>
+<ol>
+<li>父级子级均为block元素</li>
+<li>父级子级宽度固定</li>
+<li>并且处于正常文档流中</li>
+</ol>
+<p><strong>失效情况：</strong></p>
+<ol>
+<li>如果子级是inline元素或者inline-block元素，居中会失效；</li>
+<li>如果没有设定父级宽度，居中会失效；</li>
+<li>如果子级宽度为auto那就整行撑满父级，宽度等于父级了，也就没有什么居中不居中了；</li>
+<li>子级设定了绝对定位或者固定定位，脱离了正常文档流，居中会失效；</li>
+<li>另外如果不写DOCTYPE或者写的不正确也会导致失效。</li>
+</ol>
+<h2 id="absolute-left-top-50-margin为宽-高一半的负值–水平垂直居中"><a href="#absolute-left-top-50-margin为宽-高一半的负值–水平垂直居中" class="headerlink" title="absolute + left/top 50% + margin为宽/高一半的负值–水平垂直居中"></a>absolute + left/top 50% + margin为宽/高一半的负值–水平垂直居中</h2><p><strong>限制条件：</strong></p>
+<ol>
+<li>父级定位relative，子级定位absolute,</li>
+<li>子级宽度确定<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.father &#123; border:2px solid #f77; height:100px; width:300px; position:relative; &#125;</span><br><span class="line">.child &#123; width:100px; height:100px; background:#7c7; position:absolute; left:50%;  margin-left:-50px;&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://o798x2hdw.bkt.clouddn.com/align/4.png" alt="align/4"></p>
+<p>margin负值的重要作用有^2：</p>
+<ol>
+<li><p>相对自身偏移，达到的视觉效果相当于<code>position：relative; top：-xx; left:-xx; right:-xx; bottom:-xx</code>，但与之的区别在于，relative偏移后仍占据原来的位置，margin负值的偏移连原来占据的位置也会偏移，常利用这点，设置左上的margin负值，遮盖左边或者上边的border，如果设置右下的，则会被后面的内容遮住。</p>
+</li>
+<li><p>扩展宽度例如</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">div &#123; width:432px; background:#999; &#125;</span><br><span class="line">ul &#123; margin-right: -10px; height:200px; border:1px solid #f77; padding:0;&#125;</span><br><span class="line">li &#123; width:100px; margin-right:10px; float:left; height:100px; background:#7c7; list-style: none;&#125;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="http://o798x2hdw.bkt.clouddn.com/align/5.png" alt="align/5"></p>
+<h2 id="absolute-left-top-50-transform-translate–水平垂直居中"><a href="#absolute-left-top-50-transform-translate–水平垂直居中" class="headerlink" title="absolute + left/top 50% + transform translate–水平垂直居中"></a>absolute + left/top 50% + transform translate–水平垂直居中</h2><p>上面的居中方法有一个限制是必须知道子级的宽高，CSS3中的transform的translate可以基于自身尺寸设定百分数，这样就不用知道子级的宽高，也能做到居中了。此方法从张鑫旭大神博客学来^3，感谢大神。<br>缺点： IE9(-ms-), IE10+以及其他现代浏览器才支持<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.father &#123; position:relative; </span><br><span class="line">          width:300px; height: 300px; border:1px solid red;</span><br><span class="line">        &#125;</span><br><span class="line">.child &#123; position:absolute; </span><br><span class="line">         left:50%; </span><br><span class="line">         top:50%;</span><br><span class="line">         transform: translate(-50%, -50%);</span><br><span class="line"></span><br><span class="line">         width:100px; height: 100px; background: #7c7;</span><br><span class="line">        &#125;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com/align/6.png" alt="align/6"></p>
+<h2 id="margin：auto-absolute-0-0-0-0–水平垂直居中"><a href="#margin：auto-absolute-0-0-0-0–水平垂直居中" class="headerlink" title="margin：auto + absolute 0 0 0 0–水平垂直居中"></a>margin：auto + absolute 0 0 0 0–水平垂直居中</h2><p>比起上面的方法，可以兼容IE8+浏览器，同样来自张鑫旭大神^3，出来效果同上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.father &#123; position:relative; </span><br><span class="line">          width:300px; height: 300px; border:1px solid red;</span><br><span class="line">        &#125;</span><br><span class="line">.child &#123; position:absolute; </span><br><span class="line">         left:0;</span><br><span class="line">         top:0; </span><br><span class="line">         right: 0; </span><br><span class="line">         bottom: 0;</span><br><span class="line"></span><br><span class="line">         margin:auto;</span><br><span class="line"></span><br><span class="line">         width:100px; height: 100px; background: #7c7; </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>简单翻译下原理 ^4：</p>
+<ol>
+<li>正常文档流内，对于top和bottom，margin为auto，等同于margin等于零；</li>
+<li>absolute使之脱离正常文档流，此时的margin auto相当于不起作用了；</li>
+<li>设定四面都为0后，浏览器会在设定了relative的父元素内，贴近父元素的border设置一个边界盒子（bound box），此时，边界盒子占满父元素所有空间；</li>
+<li>给子元素设定了宽或者高，就阻止其占满父元素所有空间，迫使浏览器基于边界盒子重新计算margin：auto；</li>
+<li>现在元素是绝对定位，非正常文档流，浏览器计算margin：auto时，就让上下margin相等（基于规范规定），这样元素就居中于边界盒子（bound box），也就居中于父元素了。</li>
+</ol>
+<h2 id="table-cell-vertical-align-–水平居中"><a href="#table-cell-vertical-align-–水平居中" class="headerlink" title="table-cell + vertical-align –水平居中"></a>table-cell + vertical-align –水平居中</h2><p>如果是在td元素中，可以直接使用属性valign=”middle”做垂直居中，align=”center”做水平居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">td &#123; width:300px; height: 300px; border:1px solid red; &#125;</span><br><span class="line">.tdChild &#123; width:100px; height: 100px; background: #7c7; &#125;</span><br><span class="line"></span><br><span class="line">&lt;td valign=&quot;middle&quot; align=&quot;center&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;tdChild&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/td&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果没有table，没有td元素，可以用css这样写：<br>这种方法，子级不需要大小固定，可以用于：多行文字居中、大小不固定图片的居中<br>有一个疑问，许多博客写这种方法的时候，都要给.father再加一个父级，让这个父级display:table,我不知道为什么要这么加，因为不加的时候就可以居中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.father &#123;</span><br><span class="line">    display: table-cell;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">     </span><br><span class="line">    width:300px; </span><br><span class="line">    height: 300px; </span><br><span class="line">    border:1px solid red;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123; display: inline-block; background: #7c7; &#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot;&gt;dafsdf sda sdf sdfas sdf&lt;br&gt;dsfasd sdf dd &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="css3-flex居中–水平垂直居中"><a href="#css3-flex居中–水平垂直居中" class="headerlink" title="css3 flex居中–水平垂直居中"></a>css3 flex居中–水平垂直居中</h2><p>兼容性不太好，适用于手机端开发，水平垂直居中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.father &#123; display:-webkit-box;</span><br><span class="line">    -webkit-box-align:center;</span><br><span class="line">    -webkit-box-pack:center;</span><br><span class="line">    </span><br><span class="line">    width:300px; </span><br><span class="line">    height: 300px; </span><br><span class="line">    border:1px solid red; </span><br><span class="line">&#125; </span><br><span class="line">.child &#123; display:-webkit-flex; </span><br><span class="line"></span><br><span class="line">    width: 100px; </span><br><span class="line">    height:100px; </span><br><span class="line">    background: #7c7; </span><br><span class="line">    margin-bottom:10px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com/align/7.png" alt="align/7"></p>
+<p>本人常用的就是这些居中方法了，还有一些居中方式，本人比较不常用，由于精力有限就不加了。另外小可才疏学浅，时间仓促，如有错漏处，请大力批评！另外的另外，写博客真累，但是也真的很有成就感呀，赫赫~~</p>
+<blockquote>
+<p>本文为原创文章，尊重辛勤劳动，可以免费摘要、推荐或聚合，但完整转载需经过本人同意，本人邮箱 <a href="mailto:miao.hnlk@gmail.com" target="_blank" rel="noopener">miao.hnlk@gmail.com</a><br>本文地址：<a href="http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css" target="_blank" rel="noopener">http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css</a></p>
+</blockquote>
+<p>参考链接：</p>
+<p>^1:<a href="https://www.zhihu.com/question/21644198" target="_blank" rel="noopener">为什么「margin:auto」可以让块级元素水平居中？</a><br>^2:<a href="http://www.cnblogs.com/2050/archive/2012/08/13/2636467.html" target="_blank" rel="noopener">CSS布局奇淫巧计之-强大的负边距</a><br>^3:<a href="http://www.zhangxinxu.com/wordpress/2013/11/margin-auto-absolute-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" target="_blank" rel="noopener">小tip: margin:auto实现绝对定位元素的水平垂直居中</a><br>^4:<a href="https://www.smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css" target="_blank" rel="noopener">Absolute Horizontal And Vertical Centering In CSS</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag">#总结</a>
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+            <a href="/tags/垂直居中/" rel="tag">#垂直居中</a>
+          
+            <a href="/tags/水平居中/" rel="tag">#水平居中</a>
+          
+            <a href="/tags/方案总结/" rel="tag">#方案总结</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/" rel="next" title="支持离线和拍照上传的Hybrid APP开发小记">
+                <i class="fa fa-chevron-left"></i> 支持离线和拍照上传的Hybrid APP开发小记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/11/read-book-professional-javascript1/" rel="prev" title="Javascript基础">
+                Javascript基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description">有志者自有千计万计，无志者只感千难万难</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用元素分类–按照块元素、行内元素"><span class="nav-text">常用元素分类–按照块元素、行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用block元素："><span class="nav-text">常用block元素：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用inline元素："><span class="nav-text">常用inline元素：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的inline-block元素："><span class="nav-text">常用的inline-block元素：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他元素："><span class="nav-text">其他元素：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#居中主要用到的技术"><span class="nav-text">居中主要用到的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#line-height–垂直居中"><span class="nav-text">line-height–垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#text-align-center–水平居中"><span class="nav-text">text-align:center–水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#padding–水平垂直居中"><span class="nav-text">padding–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin-0-auto–水平居中"><span class="nav-text">margin 0 auto–水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#absolute-left-top-50-margin为宽-高一半的负值–水平垂直居中"><span class="nav-text">absolute + left/top 50% + margin为宽/高一半的负值–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#absolute-left-top-50-transform-translate–水平垂直居中"><span class="nav-text">absolute + left/top 50% + transform translate–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin：auto-absolute-0-0-0-0–水平垂直居中"><span class="nav-text">margin：auto + absolute 0 0 0 0–水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#table-cell-vertical-align-–水平居中"><span class="nav-text">table-cell + vertical-align –水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css3-flex居中–水平垂直居中"><span class="nav-text">css3 flex居中–水平垂直居中</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'supermaryyy';
+      var disqus_identifier = '2016/09/08/summary-of-aligning-to-center-solutions-in-css/';
+      var disqus_title = "总结向↗CSS居中常用套路";
+      var disqus_url = 'http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("viqvtCrDXybVezVWV8Rjug5j-gzGzoHsz", "26hWjxk9tYLU0r9HPP8dKz2l");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>

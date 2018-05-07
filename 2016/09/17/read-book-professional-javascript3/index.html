@@ -1,0 +1,993 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="红皮书,读书笔记,Javascript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mary's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="摘要：  一切对象都继承自Object，但不包括宿主对象，如DOM对象、BOM对象，宿主环境定义宿主对象 所有对象都有的方法有：constructor、isPrototypeOf、hasOwnProperty、toString; valueOf、toLocalString、propertyIsEnumberable 对象使用toString()一般得到”[object Object]” 除null">
+<meta name="keywords" content="红皮书,读书笔记,Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript基础3">
+<meta property="og:url" content="http://supermaryy.com/2016/09/17/read-book-professional-javascript3/index.html">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="摘要：  一切对象都继承自Object，但不包括宿主对象，如DOM对象、BOM对象，宿主环境定义宿主对象 所有对象都有的方法有：constructor、isPrototypeOf、hasOwnProperty、toString; valueOf、toLocalString、propertyIsEnumberable 对象使用toString()一般得到”[object Object]” 除null">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.600Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript基础3">
+<meta name="twitter:description" content="摘要：  一切对象都继承自Object，但不包括宿主对象，如DOM对象、BOM对象，宿主环境定义宿主对象 所有对象都有的方法有：constructor、isPrototypeOf、hasOwnProperty、toString; valueOf、toLocalString、propertyIsEnumberable 对象使用toString()一般得到”[object Object]” 除null">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://supermaryy.com/2016/09/17/read-book-professional-javascript3/"/>
+
+  <title> Javascript基础3 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-MaryIsTheBest', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7384dce190b7167fd4c04afca4b3467c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript基础3
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-17T16:00:00+08:00" content="2016-09-17">
+              2016-09-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/17/read-book-professional-javascript3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/17/read-book-professional-javascript3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/17/read-book-professional-javascript3/" class="leancloud_visitors" data-flag-title="Javascript基础3">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：</p>
+<ol>
+<li>一切对象都继承自Object，但不包括宿主对象，如DOM对象、BOM对象，宿主环境定义宿主对象</li>
+<li>所有对象都有的方法有：constructor、isPrototypeOf、hasOwnProperty、toString; valueOf、toLocalString、propertyIsEnumberable</li>
+<li>对象使用toString()一般得到”[object Object]”</li>
+<li>除null和undefined的数据类型可以使用操作符；</li>
+<li>Object类型使用操作符时会先使用toString或者valueOf转换为字符串，如果需要的是数值，再使用Number转换成数值，之后进行操作</li>
+<li>++i与i++的区别：i值改变，与所在语句求值，这两个顺序的不同</li>
+<li>加性操作、乘性操作中，涉及NaN、0、Infinity的特殊状况</li>
+<li>逻辑与&amp;&amp;或||，短路操作，当有一个值是对象时，结果怎样，当有一个值null、undefined、NaN时，结果怎样</li>
+<li>位操作~ &amp; | ^ &lt;&lt; &gt;&gt; &gt;&gt;&gt;非与或，异或，左移，有符号右移，无符号右移</li>
+<li>位操作常用场景：~与indexOf配合、求整、判奇偶、判正负、随机颜色</li>
+</ol>
+<a id="more"></a>
+<blockquote>
+<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="noopener">http://supermaryy.com</a><br>本文地址：<a href="http://luckymona.github.io/2016/09/17/read-book-professional-javascript3" target="_blank" rel="noopener">http://supermaryy.com/2016/09/17/read-book-professional-javascript3</a></p>
+</blockquote>
+<h2 id="3-5-Object"><a href="#3-5-Object" class="headerlink" title="3.5 Object"></a>3.5 Object</h2><ol>
+<li>对象就是一组数据和功能的组合；</li>
+<li>Object类型是所有对象的祖先，但不是宿主对象的祖先，例如宿主环境浏览器中的BOM和DOM对象是由宿主实现和定义的</li>
+<li><p>除了宿主对象，其他对象全都拥有有这些方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var o = new Object; //不传参时，可以不用圆括号，但不推荐这种写法</span><br><span class="line">console.log(); //打印以下值：</span><br><span class="line"></span><br><span class="line">o.constructor();</span><br><span class="line">o.hasOwnProperty(propertyName);</span><br><span class="line">o.isPrototypeOf(object);</span><br><span class="line"></span><br><span class="line">o.toString();       // 返回[object NativeConstructorName]，可以用于对象类型检测</span><br><span class="line">o.toLocalString();  // 基础功能类似toString，返回的字符串与执行环境的地理地区对应，可用于Date对象，输出以当地时间格式表示的字符串</span><br><span class="line">o.valueOf();        //</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">o.propertyIsEnumberable(propertyName); //不常用</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对Object使用toString()方法，通常会得到’[object Object]’，也可以这样用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123; toString: function()&#123;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(o.toString()); //-1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="3-6-操作符"><a href="#3-6-操作符" class="headerlink" title="3.6 操作符"></a>3.6 操作符</h2><p>包括：算数操作符、位操作符、关系操作符、相等操作符，这些操作符均可以应用于除null和undefined之外的数据类型，操作符应用于Object时，会先调用toString()或valueOf()转换成字符串，以取得可以操作的值</p>
+<ol>
+<li>使用+、-操作时会先转换数据类型，<code>1+ &quot;&quot; = &quot;1&quot;; 1-&quot;&quot; = 1;</code></li>
+<li><p>++i和i++的区别在于，所在语句求值之前改变i，还是在语句求值之后，–i和i–同理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var i=0;</span><br><span class="line">console.log(i++) // 0 </span><br><span class="line"></span><br><span class="line">var i= 0;</span><br><span class="line">console.log(++i); // 1</span><br><span class="line"></span><br><span class="line">var j = 20;</span><br><span class="line">var res = j++ + 1; // res = 21</span><br><span class="line"></span><br><span class="line">var m = 20;</span><br><span class="line">var res = ++m +1 // res = 22</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑与&amp;&amp;<br>有一个操作数不是布尔值的时候：<br>对象：</p>
+</li>
+</ol>
+<ul>
+<li>第一个值为对象，返回第二个值</li>
+<li>第二个值为对象，第一个值计算结果为true时返回第二个数</li>
+<li>两个值都是对象，返回第二个值</li>
+</ul>
+<p>其他特殊：</p>
+<ul>
+<li>有一个为NaN、undefined、null，则结果分别为NaN、undefined、null，这三个值相互&amp;&amp;，则返回第一个值：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NaN &amp;&amp; undefined;  // NaN</span><br><span class="line">undefined &amp;&amp; NaN;  // undefined</span><br><span class="line">null &amp;&amp; NaN;       // null</span><br><span class="line">NaN &amp;&amp; null;       //NaN</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>逻辑与是短路操作，如果第一个值为false，就不对第二个值求值</p>
+<ol start="4">
+<li>逻辑或 ||<br>有一个操作数不是布尔值时：<br>对象：</li>
+</ol>
+<ul>
+<li>第一个值为对象，返回第一个值</li>
+<li>第二个值为对象，如果第一个值为false，返回第二个值</li>
+<li>两值都为对象，返回第一个</li>
+</ul>
+<p>其他特殊：</p>
+<ul>
+<li>两个值都是null、undefined、NaN，那么分别返回null、undefined、NaN</li>
+<li>null、undefined、NaN之间相互或||运算，返回第二个值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NaN || null; // null</span><br><span class="line">null || NaN; // NaN</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="5">
+<li>乘性操作符<br>乘*、除/、取余%，如果操作数不是数值，会先用 <strong>Number()</strong>转换成数值<br>乘法特殊点的：</li>
+</ol>
+<ul>
+<li>Infinity * 0 = NaN</li>
+<li>Infinity乘以非0，是Infinity或者-Infinity</li>
+</ul>
+<p>除法特殊点的：</p>
+<ul>
+<li>Infinity / Infinity = NaN</li>
+<li>0 / 0 = NaN<br>取余特殊的太多，不记了</li>
+</ul>
+<ol start="6">
+<li>加性操作符</li>
+</ol>
+<ul>
+<li>Infinity+ (-Infinity) = NaN</li>
+<li>-Infinity - (-Infinity) = NaN</li>
+<li>Infinity - Infinity = NaN</li>
+</ul>
+<ol start="7">
+<li>比较操作符&gt;、&lt;、==</li>
+</ol>
+<ul>
+<li>NaN与任何值进行比较大小，结果都是false：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NaN &gt; &quot;a&quot;; //false</span><br><span class="line">NaN &lt;= &quot;a&quot;; //false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>相等操作符:</p>
+<ul>
+<li><p>null 和undefined</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">null == undefined； // true</span><br><span class="line">null == 0;          // false</span><br><span class="line">undefined == 0;     // false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NaN与任何值比较相等，都是false，比较不等都是true：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NaN == null // false</span><br><span class="line">NaN != null // true</span><br><span class="line">NaN != NaN  // true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果两个都是对象，如果这两个指向同一个对象，返回true，否则false</p>
+</li>
+</ul>
+<h2 id="3-7-位操作"><a href="#3-7-位操作" class="headerlink" title="3.7 位操作"></a>3.7 位操作</h2><h3 id="3-7-1-位操作基础知识"><a href="#3-7-1-位操作基础知识" class="headerlink" title="3.7.1 位操作基础知识"></a>3.7.1 位操作基础知识</h3><ol>
+<li>JS的数字都使用64位格式存储，所以一个数字是4Byte，此外一个英文字母是1Byte，一个汉字是2Byte，基本数据类型变量8Byte</li>
+<li>机器层面是64位，使用JS实际操作时，按照32位操作，有符号整数，左起第一位是符号位，其余为数值位，无符号整数，32位都是数值位，因此数值更大</li>
+<li>负数存储使用二进制补码，求二进制补码的过程：</li>
+</ol>
+<ul>
+<li>求这个数绝对值的二进制码</li>
+<li>求二进制码的反码(0变1,1变0)</li>
+<li>将反码加一</li>
+</ul>
+<ol start="4">
+<li>负数的二进制补码形式只在机器存储层面表现，使用toString()输出二进制字符串时，对于负数，得到的只是绝对值二进制码前面加符号</li>
+<li>机器层面把64位存储转换成32位，JS操作完再把32位转成64位存储，这个过程导致副作用是：对NaN和Infinity应用位操作时，都被当成0处理</li>
+<li><strong>位操作都只对整数有效，如果是小数，先舍弃小数，再进行位操作运算</strong></li>
+</ol>
+<h3 id="3-7-2-位操作运算"><a href="#3-7-2-位操作运算" class="headerlink" title="3.7.2 位操作运算"></a>3.7.2 位操作运算</h3><h4 id="1位操作符列表"><a href="#1位操作符列表" class="headerlink" title="1位操作符列表"></a>1位操作符列表</h4><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>英文名</th>
+<th>中文名</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~</td>
+<td>NOT</td>
+<td>按位非</td>
+<td><code>~i = -(i+1)</code>，求反码值</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>AND</td>
+<td>按位与</td>
+<td><code>var res = 3 &amp; 7</code></td>
+</tr>
+<tr>
+<td>^</td>
+<td>XOR</td>
+<td>按位异或</td>
+<td><code>var res = 25 ^ 3</code></td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>LEFT SHIFT</td>
+<td>左移</td>
+<td><code>var res = 2 &lt;&lt; 5</code></td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>RIGHT SHIFT</td>
+<td>有符号右移</td>
+<td><code>var res = 64 &gt;&gt; 5</code></td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>ZERO-FILL RIGHT SHIFT</td>
+<td>无符号右移</td>
+<td><code>var res = 64 &gt;&gt;&gt; 5</code></td>
+</tr>
+</tbody>
+</table>
+<p>按位或的符号与MD表格冲突，列在表格外：<br><code>|</code>   OR    按位或    <code>var res = 3 | 7</code>  </p>
+<h4 id="2位操作符应用场景-2-3-4："><a href="#2位操作符应用场景-2-3-4：" class="headerlink" title="2位操作符应用场景^2^3^4："></a>2位操作符应用场景^2^3^4：</h4><p>列举常用的比较简单的使用场景，尽量少用，会使阅读者理解困难，主要是当别人装13时，自己不至于蒙圈</p>
+<ol>
+<li><p>~-1 = 0，配合利用arr.indexOf(xxx) = -1代表arr中不存在xxx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;aa&apos;, &apos;bb&apos;] ;</span><br><span class="line">if(~arr.indexOf(xxx)) &#123;&#125;  // 相当于if(0)，即if(arr中不存在xxx)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求整，相当于Math.floor：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num1 = ~~1.1; // 1 </span><br><span class="line">var num2 = ~~1.9; // 1 </span><br><span class="line">var num3 = 1.9|0; // 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&amp; 判断奇偶：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function isOdd(n)&#123;</span><br><span class="line">    return n &amp; 1?true:false;</span><br><span class="line">&#125;</span><br><span class="line">isOdd(3); // true</span><br><span class="line">isOdd(4); // false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&lt;&lt;和&gt;&gt;2的幂运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function power(n)&#123;</span><br><span class="line">    return 1 &lt;&lt; n; // 求2的n次方</span><br><span class="line">&#125;</span><br><span class="line">power(5); //32</span><br><span class="line"></span><br><span class="line">console.log(32&gt;&gt;1); //求32的一半</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>&gt;&gt;&gt;</code>判断数的正负</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function isPos(n)&#123;</span><br><span class="line">   return n === (n&gt;&gt;&gt;0) ? true:false;</span><br><span class="line">&#125;</span><br><span class="line">isPos(-1); // false</span><br><span class="line">isPos(1); // true</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>-1&gt;&gt;&gt;0虽然没有向右移动位数，但-1的二进制码已经变成了正数的二进制码：<br>所以-1&gt;&gt;&gt;0的值为4294967295。</p>
+<ol start="6">
+<li>或者随机颜色色值，其实用到位运算的就是一个取整，使用Math.floor是一样的<br><code>&#39;#&#39;+(Math.random()*0xFFFFFF|0).toString(16)</code></li>
+</ol>
+<hr>
+<blockquote>
+<p>本文为原创文章，尊重辛勤劳动，可以免费摘要、推荐或聚合，但完整转载需经过本人同意，本人邮箱 <a href="mailto:miao.hnlk@gmail.com" target="_blank" rel="noopener">miao.hnlk@gmail.com</a><br>本文地址：<a href="http://luckymona.github.io/2016/09/17/read-book-professional-javascript3" target="_blank" rel="noopener">http://supermaryy.com/2016/09/17/read-book-professional-javascript3</a></p>
+</blockquote>
+<p>Reference：</p>
+<p>^2:<a href="http://www.tuicool.com/articles/VJryYb" target="_blank" rel="noopener">js中位运算的运用</a><br>^3:<a href="http://www.kqiqi.com/knowledge/program/1079.html" target="_blank" rel="noopener">JS中位操作符有什么特殊作用</a><br>^4:<a href="http://www.mmfei.com/?p=299" target="_blank" rel="noopener">小代码大学问之JavaScript位运算</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/红皮书/" rel="tag">#红皮书</a>
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/17/read-book-professional-javascript2/" rel="next" title="Javascript基础2">
+                <i class="fa fa-chevron-left"></i> Javascript基础2
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/20/read-book-professional-javascript4/" rel="prev" title="Javascript基础4">
+                Javascript基础4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description">有志者自有千计万计，无志者只感千难万难</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Object"><span class="nav-text">3.5 Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-操作符"><span class="nav-text">3.6 操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-位操作"><span class="nav-text">3.7 位操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-1-位操作基础知识"><span class="nav-text">3.7.1 位操作基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-2-位操作运算"><span class="nav-text">3.7.2 位操作运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1位操作符列表"><span class="nav-text">1位操作符列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2位操作符应用场景-2-3-4："><span class="nav-text">2位操作符应用场景^2^3^4：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'supermaryyy';
+      var disqus_identifier = '2016/09/17/read-book-professional-javascript3/';
+      var disqus_title = "Javascript基础3";
+      var disqus_url = 'http://supermaryy.com/2016/09/17/read-book-professional-javascript3/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("viqvtCrDXybVezVWV8Rjug5j-gzGzoHsz", "26hWjxk9tYLU0r9HPP8dKz2l");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,891 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="红皮书,Javascript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mary's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="摘要：  JS三个组成部分：ECMAScript 、DOM、BOM； DOM三级分别定义了什么； BOM主要定义了什么； BOM对象location、navigator、screen各自的属性和方法； If-Modified-Since； replace方法的特殊之处； screen、window、document概念区分及宽高属性获取； clientHeight / offsetHeight /">
+<meta name="keywords" content="红皮书,Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript基础">
+<meta property="og:url" content="http://supermaryy.com/2016/09/11/read-book-professional-javascript1/index.html">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="摘要：  JS三个组成部分：ECMAScript 、DOM、BOM； DOM三级分别定义了什么； BOM主要定义了什么； BOM对象location、navigator、screen各自的属性和方法； If-Modified-Since； replace方法的特殊之处； screen、window、document概念区分及宽高属性获取； clientHeight / offsetHeight /">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/screen_availH.png?imageView/2/w/500/q/90">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/window_innerW.png?imageView/2/w/500/q/90">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/jquery_window_width.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/Dimensions-client.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/Dimensions-offset.png">
+<meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com/Dimensions-scroll.png">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript基础">
+<meta name="twitter:description" content="摘要：  JS三个组成部分：ECMAScript 、DOM、BOM； DOM三级分别定义了什么； BOM主要定义了什么； BOM对象location、navigator、screen各自的属性和方法； If-Modified-Since； replace方法的特殊之处； screen、window、document概念区分及宽高属性获取； clientHeight / offsetHeight /">
+<meta name="twitter:image" content="http://o798x2hdw.bkt.clouddn.com/screen_availH.png?imageView/2/w/500/q/90">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://supermaryy.com/2016/09/11/read-book-professional-javascript1/"/>
+
+  <title> Javascript基础 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-MaryIsTheBest', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7384dce190b7167fd4c04afca4b3467c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-11T19:10:00+08:00" content="2016-09-11">
+              2016-09-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/11/read-book-professional-javascript1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/11/read-book-professional-javascript1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/11/read-book-professional-javascript1/" class="leancloud_visitors" data-flag-title="Javascript基础">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：</p>
+<ol start="0">
+<li>JS三个组成部分：ECMAScript 、DOM、BOM；</li>
+<li>DOM三级分别定义了什么；</li>
+<li>BOM主要定义了什么；</li>
+<li>BOM对象location、navigator、screen各自的属性和方法；</li>
+<li>If-Modified-Since；</li>
+<li>replace方法的特殊之处；</li>
+<li>screen、window、document概念区分及宽高属性获取；</li>
+<li>clientHeight / offsetHeight / scrollHeight 三者区分；</li>
+<li>怎么判断是否滚到底； </li>
+</ol>
+<a id="more"></a>
+<blockquote>
+<p>by MaryTien from  <a href="http://supermaryy.com">http://supermaryy.com</a><br>本文地址：<a href="http://luckymona.github.io/2016/09/11/read-book-professional-javascript1" target="_blank" rel="noopener">http://supermaryy.com/2016/09/11/read-book-professional-javascript1</a></p>
+</blockquote>
+<h1 id="一、Javascript基础"><a href="#一、Javascript基础" class="headerlink" title="一、Javascript基础"></a>一、Javascript基础</h1><h2 id="1-Javascript由ECMAScript-DOM-BOM-组成"><a href="#1-Javascript由ECMAScript-DOM-BOM-组成" class="headerlink" title="1. Javascript由ECMAScript\DOM\BOM 组成"></a>1. Javascript由ECMAScript\DOM\BOM 组成</h2><p>ECMAScript规定了这门语言的基础语法，Web浏览器只是ECMAScript的宿主环境之一，其他实现还有NodeJS、AS。</p>
+<h2 id="2-DOM"><a href="#2-DOM" class="headerlink" title="2. DOM"></a>2. DOM</h2><p>Document Object Model，文档对象模型，定义了访问和操作网页内容的接口和方法</p>
+<ul>
+<li>DOM一级，它把html文档映射为节点树，</li>
+<li><p>DOM二级定义了操作节点的方法范围和遍历、鼠标和用户界面事件、操纵css的方法：</p>
+<ul>
+<li>DOM视图（DOM Views）</li>
+<li>DOM事件（DOM Events）</li>
+<li>DOM样式（DOM Styles）</li>
+<li>DOM范围和遍历（DOM Traversal and Range）</li>
+</ul>
+</li>
+<li><p>DOM三级进一步扩展，新增DOM加载和保存模块（DOM Load and save），DOM验证模块（DOM Validation）</p>
+</li>
+</ul>
+<h2 id="3-BOM"><a href="#3-BOM" class="headerlink" title="3.BOM"></a>3.BOM</h2><p>Browser Object Model，定义与浏览器交互的接口方法。主要包括：</p>
+<ul>
+<li>弹出新窗口<code>window.open();</code></li>
+<li>对窗口进行移动、缩放、关闭 <code>window.moveTo(); window.resizeTo(); window.close();</code></li>
+<li>location对象，所加载网页的信息</li>
+<li>navigator对象，浏览器版本信息</li>
+<li>screen对象，提供屏幕分辨率信息</li>
+</ul>
+<h3 id="3-1-BOM之location对象"><a href="#3-1-BOM之location对象" class="headerlink" title="3.1 BOM之location对象"></a>3.1 BOM之location对象</h3><ul>
+<li>访问方式window.location，</li>
+<li>属性：hash（得到URL从#开始的字符串），host，hostname，href，pathname，port，protocol，search（得到URL从?开始的字符串）</li>
+<li>方法：assign、reload、replace</li>
+</ul>
+<h4 id="assign方法："><a href="#assign方法：" class="headerlink" title="assign方法："></a>assign方法：</h4><p>window.location.assign(URL),会在当前窗口加载另一个文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    function assign()&#123;</span><br><span class="line">        window.location.assign(&apos;anotherDoc.html&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;p onclick=&quot;assign()&quot;&gt;hello&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="reload方法："><a href="#reload方法：" class="headerlink" title="reload方法："></a>reload方法：</h4><p>window.location.reload(flase||force),可以模拟浏览器的刷新按钮</p>
+<ul>
+<li>参数值为false或不填，效果与浏览器刷新按钮一样，使用http头If-Modified-Since检测服务器上的文档有没有改变，没有改变就把浏览器缓存文件显示到浏览器中，如果改变了从服务器加载</li>
+<li>参数为force，效果与shift+浏览器刷新按钮，相同，强制从服务器加载<h4 id="http头If-Modified-Since实现浏览器缓存"><a href="#http头If-Modified-Since实现浏览器缓存" class="headerlink" title="http头If-Modified-Since实现浏览器缓存"></a>http头If-Modified-Since实现浏览器缓存</h4>发送请求时，写在http request header里面，如果页面是第一次加载则不写这个参数，第一次请求回来后，服务器返回200，并在response header中会返回一个Last-Modified，这是一个时间戳，代表请求的文件在服务器中最后修改的时间。浏览器会把这个时间戳和请求来的资源缓存下来，这时，按浏览器的刷新按钮之后，发起第二次请求，会在request header中加上If-Modified-Since这个字段，值为刚才的Last-Modified值，服务器收到请求就把IMS值与服务器上的Last-Modified值做对比，如果相同，证明文件没有发生改变，就返回304(Not Modified)，浏览器就从本地缓存加载文件，如果不相同，证明服务器上的文件已经改变，就返回200，浏览器显示请求回的新内容。<h4 id="replace方法："><a href="#replace方法：" class="headerlink" title="replace方法："></a>replace方法：</h4>window.location.replace(newURL)，加载新URL的文档内容，新URL将覆盖History对象中的当前记录，也就是不会产生新历史记录。想不到什么场景会需要这个功能，查了一下，有一种场景是^1，严格限制用户操作时，为防止后退后重复提交，可以在跳转时使用replace，这样就不能后退，防止重复提交。</li>
+</ul>
+<h4 id="重定向方法总结"><a href="#重定向方法总结" class="headerlink" title="重定向方法总结"></a>重定向方法总结</h4><p>window.location.href = newURL;<br>window.location.assign(newURL);<br>window.location.replace(newURL); 附加作用：不产生新History记录</p>
+<h3 id="3-2-BOM之Navigator对象"><a href="#3-2-BOM之Navigator对象" class="headerlink" title="3.2 BOM之Navigator对象"></a>3.2 BOM之Navigator对象</h3><ol>
+<li>自认为比较有用的属性：plugins，userAgent，cookieEnabled，appVersion,onLine,都是只读的属性，使用方法：<br><code>window.navigator.plugins</code></li>
+<li>一个迷思：我系统是win7 64位，然后我用window.navigator.platform，出来是”win32”<br>查到<code>With windows xp64-bit, it depends if you have Internet Explorer 64-bit. If it&#39;s the case: Win64. If it&#39;s the normal edition: Win32.</code>^2</li>
+<li>platform这个属性不是很可靠，定义经常变动^3，这个属性使用场景是，修改它以模拟不同系统^4</li>
+</ol>
+<h3 id="3-3-BOM之Screen对象"><a href="#3-3-BOM之Screen对象" class="headerlink" title="3.3 BOM之Screen对象"></a>3.3 BOM之Screen对象</h3><p>使用方法：<code>window.screen.height</code>，window可以省略不写<br>重要属性：<br><code>screen.availHeight</code>、<code>screen.availWidth</code>、<code>screen.height</code>、<code>screen.width</code></p>
+<h4 id="screen、window、document概念区分及宽高属性获取："><a href="#screen、window、document概念区分及宽高属性获取：" class="headerlink" title="screen、window、document概念区分及宽高属性获取："></a>screen、window、document概念区分及宽高属性获取：</h4><p><strong>1. screen</strong>：指屏幕，屏幕的概念就是显示器、显示屏，所以这里<code>screen.width\screen.height</code>指的是整个屏幕的宽高，就是显示器的发光的这块宽高，而<code>screen.availWidth\screen.availHeight</code>指的是window可获取的宽高，具体来说，一般情况下，availHeight是屏幕高度减去windows系统任务栏的高度（如下图），如果你把这个任务栏放在了左右某一侧，那么screen.availHeight===screen.height，这时候availWidth等于screen.width减去任务栏占去的宽度<br><img src="http://o798x2hdw.bkt.clouddn.com/screen_availH.png?imageView/2/w/500/q/90" alt="availHeight"></p>
+<p><strong>2. window</strong>：指窗口，一个屏幕上可以有多个窗口,关于宽高有两个属性:<code>window.innerHeight / window.outerHeight</code>:<img src="http://o798x2hdw.bkt.clouddn.com/window_innerW.png?imageView/2/w/500/q/90" alt="window_innerW"></p>
+<p>jquery中$(window)[0] ===window,<br><code>$(window).width() / $(window).height();</code>不包括滚动条宽度/高度，<br><code>window.innerWidth / window.innerheight</code>包括滚动条宽度/高度</p>
+<p><img src="http://o798x2hdw.bkt.clouddn.com/jquery_window_width.png" alt="jquery_window_width"></p>
+<p><strong>3. document</strong>:指文档，</p>
+<p>document.body.clientHeight：body元素的宽高<br>document.documentElement.clientHeight：视口，不包含滚动条，等于window.innerHeight减去滚动条高度</p>
+<h4 id="几种size辨析"><a href="#几种size辨析" class="headerlink" title="几种size辨析"></a>几种size辨析</h4><p><strong>1. client size</strong>^5</p>
+<blockquote>
+<p>Element.clientHeight read-only property is zero for elements with no CSS or inline layout boxes, otherwise it’s  the inner height of an element in pixels, including padding but not the horizontal scrollbar height, border, or margin.</p>
+</blockquote>
+<p>凡是client size，包含padding，不包含滚动条、边框、margin:<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-client.png" alt="Dimensions-client"></p>
+<p><strong>2.offset size</strong></p>
+<blockquote>
+<p>The HTMLElement.offsetHeight read-only property is the height of the element including vertical padding and borders, in pixels, as an integer.</p>
+</blockquote>
+<p>凡是offset size，包含border和padding<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-offset.png" alt="Dimensions-offset"></p>
+<p><strong>3.scroll size</strong></p>
+<blockquote>
+<p>The Element.scrollHeight read-only attribute is a measurement of the height of an element’s content, including content not visible on the screen due to overflow.</p>
+</blockquote>
+<p>Element.scrollHeight：包含因滚动而不可见部分的整体高度<br><img src="http://o798x2hdw.bkt.clouddn.com/Dimensions-scroll.png" alt="Dimensions-scroll"></p>
+<p>用这个公式判断是否滚到底部了，使用场景是“我已经阅读了xxx”：<br><code>element.scrollHeight - element.scrollTop === element.clientHeight</code></p>
+<blockquote>
+<p>本文为原创文章，尊重辛勤劳动，可以免费摘要、推荐或聚合，但完整转载需经过本人同意，本人邮箱 <a href="mailto:miao.hnlk@gmail.com" target="_blank" rel="noopener">miao.hnlk@gmail.com</a><br>本文地址：本文地址：<a href="http://luckymona.github.io/2016/09/11/read-book-professional-javascript1" target="_blank" rel="noopener">http://supermaryy.com/2016/09/11/read-book-professional-javascript1</a></p>
+</blockquote>
+<p>参考链接：</p>
+<p>^1:<a href="http://www.jb51.net/article/54781.htm" target="_blank" rel="noopener">通过location.replace禁止浏览器后退防止重复提交</a><br>^2:<a href="https://www.nczonline.net/blog/2007/12/17/don-t-forget-navigator-platform/" target="_blank" rel="noopener">Don’t forget navigator.platform</a><br>^3:<a href="http://stackoverflow.com/questions/19877924/what-is-the-list-of-possible-values-for-navigator-platform-as-of-today" target="_blank" rel="noopener">What is the list of possible values for navigator.platform as of today?</a><br>^4:<a href="https://www.zhihu.com/question/36609103" target="_blank" rel="noopener">如何修改游览器的navigator.platform属性？</a><br>^5:<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight" target="_blank" rel="noopener">MDN Element.clientHeight</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/红皮书/" rel="tag">#红皮书</a>
+          
+            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/08/summary-of-aligning-to-center-solutions-in-css/" rel="next" title="总结向↗CSS居中常用套路">
+                <i class="fa fa-chevron-left"></i> 总结向↗CSS居中常用套路
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/17/read-book-professional-javascript2/" rel="prev" title="Javascript基础2">
+                Javascript基础2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description">有志者自有千计万计，无志者只感千难万难</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Javascript基础"><span class="nav-text">一、Javascript基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Javascript由ECMAScript-DOM-BOM-组成"><span class="nav-text">1. Javascript由ECMAScript\DOM\BOM 组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-DOM"><span class="nav-text">2. DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-BOM"><span class="nav-text">3.BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-BOM之location对象"><span class="nav-text">3.1 BOM之location对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#assign方法："><span class="nav-text">assign方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reload方法："><span class="nav-text">reload方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http头If-Modified-Since实现浏览器缓存"><span class="nav-text">http头If-Modified-Since实现浏览器缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace方法："><span class="nav-text">replace方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向方法总结"><span class="nav-text">重定向方法总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-BOM之Navigator对象"><span class="nav-text">3.2 BOM之Navigator对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-BOM之Screen对象"><span class="nav-text">3.3 BOM之Screen对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#screen、window、document概念区分及宽高属性获取："><span class="nav-text">screen、window、document概念区分及宽高属性获取：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几种size辨析"><span class="nav-text">几种size辨析</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'supermaryyy';
+      var disqus_identifier = '2016/09/11/read-book-professional-javascript1/';
+      var disqus_title = "Javascript基础";
+      var disqus_url = 'http://supermaryy.com/2016/09/11/read-book-professional-javascript1/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("viqvtCrDXybVezVWV8Rjug5j-gzGzoHsz", "26hWjxk9tYLU0r9HPP8dKz2l");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
