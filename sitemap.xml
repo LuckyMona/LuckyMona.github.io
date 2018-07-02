@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://supermaryy.com/2018/02/02/About_Meta_Tag/</loc>
+    
+    <lastmod>2018-05-07T13:57:30.366Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://supermaryy.com/2018/03/02/HTTP_cache/</loc>
     
-    <lastmod>2018-05-07T10:55:40.234Z</lastmod>
+    <lastmod>2018-05-07T13:51:28.553Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
+    
+    <lastmod>2018-05-07T12:55:47.737Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://supermaryy.com/2018/04/02/TCP-IP/</loc>
+    
+    <lastmod>2018-05-07T12:33:24.690Z</lastmod>
     
   </url>
   
@@ -33,13 +54,6 @@
     <loc>http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/</loc>
     
     <lastmod>2018-05-07T10:29:59.604Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
-    
-    <lastmod>2018-05-07T10:29:59.603Z</lastmod>
     
   </url>
   
@@ -96,13 +110,6 @@
     <loc>http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/</loc>
     
     <lastmod>2018-05-07T10:29:59.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://supermaryy.com/2018/04/02/TCP-IP/</loc>
-    
-    <lastmod>2018-05-07T10:29:59.529Z</lastmod>
     
   </url>
   
