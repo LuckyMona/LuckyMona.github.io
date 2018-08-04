@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="梳理前端常用存储技术，包括cookie及其多个属性、localStorage / sessionStorage、客户端数据库">
+<meta name="description" content="一、cookiecookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。 容量限制 存储容量较小，每个域名4K左右 并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条 超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie  存储时长 如果设定了超时时间，cookie将在到期时失效。 如果没设定，将在关闭浏览器时失效。在未">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端常用存储技术总结">
 <meta property="og:url" content="http://supermaryy.com/2016/11/11/storage-in-frontent/index.html">
 <meta property="og:site_name" content="Mary&#39;s blog">
-<meta property="og:description" content="梳理前端常用存储技术，包括cookie及其多个属性、localStorage / sessionStorage、客户端数据库">
+<meta property="og:description" content="一、cookiecookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。 容量限制 存储容量较小，每个域名4K左右 并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条 超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie  存储时长 如果设定了超时时间，cookie将在到期时失效。 如果没设定，将在关闭浏览器时失效。在未">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_0.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_1.png">
@@ -101,10 +101,10 @@
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_4.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_5.png">
 <meta property="og:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_6.png">
-<meta property="og:updated_time" content="2018-05-07T12:55:47.737Z">
+<meta property="og:updated_time" content="2018-05-07T10:29:59.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端常用存储技术总结">
-<meta name="twitter:description" content="梳理前端常用存储技术，包括cookie及其多个属性、localStorage / sessionStorage、客户端数据库">
+<meta name="twitter:description" content="一、cookiecookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。 容量限制 存储容量较小，每个域名4K左右 并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条 超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie  存储时长 如果设定了超时时间，cookie将在到期时失效。 如果没设定，将在关闭浏览器时失效。在未">
 <meta name="twitter:image" content="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_0.png">
 
 
@@ -367,11 +367,7 @@
       
 
       
-        <p>梳理前端常用存储技术，包括cookie及其多个属性、localStorage / sessionStorage、客户端数据库<br><a id="more"></a></p>
-<blockquote>
-<p>by MaryTien from <a href="http://luckymona.github.io" target="_blank" rel="noopener">http://luckymona.github.io</a></p>
-</blockquote>
-<h1 id="一、cookie"><a href="#一、cookie" class="headerlink" title="一、cookie"></a>一、cookie</h1><p>cookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。</p>
+        <h1 id="一、cookie"><a href="#一、cookie" class="headerlink" title="一、cookie"></a>一、cookie</h1><p>cookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。</p>
 <h2 id="容量限制"><a href="#容量限制" class="headerlink" title="容量限制"></a>容量限制</h2><ol>
 <li>存储容量较小，每个域名4K左右</li>
 <li>并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条</li>

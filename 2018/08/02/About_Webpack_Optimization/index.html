@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Mary&#39;s blog">
 <meta property="og:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-04T03:15:44.146Z">
+<meta property="og:updated_time" content="2018-08-04T03:36:26.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三十分钟掌握Webpack性能优化">
 <meta name="twitter:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
@@ -397,8 +397,7 @@
 <li><p><strong>配置loader时，通过test、exclude、include缩小搜索范围</strong></p>
 </li>
 </ol>
-<p>###1.2使用DllPlugin减少基础模块编译次数     </p>
-<p>DllPlugin动态链接库插件，<strong>其原理是</strong>把网页依赖的基础模块抽离出来打包到dll文件中，当需要导入的模块存在于某个dll中时，这个模块不再被打包，而是去dll中获取。<strong>为什么会提升构建速度呢？</strong>原因在于dll中大多包含的是常用的第三方模块，如react、react-dom，所以只要这些模块版本不升级，就只需被编译一次。我认为这样做和配置resolve.alias和module.noParse的效果有异曲同工的效果。</p>
+<h3 id="1-2-使用DllPlugin减少基础模块编译次数"><a href="#1-2-使用DllPlugin减少基础模块编译次数" class="headerlink" title="1.2 使用DllPlugin减少基础模块编译次数"></a>1.2 使用DllPlugin减少基础模块编译次数</h3><p>DllPlugin动态链接库插件，<strong>其原理是</strong>把网页依赖的基础模块抽离出来打包到dll文件中，当需要导入的模块存在于某个dll中时，这个模块不再被打包，而是去dll中获取。<strong>为什么会提升构建速度呢？</strong>原因在于dll中大多包含的是常用的第三方模块，如react、react-dom，所以只要这些模块版本不升级，就只需被编译一次。我认为这样做和配置resolve.alias和module.noParse的效果有异曲同工的效果。</p>
 <p><strong>使用方法：</strong></p>
 <ol>
 <li><p>使用DllPlugin配置一个webpack_dll.config.js来构建dll文件：</p>
@@ -421,14 +420,12 @@
 <p>使用也很简单，把原来的UglifyJS插件换成本插件即可，使用如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm i -D webpack-parallel-uglify-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment">// webpack.config.json</span></span><br><span class="line"><span class="keyword">const</span> ParallelUglifyPlugin = <span class="built_in">require</span>(<span class="string">'wbepack-parallel-uglify-plugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> ParallelUglifyPlugin(&#123;</span><br><span class="line">        uglifyJS:&#123;</span><br><span class="line">            <span class="comment">//...这里放uglifyJS的参数</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//...其他ParallelUglifyPlugin的参数，设置cacheDir可以开启缓存，加快构建速度</span></span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <h2 id="二、优化开发体验"><a href="#二、优化开发体验" class="headerlink" title="二、优化开发体验"></a>二、优化开发体验</h2><p>开发过程中修改源码后，需要自动构建和刷新浏览器，以查看效果。这个过程可以使用Webpack实现自动化，Webpack负责监听文件的变化，DevServer负责刷新浏览器。</p>
-<h3 id="2-1-使用自动刷新"><a href="#2-1-使用自动刷新" class="headerlink" title="2.1 使用自动刷新"></a>2.1 使用自动刷新</h3><p>####2.1.1 Webpack监听文件</p>
-<p>Webpack可以使用两种方式开启监听：1. 启动webpack时加上–watch参数；2. 在配置文件中设置watch:true。此外还有如下配置参数。合理设置watchOptions可以优化监听体验。</p>
+<h3 id="2-1-使用自动刷新"><a href="#2-1-使用自动刷新" class="headerlink" title="2.1 使用自动刷新"></a>2.1 使用自动刷新</h3><h4 id="2-1-1-Webpack监听文件"><a href="#2-1-1-Webpack监听文件" class="headerlink" title="2.1.1 Webpack监听文件"></a>2.1.1 Webpack监听文件</h4><p>Webpack可以使用两种方式开启监听：1. 启动webpack时加上–watch参数；2. 在配置文件中设置watch:true。此外还有如下配置参数。合理设置watchOptions可以优化监听体验。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    watch: <span class="literal">true</span>,</span><br><span class="line">    watchOptions: &#123;</span><br><span class="line">        ignored: <span class="regexp">/node_modules/</span>,</span><br><span class="line">        aggregateTimeout: <span class="number">300</span>,  <span class="comment">//文件变动后多久发起构建，越大越好</span></span><br><span class="line">        poll: <span class="number">1000</span>,  <span class="comment">//每秒询问次数，越小越好</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>ignored：设置不监听的目录，排除node_modules后可以显著减少Webpack消耗的内存</p>
 <p>aggregateTimeout：文件变动后多久发起构建，避免文件更新太快而造成的频繁编译以至卡死，越大越好</p>
 <p>poll：通过向系统轮询文件是否变化来判断文件是否改变，poll为每秒询问次数，越小越好</p>
-<p>####2.1.2 DevServer刷新浏览器</p>
-<p><strong>DevServer刷新浏览器有两种方式</strong>：</p>
+<h4 id="2-1-2-DevServer刷新浏览器"><a href="#2-1-2-DevServer刷新浏览器" class="headerlink" title="2.1.2 DevServer刷新浏览器"></a>2.1.2 DevServer刷新浏览器</h4><p><strong>DevServer刷新浏览器有两种方式</strong>：</p>
 <ol>
 <li>向网页中注入代理客户端代码，通过客户端发起刷新</li>
 <li>向网页装入一个iframe，通过刷新iframe实现刷新效果</li>
@@ -536,15 +533,15 @@
 <p><code>import(/* webpackChunkName:show */ &#39;./show&#39;).then()</code> 是实现按需加载的关键，Webpack内置对import( *)语句的支持，Webpack会以<code>./show.js</code>为入口重新生成一个Chunk。代码在浏览器上运行时只有点击了按钮才会开始加载show.js，且import语句会返回一个Promise，加载成功后可以在then方法中获取加载的内容。这要求浏览器支持Promise API，对于不支持的浏览器，需要注入Promise polyfill。<code>/* webpackChunkName:show */</code> 是定义动态生成的Chunk的名称，默认名称是[id].js，定义名称方便调试代码。为了正确输出这个配置的ChunkName，还需要配置Webpack：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line">output:&#123;</span><br><span class="line">    filename:<span class="string">'[name].js'</span>,</span><br><span class="line">    chunkFilename:<span class="string">'[name].js'</span>, <span class="comment">//指定动态生成的Chunk在输出时的文件名称</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>书中另外提供了更复杂的React-Router中异步加载组件的实战场景。P212</p>
+</li>
+</ol>
 <h2 id="五、优化输出质量–提升代码运行时的效率"><a href="#五、优化输出质量–提升代码运行时的效率" class="headerlink" title="五、优化输出质量–提升代码运行时的效率"></a>五、优化输出质量–提升代码运行时的效率</h2><h3 id="5-1-使用Prepack提前求值"><a href="#5-1-使用Prepack提前求值" class="headerlink" title="5.1 使用Prepack提前求值"></a>5.1 使用Prepack提前求值</h3><ol>
 <li><p><strong>原理：</strong></p>
 <p>Prepack是一个部分求值器，编译代码时提前将计算结果放到编译后的代码中，而不是在代码运行时才去求值。通过在便一阶段预先执行源码来得到执行结果，再直接将运行结果输出以提升性能。但是现在Prepack还不够成熟，用于线上环境还为时过早。</p>
 </li>
 <li><p><strong>使用方法</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PrepackWebpackPlugin = <span class="built_in">require</span>(<span class="string">'prepack-webpack-plugin'</span>).default;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> PrepackWebpackPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="5-2-使用Scope-Hoisting"><a href="#5-2-使用Scope-Hoisting" class="headerlink" title="5.2 使用Scope Hoisting"></a>5.2 使用Scope Hoisting</h3><ol>
+<h3 id="5-2-使用Scope-Hoisting"><a href="#5-2-使用Scope-Hoisting" class="headerlink" title="5.2 使用Scope Hoisting"></a>5.2 使用Scope Hoisting</h3></li>
 <li><p><strong>原理</strong></p>
 <p>译作“作用域提升”，是在Webpack3中推出的功能，它分析模块间的依赖关系，尽可能将被打散的模块合并到一个函数中，但不能造成代码冗余，所以只有被引用一次的模块才能被合并。由于需要分析模块间的依赖关系，所以源码必须是采用了ES6模块化的，否则Webpack会降级处理不采用Scope Hoisting。</p>
 </li>
@@ -553,8 +550,8 @@
 <p><code>webpack --display-optimization-bailout</code> 输出日志中会提示哪个文件导致了降级处理</p>
 </li>
 </ol>
-<h2 id="六、使用输出分析工具"><a href="#六、使用输出分析工具" class="headerlink" title="六、使用输出分析工具"></a>六、使用输出分析工具</h2><p>启动Webpack时带上这两个参数可以生成一个json文件，输出分析工具大多依赖该文件进行分析：</p>
-<p><code>webpack --profile --json &gt; stats.json</code> 其中 <code>--profile</code> 记录构建过程中的耗时信息，<code>--json</code> 以JSON的格式输出构建结果，<code>&gt;stats.json</code> 是UNIX / Linux系统中的管道命令，含义是将内容通过管道输出到stats.json文件中。</p>
+<h2 id="六、使用输出分析工具"><a href="#六、使用输出分析工具" class="headerlink" title="六、使用输出分析工具"></a>六、使用输出分析工具</h2><p>   启动Webpack时带上这两个参数可以生成一个json文件，输出分析工具大多依赖该文件进行分析：</p>
+<p>   <code>webpack --profile --json &gt; stats.json</code> 其中 <code>--profile</code> 记录构建过程中的耗时信息，<code>--json</code> 以JSON的格式输出构建结果，<code>&gt;stats.json</code> 是UNIX / Linux系统中的管道命令，含义是将内容通过管道输出到stats.json文件中。</p>
 <ol>
 <li><p><strong>官方工具Webpack Analyse</strong></p>
 <p>打开该工具的官网<a href="http://webpack.github.io/analyse/上传stats.json，就可以得到分析结果" target="_blank" rel="noopener">http://webpack.github.io/analyse/上传stats.json，就可以得到分析结果</a></p>
@@ -584,8 +581,6 @@
 <li><p>通过imagemin-webpack-plugin压缩图片，通过webpack-spritesmith制作雪碧图。</p>
 </li>
 <li><p>开发环境下将devtool设置为cheap-module-eval-source-map，因为生成这种source map的速度最快，能加速构建。在生产环境下将devtool设置为hidden-source-map</p>
-</li>
-</ol>
 </li>
 </ol>
 
@@ -752,7 +747,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、优化构建速度"><span class="nav-text">一、优化构建速度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-缩小文件的搜索范围"><span class="nav-text">1.1 缩小文件的搜索范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-使用HappyPack开启多进程Loader转换"><span class="nav-text">1.3 使用HappyPack开启多进程Loader转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-使用ParallelUglifyPlugin开启多进程压缩JS文件"><span class="nav-text">1.4 使用ParallelUglifyPlugin开启多进程压缩JS文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、优化开发体验"><span class="nav-text">二、优化开发体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-使用自动刷新"><span class="nav-text">2.1 使用自动刷新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-开启模块热替换HMR"><span class="nav-text">2.2 开启模块热替换HMR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、优化输出质量-压缩文件体积"><span class="nav-text">三、优化输出质量-压缩文件体积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-区分环境–减小生产环境代码体积"><span class="nav-text">3.1 区分环境–减小生产环境代码体积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-压缩代码-JS、ES、CSS"><span class="nav-text">3.2  压缩代码-JS、ES、CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-使用Tree-Shaking剔除JS死代码"><span class="nav-text">3.3 使用Tree Shaking剔除JS死代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、优化输出质量–加速网络请求"><span class="nav-text">四、优化输出质量–加速网络请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-使用CDN加速静态资源加载"><span class="nav-text">4.1 使用CDN加速静态资源加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-多页面应用提取页面间公共代码，以利用缓存"><span class="nav-text">4.2 多页面应用提取页面间公共代码，以利用缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-分割代码以按需加载"><span class="nav-text">4.3 分割代码以按需加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、优化输出质量–提升代码运行时的效率"><span class="nav-text">五、优化输出质量–提升代码运行时的效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-使用Prepack提前求值"><span class="nav-text">5.1 使用Prepack提前求值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-使用Scope-Hoisting"><span class="nav-text">5.2 使用Scope Hoisting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、使用输出分析工具"><span class="nav-text">六、使用输出分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、其他Tips"><span class="nav-text">七、其他Tips</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、优化构建速度"><span class="nav-text">一、优化构建速度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-缩小文件的搜索范围"><span class="nav-text">1.1 缩小文件的搜索范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-使用DllPlugin减少基础模块编译次数"><span class="nav-text">1.2 使用DllPlugin减少基础模块编译次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-使用HappyPack开启多进程Loader转换"><span class="nav-text">1.3 使用HappyPack开启多进程Loader转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-使用ParallelUglifyPlugin开启多进程压缩JS文件"><span class="nav-text">1.4 使用ParallelUglifyPlugin开启多进程压缩JS文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、优化开发体验"><span class="nav-text">二、优化开发体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-使用自动刷新"><span class="nav-text">2.1 使用自动刷新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-Webpack监听文件"><span class="nav-text">2.1.1 Webpack监听文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-DevServer刷新浏览器"><span class="nav-text">2.1.2 DevServer刷新浏览器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-开启模块热替换HMR"><span class="nav-text">2.2 开启模块热替换HMR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、优化输出质量-压缩文件体积"><span class="nav-text">三、优化输出质量-压缩文件体积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-区分环境–减小生产环境代码体积"><span class="nav-text">3.1 区分环境–减小生产环境代码体积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-压缩代码-JS、ES、CSS"><span class="nav-text">3.2  压缩代码-JS、ES、CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-使用Tree-Shaking剔除JS死代码"><span class="nav-text">3.3 使用Tree Shaking剔除JS死代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、优化输出质量–加速网络请求"><span class="nav-text">四、优化输出质量–加速网络请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-使用CDN加速静态资源加载"><span class="nav-text">4.1 使用CDN加速静态资源加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-多页面应用提取页面间公共代码，以利用缓存"><span class="nav-text">4.2 多页面应用提取页面间公共代码，以利用缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-分割代码以按需加载"><span class="nav-text">4.3 分割代码以按需加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、优化输出质量–提升代码运行时的效率"><span class="nav-text">五、优化输出质量–提升代码运行时的效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-使用Prepack提前求值"><span class="nav-text">5.1 使用Prepack提前求值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-使用Scope-Hoisting"><span class="nav-text">5.2 使用Scope Hoisting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、使用输出分析工具"><span class="nav-text">六、使用输出分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、其他Tips"><span class="nav-text">七、其他Tips</span></a></li></ol></div>
             
           </div>
         </section>
