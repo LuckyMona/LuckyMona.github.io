@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
+    
+    <lastmod>2018-08-04T04:13:09.576Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://supermaryy.com/2018/04/02/TCP-IP/</loc>
+    
+    <lastmod>2018-08-04T03:56:44.739Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://supermaryy.com/2018/03/02/HTTP_cache/</loc>
     
     <lastmod>2018-08-04T03:36:53.246Z</lastmod>
@@ -44,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
-    
-    <lastmod>2018-05-07T10:29:59.603Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://supermaryy.com/2016/09/20/read-book-professional-javascript5/</loc>
     
     <lastmod>2018-05-07T10:29:59.602Z</lastmod>
@@ -65,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
     
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
     
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     
@@ -103,13 +110,6 @@
     <loc>http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/</loc>
     
     <lastmod>2018-05-07T10:29:59.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://supermaryy.com/2018/04/02/TCP-IP/</loc>
-    
-    <lastmod>2018-05-07T10:29:59.529Z</lastmod>
     
   </url>
   
