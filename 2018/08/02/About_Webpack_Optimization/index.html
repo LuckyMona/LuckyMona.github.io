@@ -1,0 +1,1023 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Webpack," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mary's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
+<meta name="keywords" content="Webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三十分钟掌握Webpack性能优化">
+<meta property="og:url" content="http://supermaryy.com/2018/08/02/About_Webpack_Optimization/index.html">
+<meta property="og:site_name" content="Mary&#39;s blog">
+<meta property="og:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-04T03:15:44.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三十分钟掌握Webpack性能优化">
+<meta name="twitter:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://supermaryy.com/2018/08/02/About_Webpack_Optimization/"/>
+
+  <title> 三十分钟掌握Webpack性能优化 | Mary's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-MaryIsTheBest', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7384dce190b7167fd4c04afca4b3467c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mary's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                三十分钟掌握Webpack性能优化
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-08-02T20:30:00+08:00" content="2018-08-02">
+              2018-08-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/框架/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/08/02/About_Webpack_Optimization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/02/About_Webpack_Optimization/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/08/02/About_Webpack_Optimization/" class="leancloud_visitors" data-flag-title="三十分钟掌握Webpack性能优化">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需要您熟悉Webpack基本使用方法，读完大约需要三十分钟。</p>
+<a id="more"></a>
+<blockquote>
+<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="noopener">http://supermaryy.com</a></p>
+</blockquote>
+<h2 id="一、优化构建速度"><a href="#一、优化构建速度" class="headerlink" title="一、优化构建速度"></a>一、优化构建速度</h2><p>Webpack在启动后会根据Entry配置的入口出发，递归地解析所依赖的文件。这个过程分为搜索文件和把匹配的文件进行分析、转化的两个过程，因此可以从这两个角度来进行优化配置。</p>
+<h3 id="1-1-缩小文件的搜索范围"><a href="#1-1-缩小文件的搜索范围" class="headerlink" title="1.1 缩小文件的搜索范围"></a>1.1 缩小文件的搜索范围</h3><p><strong>搜索过程优化方式包括：</strong></p>
+<ol>
+<li><p><strong><code>resolve</code>字段告诉webpack怎么去搜索文件，所以首先要重视resolve字段的配置：</strong></p>
+<ol>
+<li><p>设置<code>resolve.modules:[path.resolve(__dirname, &#39;node_modules&#39;)]</code>避免层层查找。</p>
+<p><code>resolve.modules</code>告诉webpack去哪些目录下寻找第三方模块，默认值为<code>[&#39;node_modules&#39;]</code>，会依次查找./node_modules、../node_modules、../../node_modules。</p>
+</li>
+<li><p>设置<code>resolve.mainFields:[&#39;main&#39;]</code>，设置尽量少的值可以减少入口文件的搜索步骤</p>
+<p>第三方模块为了适应不同的使用环境，会定义多个入口文件，mainFields定义使用第三方模块的哪个入口文件，由于大多数第三方模块都使用main字段描述入口文件的位置，所以可以设置单独一个main值，减少搜索</p>
+</li>
+<li><p>对庞大的第三方模块设置<code>resolve.alias</code>, 使webpack直接使用库的min文件，避免库内解析</p>
+<p>如对于react：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resolve.alias:&#123;</span><br><span class="line">	<span class="string">'react'</span>:patch.resolve(__dirname, <span class="string">'./node_modules/react/dist/react.min.js'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样会影响Tree-Shaking，适合对整体性比较强的库使用，如果是像lodash这类工具类的比较分散的库，比较适合Tree-Shaking，避免使用这种方式。</p>
+</li>
+<li><p>合理配置<code>resolve.extensions</code>，减少文件查找</p>
+<p>默认值：<code>extensions:[&#39;.js&#39;, &#39;.json&#39;]</code>,当导入语句没带文件后缀时，Webpack会根据extensions定义的后缀列表进行文件查找，所以：</p>
+<ul>
+<li>列表值尽量少</li>
+<li>频率高的文件类型的后缀写在前面</li>
+<li>源码中的导入语句尽可能的写上文件后缀，如<code>require(./data)</code>要写成<code>require(./data.json)</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong><code>module.noParse</code>字段告诉Webpack不必解析哪些文件，可以用来排除对非模块化库文件的解析</strong></p>
+<p>如jQuery、ChartJS，另外如果使用resolve.alias配置了react.min.js，则也应该排除解析，因为react.min.js经过构建，已经是可以直接运行在浏览器的、非模块化的文件了。noParse值可以是RegExp、[RegExp]、function</p>
+<p><code>module:{ noParse:[/jquery|chartjs/, /react\.min\.js$/] }</code></p>
+</li>
+<li><p><strong>配置loader时，通过test、exclude、include缩小搜索范围</strong></p>
+</li>
+</ol>
+<p>###1.2使用DllPlugin减少基础模块编译次数     </p>
+<p>DllPlugin动态链接库插件，<strong>其原理是</strong>把网页依赖的基础模块抽离出来打包到dll文件中，当需要导入的模块存在于某个dll中时，这个模块不再被打包，而是去dll中获取。<strong>为什么会提升构建速度呢？</strong>原因在于dll中大多包含的是常用的第三方模块，如react、react-dom，所以只要这些模块版本不升级，就只需被编译一次。我认为这样做和配置resolve.alias和module.noParse的效果有异曲同工的效果。</p>
+<p><strong>使用方法：</strong></p>
+<ol>
+<li><p>使用DllPlugin配置一个webpack_dll.config.js来构建dll文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack_dll.config.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> DllPlugin = <span class="built_in">require</span>(<span class="string">'webpack/lib/DllPlugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> entry:&#123;</span><br><span class="line">     react:[<span class="string">'react'</span>,<span class="string">'react-dom'</span>],</span><br><span class="line">     polyfill:[<span class="string">'core-js/fn/promise'</span>,<span class="string">'whatwg-fetch'</span>]</span><br><span class="line"> &#125;,</span><br><span class="line"> output:&#123;</span><br><span class="line">     filename:<span class="string">'[name].dll.js'</span>,</span><br><span class="line">     path:path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">     library:<span class="string">'_dll_[name]'</span>,  <span class="comment">//dll的全局变量名</span></span><br><span class="line"> &#125;,</span><br><span class="line"> plugins:[</span><br><span class="line">     <span class="keyword">new</span> DllPlugin(&#123;</span><br><span class="line">         name:<span class="string">'_dll_[name]'</span>,  <span class="comment">//dll的全局变量名</span></span><br><span class="line">         path:path.join(__dirname,<span class="string">'dist'</span>,<span class="string">'[name].manifest.json'</span>),<span class="comment">//描述生成的manifest文件</span></span><br><span class="line">     &#125;)</span><br><span class="line"> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意DllPlugin的参数中name值必须和output.library值保持一致，并且生成的manifest文件中会引用output.library值。</p>
+<p>最终构建出的文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|-- polyfill.dll.js</span><br><span class="line">|-- polyfill.manifest.json</span><br><span class="line">|-- react.dll.js</span><br><span class="line">└── react.manifest.json</span><br></pre></td></tr></table></figure>
+<p>其中xx.dll.js包含打包的n多模块，这些模块存在一个数组里，并以数组索引作为ID，通过一个变量假设为_xx_dll暴露在全局中，可以通过window._xx_dll访问这些模块。xx.manifest.json文件描述dll文件包含哪些模块、每个模块的路径和ID。然后再在项目的主config文件里使用DllReferencePlugin插件引入xx.manifest.json文件。</p>
+</li>
+<li><p>在主config文件里使用DllReferencePlugin插件引入xx.manifest.json文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.json</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> DllReferencePlugin = <span class="built_in">require</span>(<span class="string">'webpack/lib/DllReferencePlugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:&#123; <span class="attr">main</span>:<span class="string">'./main.js'</span> &#125;,</span><br><span class="line">    <span class="comment">//... 省略output、loader等的配置</span></span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> DllReferencePlugin(&#123;</span><br><span class="line">            manifest:<span class="built_in">require</span>(<span class="string">'./dist/react.manifest.json'</span>)</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> DllReferenctPlugin(&#123;</span><br><span class="line">            manifest:<span class="built_in">require</span>(<span class="string">'./dist/polyfill.manifest.json'</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最终构建生成<code>main.js</code></p>
+</li>
+</ol>
+<h3 id="1-3-使用HappyPack开启多进程Loader转换"><a href="#1-3-使用HappyPack开启多进程Loader转换" class="headerlink" title="1.3 使用HappyPack开启多进程Loader转换"></a>1.3 使用HappyPack开启多进程Loader转换</h3><p>在整个构建流程中，最耗时的就是Loader对文件的转换操作了，而运行在Node.js之上的Webpack是单线程模型的，也就是只能一个一个文件进行处理，不能并行处理。HappyPack可以将任务分解给多个子进程，最后将结果发给主进程。JS是单线程模型，只能通过这种多进程的方式提高性能。   </p>
+<p>HappyPack使用如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">npm i -D happypack</span><br><span class="line"><span class="comment">// webpack.config.json</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> HappyPack = <span class="built_in">require</span>(<span class="string">'happypack'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[&#123;</span><br><span class="line">                test:<span class="regexp">/\.js$/</span>，</span><br><span class="line">                use:[<span class="string">'happypack/loader?id=babel'</span>]</span><br><span class="line">                exclude:path.resolve(__dirname, <span class="string">'node_modules'</span>)</span><br><span class="line">            &#125;,&#123;</span><br><span class="line">                test:<span class="regexp">/\.css/</span>,</span><br><span class="line">                use:[<span class="string">'happypack/loader?id=css'</span>]</span><br><span class="line">            &#125;],</span><br><span class="line">        plugins:[</span><br><span class="line">            <span class="keyword">new</span> HappyPack(&#123;</span><br><span class="line">                id:<span class="string">'babel'</span>,</span><br><span class="line">                loaders:[<span class="string">'babel-loader?cacheDirectory'</span>]</span><br><span class="line">            &#125;),</span><br><span class="line">            <span class="keyword">new</span> HappyPack(&#123;</span><br><span class="line">                id:<span class="string">'css'</span>,</span><br><span class="line">                loaders:[<span class="string">'css-loader'</span>]</span><br><span class="line">            &#125;)</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除了id和loaders，HappyPack还支持这三个参数：<code>threads、verbose、threadpool</code>，threadpool代表共享进程池，即多个HappyPack实例都用同个进程池中的子进程处理任务，以防资源占用过多。</p>
+<h3 id="1-4-使用ParallelUglifyPlugin开启多进程压缩JS文件"><a href="#1-4-使用ParallelUglifyPlugin开启多进程压缩JS文件" class="headerlink" title="1.4 使用ParallelUglifyPlugin开启多进程压缩JS文件"></a>1.4 使用ParallelUglifyPlugin开启多进程压缩JS文件</h3><p>使用UglifyJS插件压缩JS代码时，需要先将代码解析成Object表示的AST（抽象语法树），再去应用各种规则去分析和处理AST，所以这个过程计算量大耗时较多。ParallelUglifyPlugin可以开启多个子进程，每个子进程使用UglifyJS压缩代码，可以并行执行，能显著缩短压缩时间。</p>
+<p>使用也很简单，把原来的UglifyJS插件换成本插件即可，使用如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm i -D webpack-parallel-uglify-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment">// webpack.config.json</span></span><br><span class="line"><span class="keyword">const</span> ParallelUglifyPlugin = <span class="built_in">require</span>(<span class="string">'wbepack-parallel-uglify-plugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> ParallelUglifyPlugin(&#123;</span><br><span class="line">        uglifyJS:&#123;</span><br><span class="line">            <span class="comment">//...这里放uglifyJS的参数</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//...其他ParallelUglifyPlugin的参数，设置cacheDir可以开启缓存，加快构建速度</span></span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="二、优化开发体验"><a href="#二、优化开发体验" class="headerlink" title="二、优化开发体验"></a>二、优化开发体验</h2><p>开发过程中修改源码后，需要自动构建和刷新浏览器，以查看效果。这个过程可以使用Webpack实现自动化，Webpack负责监听文件的变化，DevServer负责刷新浏览器。</p>
+<h3 id="2-1-使用自动刷新"><a href="#2-1-使用自动刷新" class="headerlink" title="2.1 使用自动刷新"></a>2.1 使用自动刷新</h3><p>####2.1.1 Webpack监听文件</p>
+<p>Webpack可以使用两种方式开启监听：1. 启动webpack时加上–watch参数；2. 在配置文件中设置watch:true。此外还有如下配置参数。合理设置watchOptions可以优化监听体验。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    watch: <span class="literal">true</span>,</span><br><span class="line">    watchOptions: &#123;</span><br><span class="line">        ignored: <span class="regexp">/node_modules/</span>,</span><br><span class="line">        aggregateTimeout: <span class="number">300</span>,  <span class="comment">//文件变动后多久发起构建，越大越好</span></span><br><span class="line">        poll: <span class="number">1000</span>,  <span class="comment">//每秒询问次数，越小越好</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ignored：设置不监听的目录，排除node_modules后可以显著减少Webpack消耗的内存</p>
+<p>aggregateTimeout：文件变动后多久发起构建，避免文件更新太快而造成的频繁编译以至卡死，越大越好</p>
+<p>poll：通过向系统轮询文件是否变化来判断文件是否改变，poll为每秒询问次数，越小越好</p>
+<p>####2.1.2 DevServer刷新浏览器</p>
+<p><strong>DevServer刷新浏览器有两种方式</strong>：</p>
+<ol>
+<li>向网页中注入代理客户端代码，通过客户端发起刷新</li>
+<li>向网页装入一个iframe，通过刷新iframe实现刷新效果</li>
+</ol>
+<p>默认情况下，以及 <code>devserver: {inline:true}</code> 都是采用第一种方式刷新页面。第一种方式DevServer因为不知道网页依赖哪些Chunk，所以会向每个chunk中都注入客户端代码，当要输出很多chunk时，会导致构建变慢。而一个页面只需要一个客户端，<strong>所以关闭inline模式可以减少构建时间</strong>，chunk越多提升月明显。关闭方式：</p>
+<ol>
+<li>启动时使用webpack-dev-server –inline false</li>
+<li>配置 <code>devserver:{inline:false}</code></li>
+</ol>
+<p>关闭inline后入口网址变为<a href="http://localhost:8080/webpack-dev-server/" target="_blank" rel="noopener">http://localhost:8080/webpack-dev-server/</a></p>
+<p>另外<code>devServer.compress</code> 参数可配置是否采用Gzip压缩，默认为false</p>
+<h3 id="2-2-开启模块热替换HMR"><a href="#2-2-开启模块热替换HMR" class="headerlink" title="2.2 开启模块热替换HMR"></a>2.2 开启模块热替换HMR</h3><p>模块热替换不刷新整个网页而只重新编译发生变化的模块，并用新模块替换老模块，所以预览反应更快，等待时间更少，同时不刷新页面能保留当前网页的运行状态。原理也是向每一个chunk中注入代理客户端来连接DevServer和网页。开启方式：</p>
+<ol>
+<li>webpack-dev-server –hot</li>
+<li>使用HotModuleReplacementPlugin，比较麻烦</li>
+</ol>
+<p>开启后如果修改子模块就可以实现局部刷新，但如果修改的是根JS文件，会整页刷新，原因在于，子模块更新时，事件一层层向上传递，直到某层的文件接收了当前变化的模块，然后执行回调函数。如果一层层向外抛直到最外层都没有文件接收，就会刷新整页。</p>
+<p>使用 <code>NamedModulesPlugin</code> 可以使控制台打印出被替换的模块的名称而非数字ID，另外同webpack监听，忽略node_modules目录的文件可以提升性能。</p>
+<h2 id="三、优化输出质量-压缩文件体积"><a href="#三、优化输出质量-压缩文件体积" class="headerlink" title="三、优化输出质量-压缩文件体积"></a>三、优化输出质量-压缩文件体积</h2><h3 id="3-1-区分环境–减小生产环境代码体积"><a href="#3-1-区分环境–减小生产环境代码体积" class="headerlink" title="3.1 区分环境–减小生产环境代码体积"></a>3.1 区分环境–减小生产环境代码体积</h3><p>代码运行环境分为开发环境和生产环境，代码需要根据不同环境做不同的操作，许多第三方库中也有大量的根据开发环境判断的if else代码，构建也需要根据不同环境输出不同的代码，所以需要一套机制可以在源码中区分环境，区分环境之后可以使输出的生产环境的代码体积减小。Webpack中使用DefinePlugin插件来定义配置文件适用的环境。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> DefinePlugin = <span class="built_in">require</span>(<span class="string">'webpack/lib/DefinePlugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">plugins:[</span><br><span class="line">    <span class="keyword">new</span> DefinePlugin(&#123;</span><br><span class="line">        <span class="string">'process.env'</span>: &#123;</span><br><span class="line">            NODE_ENV: <span class="built_in">JSON</span>.stringify(<span class="string">'production'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>注意，<code>JSON.stringify(&#39;production&#39;)</code> 的原因是，环境变量值需要一个双引号包裹的字符串，而stringify后的值是<code>&#39;&quot;production&quot;&#39;</code></p>
+<p>然后就可以在源码中使用定义的环境：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(process.env.NODE_ENV === <span class="string">'production'</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'你在生产环境'</span>)</span><br><span class="line">    doSth();</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'你在开发环境'</span>)</span><br><span class="line">    doSthElse();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当代码中使用了process时，Webpack会自动打包进process模块的代码以支持非Node.js的运行环境，这个模块的作用是模拟Node.js中的process，以支持<code>process.env.NODE_ENV === &#39;production&#39;</code> 语句。</p>
+<h3 id="3-2-压缩代码-JS、ES、CSS"><a href="#3-2-压缩代码-JS、ES、CSS" class="headerlink" title="3.2  压缩代码-JS、ES、CSS"></a>3.2  压缩代码-JS、ES、CSS</h3><ol>
+<li><p><strong>压缩JS：Webpack内置UglifyJS插件、ParallelUglifyPlugin</strong></p>
+<p>会分析JS代码语法树，理解代码的含义，从而做到去掉无效代码、去掉日志输入代码、缩短变量名等优化。常用配置参数如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> UglifyJSPlugin = <span class="built_in">require</span>(<span class="string">'webpack/lib/optimize/UglifyJsPlugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> UglifyJSPlugin(&#123;</span><br><span class="line">        compress: &#123;</span><br><span class="line">            warnings: <span class="literal">false</span>,  <span class="comment">//删除无用代码时不输出警告</span></span><br><span class="line">            drop_console: <span class="literal">true</span>,  <span class="comment">//删除所有console语句，可以兼容IE</span></span><br><span class="line">            collapse_vars: <span class="literal">true</span>,  <span class="comment">//内嵌已定义但只使用一次的变量</span></span><br><span class="line">            reduce_vars: <span class="literal">true</span>,  <span class="comment">//提取使用多次但没定义的静态值到变量</span></span><br><span class="line">        &#125;,</span><br><span class="line">        output: &#123;</span><br><span class="line">            beautify: <span class="literal">false</span>, <span class="comment">//最紧凑的输出，不保留空格和制表符</span></span><br><span class="line">            comments: <span class="literal">false</span>, <span class="comment">//删除所有注释</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>使用<code>webpack --optimize-minimize</code> 启动webpack，可以注入默认配置的UglifyJSPlugin</p>
+</li>
+<li><p><strong>压缩ES6：第三方UglifyJS插件</strong></p>
+<p>随着越来越多的浏览器支持直接执行ES6代码，应尽可能的运行原生ES6，这样比起转换后的ES5代码，代码量更少，且ES6代码性能更好。直接运行ES6代码时，也需要代码压缩，第三方的uglify-webpack-plugin提供了压缩ES6代码的功能：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">npm i -D uglify-webpack-plugin@beta <span class="comment">//要使用最新版本的插件</span></span><br><span class="line"><span class="comment">//webpack.config.json</span></span><br><span class="line"><span class="keyword">const</span> UglifyESPlugin = <span class="built_in">require</span>(<span class="string">'uglify-webpack-plugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">plugins:[</span><br><span class="line">    <span class="keyword">new</span> UglifyESPlugin(&#123;</span><br><span class="line">        uglifyOptions: &#123;  <span class="comment">//比UglifyJS多嵌套一层</span></span><br><span class="line">            compress: &#123;</span><br><span class="line">                warnings: <span class="literal">false</span>,</span><br><span class="line">                drop_console: <span class="literal">true</span>,</span><br><span class="line">                collapse_vars: <span class="literal">true</span>,</span><br><span class="line">                reduce_vars: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            output: &#123;</span><br><span class="line">                beautify: <span class="literal">false</span>,</span><br><span class="line">                comments: <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>另外要防止babel-loader转换ES6代码，要在.babelrc中去掉babel-preset-env，因为正是babel-preset-env负责把ES6转换为ES5。</p>
+</li>
+<li><p><strong>压缩CSS：css-loader?minimize、PurifyCSSPlugin</strong></p>
+<p>cssnano基于PostCSS，不仅是删掉空格，还能理解代码含义，例如把<code>color:#ff0000</code> 转换成 <code>color:red</code>，css-loader内置了cssnano，只需要使用 <code>css-loader?minimize</code> 就可以开启cssnano压缩。</p>
+<p>另外一种压缩CSS的方式是使用<a href="https://github.com/webpack-contrib/purifycss-webpack" target="_blank" rel="noopener">PurifyCSSPlugin</a>，需要配合 <code>extract-text-webpack-plugin</code> 使用，它主要的作用是可以去除没有用到的CSS代码，类似JS的Tree Shaking。</p>
+</li>
+</ol>
+<h3 id="3-3-使用Tree-Shaking剔除JS死代码"><a href="#3-3-使用Tree-Shaking剔除JS死代码" class="headerlink" title="3.3 使用Tree Shaking剔除JS死代码"></a>3.3 使用Tree Shaking剔除JS死代码</h3><p>Tree Shaking可以剔除用不上的死代码，它依赖ES6的import、export的模块化语法，最先在Rollup中出现，Webpack 2.0将其引入。适合用于Lodash、utils.js等工具类较分散的文件。<strong>它正常工作的前提是代码必须采用ES6的模块化语法</strong>，因为ES6模块化语法是静态的（在导入、导出语句中的路径必须是静态字符串，且不能放入其他代码块中）。如果采用了ES5中的模块化，例如module.export = {…}、require( x+y )、if (x) { require( ‘./util’ ) }，则Webpack无法分析出可以剔除哪些代码。</p>
+<p><strong>启用Tree Shaking：</strong></p>
+<ol>
+<li><p>修改.babelrc以保留ES6模块化语句：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"presets"</span>: [</span><br><span class="line">        [</span><br><span class="line">            <span class="string">"env"</span>, </span><br><span class="line">            &#123; <span class="string">"module"</span>: <span class="literal">false</span> &#125;,   <span class="comment">//关闭Babel的模块转换功能，保留ES6模块化语法</span></span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动webpack时带上 –display-used-exports可以在shell打印出关于代码剔除的提示</p>
+</li>
+<li><p>使用UglifyJSPlugin，或者启动时使用–optimize-minimize</p>
+</li>
+<li><p>在使用第三方库时，需要配置 <code>resolve.mainFields: [&#39;jsnext:main&#39;, &#39;main&#39;]</code> 以指明解析第三方库代码时，采用ES6模块化的代码入口</p>
+</li>
+</ol>
+<h2 id="四、优化输出质量–加速网络请求"><a href="#四、优化输出质量–加速网络请求" class="headerlink" title="四、优化输出质量–加速网络请求"></a>四、优化输出质量–加速网络请求</h2><h3 id="4-1-使用CDN加速静态资源加载"><a href="#4-1-使用CDN加速静态资源加载" class="headerlink" title="4.1 使用CDN加速静态资源加载"></a>4.1 使用CDN加速静态资源加载</h3><ol>
+<li><p><strong>CND加速的原理</strong></p>
+<p>CDN通过将资源部署到世界各地，使得用户可以就近访问资源，加快访问速度。要接入CDN，需要把网页的静态资源上传到CDN服务上，在访问这些资源时，使用CDN服务提供的URL。</p>
+<p>由于CDN会为资源开启长时间的缓存，例如用户从CDN上获取了index.html，即使之后替换了CDN上的index.html，用户那边仍会在使用之前的版本直到缓存时间过期。业界做法：</p>
+<ul>
+<li><strong>HTML文件：放在自己的服务器上且关闭缓存，不接入CDN</strong></li>
+<li><strong>静态的JS、CSS、图片等资源：开启CDN和缓存，同时文件名带上由内容计算出的Hash值</strong>，这样只要内容变化hash就会变化，文件名就会变化，就会被重新下载而不论缓存时间多长。</li>
+</ul>
+<p>另外，HTTP1.x版本的协议下，浏览器会对于向同一域名并行发起的请求数限制在4~8个。那么把所有静态资源放在同一域名下的CDN服务上就会遇到这种限制，所以可以把他们<strong>分散放在不同的CDN服务</strong>上，例如JS文件放在js.cdn.com下，将CSS文件放在css.cdn.com下等。这样又会带来一个新的问题：增加了域名解析时间，这个可以通过<strong>dns-prefetch</strong>来解决 <code>&lt;link rel=&#39;dns-prefetch&#39; href=&#39;//js.cdn.com&#39;&gt;</code> 来缩减域名解析的时间。形如<strong><code>//xx.com</code> 这样的URL省略了协议</strong>，这样做的好处是，浏览器在访问资源时会自动根据当前URL采用的模式来决定使用HTTP还是HTTPS协议。</p>
+</li>
+<li><p><strong>总之，构建需要满足以下几点：</strong></p>
+<ul>
+<li>静态资源导入的URL要变成指向CDN服务的绝对路径的URL</li>
+<li>静态资源的文件名需要带上根据内容计算出的Hash值</li>
+<li>不同类型资源放在不同域名的CDN上</li>
+</ul>
+</li>
+<li><p><strong>最终配置：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;WebPlugin&#125; = <span class="built_in">require</span>(<span class="string">'web-webpack-plugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">output:&#123;</span><br><span class="line"> filename: <span class="string">'[name]_[chunkhash:8].js'</span>,</span><br><span class="line"> path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line"> publicPatch: <span class="string">'//js.cdn.com/id/'</span>, <span class="comment">//指定存放JS文件的CDN地址</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line"> rules:[&#123;</span><br><span class="line">     test: <span class="regexp">/\.css/</span>,</span><br><span class="line">     use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">         use: [<span class="string">'css-loader?minimize'</span>],</span><br><span class="line">         publicPatch: <span class="string">'//img.cdn.com/id/'</span>, <span class="comment">//指定css文件中导入的图片等资源存放的cdn地址</span></span><br><span class="line">     &#125;),</span><br><span class="line"> &#125;,&#123;</span><br><span class="line">    test: <span class="regexp">/\.png/</span>,</span><br><span class="line">    use: [<span class="string">'file-loader?name=[name]_[hash:8].[ext]'</span>], <span class="comment">//为输出的PNG文件名加上Hash值 </span></span><br><span class="line"> &#125;]</span><br><span class="line">&#125;,</span><br><span class="line">plugins:[</span><br><span class="line">  <span class="keyword">new</span> WebPlugin(&#123;</span><br><span class="line">     template: <span class="string">'./template.html'</span>,</span><br><span class="line">     filename: <span class="string">'index.html'</span>,</span><br><span class="line">     stylePublicPath: <span class="string">'//css.cdn.com/id/'</span>, <span class="comment">//指定存放CSS文件的CDN地址</span></span><br><span class="line">  &#125;),</span><br><span class="line"> <span class="keyword">new</span> ExtractTextPlugin(&#123;</span><br><span class="line">     filename:<span class="string">`[name]_[contenthash:8].css`</span>, <span class="comment">//为输出的CSS文件加上Hash</span></span><br><span class="line"> &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="4-2-多页面应用提取页面间公共代码，以利用缓存"><a href="#4-2-多页面应用提取页面间公共代码，以利用缓存" class="headerlink" title="4.2 多页面应用提取页面间公共代码，以利用缓存"></a>4.2 多页面应用提取页面间公共代码，以利用缓存</h3><ol>
+<li><p><strong>原理</strong></p>
+<p>大型网站通常由多个页面组成，每个页面都是一个独立的单页应用，多个页面间肯定会依赖同样的样式文件、技术栈等。如果不把这些公共文件提取出来，那么每个单页打包出来的chunk中都会包含公共代码，相当于要传输n份重复代码。如果把公共文件提取出一个文件，那么当用户访问了一个网页，加载了这个公共文件，再访问其他依赖公共文件的网页时，就直接使用文件在浏览器的缓存，这样公共文件就只用被传输一次。</p>
+</li>
+<li><p><strong>应用方法</strong></p>
+<ol>
+<li><p>把多个页面依赖的公共代码提取到common.js中，此时common.js包含基础库的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CommonsChunkPlugin = <span class="built_in">require</span>(<span class="string">'webpack/lib/optimize/CommonsChunkPlugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">plugins:[</span><br><span class="line">    <span class="keyword">new</span> CommonsChunkPlugin(&#123;</span><br><span class="line">        chunks:[<span class="string">'a'</span>,<span class="string">'b'</span>], <span class="comment">//从哪些chunk中提取</span></span><br><span class="line">        name:<span class="string">'common'</span>,  <span class="comment">// 提取出的公共部分形成一个新的chunk</span></span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找出依赖的基础库，写一个base.js文件，再与common.js提取公共代码到base中，common.js就剔除了基础库代码，而base.js保持不变</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//base.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./base.css'</span>;</span><br><span class="line"><span class="comment">//webpack.config.json</span></span><br><span class="line">entry:&#123;</span><br><span class="line">    base: <span class="string">'./base.js'</span></span><br><span class="line">&#125;,</span><br><span class="line">plugins:[</span><br><span class="line">    <span class="keyword">new</span> CommonsChunkPlugin(&#123;</span><br><span class="line">        chunks:[<span class="string">'base'</span>,<span class="string">'common'</span>],</span><br><span class="line">        name:<span class="string">'base'</span>,</span><br><span class="line">        <span class="comment">//minChunks:2, 表示文件要被提取出来需要在指定的chunks中出现的最小次数，防止common.js中没有代码的情况</span></span><br><span class="line">    &#125;)        </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>得到基础库代码base.js，不含基础库的公共代码common.js，和页面各自的代码文件xx.js。</p>
+<p>页面引用顺序如下：base.js–&gt; common.js–&gt; xx.js</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="4-3-分割代码以按需加载"><a href="#4-3-分割代码以按需加载" class="headerlink" title="4.3 分割代码以按需加载"></a>4.3 分割代码以按需加载</h3><ol>
+<li><p><strong>原理</strong></p>
+<p>单页应用的一个问题在于使用一个页面承载复杂的功能，要加载的文件体积很大，不进行优化的话会导致首屏加载时间过长，影响用户体验。做按需加载可以解决这个问题。具体方法如下：</p>
+<ol>
+<li>将网站功能按照相关程度划分成几类</li>
+<li>每一类合并成一个Chunk，按需加载对应的Chunk</li>
+<li>例如，只把首屏相关的功能放入执行入口所在的Chunk，这样首次加载少量的代码，其他代码要用到的时候再去加载。最好提前预估用户接下来的操作，提前加载对应代码，让用户感知不到网络加载</li>
+</ol>
+</li>
+<li><p><strong>做法</strong></p>
+<p>一个最简单的例子：网页首次只加载main.js，网页展示一个按钮，点击按钮时加载分割出去的show.js，加载成功后执行show.js里的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>).addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">import</span>(<span class="comment">/* webpackChunkName:"show" */</span> <span class="string">'./show'</span>).then(<span class="function">(<span class="params">show</span>)=&gt;</span>&#123;</span><br><span class="line">        show(<span class="string">'Webpack'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//show.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.alert(<span class="string">'Hello '</span> + content);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>import(/* webpackChunkName:show */ &#39;./show&#39;).then()</code> 是实现按需加载的关键，Webpack内置对import( *)语句的支持，Webpack会以<code>./show.js</code>为入口重新生成一个Chunk。代码在浏览器上运行时只有点击了按钮才会开始加载show.js，且import语句会返回一个Promise，加载成功后可以在then方法中获取加载的内容。这要求浏览器支持Promise API，对于不支持的浏览器，需要注入Promise polyfill。<code>/* webpackChunkName:show */</code> 是定义动态生成的Chunk的名称，默认名称是[id].js，定义名称方便调试代码。为了正确输出这个配置的ChunkName，还需要配置Webpack：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line">output:&#123;</span><br><span class="line">    filename:<span class="string">'[name].js'</span>,</span><br><span class="line">    chunkFilename:<span class="string">'[name].js'</span>, <span class="comment">//指定动态生成的Chunk在输出时的文件名称</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>书中另外提供了更复杂的React-Router中异步加载组件的实战场景。P212</p>
+<h2 id="五、优化输出质量–提升代码运行时的效率"><a href="#五、优化输出质量–提升代码运行时的效率" class="headerlink" title="五、优化输出质量–提升代码运行时的效率"></a>五、优化输出质量–提升代码运行时的效率</h2><h3 id="5-1-使用Prepack提前求值"><a href="#5-1-使用Prepack提前求值" class="headerlink" title="5.1 使用Prepack提前求值"></a>5.1 使用Prepack提前求值</h3><ol>
+<li><p><strong>原理：</strong></p>
+<p>Prepack是一个部分求值器，编译代码时提前将计算结果放到编译后的代码中，而不是在代码运行时才去求值。通过在便一阶段预先执行源码来得到执行结果，再直接将运行结果输出以提升性能。但是现在Prepack还不够成熟，用于线上环境还为时过早。</p>
+</li>
+<li><p><strong>使用方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PrepackWebpackPlugin = <span class="built_in">require</span>(<span class="string">'prepack-webpack-plugin'</span>).default;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> PrepackWebpackPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="5-2-使用Scope-Hoisting"><a href="#5-2-使用Scope-Hoisting" class="headerlink" title="5.2 使用Scope Hoisting"></a>5.2 使用Scope Hoisting</h3><ol>
+<li><p><strong>原理</strong></p>
+<p>译作“作用域提升”，是在Webpack3中推出的功能，它分析模块间的依赖关系，尽可能将被打散的模块合并到一个函数中，但不能造成代码冗余，所以只有被引用一次的模块才能被合并。由于需要分析模块间的依赖关系，所以源码必须是采用了ES6模块化的，否则Webpack会降级处理不采用Scope Hoisting。</p>
+</li>
+<li><p><strong>使用方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ModuleConcatenationPlugin = <span class="built_in">require</span>(<span class="string">'webpack/lib/optimize/ModuleConcatenationPlugin'</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">plugins:[</span><br><span class="line">    <span class="keyword">new</span> ModuleConcatenationPlugin();</span><br><span class="line">],</span><br><span class="line">resolve:&#123;</span><br><span class="line">	mainFields:[<span class="string">'jsnext:main'</span>,<span class="string">'browser'</span>,<span class="string">'main'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>webpack --display-optimization-bailout</code> 输出日志中会提示哪个文件导致了降级处理</p>
+</li>
+</ol>
+<h2 id="六、使用输出分析工具"><a href="#六、使用输出分析工具" class="headerlink" title="六、使用输出分析工具"></a>六、使用输出分析工具</h2><p>启动Webpack时带上这两个参数可以生成一个json文件，输出分析工具大多依赖该文件进行分析：</p>
+<p><code>webpack --profile --json &gt; stats.json</code> 其中 <code>--profile</code> 记录构建过程中的耗时信息，<code>--json</code> 以JSON的格式输出构建结果，<code>&gt;stats.json</code> 是UNIX / Linux系统中的管道命令，含义是将内容通过管道输出到stats.json文件中。</p>
+<ol>
+<li><p><strong>官方工具Webpack Analyse</strong></p>
+<p>打开该工具的官网<a href="http://webpack.github.io/analyse/上传stats.json，就可以得到分析结果" target="_blank" rel="noopener">http://webpack.github.io/analyse/上传stats.json，就可以得到分析结果</a></p>
+</li>
+<li><p><strong>webpack-bundle-analyzer</strong></p>
+<p>可视化分析工具，比Webapck Analyse更直观。使用也很简单：</p>
+<ol>
+<li>npm  i -g webpack-bundle-analyzer安装到全局</li>
+<li>按照上面方法生成stats.json文件</li>
+<li>在项目根目录执行<code>webpack-bundle-analyzer</code> ，浏览器会自动打开结果分析页面。</li>
+</ol>
+</li>
+</ol>
+<h2 id="七、其他Tips"><a href="#七、其他Tips" class="headerlink" title="七、其他Tips"></a>七、其他Tips</h2><ol>
+<li><p>配置babel-loader时，<code>use: [‘babel-loader?cacheDirectory’]</code> cacheDirectory用于缓存babel的编译结果，加快重新编译的速度。另外注意排除node_modules文件夹，因为文件都使用了ES5的语法，没必要再使用Babel转换。</p>
+</li>
+<li><p>配置externals，排除因为已使用\&lt;script>标签引入而不用打包的代码，noParse是排除没使用模块化语句的代码。</p>
+</li>
+<li><p>配置performance参数可以输出文件的性能检查配置。</p>
+</li>
+<li><p>配置profile：true，是否捕捉Webpack构建的性能信息，用于分析是什么原因导致构建性能不佳。</p>
+</li>
+<li><p>配置cache：true，是否启用缓存来提升构建速度。</p>
+</li>
+<li><p>可以使用url-loader把小图片转换成base64嵌入到JS或CSS中，减少加载次数。</p>
+</li>
+<li><p>通过imagemin-webpack-plugin压缩图片，通过webpack-spritesmith制作雪碧图。</p>
+</li>
+<li><p>开发环境下将devtool设置为cheap-module-eval-source-map，因为生成这种source map的速度最快，能加速构建。在生产环境下将devtool设置为hidden-source-map</p>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Webpack/" rel="tag">#Webpack</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/02/TCP-IP/" rel="next" title="TCP/IP入门经典_笔记">
+                <i class="fa fa-chevron-left"></i> TCP/IP入门经典_笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="superMaryyy" />
+          <p class="site-author-name" itemprop="name">superMaryyy</p>
+          <p class="site-description motion-element" itemprop="description">有志者自有千计万计，无志者只感千难万难</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、优化构建速度"><span class="nav-text">一、优化构建速度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-缩小文件的搜索范围"><span class="nav-text">1.1 缩小文件的搜索范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-使用HappyPack开启多进程Loader转换"><span class="nav-text">1.3 使用HappyPack开启多进程Loader转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-使用ParallelUglifyPlugin开启多进程压缩JS文件"><span class="nav-text">1.4 使用ParallelUglifyPlugin开启多进程压缩JS文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、优化开发体验"><span class="nav-text">二、优化开发体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-使用自动刷新"><span class="nav-text">2.1 使用自动刷新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-开启模块热替换HMR"><span class="nav-text">2.2 开启模块热替换HMR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、优化输出质量-压缩文件体积"><span class="nav-text">三、优化输出质量-压缩文件体积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-区分环境–减小生产环境代码体积"><span class="nav-text">3.1 区分环境–减小生产环境代码体积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-压缩代码-JS、ES、CSS"><span class="nav-text">3.2  压缩代码-JS、ES、CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-使用Tree-Shaking剔除JS死代码"><span class="nav-text">3.3 使用Tree Shaking剔除JS死代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、优化输出质量–加速网络请求"><span class="nav-text">四、优化输出质量–加速网络请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-使用CDN加速静态资源加载"><span class="nav-text">4.1 使用CDN加速静态资源加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-多页面应用提取页面间公共代码，以利用缓存"><span class="nav-text">4.2 多页面应用提取页面间公共代码，以利用缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-分割代码以按需加载"><span class="nav-text">4.3 分割代码以按需加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、优化输出质量–提升代码运行时的效率"><span class="nav-text">五、优化输出质量–提升代码运行时的效率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-使用Prepack提前求值"><span class="nav-text">5.1 使用Prepack提前求值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-使用Scope-Hoisting"><span class="nav-text">5.2 使用Scope Hoisting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、使用输出分析工具"><span class="nav-text">六、使用输出分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、其他Tips"><span class="nav-text">七、其他Tips</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">superMaryyy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'supermaryyy';
+      var disqus_identifier = '2018/08/02/About_Webpack_Optimization/';
+      var disqus_title = "三十分钟掌握Webpack性能优化";
+      var disqus_url = 'http://supermaryy.com/2018/08/02/About_Webpack_Optimization/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("viqvtCrDXybVezVWV8Rjug5j-gzGzoHsz", "26hWjxk9tYLU0r9HPP8dKz2l");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
