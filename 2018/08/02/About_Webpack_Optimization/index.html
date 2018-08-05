@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
+<meta name="description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。基于Web">
 <meta name="keywords" content="Webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三十分钟掌握Webpack性能优化">
 <meta property="og:url" content="http://supermaryy.com/2018/08/02/About_Webpack_Optimization/index.html">
 <meta property="og:site_name" content="Mary&#39;s blog">
-<meta property="og:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
+<meta property="og:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。基于Web">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-04T03:36:26.654Z">
+<meta property="og:updated_time" content="2018-08-04T04:31:47.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三十分钟掌握Webpack性能优化">
-<meta name="twitter:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需">
+<meta name="twitter:description" content="Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。基于Web">
 
 
 
@@ -359,10 +359,10 @@
       
 
       
-        <p>Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。阅读本文需要您熟悉Webpack基本使用方法，读完大约需要三十分钟。</p>
+        <p>Webpack是现在主流的功能强大的模块化打包工具，在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。本文主要是根据自己的理解对《深入浅出Webpack》这本书进行总结，涵盖了大部分的优化方法，可以作为Webpack性能优化时的参考和检查清单。基于Webpack3.4版本，阅读本文需要您熟悉Webpack基本使用方法，读完大约需要三十分钟。</p>
 <a id="more"></a>
 <blockquote>
-<p>by MaryTien from  <a href="http://luckymona.github.com" target="_blank" rel="noopener">http://supermaryy.com</a></p>
+<p>From  <a href="http://luckymona.github.com" target="_blank" rel="noopener">http://supermaryy.com</a></p>
 </blockquote>
 <h2 id="一、优化构建速度"><a href="#一、优化构建速度" class="headerlink" title="一、优化构建速度"></a>一、优化构建速度</h2><p>Webpack在启动后会根据Entry配置的入口出发，递归地解析所依赖的文件。这个过程分为搜索文件和把匹配的文件进行分析、转化的两个过程，因此可以从这两个角度来进行优化配置。</p>
 <h3 id="1-1-缩小文件的搜索范围"><a href="#1-1-缩小文件的搜索范围" class="headerlink" title="1.1 缩小文件的搜索范围"></a>1.1 缩小文件的搜索范围</h3><p><strong>搜索过程优化方式包括：</strong></p>
@@ -694,7 +694,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

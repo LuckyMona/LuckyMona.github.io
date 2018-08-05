@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://supermaryy.com/2018/08/02/About_Webpack_Optimization/</loc>
+    
+    <lastmod>2018-08-04T04:31:47.823Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
     
     <lastmod>2018-08-04T04:13:09.576Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://supermaryy.com/2018/03/02/HTTP_cache/</loc>
     
     <lastmod>2018-08-04T03:36:53.246Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://supermaryy.com/2018/08/02/About_Webpack_Optimization/</loc>
-    
-    <lastmod>2018-08-04T03:36:26.654Z</lastmod>
     
   </url>
   
@@ -54,13 +54,6 @@
     <loc>http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/</loc>
     
     <lastmod>2018-05-07T10:29:59.604Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://supermaryy.com/2016/09/20/read-book-professional-javascript5/</loc>
-    
-    <lastmod>2018-05-07T10:29:59.602Z</lastmod>
     
   </url>
   

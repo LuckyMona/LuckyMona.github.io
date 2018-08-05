@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2018/08/02/About_Webpack_Optimization/</loc>
+    <lastmod>2018-08-04T04:31:47.823Z</lastmod>
+    <data>
+        <display>
+        <title>三十分钟掌握Webpack性能优化</title>
+        <pubTime>2018-08-02T12:30:00.000Z</pubTime>
+        
+        <tag>Webpack</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
     <lastmod>2018-08-04T04:13:09.576Z</lastmod>
     <data>
@@ -63,26 +83,6 @@
     </url>
 
     
-  <url>
-    <loc>http://supermaryy.com/2018/08/02/About_Webpack_Optimization/</loc>
-    <lastmod>2018-08-04T03:36:26.654Z</lastmod>
-    <data>
-        <display>
-        <title>三十分钟掌握Webpack性能优化</title>
-        <pubTime>2018-08-02T12:30:00.000Z</pubTime>
-        
-        <tag>Webpack</tag>
-         
-         
-           
-             
-              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
@@ -108,30 +108,6 @@
            
              
               <breadCrumb title="CSS" url="http://supermaryy.com/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2016/09/20/read-book-professional-javascript5/</loc>
-    <lastmod>2018-05-07T10:29:59.602Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript基础5-Date</title>
-        <pubTime>2016-09-20T14:00:00.000Z</pubTime>
-        
-        <tag>红皮书</tag>
-         
-        <tag>读书笔记</tag>
-         
-        <tag>Javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
           
         </display>
     </data>
