@@ -1,11 +1,17 @@
 ---
 title: 前端常用存储技术总结
 date: 2016-11-11 19:10:00
-categories: Javascript
+categories: Javascript #CSS，HTTP，Javascript，NodeJS，框架
 tags: [Javascript] #文章标签，可空，多标签请用格式，注意:后面有个空格
 toc: true
 comments: true
 ---
+主要总结了前端常用的客户端存储技术，主要包括Cookie、HTML5 Web Storage，和客户端数据库的内容。
+
+<!-- more -->
+
+> by MaryTien from  http://supermaryy.com
+
 # 一、cookie#
 
 cookie是浏览器保存在用户计算机上的少量数据，每次发送HTTP请求时自动地在附在HTTP头部里。

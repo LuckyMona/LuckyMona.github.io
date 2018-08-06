@@ -1,16 +1,16 @@
 ---
-title: TCP/IP入门经典_笔记
+title: TCP/IP入门经典_总结
 date: 2018-04-02 21:00:00
 categories: HTTP
 tags: [HTTP] #文章标签，可空，多标签请用格式，注意:后面有个空格
 toc: true
 comments: true
 ---
-> by MaryTien from [http://luckymona.github.io](http://luckymona.github.io)
-> 本文地址：[http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css](http://luckymona.github.io/2016/09/08/summary-of-aligning-to-center-solutions-in-css)
+本文是对《TCP/IP入门经典》前五章的梳理总结或者说一个读书笔记，主要说明了TCP/IP协议的基础知识、四层模型的结构、每层模型用到的协议，协议的主要内容等。由于篇幅关系，只写到了四层协议中的网络访问层和网际层，计划后续补全。阅读本文可以让你对于互联网的运行基础建立一个大概的印象，为深入了解TCP/IP协议打下基础。
 
-《TCP/IP入门经典》的读书笔记，总结一下以加深印象。
 <!-- More -->
+
+> by MaryTien from [http://luckymona.github.io](http://luckymona.github.io)
 
 ## 一、什么是TCP/IP##
 
