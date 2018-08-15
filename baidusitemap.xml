@@ -83,6 +83,30 @@
     </url>
 
     
+  <url>
+    <loc>http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/</loc>
+    <lastmod>2018-08-04T03:36:53.245Z</lastmod>
+    <data>
+        <display>
+        <title>支持离线和拍照上传的Hybrid APP开发小记</title>
+        <pubTime>2016-08-06T08:30:00.000Z</pubTime>
+        
+        <tag>Hybrid APP</tag>
+         
+        <tag>离线应用</tag>
+         
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
     
@@ -139,12 +163,12 @@
 
     
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     <data>
         <display>
-        <title>Javascript基础2</title>
-        <pubTime>2016-09-17T07:00:00.000Z</pubTime>
+        <title>Javascript基础3</title>
+        <pubTime>2016-09-17T08:00:00.000Z</pubTime>
         
         <tag>红皮书</tag>
          
@@ -163,12 +187,12 @@
 
     
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     <data>
         <display>
-        <title>Javascript基础3</title>
-        <pubTime>2016-09-17T08:00:00.000Z</pubTime>
+        <title>Javascript基础2</title>
+        <pubTime>2016-09-17T07:00:00.000Z</pubTime>
         
         <tag>红皮书</tag>
          
@@ -373,30 +397,6 @@
         <tag>开发环境</tag>
          
         <tag>webapp</tag>
-         
-         
-           
-             
-              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/</loc>
-    <lastmod>2018-05-07T10:29:59.525Z</lastmod>
-    <data>
-        <display>
-        <title>支持离线和拍照上传的Hybrid APP开发小记</title>
-        <pubTime>2016-08-06T08:30:00.000Z</pubTime>
-        
-        <tag>Hybrid APP</tag>
-         
-        <tag>离线应用</tag>
-         
-        <tag>总结</tag>
          
          
            
