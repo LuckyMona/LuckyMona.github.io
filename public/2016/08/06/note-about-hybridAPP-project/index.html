@@ -90,16 +90,16 @@
 <meta name="keywords" content="Hybrid APP,离线应用,总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="支持离线和拍照上传的Hybrid APP开发小记">
-<meta property="og:url" content="http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/index.html">
+<meta property="og:url" content="http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/index.html">
 <meta property="og:site_name" content="Mary&#39;s blog">
 <meta property="og:description" content="本篇主要记录了我遇到的一些问题，和解决方案，以供参考。问题比较杂乱，简单分了一下类，感觉还是不太清晰π__π，但是感觉也没有人会需要全篇内容吧，如果能在你报了某个错误时，我的某个解决方案能给你一点启发，那就是做好事啦~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/heightWrong.jpg">
-<meta property="og:updated_time" content="2018-05-07T10:29:59.525Z">
+<meta property="og:image" content="http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/ionic_hybrid/heightWrong.jpg">
+<meta property="og:updated_time" content="2018-08-04T03:36:53.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持离线和拍照上传的Hybrid APP开发小记">
 <meta name="twitter:description" content="本篇主要记录了我遇到的一些问题，和解决方案，以供参考。问题比较杂乱，简单分了一下类，感觉还是不太清晰π__π，但是感觉也没有人会需要全篇内容吧，如果能在你报了某个错误时，我的某个解决方案能给你一点启发，那就是做好事啦~">
-<meta name="twitter:image" content="http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/heightWrong.jpg">
+<meta name="twitter:image" content="http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/ionic_hybrid/heightWrong.jpg">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/"/>
+  <link rel="canonical" href="http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/"/>
 
   <title> 支持离线和拍照上传的Hybrid APP开发小记 | Mary's blog </title>
 </head>
@@ -328,8 +328,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/" itemprop="commentsCount"></span>
+                <a href="/2016/08/06/note-about-hybridAPP-project/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/06/note-about-hybridAPP-project/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -339,7 +339,7 @@
 
           
           
-             <span id="/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/" class="leancloud_visitors" data-flag-title="支持离线和拍照上传的Hybrid APP开发小记">
+             <span id="/2016/08/06/note-about-hybridAPP-project/" class="leancloud_visitors" data-flag-title="支持离线和拍照上传的Hybrid APP开发小记">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -465,7 +465,7 @@
 <li>各种hack方案<br><a href="http://stackoverflow.com/questions/2637058/positions-fixed-doesnt-work-when-using-webkit-transform" title="这是一个链接" target="_blank" rel="noopener">Positions fixed doesn’t work when using -webkit-transform</a></li>
 <li>拓展：<br><a href="http://www.ddhigh.com/2014/09/angularjs-lazy-load/" title="这是一个链接" target="_blank" rel="noopener">摆脱jquery!angularjs利用指令简单实现滚动翻页</a></li>
 </ol>
-<h2 id="ionic滚动时，ion-content-高度计算错误-，不能显示全部内容"><a href="#ionic滚动时，ion-content-高度计算错误-，不能显示全部内容" class="headerlink" title="ionic滚动时，ion-content 高度计算错误 ，不能显示全部内容"></a>ionic滚动时，ion-content 高度计算错误 ，不能显示全部内容</h2><p><img src="/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/heightWrong.jpg" alt="ionic_hybrid/heightWrong.jpg"><br>解决方案：<br>在ion-content上加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;   position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    margin: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="ionic滚动时，ion-content-高度计算错误-，不能显示全部内容"><a href="#ionic滚动时，ion-content-高度计算错误-，不能显示全部内容" class="headerlink" title="ionic滚动时，ion-content 高度计算错误 ，不能显示全部内容"></a>ionic滚动时，ion-content 高度计算错误 ，不能显示全部内容</h2><p><img src="ionic_hybrid/heightWrong.jpg" alt="ionic_hybrid/heightWrong.jpg"><br>解决方案：<br>在ion-content上加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;   position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    margin: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>注意：</strong>top和bottom值必须为零，如果需要间隔，在ion-content的子元素上加margin，而不要修改top值或bottom值，否则会造成高度计算不正确，还是不能正常显示全部内容。</p>
 <h2 id="上传图片："><a href="#上传图片：" class="headerlink" title="上传图片："></a>上传图片：</h2><p>后台是用ASP.NET接收的，写法参考链接：</p>
 <ol>
@@ -622,7 +622,7 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -639,7 +639,7 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -802,9 +802,9 @@ https://github.com/dtaalbers/ionic-2-examples/tree/master/file-transfer-uploa" t
 
     <script type="text/javascript">
       var disqus_shortname = 'supermaryyy';
-      var disqus_identifier = '2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/';
+      var disqus_identifier = '2016/08/06/note-about-hybridAPP-project/';
       var disqus_title = "支持离线和拍照上传的Hybrid APP开发小记";
-      var disqus_url = 'http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/';
+      var disqus_url = 'http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

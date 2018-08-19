@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://supermaryy.com/2018/07/10/about-HTTPS/</loc>
+    
+    <lastmod>2018-08-16T16:30:30.118Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://supermaryy.com/2018/08/02/About_Webpack_Optimization/</loc>
     
     <lastmod>2018-08-04T04:31:47.823Z</lastmod>
@@ -30,14 +37,21 @@
   </url>
   
   <url>
-    <loc>http://supermaryy.com/tags/index.html</loc>
+    <loc>http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/</loc>
+    
+    <lastmod>2018-08-04T03:36:53.245Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://supermaryy.com/categories/index.html</loc>
     
     <lastmod>2018-05-07T10:29:59.605Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://supermaryy.com/categories/index.html</loc>
+    <loc>http://supermaryy.com/tags/index.html</loc>
     
     <lastmod>2018-05-07T10:29:59.605Z</lastmod>
     
@@ -65,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
     
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
     
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     
@@ -131,13 +145,6 @@
     <loc>http://supermaryy.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/</loc>
     
     <lastmod>2018-05-07T10:29:59.526Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://supermaryy.com/2016/08/06/A_Note_About_Developing_A_Hybrid_APP_Which_Supports_for_offline_Take_Photo_And_Uploading_Pictures/</loc>
-    
-    <lastmod>2018-05-07T10:29:59.525Z</lastmod>
     
   </url>
   
