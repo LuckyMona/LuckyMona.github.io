@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://supermaryy.com/2018/05/10/JS-inheritance-and-super-of-ES6/</loc>
+    
+    <lastmod>2018-08-28T15:35:20.464Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://supermaryy.com/2018/07/10/about-HTTPS/</loc>
     
     <lastmod>2018-08-16T16:30:30.118Z</lastmod>
@@ -44,14 +51,14 @@
   </url>
   
   <url>
-    <loc>http://supermaryy.com/categories/index.html</loc>
+    <loc>http://supermaryy.com/tags/index.html</loc>
     
     <lastmod>2018-05-07T10:29:59.605Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://supermaryy.com/tags/index.html</loc>
+    <loc>http://supermaryy.com/categories/index.html</loc>
     
     <lastmod>2018-05-07T10:29:59.605Z</lastmod>
     
@@ -79,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
     
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
     
     <lastmod>2018-05-07T10:29:59.600Z</lastmod>
     
