@@ -3,158 +3,12 @@
 
 
     
-  <url>
-    <loc>http://supermaryy.com/2018/05/10/JS-inheritance-and-super-of-ES6/</loc>
-    <lastmod>2018-08-28T15:35:20.464Z</lastmod>
-    <data>
-        <display>
-        <title>继承以及Super</title>
-        <pubTime>2018-05-10T12:30:00.000Z</pubTime>
-        
-        <tag>ES6</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2018/07/10/about-HTTPS/</loc>
-    <lastmod>2018-08-16T16:30:30.118Z</lastmod>
-    <data>
-        <display>
-        <title>十分钟了解HTTPS</title>
-        <pubTime>2018-07-10T12:30:00.000Z</pubTime>
-        
-        <tag>HTTP2</tag>
-         
-        <tag>HTTPS</tag>
-         
-         
-           
-             
-              <breadCrumb title="HTTP" url="http://supermaryy.com/categories/HTTP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2018/08/02/About_Webpack_Optimization/</loc>
-    <lastmod>2018-08-04T04:31:47.823Z</lastmod>
-    <data>
-        <display>
-        <title>三十分钟掌握Webpack性能优化</title>
-        <pubTime>2018-08-02T12:30:00.000Z</pubTime>
-        
-        <tag>Webpack</tag>
-         
-         
-           
-             
-              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
-    <lastmod>2018-08-04T04:13:09.576Z</lastmod>
-    <data>
-        <display>
-        <title>前端常用存储技术总结</title>
-        <pubTime>2016-11-11T11:10:00.000Z</pubTime>
-        
-        <tag>Javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2018/04/02/TCP-IP/</loc>
-    <lastmod>2018-08-04T03:56:44.739Z</lastmod>
-    <data>
-        <display>
-        <title>TCP/IP入门经典_总结</title>
-        <pubTime>2018-04-02T13:00:00.000Z</pubTime>
-        
-        <tag>HTTP</tag>
-         
-         
-           
-             
-              <breadCrumb title="HTTP" url="http://supermaryy.com/categories/HTTP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2018/03/02/HTTP_cache/</loc>
-    <lastmod>2018-08-04T03:36:53.246Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP缓存机制大局观</title>
-        <pubTime>2018-03-02T13:30:00.000Z</pubTime>
-        
-        <tag>http</tag>
-         
-         
-           
-             
-              <breadCrumb title="http" url="http://supermaryy.com/categories/http/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/</loc>
-    <lastmod>2018-08-04T03:36:53.245Z</lastmod>
-    <data>
-        <display>
-        <title>支持离线和拍照上传的Hybrid APP开发小记</title>
-        <pubTime>2016-08-06T08:30:00.000Z</pubTime>
-        
-        <tag>Hybrid APP</tag>
-         
-        <tag>离线应用</tag>
-         
-        <tag>总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
   <url>
     <loc>http://supermaryy.com/2016/09/08/summary-of-aligning-to-center-solutions-in-css/</loc>
-    <lastmod>2018-05-07T10:29:59.604Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.971Z</lastmod>
     <data>
         <display>
         <title>总结向↗CSS居中常用套路</title>
@@ -181,8 +35,28 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2016/11/11/storage-in-frontent/</loc>
+    <lastmod>2018-08-29T02:37:41.970Z</lastmod>
+    <data>
+        <display>
+        <title>前端常用存储技术总结</title>
+        <pubTime>2016-11-11T11:10:00.000Z</pubTime>
+        
+        <tag>Javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/09/20/read-book-professional-javascript4/</loc>
-    <lastmod>2018-05-07T10:29:59.601Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.968Z</lastmod>
     <data>
         <display>
         <title>Javascript基础4</title>
@@ -205,32 +79,8 @@
 
     
   <url>
-    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
-    <lastmod>2018-05-07T10:29:59.600Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript基础2</title>
-        <pubTime>2016-09-17T07:00:00.000Z</pubTime>
-        
-        <tag>红皮书</tag>
-         
-        <tag>读书笔记</tag>
-         
-        <tag>Javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript3/</loc>
-    <lastmod>2018-05-07T10:29:59.600Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.967Z</lastmod>
     <data>
         <display>
         <title>Javascript基础3</title>
@@ -253,8 +103,32 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2016/09/17/read-book-professional-javascript2/</loc>
+    <lastmod>2018-08-29T02:37:41.967Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript基础2</title>
+        <pubTime>2016-09-17T07:00:00.000Z</pubTime>
+        
+        <tag>红皮书</tag>
+         
+        <tag>读书笔记</tag>
+         
+        <tag>Javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/09/11/read-book-professional-javascript1/</loc>
-    <lastmod>2018-05-07T10:29:59.599Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.965Z</lastmod>
     <data>
         <display>
         <title>Javascript基础</title>
@@ -276,7 +150,7 @@
     
   <url>
     <loc>http://supermaryy.com/2016/06/02/npm%20ERR!%20shasum%20check%20failed%20for/</loc>
-    <lastmod>2018-05-07T10:29:59.568Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.898Z</lastmod>
     <data>
         <display>
         <title>npm ERR! shasum check failed for报错，解决办法</title>
@@ -299,18 +173,42 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2016/08/06/note-about-hybridAPP-project/</loc>
+    <lastmod>2018-08-29T02:37:41.897Z</lastmod>
+    <data>
+        <display>
+        <title>支持离线和拍照上传的Hybrid APP开发小记</title>
+        <pubTime>2016-08-06T08:30:00.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+        <tag>Hybrid APP</tag>
+         
+        <tag>离线应用</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/10/30/knowledge-about-encoding-and-transcoding/</loc>
-    <lastmod>2018-05-07T10:29:59.567Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.896Z</lastmod>
     <data>
         <display>
         <title>前端中关于编码和转码的知识小总结</title>
         <pubTime>2016-10-30T06:30:00.000Z</pubTime>
         
-        <tag>总结</tag>
-         
         <tag>编码</tag>
          
         <tag>转码</tag>
+         
+        <tag>总结</tag>
          
          
            
@@ -324,7 +222,7 @@
     
   <url>
     <loc>http://supermaryy.com/2016/10/22/developing-a-simple-web-server-with-node-js/</loc>
-    <lastmod>2018-05-07T10:29:59.531Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.844Z</lastmod>
     <data>
         <display>
         <title>使用Node.js搭建简单Web服务器</title>
@@ -349,8 +247,50 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2018/07/10/about-HTTPS/</loc>
+    <lastmod>2018-08-29T02:37:41.843Z</lastmod>
+    <data>
+        <display>
+        <title>十分钟了解HTTPS</title>
+        <pubTime>2018-07-10T12:30:00.000Z</pubTime>
+        
+        <tag>HTTP2</tag>
+         
+        <tag>HTTPS</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTTP" url="http://supermaryy.com/categories/HTTP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2018/04/02/TCP-IP/</loc>
+    <lastmod>2018-08-29T02:37:41.835Z</lastmod>
+    <data>
+        <display>
+        <title>TCP/IP入门经典_总结</title>
+        <pubTime>2018-04-02T13:00:00.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTTP" url="http://supermaryy.com/categories/HTTP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/05/16/Question_About_Onunload/</loc>
-    <lastmod>2018-05-07T10:29:59.528Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.834Z</lastmod>
     <data>
         <display>
         <title>onunload用于移除事件处理程序的疑问</title>
@@ -378,7 +318,7 @@
     
   <url>
     <loc>http://supermaryy.com/2016/06/02/Obstacles_I_Met_When_Using_MongoDB/</loc>
-    <lastmod>2018-05-07T10:29:59.527Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.834Z</lastmod>
     <data>
         <display>
         <title>MongoDB使用过程踩坑小记</title>
@@ -400,7 +340,7 @@
     
   <url>
     <loc>http://supermaryy.com/2016/07/02/Obstacles_I_Met_When_Using_Hexo/</loc>
-    <lastmod>2018-05-07T10:29:59.527Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.833Z</lastmod>
     <data>
         <display>
         <title>使用Hexo踩坑小记</title>
@@ -425,8 +365,28 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2018/05/10/JS-inheritance-and-super-of-ES6/</loc>
+    <lastmod>2018-08-29T02:37:41.832Z</lastmod>
+    <data>
+        <display>
+        <title>继承以及Super</title>
+        <pubTime>2018-05-10T12:30:00.000Z</pubTime>
+        
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="http://supermaryy.com/categories/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/06/14/Ionic_AngularJS_Cordova_Hybrid_APP_Developing_Environment_And_Build/</loc>
-    <lastmod>2018-05-07T10:29:59.526Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.831Z</lastmod>
     <data>
         <display>
         <title>ionic + angularJS开发Hybrid App开发环境配置及打包踩坑记</title>
@@ -451,8 +411,48 @@
 
     
   <url>
+    <loc>http://supermaryy.com/2018/03/02/HTTP_cache/</loc>
+    <lastmod>2018-08-29T02:37:41.830Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP缓存机制大局观</title>
+        <pubTime>2018-03-02T13:30:00.000Z</pubTime>
+        
+        <tag>http</tag>
+         
+         
+           
+             
+              <breadCrumb title="http" url="http://supermaryy.com/categories/http/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://supermaryy.com/2018/08/02/About_Webpack_Optimization/</loc>
+    <lastmod>2018-08-29T02:37:41.828Z</lastmod>
+    <data>
+        <display>
+        <title>三十分钟掌握Webpack性能优化</title>
+        <pubTime>2018-08-02T12:30:00.000Z</pubTime>
+        
+        <tag>Webpack</tag>
+         
+         
+           
+             
+              <breadCrumb title="框架" url="http://supermaryy.com/categories/%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://supermaryy.com/2016/07/11/A_Hiccup_When_ion-view_And_ng-repeat_Meet_With_$watch/</loc>
-    <lastmod>2018-05-07T10:29:59.524Z</lastmod>
+    <lastmod>2018-08-29T02:37:41.827Z</lastmod>
     <data>
         <display>
         <title>ion-view、ng-repeat遇到$watch时产生的一个小坑</title>
